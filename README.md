@@ -5,4 +5,5 @@
 
 Here are some common machine learning algorithms that can be applied to almost all data problems:
 
-  - Linear Regression
+  - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/Linear%20Regression.R)
+  - [Logistic Regression]
