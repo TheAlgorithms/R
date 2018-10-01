@@ -15,3 +15,6 @@ Here are some common machine learning algorithms that can be applied to almost a
   - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/Random%20Forest.R)
   - [Dimensionality Reduction Algorithms](https://github.com/TheAlgorithms/R/blob/master/Dimensionality%20Reduction%20Algorithms.R)
   - [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/Gradient%20Boosting%20Algorithms.R)
+  
+## Data Processing
+  - xlsx package
