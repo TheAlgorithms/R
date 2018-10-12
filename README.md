@@ -5,19 +5,15 @@
 
 Here are some common machine learning algorithms that can be applied to almost all data problems:
 
-  - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/Linear%20Regression.R)
-  - [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/Logistic%20Regression.R)
-  - [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/Decision%20Tree.R)
-  - [SVM](https://github.com/TheAlgorithms/R/blob/master/SVM.R)
-  - [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/Naive%20Bayes.R)
-  - [KNN](https://github.com/TheAlgorithms/R/blob/master/KNN.R)
-  - [K-Means](https://github.com/TheAlgorithms/R/blob/master/K-Means.R)
-  - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/Random%20Forest.R)
-  - [Dimensionality Reduction Algorithms](https://github.com/TheAlgorithms/R/blob/master/Dimensionality%20Reduction%20Algorithms.R)
-  - [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/Gradient%20Boosting%20Algorithms.R)
-  - [LightGMB](https://github.com/TheAlgorithms/R/blob/master/LightGBM.R)
-  - [K-Means Clustering](https://github.com/TheAlgorithms/R/blob/master/kmeans_clustering.r)
-  - [Heirarchial Clustering](https://github.com/TheAlgorithms/R/blob/master/heirarchical_clustering.r)
+  - [classification]
+    - [Decision Tree]
+    - [Gradient Boosting Algorithm]
+    - [KNN]
+    - [LightGBM]
+    - [Logistic Regression]
+    - [Naive Bayes]
+    - [Random Forest]
+    - [SVM]
   
   
   
