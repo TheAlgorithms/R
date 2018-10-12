@@ -5,7 +5,7 @@
 
 Here are some common machine learning algorithms that can be applied to almost all data problems:
 
-  - [classification]
+  - classification
     - [Decision Tree]
     - [Gradient Boosting Algorithm]
     - [KNN]
@@ -14,7 +14,12 @@ Here are some common machine learning algorithms that can be applied to almost a
     - [Naive Bayes]
     - [Random Forest]
     - [SVM]
-  - [clustering]
+  - regression
+    - [Gradient Boosting Algorithm]
+    - [KNN]
+    - [LightGBM]
+    - [Linear Regression]
+  - clustering
     - [K-Means]
     - [dbscan_clustering]
     - [heirarchical_clustering]
