@@ -6,14 +6,14 @@
 Here are some common machine learning algorithms that can be applied to almost all data problems:
 
   - Classification
-    - [Decision Tree]
-    - [Gradient Boosting Algorithm]
-    - [KNN]
-    - [LightGBM]
-    - [Logistic Regression]
-    - [Naive Bayes]
-    - [Random Forest]
-    - [SVM]
+    - [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/Decision%20Tree.R)
+    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/classification/Gradient%20Boosting%20Algorithms.R)
+    - [KNN](https://github.com/TheAlgorithms/R/blob/master/classification/KNN.R)
+    - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/classification/LightGBM.R)
+    - [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/classification/Logistic%20Regression.R)
+    - [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/classification/Naive%20Bayes.R)
+    - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/Random%20Forest.R)
+    - [SVM](https://github.com/TheAlgorithms/R/blob/master/classification/SVM.R)
   - Regression
     - [Gradient Boosting Algorithm]
     - [KNN]
@@ -31,5 +31,4 @@ Here are some common machine learning algorithms that can be applied to almost a
   
   
   
-## Data Processing
-  - [xlsx package](https://github.com/TheAlgorithms/R/blob/master/data_processing.R)
+
