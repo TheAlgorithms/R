@@ -29,6 +29,8 @@ Here are some common machine learning algorithms that can be applied to almost a
     - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
   
   
-  
+  ----------
+  # About
+  This repository is welcome to maintain together for all R language lovers!
   
 
