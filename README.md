@@ -20,10 +20,10 @@ Here are some common machine learning algorithms that can be applied to almost a
     - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/regression/LightGBM.R)
     - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
   - Clustering
-    - [K-Means]
-    - [dbscan_clustering]
-    - [heirarchical_clustering]
-    - [kmeans_clustering]
+    - [K-Means](https://github.com/TheAlgorithms/R/blob/master/clustering/K-Means.R)
+    - [dbscan_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/dbscan_clustering.r)
+    - [heirarchical_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/heirarchical_clustering.r)
+    - [kmeans_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.r)
   - Preprocessing
     - [Dimensionality Reduction Algorithm]
     - [Data Processing]
