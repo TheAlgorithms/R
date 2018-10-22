@@ -31,9 +31,10 @@ Here are some common machine learning algorithms that can be applied to almost a
     - [kmeans_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.r)
 
 
-### PRE-PROCESSING
-
+### PREPROCESSING
+- Feature projection
     - [Dimensionality Reduction Algorithm](https://github.com/TheAlgorithms/R/blob/master/preprocessing/Dimensionality%20Reduction%20Algorithms.R)
+- Data manipulattion
     - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
 
 
