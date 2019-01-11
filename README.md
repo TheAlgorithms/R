@@ -16,11 +16,13 @@ Here are some common machine learning algorithms that can be applied to almost a
     - [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/classification/Naive%20Bayes.R)
     - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/Random%20Forest.R)
     - [SVM](https://github.com/TheAlgorithms/R/blob/master/classification/SVM.R)
+    - [XGBoost](https://github.com/TheAlgorithms/R/blob/master/classification/xgboost.R)
   - Regression
     - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/regression/Gradient%20Boosting%20Algorithms.R)
     - [KNN](https://github.com/TheAlgorithms/R/blob/master/regression/KNN.R)
     - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/regression/LightGBM.R)
     - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
+    
 
 ### UNSUPERVISED LEARNING
 
@@ -37,7 +39,7 @@ Here are some common machine learning algorithms that can be applied to almost a
 - Data manipulattion
     - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
     
-
+### DATA MANIPULATION (Soon)
 ----------
 ## TODO
 
