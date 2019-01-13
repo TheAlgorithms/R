@@ -22,6 +22,7 @@ Here are some common machine learning algorithms that can be applied to almost a
     - [KNN](https://github.com/TheAlgorithms/R/blob/master/regression/KNN.R)
     - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/regression/LightGBM.R)
     - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
+    - [Artificial Neural Net](https://github.com/TheAlgorithms/R/blob/master/regression/ANN.R)
     
 
 ### UNSUPERVISED LEARNING
@@ -39,7 +40,9 @@ Here are some common machine learning algorithms that can be applied to almost a
 - Data manipulattion
     - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
     
-### DATA MANIPULATION (Soon)
+### DATA MANIPULATION
+- Categorical variable into numerical
+    - [One Hot Coding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotCode.R)
 ----------
 ## TODO
 
