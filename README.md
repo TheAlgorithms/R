@@ -39,10 +39,10 @@ Here are some common machine learning algorithms that can be applied to almost a
     - [Dimensionality Reduction Algorithm](https://github.com/TheAlgorithms/R/blob/master/preprocessing/Dimensionality%20Reduction%20Algorithms.R)
 - Data manipulattion
     - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
+    - Categorical variable into numerical
+      - [One Hot Coding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotCode.R)
     
-### DATA MANIPULATION
-- Categorical variable into numerical
-    - [One Hot Coding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotCode.R)
+
 ----------
 ## TODO
 
