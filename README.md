@@ -1,10 +1,25 @@
 # The Algorithms - R
+
+![build](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![license](https://img.shields.io/badge/License-MIT-brightgreen.svg)
+![prs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
 *R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. The R language is widely used among statisticians and data miners for developing statistical software and data analysis. Polls, data mining surveys and studies of scholarly literature databases show substantial increases in popularity in recent years. As of August 2018, R ranks 18th in the TIOBE index, a measure of popularity of programming languages. ([Wikipedia](https://en.wikipedia.org/wiki/R_(programming_language)))*
 
-## General Machine Learning Algorithm List
+## General Algorithms List
 
-Here are some common machine learning algorithms that can be applied to almost all data problems:
+Here are some common algorithms that can be applied to almost all data problems:
 
+### PREPROCESSING
+- Feature projection
+    - [Dimensionality Reduction Algorithm](https://github.com/TheAlgorithms/R/blob/master/preprocessing/Dimensionality%20Reduction%20Algorithms.R)
+- Data manipulattion
+    - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
+    - [Data normalization and standardization](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_normalization_standardization.R)
+    - Categorical variable into numerical
+      - [One Hot Coding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotCode.R)
+      
+      
 ### SUPERVISED LEARNING
 
   - Classification
@@ -34,22 +49,10 @@ Here are some common machine learning algorithms that can be applied to almost a
     - [kmeans_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.r)
 
 
-### PREPROCESSING
-- Feature projection
-    - [Dimensionality Reduction Algorithm](https://github.com/TheAlgorithms/R/blob/master/preprocessing/Dimensionality%20Reduction%20Algorithms.R)
-- Data manipulattion
-    - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
-    - [Data normalization and standardization](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_normalization_standardization.R)
-    - Categorical variable into numerical
-      - [One Hot Coding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotCode.R)
+### Machine Learning
+
+
+### Data Mining
     
 
-----------
-## TODO
 
-### R for Quantitative Finance
-
-
-  ----------
-  # About
-  This repository is welcome to maintain together for all R language lovers!
