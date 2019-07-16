@@ -19,7 +19,13 @@ Here are some common algorithms that can be applied to almost all data problems:
     - Categorical variable into numerical
       - [One Hot Coding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotCode.R)
       
-      
+### [MACHINE LEARNING](https://github.com/TheAlgorithms/R/tree/master/Machine-Learning)
+
+
+### [DATA MINING](https://github.com/TheAlgorithms/R/tree/master/Data-Mining)
+
+
+
 ### SUPERVISED LEARNING
 
   - Classification
@@ -49,10 +55,7 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [kmeans_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.r)
 
 
-### [Machine Learning](https://github.com/TheAlgorithms/R/tree/master/Machine-Learning)
 
-
-### [Data Mining](https://github.com/TheAlgorithms/R/tree/master/Data-Mining)
     
 
 
