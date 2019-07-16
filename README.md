@@ -49,10 +49,10 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [kmeans_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.r)
 
 
-### Machine Learning
+### [Machine Learning](https://github.com/TheAlgorithms/R/tree/master/Machine-Learning)
 
 
-### Data Mining
+### [Data Mining](https://github.com/TheAlgorithms/R/tree/master/Data-Mining)
     
 
 
