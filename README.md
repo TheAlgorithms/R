@@ -20,6 +20,12 @@ Here are some common algorithms that can be applied to almost all data problems:
       - [One Hot Coding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotCode.R)
       
 ### [MACHINE LEARNING](https://github.com/TheAlgorithms/R/tree/master/Machine-Learning)
+- Tutorials
+    - [Introduction to machine learning in R (tutorial) --- from Kaggle](https://www.kaggle.com/camnugent/introduction-to-machine-learning-in-r-tutorial)
+    - [An Introduction to Machine Learning with R](https://lgatto.github.io/IntroMachineLearningWithR/)
+    - [Machine Learning in R for beginners](https://www.datacamp.com/community/tutorials/machine-learning-in-r)
+    - [Machine Learning in R: mlr-tutorial](https://www.notion.so/mlr-Tutorial-b71444fe979c4a8cafe91e10e7f81d79)
+
 
 
 ### [DATA MINING](https://github.com/TheAlgorithms/R/tree/master/Data-Mining)
