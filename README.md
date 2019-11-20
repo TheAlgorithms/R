@@ -17,7 +17,7 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
     - [Data normalization and standardization](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_normalization_standardization.R)
     - Categorical variable into numerical
-      - [One Hot Encoding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotCode.R)
+      - [One Hot Encoding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotEncode.R)
       - [Label Encoding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/LabelEncode.R)
       
 ### [MACHINE LEARNING](https://github.com/TheAlgorithms/R/tree/master/Machine-Learning)
