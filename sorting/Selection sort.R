@@ -1,6 +1,6 @@
-# Selection sort in R:
+# Insertion sort in R:
 
-selection.sort <- function(elements.vec) { 
+insertion.sort <- function(elements.vec) { 
   for (j in 2:length(elements.vec)) {
     key = elements.vec[j] 
     i = j - 1
@@ -14,5 +14,5 @@ selection.sort <- function(elements.vec) {
 }
 
 # Example:
-# selection.sort(c(5, 2, 3, 1, 4))
+# insertion.sort(c(5, 2, 3, 1, 4))
 # [1] 1 2 3 4 5
