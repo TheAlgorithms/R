@@ -61,8 +61,9 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [heirarchical_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/heirarchical_clustering.r)
     - [kmeans_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.r)
 
-
-
-    
+### SORTING
+  - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Bubble%20sort.R)
+  - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Insertion%20sort.R)
+  - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)  
 
 
