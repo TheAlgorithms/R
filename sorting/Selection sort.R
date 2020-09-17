@@ -1,4 +1,4 @@
-# Seleciton sort in R:
+# Selection sort in R:
 
 selection.sort <- function (x, ascending = TRUE) {
   max <- length(x)
