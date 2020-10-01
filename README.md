@@ -66,5 +66,6 @@ Here are some common algorithms that can be applied to almost all data problems:
   - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Insertion%20sort.R)
   - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)  
   - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/SelectionSort.R)
+  - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Merge%20sort.R)
 
 
