@@ -68,5 +68,3 @@ Here are some common algorithms that can be applied to almost all data problems:
   - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Merge%20sort.R)
   - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Radix%20sort.R)
   - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/SelectionSort.R)
-  - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)  
-
