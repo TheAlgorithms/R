@@ -57,3 +57,15 @@ Here are some common algorithms that can be applied to almost all data problems:
   - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Bubble%20sort.R)
   - [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/CombSort.R)
   - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Insertion%20sort.R)
+  - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)  
+  - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Selection%20sort.R)
+  - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Merge%20sort.R)
+  - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Radix%20sort.R)
+  - [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Heap%20sort.R)
+
+## Contribution Guidelines
+Please ensure to follow the points stated below if you would like to contribute:
+- If your proposing a new algorithm or making changes to an existing one, make sure your code works. Reviewers or the general user must be able to directly emplace it in an R environment and get the desired output.
+- Add an example to showcase the use of an algorithm proposed. It can be commented.
+- Follow proper naming convention for variables (use `.` or `_` to seperate terms, such as `results.df` for a data frame containing some results) and filenames (follow the convention that has been followed for files under the directory your committing to).
+- Feel free to add links here to the newly added file(s), but ensure that they do not result in a merge conflict with different versions of this readme under previous pull requests. 
