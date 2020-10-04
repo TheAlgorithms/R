@@ -7,7 +7,6 @@
 *R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. The R language is widely used among statisticians and data miners for developing statistical software and data analysis. Polls, data mining surveys and studies of scholarly literature databases show substantial increases in popularity in recent years. As of November 2019, R ranks 16th in the TIOBE index, a measure of popularity of programming languages. ([Wikipedia](https://en.wikipedia.org/wiki/R_(programming_language)))*
 
 ## General Algorithms List
-
 Here are some common algorithms that can be applied to almost all data problems:
 
 ### PREPROCESSING
@@ -27,14 +26,9 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [Machine Learning in R for beginners](https://www.datacamp.com/community/tutorials/machine-learning-in-r)
     - [Machine Learning in R: mlr-tutorial](https://www.notion.so/mlr-Tutorial-b71444fe979c4a8cafe91e10e7f81d79)
 
-
-
 ### [DATA MINING](https://github.com/TheAlgorithms/R/tree/master/Data-Mining)
 
-
-
 ### SUPERVISED LEARNING
-
   - Classification
     - [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/Decision%20Tree.R)
     - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/classification/Gradient%20Boosting%20Algorithms.R)
@@ -52,9 +46,7 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
     - [Artificial Neural Net](https://github.com/TheAlgorithms/R/blob/master/regression/ANN.R)
     
-
 ### UNSUPERVISED LEARNING
-
   - Clustering
     - [K-Means](https://github.com/TheAlgorithms/R/blob/master/clustering/K-Means.R)
     - [dbscan_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/dbscan_clustering.r)
@@ -65,6 +57,3 @@ Here are some common algorithms that can be applied to almost all data problems:
   - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Bubble%20sort.R)
   - [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/CombSort.R)
   - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Insertion%20sort.R)
-  - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Merge%20sort.R)
-  - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Radix%20sort.R)
-  - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/SelectionSort.R)
