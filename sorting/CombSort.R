@@ -1,6 +1,7 @@
 # Comb sort in R:
 
-comb.sort <- function(a) {
+comb.sort <- function(elements.vec) {
+  a = elements.vec
   gap <- length(a)
   swaps <- 1
   while (gap > 1 && swaps == 1) {
