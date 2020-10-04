@@ -14,4 +14,9 @@ quick.sort <- function(elements.vec) {
 # Example:
 # quick.sort(c(5, 2, 3, 1, 1, 4)) 
 # [1] 1 1 2 3 4 5
-# Note that quick sort is not a stable sorting algorithm.
+
+# Notes:
+# 1. Quick sort is not a stable sorting algorithm.
+# 2. It is implemented in the 'sort' function of base R:
+# sort(c(5, 2, 3, 1, 1, 4), method = "quick" , index.return = FALSE)
+# [1] 1 1 2 3 4 5
