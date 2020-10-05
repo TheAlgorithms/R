@@ -1,4 +1,4 @@
-# Sootage sort in R:
+# Stooge sort in R:
 
 stooge.sort <- function(elements.vec) {
 	i = 1
