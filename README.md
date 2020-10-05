@@ -59,7 +59,7 @@ Here are some common algorithms that can be applied to almost all data problems:
   - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Insertion%20sort.R)
   - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)  
   - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Selection%20sort.R)
-  - [Sootage Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Sootage%20sort.R)
+  - [Stooge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Stooge%20sort.R)
   - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Merge%20sort.R)
   - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Radix%20sort.R)
   - [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Heap%20sort.R)
