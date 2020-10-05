@@ -56,6 +56,7 @@ Here are some common algorithms that can be applied to almost all data problems:
 ### SORTING
   - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Bubble%20sort.R)
   - [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Comb%20sort.R)
+  - [Gnome Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Gnome%20sort.R)
   - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Insertion%20sort.R)
   - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)  
   - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Selection%20sort.R)
