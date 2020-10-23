@@ -39,6 +39,7 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/Random%20Forest.R)
     - [SVM](https://github.com/TheAlgorithms/R/blob/master/classification/SVM.R)
     - [XGBoost](https://github.com/TheAlgorithms/R/blob/master/classification/xgboost.R)
+    - [Lasso](https://github.com/TheAlgorithms/R/blob/master/classification/lasso.R)
   - Regression
     - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/regression/Gradient%20Boosting%20Algorithms.R)
     - [KNN](https://github.com/TheAlgorithms/R/blob/master/regression/KNN.R)
