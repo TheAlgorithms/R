@@ -50,9 +50,9 @@ Here are some common algorithms that can be applied to almost all data problems:
 ### UNSUPERVISED LEARNING
   - Clustering
     - [K-Means](https://github.com/TheAlgorithms/R/blob/master/clustering/K-Means.R)
-    - [dbscan_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/dbscan_clustering.r)
-    - [heirarchical_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/heirarchical_clustering.r)
-    - [kmeans_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.r)
+    - [dbscan_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/dbscan_clustering.R)
+    - [heirarchical_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/heirarchical_clustering.R)
+    - [kmeans_clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.R)
 
 ### SORTING
   - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Bubble%20sort.R)
