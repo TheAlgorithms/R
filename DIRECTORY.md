@@ -53,5 +53,5 @@
   * [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/merge_sort.R)
   * [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)
   * [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/radix_sort.R)
-  * [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Selection%20sort.R)
+  * [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/selection_sort.R)
   * [Stooge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/stooge_sort.R)
