@@ -42,6 +42,7 @@
   * [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
   * [Linearregressionrawr](https://github.com/TheAlgorithms/R/blob/master/regression/linearRegressionRawR.R)
   * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Logistic%20Regression.R)
+  * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/regression/logistic_regression.R)
   * [Multiple Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Multiple%20Linear%20Regression.R)
 
 ## Sorting
