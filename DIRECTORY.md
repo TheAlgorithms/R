@@ -41,8 +41,8 @@
   * [Lightgbm](https://github.com/TheAlgorithms/R/blob/master/regression/LightGBM.R)
   * [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
   * [Linearregressionrawr](https://github.com/TheAlgorithms/R/blob/master/regression/linearRegressionRawR.R)
-  * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Logistic%20Regression.R)
   * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/regression/logistic_regression.R)
+  * [Logistic Regression2](https://github.com/TheAlgorithms/R/blob/master/regression/logistic_regression2.R)
   * [Multiple Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Multiple%20Linear%20Regression.R)
 
 ## Sorting
