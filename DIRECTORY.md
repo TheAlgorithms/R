@@ -31,7 +31,7 @@
 ## Preprocessing
   * [Data Normalization Standardization](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_normalization_standardization.R)
   * [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
-  * [Dimensionality Reduction Algorithms](https://github.com/TheAlgorithms/R/blob/master/preprocessing/Dimensionality%20Reduction%20Algorithms.R)
+  * [Dimensionality Reduction Algorithms](https://github.com/TheAlgorithms/R/blob/master/preprocessing/dimensionality_reduction_algorithms.R)
   * [K Folds](https://github.com/TheAlgorithms/R/blob/master/preprocessing/K_Folds.R)
   * [Lasso](https://github.com/TheAlgorithms/R/blob/master/preprocessing/lasso.R)
 
