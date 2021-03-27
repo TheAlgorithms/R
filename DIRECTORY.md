@@ -51,7 +51,7 @@
   * [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/heap_sort.R)
   * [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/insertion_sort.R)
   * [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/merge_sort.R)
-  * [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)
+  * [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/quick_sort.R)
   * [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/radix_sort.R)
   * [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/selection_sort.R)
   * [Stooge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/stooge_sort.R)
