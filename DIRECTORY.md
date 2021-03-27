@@ -27,6 +27,9 @@
   * [Labelencode](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/LabelEncode.R)
   * [Onehotencode](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotEncode.R)
 
+## Maths
+  * [Prime Check](https://github.com/TheAlgorithms/R/blob/master/maths/prime_check.R)
+
 ## Preprocessing
   * [Data Normalization Standardization](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_normalization_standardization.R)
   * [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
