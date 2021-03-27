@@ -11,7 +11,7 @@ Here are some common algorithms that can be applied to almost all data problems:
 
 ### PREPROCESSING
 - Feature projection
-    - [Dimensionality Reduction Algorithm](https://github.com/TheAlgorithms/R/blob/master/preprocessing/Dimensionality%20Reduction%20Algorithms.R)
+    - [Dimensionality Reduction Algorithm](https://github.com/TheAlgorithms/R/blob/master/preprocessing/dimensionality_reduction_algorithms.R)
 - Data manipulattion
     - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
     - [Data normalization and standardization](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_normalization_standardization.R)
