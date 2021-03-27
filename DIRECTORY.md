@@ -4,7 +4,7 @@
   * [Apriori](https://github.com/TheAlgorithms/R/blob/master/association_algorithms/apriori.R)
 
 ## Classification
-  * [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/Decision%20Tree.R)
+  * [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/decision_tree.R)
   * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/classification/Gradient%20Boosting%20Algorithms.R)
   * [Knn](https://github.com/TheAlgorithms/R/blob/master/classification/KNN.R)
   * [Lasso](https://github.com/TheAlgorithms/R/blob/master/classification/lasso.R)
