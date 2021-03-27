@@ -39,7 +39,7 @@
   * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/regression/gradient_boosting_algorithms.R)
   * [Knn](https://github.com/TheAlgorithms/R/blob/master/regression/KNN.R)
   * [Lightgbm](https://github.com/TheAlgorithms/R/blob/master/regression/LightGBM.R)
-  * [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
+  * [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/linear_regression.R)
   * [Linearregressionrawr](https://github.com/TheAlgorithms/R/blob/master/regression/linearRegressionRawR.R)
   * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/regression/logistic_regression.R)
   * [Logistic Regression2](https://github.com/TheAlgorithms/R/blob/master/regression/logistic_regression2.R)
