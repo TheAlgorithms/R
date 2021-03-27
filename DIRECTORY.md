@@ -10,7 +10,7 @@
   * [Lasso](https://github.com/TheAlgorithms/R/blob/master/classification/lasso.R)
   * [Lightgbm](https://github.com/TheAlgorithms/R/blob/master/classification/LightGBM.R)
   * [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/classification/naive_bayes.R)
-  * [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/Random%20Forest.R)
+  * [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/random_forest.R)
   * [Svm](https://github.com/TheAlgorithms/R/blob/master/classification/SVM.R)
   * [Xgboost](https://github.com/TheAlgorithms/R/blob/master/classification/xgboost.R)
 
