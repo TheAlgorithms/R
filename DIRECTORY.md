@@ -37,7 +37,7 @@
 
 ## Regression
   * [Ann](https://github.com/TheAlgorithms/R/blob/master/regression/ANN.R)
-  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/regression/Gradient%20Boosting%20Algorithms.R)
+  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/regression/gradient_boosting_algorithms.R)
   * [Knn](https://github.com/TheAlgorithms/R/blob/master/regression/KNN.R)
   * [Lightgbm](https://github.com/TheAlgorithms/R/blob/master/regression/LightGBM.R)
   * [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
