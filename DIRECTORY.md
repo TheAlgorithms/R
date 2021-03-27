@@ -46,7 +46,7 @@
   * [Multiple Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/multiple_linear_regression.R)
 
 ## Sorting
-  * [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Bubble%20sort.R)
+  * [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/bubble_sort.R)
   * [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Comb%20sort.R)
   * [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Heap%20sort.R)
   * [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Insertion%20sort.R)
