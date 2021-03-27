@@ -1,7 +1,7 @@
 # List of all files
 
-## Associationalgorithm
-  * [Apriori](https://github.com/TheAlgorithms/R/blob/master/AssociationAlgorithm/Apriori.R)
+## Association Algorithms
+  * [Apriori](https://github.com/TheAlgorithms/R/blob/master/association_algorithms/apriori.R)
 
 ## Classification
   * [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/Decision%20Tree.R)
