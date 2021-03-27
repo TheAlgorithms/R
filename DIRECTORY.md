@@ -9,7 +9,6 @@
   * [Knn](https://github.com/TheAlgorithms/R/blob/master/classification/KNN.R)
   * [Lasso](https://github.com/TheAlgorithms/R/blob/master/classification/lasso.R)
   * [Lightgbm](https://github.com/TheAlgorithms/R/blob/master/classification/LightGBM.R)
-  * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/classification/Logistic%20Regression.R)
   * [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/classification/Naive%20Bayes.R)
   * [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/Random%20Forest.R)
   * [Svm](https://github.com/TheAlgorithms/R/blob/master/classification/SVM.R)
