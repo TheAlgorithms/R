@@ -30,13 +30,13 @@ Here are some common algorithms that can be applied to almost all data problems:
 
 ### SUPERVISED LEARNING
   - Classification
-    - [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/Decision%20Tree.R)
-    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/classification/Gradient%20Boosting%20Algorithms.R)
+    - [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/decision_tree.R)
+    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/classification/gradient_boosting_algorithms.R)
     - [KNN](https://github.com/TheAlgorithms/R/blob/master/classification/KNN.R)
     - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/classification/LightGBM.R)
     - [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/classification/logistic_regression.R)
-    - [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/classification/Naive%20Bayes.R)
-    - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/Random%20Forest.R)
+    - [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/classification/naive_bayes.R)
+    - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/random_forest.R)
     - [SVM](https://github.com/TheAlgorithms/R/blob/master/classification/SVM.R)
     - [XGBoost](https://github.com/TheAlgorithms/R/blob/master/classification/xgboost.R)
     - [Lasso](https://github.com/TheAlgorithms/R/blob/master/classification/lasso.R)
@@ -50,9 +50,9 @@ Here are some common algorithms that can be applied to almost all data problems:
 ### UNSUPERVISED LEARNING
   - Clustering
     - [K-Means](https://github.com/TheAlgorithms/R/blob/master/clustering/K-Means.R)
-    - [DbScan_Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/dbscan_clustering.R)
-    - [Heirarchical_Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/heirarchical_clustering.R)
-    - [K-Means_Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.R)
+    - [DbScan Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/dbscan_clustering.R)
+    - [Heirarchical Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/heirarchical_clustering.R)
+    - [K-Means Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.R)
 
 ### SORTING
   - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Bubble%20sort.R)
