@@ -41,7 +41,7 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [XGBoost](https://github.com/TheAlgorithms/R/blob/master/classification/xgboost.R)
     - [Lasso](https://github.com/TheAlgorithms/R/blob/master/classification/lasso.R)
   - Regression
-    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/regression/Gradient%20Boosting%20Algorithms.R)
+    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/regression/gradient_boosting_algorithms.R)
     - [KNN](https://github.com/TheAlgorithms/R/blob/master/regression/KNN.R)
     - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/regression/LightGBM.R)
     - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/Linear%20Regression.R)
