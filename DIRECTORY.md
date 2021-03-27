@@ -5,7 +5,7 @@
 
 ## Classification
   * [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/decision_tree.R)
-  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/classification/Gradient%20Boosting%20Algorithms.R)
+  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/classification/gradient_boosting_algorithms.R)
   * [Knn](https://github.com/TheAlgorithms/R/blob/master/classification/KNN.R)
   * [Lasso](https://github.com/TheAlgorithms/R/blob/master/classification/lasso.R)
   * [Lightgbm](https://github.com/TheAlgorithms/R/blob/master/classification/LightGBM.R)
