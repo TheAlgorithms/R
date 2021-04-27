@@ -28,6 +28,7 @@
   * [Onehotencode](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotEncode.R)
 
 ## Maths
+  * [Fibonacci](https://github.com/TheAlgorithms/R/blob/master/maths/Fibonacci.R)
   * [Prime Check](https://github.com/TheAlgorithms/R/blob/master/maths/prime_check.R)
 
 ## Preprocessing
