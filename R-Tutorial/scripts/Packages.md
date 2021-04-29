@@ -1,3 +1,3 @@
-# Some of the most popular packages :
+### Some of the most popular packages:
 
-![packages_img1](../images/packages_img1.jpg)
+## dplyr, tidyr, stringr, lubridate, httr, ggvis, ggplo2, shiny, rio & rmarkdown

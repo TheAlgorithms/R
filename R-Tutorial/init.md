@@ -27,3 +27,11 @@ The course covers:
 ----------------------------------------------
 
 You can watch the [full video course on the freeCodeCamp.org](https://www.youtube.com/watch?v=_V8eKsto3Ug) YouTube channel.
+
+About FreeCodeCamp.org's course distribution policies (copied and pasted from FreeCodeCamp own website):
+
+_freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)_
+
+_Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world._
+
+_Donations to freeCodeCamp go toward our education initiatives and help pay for servers, services, and staff._

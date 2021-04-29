@@ -1,11 +1,5 @@
-# The website for downloading the is:
+### The website for downloading the is: [RStudio](https://www.rstudio.com/products/rstudio/download/)
+### once downloaded, do the following:
 
-[RStudio](https://www.rstudio.com/products/rstudio/download/)
-
-# Once downloaded, the following steps are followed :
-
-![RStudio_img1](../images/RStudio_img1.jpg)
-
-![RStudio_img2](../images/RStudio_img2.jpg)
-
-![RStudio_img3](../images/RStudio_img3.jpg)
+### 1 - Open the following file: R01_2_2_RStudio.R
+### 2 - And you can edit the script however you want!
