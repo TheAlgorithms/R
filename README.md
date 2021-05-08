@@ -11,13 +11,13 @@ Here are some common algorithms that can be applied to almost all data problems:
 
 ### PREPROCESSING
 - Feature projection
-    - [Dimensionality Reduction Algorithm](https://github.com/TheAlgorithms/R/blob/master/preprocessing/dimensionality_reduction_algorithms.R)
+    - [Dimensionality Reduction Algorithm](https://github.com/TheAlgorithms/R/blob/master/Preprocessing/dimensionality_reduction_algorithms.R)
 - Data manipulattion
-    - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_processing.R)
-    - [Data normalization and standardization](https://github.com/TheAlgorithms/R/blob/master/preprocessing/data_normalization_standardization.R)
+    - [Data Processing](https://github.com/TheAlgorithms/R/blob/master/Preprocessing/data_processing.R)
+    - [Data normalization and standardization](https://github.com/TheAlgorithms/R/blob/master/Preprocessing/data_normalization_standardization.R)
     - Categorical variable into numerical
-      - [One Hot Encoding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotEncode.R)
-      - [Label Encoding](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/LabelEncode.R)
+      - [One Hot Encoding](https://github.com/TheAlgorithms/R/blob/master/Data-Manipulation/OneHotEncode.R)
+      - [Label Encoding](https://github.com/TheAlgorithms/R/blob/master/Data-Manipulation/LabelEncode.R)
       
 ### [MACHINE LEARNING](https://github.com/TheAlgorithms/R/tree/master/Machine-Learning)
 - Tutorials
@@ -30,40 +30,40 @@ Here are some common algorithms that can be applied to almost all data problems:
 
 ### SUPERVISED LEARNING
   - Classification
-    - [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/decision_tree.R)
-    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/classification/gradient_boosting_algorithms.R)
-    - [KNN](https://github.com/TheAlgorithms/R/blob/master/classification/KNN.R)
-    - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/classification/LightGBM.R)
-    - [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/classification/logistic_regression.R)
-    - [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/classification/naive_bayes.R)
-    - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/classification/random_forest.R)
-    - [SVM](https://github.com/TheAlgorithms/R/blob/master/classification/SVM.R)
-    - [XGBoost](https://github.com/TheAlgorithms/R/blob/master/classification/xgboost.R)
-    - [Lasso](https://github.com/TheAlgorithms/R/blob/master/classification/lasso.R)
+    - [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/Classification/decision_tree.R)
+    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/Classification/gradient_boosting_algorithms.R)
+    - [KNN](https://github.com/TheAlgorithms/R/blob/master/Classification/KNN.R)
+    - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/Classification/LightGBM.R)
+    - [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/Classification/logistic_regression.R)
+    - [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/Classification/naive_bayes.R)
+    - [Random Forest](https://github.com/TheAlgorithms/R/blob/master/Classification/random_forest.R)
+    - [SVM](https://github.com/TheAlgorithms/R/blob/master/Classification/SVM.R)
+    - [XGBoost](https://github.com/TheAlgorithms/R/blob/master/Classification/xgboost.R)
+    - [Lasso](https://github.com/TheAlgorithms/R/blob/master/Classification/lasso.R)
   - Regression
-    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/regression/gradient_boosting_algorithms.R)
-    - [KNN](https://github.com/TheAlgorithms/R/blob/master/regression/KNN.R)
-    - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/regression/LightGBM.R)
-    - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/regression/linear_regression.R)
-    - [Artificial Neural Net](https://github.com/TheAlgorithms/R/blob/master/regression/ANN.R)
+    - [Gradient Boosting Algorithm](https://github.com/TheAlgorithms/R/blob/master/Regression/gradient_boosting_algorithms.R)
+    - [KNN](https://github.com/TheAlgorithms/R/blob/master/Regression/KNN.R)
+    - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/Regression/LightGBM.R)
+    - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/Regression/linear_regression.R)
+    - [Artificial Neural Net](https://github.com/TheAlgorithms/R/blob/master/Regression/ANN.R)
     
 ### UNSUPERVISED LEARNING
   - Clustering
-    - [K-Means](https://github.com/TheAlgorithms/R/blob/master/clustering/K-Means.R)
-    - [DbScan Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/dbscan_clustering.R)
-    - [Heirarchical Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/heirarchical_clustering.R)
-    - [K-Means Clustering](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_clustering.R)
+    - [K-Means](https://github.com/TheAlgorithms/R/blob/master/Clustering/K-Means.R)
+    - [DbScan Clustering](https://github.com/TheAlgorithms/R/blob/master/Clustering/dbscan_clustering.R)
+    - [Heirarchical Clustering](https://github.com/TheAlgorithms/R/blob/master/Clustering/heirarchical_clustering.R)
+    - [K-Means Clustering](https://github.com/TheAlgorithms/R/blob/master/Clustering/kmeans_clustering.R)
 
 ### SORTING
-  - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Bubble%20sort.R)
-  - [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Comb%20sort.R)
-  - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Insertion%20sort.R)
-  - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Quick%20sort.R)  
-  - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Selection%20sort.R)
-  - [Stooge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Stooge%20sort.R)
-  - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Merge%20sort.R)
-  - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Radix%20sort.R)
-  - [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/sorting/Heap%20sort.R)
+  - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Bubble%20sort.R)
+  - [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Comb%20sort.R)
+  - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Insertion%20sort.R)
+  - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Quick%20sort.R)  
+  - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Selection%20sort.R)
+  - [Stooge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Stooge%20sort.R)
+  - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Merge%20sort.R)
+  - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Radix%20sort.R)
+  - [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting/Heap%20sort.R)
 
 ## Contribution Guidelines
 Please ensure to follow the points stated below if you would like to contribute:
