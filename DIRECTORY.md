@@ -1,7 +1,7 @@
 # List of all files
 
-## Association Algorithms
-  * [Apriori](https://github.com/TheAlgorithms/R/blob/master/association_algorithms/apriori.R)
+## Association-Algorithms
+  * [Apriori](https://github.com/TheAlgorithms/R/blob/master/Association-Algorithms/apriori.R)
 
 ## Classification
   * [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/classification/decision_tree.R)
@@ -23,9 +23,9 @@
   * [Kmeans Raw R](https://github.com/TheAlgorithms/R/blob/master/clustering/kmeans_raw_R.R)
   * [Pam](https://github.com/TheAlgorithms/R/blob/master/clustering/pam.R)
 
-## Datamanipulation
-  * [Labelencode](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/LabelEncode.R)
-  * [Onehotencode](https://github.com/TheAlgorithms/R/blob/master/datamanipulation/OneHotEncode.R)
+## Data-Manipulation
+  * [Labelencode](https://github.com/TheAlgorithms/R/blob/master/Data-Manipulation/LabelEncode.R)
+  * [Onehotencode](https://github.com/TheAlgorithms/R/blob/master/Data-Manipulation/OneHotEncode.R)
 
 ## Maths
   * [Factorial](https://github.com/TheAlgorithms/R/blob/master/maths/Factorial.R)
