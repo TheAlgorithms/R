@@ -37,7 +37,7 @@
 ## Mathematics
   * [Factorial](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Factorial.R)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Fibonacci.R)
-  * [Prime Check](https://github.com/TheAlgorithms/R/blob/master/Mathematics/prime_check.R)
+  * [Prime](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Prime.R)
 
 ## Regression-Algorithms
   * [Ann](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/ANN.R)
