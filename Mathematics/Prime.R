@@ -6,7 +6,7 @@ isPrime <- function(number) {
     return(FALSE)
   } else {
     k <- 1
-    while(6 * k + 1 <= sqrt(number)){
+    while(6 * k - 1 <= sqrt(number)){
       if(number %% (6 * k + 1) == 0){
         return(FALSE)
       } else if(number %% (6 * k - 1) == 0){

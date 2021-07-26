@@ -1,8 +1,10 @@
 ols<-function(y,x){
-    x<-as.matrix(x)
-    x<-cbind(intercept=1,x)
-    decomp <- svd(x)
+    data<-model.matrix(y ~ ., data = x)
+    decomp <- svd(data)
     return(decomp$v %*% diag(1 / decomp$d) %*% t(decomp$u) %*% y)
   }
 
-  ols(y=diamonds$price,x=diamonds %>% select(-price)) %>% print()
+set.seed(1)
+x <- rnorm(1000)
+y <- 4 * x + rnorm(1000, sd = .5)
+ols(y=y,x=matrix(x, ncol = 1))
