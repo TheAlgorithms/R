@@ -18,7 +18,7 @@ Here are some common algorithms that can be applied to almost all data problems:
     - Categorical variable into numerical
       - [One Hot Encoding](https://github.com/TheAlgorithms/R/blob/master/Data-Manipulation/OneHotEncode.R)
       - [Label Encoding](https://github.com/TheAlgorithms/R/blob/master/Data-Manipulation/LabelEncode.R)
-      
+
 ### [MACHINE LEARNING](https://github.com/TheAlgorithms/R/tree/master/Machine-Learning)
 - Tutorials
     - [Introduction to machine learning in R (tutorial) --- from Kaggle](https://www.kaggle.com/camnugent/introduction-to-machine-learning-in-r-tutorial)
@@ -46,7 +46,7 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [LightGBM](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/LightGBM.R)
     - [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/linear_regression.R)
     - [Artificial Neural Net](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/ANN.R)
-    
+
 ### UNSUPERVISED LEARNING
   - Clustering
     - [K-Means](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/K-Means.R)
@@ -55,19 +55,19 @@ Here are some common algorithms that can be applied to almost all data problems:
     - [K-Means Clustering](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/kmeans_clustering.R)
 
 ### SORTING
-  - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Bubble%20sort.R)
-  - [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Comb%20sort.R)
-  - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Insertion%20sort.R)
-  - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Quick%20sort.R)  
-  - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Selection%20sort.R)
-  - [Stooge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Stooge%20sort.R)
-  - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Merge%20sort.R)
-  - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Radix%20sort.R)
-  - [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/Heap%20sort.R)
+  - [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/bubble_sort.R)
+  - [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/comb_sort.R)
+  - [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/insertion_sort.R)
+  - [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/quick_sort.R)
+  - [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/selection_sort.R)
+  - [Stooge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/stooge_sort.R)
+  - [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/merge_sort.R)
+  - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/radix_sort.R)
+  - [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/heap_sort.R)
 
 ## Contribution Guidelines
 Please ensure to follow the points stated below if you would like to contribute:
 - If your proposing a new algorithm or making changes to an existing one, make sure your code works. Reviewers or the general user must be able to directly emplace it in an R environment and get the desired output.
 - Add an example to showcase the use of an algorithm proposed. It can be commented.
 - Follow proper naming convention for variables (use `.` or `_` to seperate terms, such as `results.df` for a data frame containing some results) and filenames (follow the convention that has been followed for files under the directory your committing to).
-- Feel free to add links here to the newly added file(s), but ensure that they do not result in a merge conflict with different versions of this readme under previous pull requests. 
+- Feel free to add links here to the newly added file(s), but ensure that they do not result in a merge conflict with different versions of this readme under previous pull requests.
