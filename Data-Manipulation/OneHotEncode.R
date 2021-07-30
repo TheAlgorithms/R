@@ -1,12 +1,27 @@
-library(tidyverse)
-#divide data into train and test in 70% and 30%
-ind<-sample(2,nrow(diamonds),replace = T,prob = c(0.7,0.3))
-train.set<-diamonds[ind==1,]
-test.set<-diamonds[ind==2,]
+oneHotEncode <- function(x, fullRank = T){
+    if(fullRank){
+        return(model.matrix(~ 0 + ., data = x))
+    } else {
+        charCols <- colnames(x)[sapply(x, is.character)]
+        if(length(charCols) > 0){
+            for(col in charCols){
+                x[[eval(col)]] <- factor(x[[eval(col)]])
+            }
+        }
+        factorCols <- colnames(x)[sapply(x, is.factor)]
+        contrastsList <- vector(mode = "list", length = length(factorCols))
+        names(contrastsList) <- factorCols
+        if(length(factorCols) > 0){
+            for(col in factorCols){
+                contrastsList[[eval(col)]] <- contrasts(x[[eval(col)]], contrasts = F)
+            }
+            return(model.matrix(~ 0 + ., data = x, contrasts = contrastsList))
+        } else {
+            return(model.matrix(~ 0 + ., data = x))
+        }
+    }
+}
 
-# one hot encode using model.matrix(built-in function)
-#along with %>%, select_if, bind_cols, as.tibble in dplyr and tibble
-train<-bind_cols(select_if(train.set,is.numeric),model.matrix(~cut-1,train.set) %>% as.tibble(),
-                model.matrix(~color-1,train.set) %>% as.tibble(),model.matrix(~clarity-1,train.set) %>% as.tibble())
-test<-bind_cols(select_if(test.set,is.numeric),model.matrix(~cut-1,test.set) %>% as.tibble(),
-                model.matrix(~color-1,test.set) %>% as.tibble(),model.matrix(~clarity-1,test.set) %>% as.tibble())
+diamonds <- ggplot2::diamonds
+head(oneHotEncode(diamonds))
+head(oneHotEncode(diamonds, fullRank = F))
