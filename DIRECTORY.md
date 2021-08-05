@@ -35,8 +35,11 @@
   * [Lasso](https://github.com/TheAlgorithms/R/blob/master/Data-Preprocessing/lasso.R)
 
 ## Mathematics
+  * [Euclideandistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/EuclideanDistance.R)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Factorial.R)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Fibonacci.R)
+  * [Perfectsquare](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PerfectSquare.R)
+  * [Pimontecarlo](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PiMonteCarlo.R)
   * [Prime](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Prime.R)
 
 ## Regression-Algorithms
