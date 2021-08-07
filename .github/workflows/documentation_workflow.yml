@@ -1,0 +1,68 @@
+name: Workflow test
+on: [push, pull_request]
+
+jobs:
+  MakeDocs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Setup R
+        uses: r-lib/actions/setup-r@master
+        with:
+          r-version: '4.1.0'
+      - name: Create Documentation directory
+        run: |
+          echo "Creating the \'Documentation\' directory if it does not exist."
+          if [[ -d Documentation ]]; then
+            echo "Changing directory to \'Documentation\'"
+            cd Documentation
+          else
+            echo "Creating 'Documentation'"
+            mkdir Documentation
+            echo "Changing directory to \'Documentation\'"
+            cd Documentation
+          fi
+      - name: Install knitr dependency
+        run: |
+          echo "Installing R package dependencies. Scripts might have additional dependencies installed."
+          Rscript -e 'if (!require(knitr)) install.packages("knitr")'
+      - name: Documentation compilation
+        run: |
+          Rscript -e '
+          cat("R process started.\n")
+          cat("Creating the directory list\n")
+          dirlist <- c("../Association-Algorithms",
+                       "../Classification-Algorithms",
+                       "../Clustering-Algorithms",
+                       "../Data-Manipulation",
+                       "../Data-Mining",
+                       "../Data-Preprocessing",
+                       "../Machine-Learning",
+                       "../Mathematics",
+                       "../Regression-Algorithms",
+                       "../Sorting-Algorithms")
+
+          cat("Getting a list of R scripts from the algorithm directories.\n")
+          scriptlist <- lapply(dirlist, list.files, ".R", full.names = TRUE)
+          cat("Removing from the list empty directories.\n")
+          scriptlist <- scriptlist[!sapply(scriptlist, identical, character(0))]
+          cat("Compiling documentation from scripts.\n")
+          invisible(lapply(unlist(scriptlist), function(x) tryCatch(knitr::spin(x),
+                                                                    error = function(e) message("Error compiling: ", x))))
+          cat("Removing superfluous markdown files.\n")
+          invisible(file.remove(list.files(pattern = ".md")))
+          cat("R process done.\n")
+          '
+
+          echo "Changing directory to project root."
+          cd ../
+
+      - name: Commit Documentation
+        run: |
+          echo "Setting up git a pushing changes."
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add Documentation/
+          git commit -m "Documentation generation" || true
+          git diff Documentation/
+          git push || true
