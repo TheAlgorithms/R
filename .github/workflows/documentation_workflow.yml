@@ -1,4 +1,4 @@
-name: Workflow test
+name: Documentation
 on: [push, pull_request]
 
 jobs:
