@@ -59,7 +59,7 @@ jobs:
           '
       - name: Commit Documentation
         run: |
-          echo "Setting up git for pushing changes."
+          echo "Setting up Git to push changes."
           git config user.name github-actions
           git config user.email github-actions@github.com
           echo "Staging documentation"
