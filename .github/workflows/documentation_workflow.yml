@@ -12,13 +12,8 @@ jobs:
           r-version: '4.1.0'
       - name: Create Documentation directory
         run: |
-          echo "Creating the 'Documentation' directory if it does not exist."
-          if [[ -d Documentation ]]; then
-            :
-          else
-            echo "Creating 'Documentation'"
-            mkdir Documentation
-          fi
+          echo "Creating 'Documentation'"
+          mkdir -p Documentation
       - name: Install knitr dependency
         run: |
           echo "Installing R package dependencies. Scripts might have additional dependencies installed."
