@@ -60,4 +60,4 @@ jobs:
           git config user.name "$(git log --format='%an' HEAD^!)"
           echo "Staging documentation"
           git commit -am "Update documentation"
-          git push origin HEAD:${GITHUB_REF}
+          git push || true
