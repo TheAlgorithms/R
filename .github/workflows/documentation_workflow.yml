@@ -1,0 +1,62 @@
+name: Documentation
+on: [push, pull_request]
+
+jobs:
+  MakeDocs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup R
+        uses: r-lib/actions/setup-r@master
+        with:
+          r-version: '4.1.0'
+      - name: Create Documentation directory
+        run: |
+          echo "Creating 'Documentation'"
+          mkdir -p Documentation
+      - name: Install knitr dependency
+        run: |
+          echo "Installing R package dependencies. Scripts might have additional dependencies installed."
+          Rscript -e 'if (!require(knitr)) install.packages("knitr")'
+      - name: Documentation compilation
+        run: |
+          Rscript -e '
+          cat("R process started.\n")
+          cat("Change working directory to documentation directory\n")
+          setwd("Documentation")
+
+          cat("Creating the directory list\n")
+          dirlist <- c("../Association-Algorithms",
+                       "../Classification-Algorithms",
+                       "../Clustering-Algorithms",
+                       "../Data-Manipulation",
+                       "../Data-Mining",
+                       "../Data-Preprocessing",
+                       "../Machine-Learning",
+                       "../Mathematics",
+                       "../Regression-Algorithms",
+                       "../Sorting-Algorithms")
+          print(dirlist)
+
+          cat("Getting a list of R scripts from the algorithm directories.\n")
+          scriptlist <- lapply(dirlist, list.files, ".R", full.names = TRUE)
+          cat("Removing from the list empty directories.\n")
+          scriptlist <- scriptlist[!sapply(scriptlist, identical, character(0))]
+          print(unlist(scriptlist))
+
+          cat("Compiling documentation from scripts.\n")
+          invisible(lapply(unlist(scriptlist), function(x) tryCatch(knitr::spin(x),
+                                                                    error = function(e) message("Error compiling: ", x))))
+
+          cat("R process done.\n")
+          '
+      - name: Commit Documentation
+        run: |
+          git diff-index --quiet HEAD && exit
+          echo "Setting up Git to push changes."
+          git config user.email "$(git log --format='%ae' HEAD^!)"
+          git config user.name "$(git log --format='%an' HEAD^!)"
+          echo "Staging documentation"
+          git add Documentation/ # This is the only directory that has changes and should be staged
+          git commit -m "Update documentation"
+          git push || true
