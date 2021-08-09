@@ -59,6 +59,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           echo "Staging documentation"
-          git add .
-          git commit -m "Update documentation"
+          git commit -am "Update documentation"
           git push
