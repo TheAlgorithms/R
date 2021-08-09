@@ -54,11 +54,11 @@ jobs:
           '
       - name: Commit Documentation
         run: |
+          git diff-index --quiet HEAD && exit
           echo "Setting up Git to push changes."
           git config user.name github-actions
           git config user.email github-actions@github.com
           echo "Staging documentation"
-          git add Documentation/
-          git commit -m "Documentation generation" || true
-          git diff Documentation/
-          git push || true
+          git add .
+          git commit -m "Update documentation"
+          git push
