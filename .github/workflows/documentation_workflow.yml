@@ -5,7 +5,7 @@ jobs:
   MakeDocs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v2
       - name: Setup R
         uses: r-lib/actions/setup-r@master
         with:
