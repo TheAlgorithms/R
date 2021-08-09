@@ -48,8 +48,6 @@ jobs:
           invisible(lapply(unlist(scriptlist), function(x) tryCatch(knitr::spin(x),
                                                                     error = function(e) message("Error compiling: ", x))))
 
-          cat("Removing superfluous markdown files.\n")
-          invisible(file.remove(list.files(pattern = ".md")))
           cat("R process done.\n")
           '
       - name: Commit Documentation
