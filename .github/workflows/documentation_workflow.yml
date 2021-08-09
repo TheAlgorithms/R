@@ -60,4 +60,4 @@ jobs:
           git config user.email github-actions@github.com
           echo "Staging documentation"
           git commit -am "Update documentation"
-          git push
+          git push origin HEAD:${GITHUB_REF}
