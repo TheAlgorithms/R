@@ -66,7 +66,7 @@ Here are some common algorithms that can be applied to almost all data problems:
   - [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/heap_sort.R)
 
 ### MATHEMATICS
-  - [HammingDistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/HammingDistance.R)
+  - [Hamming Distance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/HammingDistance.R)
   
 ## Contribution Guidelines
 Please ensure to follow the points stated below if you would like to contribute:
