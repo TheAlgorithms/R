@@ -38,10 +38,10 @@
   * [Euclideandistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/EuclideanDistance.R)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Factorial.R)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Fibonacci.R)
+  * [Hammingdistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/HammingDistance.R)
   * [Perfectsquare](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PerfectSquare.R)
   * [Pimontecarlo](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PiMonteCarlo.R)
   * [Prime](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Prime.R)
-  * [Hamming Distance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/HammingDistance.R)
 
 ## Regression-Algorithms
   * [Ann](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/ANN.R)
