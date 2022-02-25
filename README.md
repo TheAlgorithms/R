@@ -65,6 +65,9 @@ Here are some common algorithms that can be applied to almost all data problems:
   - [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/radix_sort.R)
   - [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/heap_sort.R)
 
+### MATHEMATICS
+  - [Hamming Distance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/HammingDistance.R)
+  
 ## Contribution Guidelines
 Please ensure to follow the points stated below if you would like to contribute:
 - If your proposing a new algorithm or making changes to an existing one, make sure your code works. Reviewers or the general user must be able to directly emplace it in an R environment and get the desired output.
