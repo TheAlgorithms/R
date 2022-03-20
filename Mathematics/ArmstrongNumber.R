@@ -1,4 +1,4 @@
-# Armstrong Number checking in R (also know as narcissistic numbers)
+# Armstrong Number (also know as narcissistic numbers) checking in R
 
 isArmstrong <- function(integer){
   
