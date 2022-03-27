@@ -35,6 +35,7 @@
   * [Lasso](https://github.com/TheAlgorithms/R/blob/master/Data-Preprocessing/lasso.R)
 
 ## Mathematics
+  * [Armstrongnumber](https://github.com/TheAlgorithms/R/blob/master/Mathematics/ArmstrongNumber.R)
   * [Euclideandistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/EuclideanDistance.R)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Factorial.R)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Fibonacci.R)
