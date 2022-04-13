@@ -58,6 +58,7 @@
 ## Sorting-Algorithms
   * [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/bubble_sort.R)
   * [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/comb_sort.R)
+  * [Counting Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/counting_sort.R)
   * [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/heap_sort.R)
   * [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/insertion_sort.R)
   * [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/merge_sort.R)
