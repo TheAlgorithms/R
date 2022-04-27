@@ -35,9 +35,11 @@
   * [Lasso](https://github.com/TheAlgorithms/R/blob/master/Data-Preprocessing/lasso.R)
 
 ## Mathematics
+  * [Armstrongnumber](https://github.com/TheAlgorithms/R/blob/master/Mathematics/ArmstrongNumber.R)
   * [Euclideandistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/EuclideanDistance.R)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Factorial.R)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Fibonacci.R)
+  * [Hammingdistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/HammingDistance.R)
   * [Perfectsquare](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PerfectSquare.R)
   * [Pimontecarlo](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PiMonteCarlo.R)
   * [Prime](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Prime.R)
@@ -56,6 +58,7 @@
 ## Sorting-Algorithms
   * [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/bubble_sort.R)
   * [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/comb_sort.R)
+  * [Counting Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/counting_sort.R)
   * [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/heap_sort.R)
   * [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/insertion_sort.R)
   * [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/merge_sort.R)
