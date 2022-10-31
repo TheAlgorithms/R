@@ -39,6 +39,7 @@
   * [Euclideandistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/EuclideanDistance.R)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Factorial.R)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Fibonacci.R)
+  * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/First_n_Fibonacci.R)
   * [Hammingdistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/HammingDistance.R)
   * [Perfectsquare](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PerfectSquare.R)
   * [Pimontecarlo](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PiMonteCarlo.R)
