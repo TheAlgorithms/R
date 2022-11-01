@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup R
-        uses: r-lib/actions/setup-r@master
+        uses: r-lib/actions/setup-r@old
         with:
           r-version: '4.1.0'
       - name: Create Documentation directory
@@ -54,8 +54,9 @@ jobs:
         run: |
           git diff-index --quiet HEAD && exit
           echo "Setting up Git to push changes."
-          git config user.email "$(git log --format='%ae' HEAD^!)"
-          git config user.name "$(git log --format='%an' HEAD^!)"
+          git config --global user.name 'autoprettier'
+          git config --global user.email 'actions@github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           echo "Staging documentation"
           git add Documentation/ # This is the only directory that has changes and should be staged
           git commit -m "Update documentation"
