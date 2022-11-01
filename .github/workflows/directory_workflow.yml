@@ -34,7 +34,7 @@ jobs:
       - name: Update DIRECTORY.md
         run: |
           wget https://raw.githubusercontent.com/TheAlgorithms/scripts/main/build_directory_md.py
-          python3 build_directory_md.py R . .R > DIRECTORY.md
+          python3 build_directory_md.py R . .R,.r > DIRECTORY.md
           git diff
           git commit -m "Update DIRECTORY.md" DIRECTORY.md || true
           git push --force origin HEAD:$GITHUB_REF || true
