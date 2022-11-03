@@ -1,69 +1,68 @@
-# List of all files
 
-## Association-Algorithms
-  * [Apriori](https://github.com/TheAlgorithms/R/blob/master/Association-Algorithms/apriori.R)
+## Association Algorithms
+  * [Apriori](https://github.com/TheAlgorithms/R/blob/HEAD/association_algorithms/apriori.r)
 
-## Classification-Algorithms
-  * [Decision Tree](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/decision_tree.R)
-  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/gradient_boosting_algorithms.R)
-  * [Knn](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/KNN.R)
-  * [Lasso](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/lasso.R)
-  * [Lightgbm](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/LightGBM.R)
-  * [Naive Bayes](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/naive_bayes.R)
-  * [Random Forest](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/random_forest.R)
-  * [Svm](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/SVM.R)
-  * [Xgboost](https://github.com/TheAlgorithms/R/blob/master/Classification-Algorithms/xgboost.R)
+## Classification Algorithms
+  * [Decision Tree](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/decision_tree.r)
+  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/gradient_boosting_algorithms.r)
+  * [Knn](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/knn.r)
+  * [Lasso](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/lasso.r)
+  * [Light Gbm](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/light_gbm.r)
+  * [Naive Bayes](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/naive_bayes.r)
+  * [Random Forest](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/random_forest.r)
+  * [Svm](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/svm.r)
+  * [Xgboost](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/xgboost.r)
 
-## Clustering-Algorithms
-  * [Dbscan Clustering](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/dbscan_clustering.R)
-  * [Gmm](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/gmm.R)
-  * [Heirarchical Clustering](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/heirarchical_clustering.R)
-  * [K-Means](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/K-Means.R)
-  * [Kmeans Clustering](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/kmeans_clustering.R)
-  * [Kmeans Raw R](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/kmeans_raw_R.R)
-  * [Pam](https://github.com/TheAlgorithms/R/blob/master/Clustering-Algorithms/pam.R)
+## Clustering Algorithms
+  * [Dbscan Clustering](https://github.com/TheAlgorithms/R/blob/HEAD/clustering_algorithms/dbscan_clustering.r)
+  * [Gmm](https://github.com/TheAlgorithms/R/blob/HEAD/clustering_algorithms/gmm.r)
+  * [Heirarchical Clustering](https://github.com/TheAlgorithms/R/blob/HEAD/clustering_algorithms/heirarchical_clustering.r)
+  * [K Means](https://github.com/TheAlgorithms/R/blob/HEAD/clustering_algorithms/k_means.r)
+  * [Kmeans Clustering](https://github.com/TheAlgorithms/R/blob/HEAD/clustering_algorithms/kmeans_clustering.r)
+  * [Kmeans Raw R](https://github.com/TheAlgorithms/R/blob/HEAD/clustering_algorithms/kmeans_raw_r.r)
+  * [Pam](https://github.com/TheAlgorithms/R/blob/HEAD/clustering_algorithms/pam.r)
 
-## Data-Manipulation
-  * [Labelencode](https://github.com/TheAlgorithms/R/blob/master/Data-Manipulation/LabelEncode.R)
-  * [Onehotencode](https://github.com/TheAlgorithms/R/blob/master/Data-Manipulation/OneHotEncode.R)
+## Data Manipulation
+  * [Label Encode](https://github.com/TheAlgorithms/R/blob/HEAD/data_manipulation/label_encode.r)
+  * [One Hot Encode](https://github.com/TheAlgorithms/R/blob/HEAD/data_manipulation/one_hot_encode.r)
 
-## Data-Preprocessing
-  * [Data Normalization Standardization](https://github.com/TheAlgorithms/R/blob/master/Data-Preprocessing/data_normalization_standardization.R)
-  * [Data Processing](https://github.com/TheAlgorithms/R/blob/master/Data-Preprocessing/data_processing.R)
-  * [Dimensionality Reduction Algorithms](https://github.com/TheAlgorithms/R/blob/master/Data-Preprocessing/dimensionality_reduction_algorithms.R)
-  * [K Folds](https://github.com/TheAlgorithms/R/blob/master/Data-Preprocessing/K_Folds.R)
-  * [Lasso](https://github.com/TheAlgorithms/R/blob/master/Data-Preprocessing/lasso.R)
+## Data Preprocessing
+  * [Data Normalization Standardization](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/data_normalization_standardization.r)
+  * [Data Processing](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/data_processing.r)
+  * [Dimensionality Reduction Algorithms](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/dimensionality_reduction_algorithms.r)
+  * [K Folds](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/k_folds.r)
+  * [Lasso](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/lasso.r)
 
 ## Mathematics
-  * [Armstrongnumber](https://github.com/TheAlgorithms/R/blob/master/Mathematics/ArmstrongNumber.R)
-  * [Euclideandistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/EuclideanDistance.R)
-  * [Factorial](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Factorial.R)
-  * [Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Fibonacci.R)
-  * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/master/Mathematics/First_n_Fibonacci.R)
-  * [Hammingdistance](https://github.com/TheAlgorithms/R/blob/master/Mathematics/HammingDistance.R)
-  * [Perfectsquare](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PerfectSquare.R)
-  * [Pimontecarlo](https://github.com/TheAlgorithms/R/blob/master/Mathematics/PiMonteCarlo.R)
-  * [Prime](https://github.com/TheAlgorithms/R/blob/master/Mathematics/Prime.R)
+  * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
+  * [Euclidean Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/euclidean_distance.r)
+  * [Factorial](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/factorial.r)
+  * [Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/fibonacci.r)
+  * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/first_n_fibonacci.r)
+  * [Hamming Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/hamming_distance.r)
+  * [Perfect Square](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/perfect_square.r)
+  * [Pi Monte Carlo](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/pi_monte_carlo.r)
+  * [Prime](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/prime.r)
 
-## Regression-Algorithms
-  * [Ann](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/ANN.R)
-  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/gradient_boosting_algorithms.R)
-  * [Knn](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/KNN.R)
-  * [Lightgbm](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/LightGBM.R)
-  * [Linear Regression](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/linear_regression.R)
-  * [Linearregressionrawr](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/linearRegressionRawR.R)
-  * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/logistic_regression.R)
-  * [Logistic Regression2](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/logistic_regression2.R)
-  * [Multiple Linear Regression](https://github.com/TheAlgorithms/R/blob/master/Regression-Algorithms/multiple_linear_regression.R)
+## Regression Algorithms
+  * [Ann](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/ann.r)
+  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/gradient_boosting_algorithms.r)
+  * [Knn](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/knn.r)
+  * [Light Gbm](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/light_gbm.r)
+  * [Linear Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/linear_regression.r)
+  * [Linearregressionrawr](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/linearregressionrawr.r)
+  * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/logistic_regression.r)
+  * [Logistic Regression 2](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/logistic_regression_2.r)
+  * [Multiple Linear Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/multiple_linear_regression.r)
 
-## Sorting-Algorithms
-  * [Bubble Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/bubble_sort.R)
-  * [Comb Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/comb_sort.R)
-  * [Counting Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/counting_sort.R)
-  * [Heap Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/heap_sort.R)
-  * [Insertion Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/insertion_sort.R)
-  * [Merge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/merge_sort.R)
-  * [Quick Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/quick_sort.R)
-  * [Radix Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/radix_sort.R)
-  * [Selection Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/selection_sort.R)
-  * [Stooge Sort](https://github.com/TheAlgorithms/R/blob/master/Sorting-Algorithms/stooge_sort.R)
+## Sorting Algorithms
+  * [Bubble Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/bubble_sort.r)
+  * [Comb Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/comb_sort.r)
+  * [Counting Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/counting_sort.r)
+  * [Heap Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/heap_sort.r)
+  * [Insertion Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/insertion_sort.r)
+  * [Merge Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/merge_sort.r)
+  * [Quick Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/quick_sort.r)
+  * [Radix Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/radix_sort.r)
+  * [Selection Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/selection_sort.r)
+  * [Stooge Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/stooge_sort.r)
