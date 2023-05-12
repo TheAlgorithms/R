@@ -29,5 +29,5 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           echo "Staging documentation"
           git add documentation/ # This is the only directory that has changes and should be staged
-          git commit -m "Update documentation"
+          git commit -m "Update documentation" || true
           git push || true
