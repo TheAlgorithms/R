@@ -2,7 +2,8 @@
 
 ```r
 library(cluster)
-fit <- kmeans(X, 3) # 5 cluster solution
+set.seed(42)
+fit <- kmeans(X, 3) # 3 cluster solution
 ```
 
 ```
