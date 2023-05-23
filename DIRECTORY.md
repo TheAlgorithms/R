@@ -41,6 +41,7 @@
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/fibonacci.r)
   * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/first_n_fibonacci.r)
   * [Hamming Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/hamming_distance.r)
+  * [Josephus Problem](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/josephus_problem.r)
   * [Perfect Square](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/perfect_square.r)
   * [Pi Monte Carlo](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/pi_monte_carlo.r)
   * [Prime](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/prime.r)
