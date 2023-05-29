@@ -34,6 +34,7 @@
   * [Lasso](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/lasso.r)
 
 ## Mathematics
+  * [Amicable Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/amicable_numbers.r)
   * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
   * [Bisection Method](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/bisection_method.r)
   * [Euclidean Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/euclidean_distance.r)
