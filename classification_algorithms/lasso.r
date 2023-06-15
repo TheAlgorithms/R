@@ -30,7 +30,9 @@ coefficient %>% print()
 
 # predict the fitted probability of each test observation
 stats::predict(cv.fit$glmnet.fit, 
-              as.matrix(iris_raw[1:5, 1:4]), 
-              type = 'response',
-              s = cv.fit$lambda.min)
+               as.matrix(iris_raw[1:4, 1:4]), 
+               type = 'response',
+               s = cv.fit$lambda.min)
+
+
 
