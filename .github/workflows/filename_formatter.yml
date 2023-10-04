@@ -1,0 +1,14 @@
+name: Filename formatter
+on: [push, workflow_dispatch]
+jobs:
+  formatter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Filename Formatter
+        uses: TheAlgorithms/scripts/formatter@main
+        with:
+          filetypes: .r
+          ignore-files: documentation/,.github/
