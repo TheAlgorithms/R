@@ -70,3 +70,8 @@
   * [Radix Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/radix_sort.r)
   * [Selection Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/selection_sort.r)
   * [Stooge Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/stooge_sort.r)
+
+
+## Searches
+  * [Linear Search](https://github.com/TheAlgorithms/R/blob/master/searches/linear_search.r)
+  * [Binary Search](https://github.com/TheAlgorithms/R/blob/master/searches/binary_search.r)
