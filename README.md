@@ -1,5 +1,9 @@
 # The Algorithms - R
 
+<a href="https://gitpod.io/#https://github.com/TheAlgorithms/R">
+    <img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod&style=flat-square" height="20" alt="Gitpod Ready-to-Code">
+</a>
+
 ![build](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![license](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 ![prs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
