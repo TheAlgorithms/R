@@ -11,7 +11,7 @@ jobs:
           r-version: '4.1.0'
       - name: Create Documentation directory
         run: |
-          echo "Creating 'Documentation"
+          echo "Creating documentation directory"
           mkdir -p documentation
       - name: Install knitr dependency
         run: |
