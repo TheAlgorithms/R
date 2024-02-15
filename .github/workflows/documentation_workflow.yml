@@ -19,7 +19,7 @@ jobs:
           echo "Installing R package dependencies. Scripts might have additional dependencies installed."
           Rscript -e 'if (!require(knitr)) install.packages("knitr")'
       - name: Remove old documentation
-        run: 'rm documentation/*'
+        run: 'rm -rf documentation/*'
       - name: Generate new documentation
         run: 'Rscript .github/scripts/doc_builder.r'
       - name: Commit Documentation
