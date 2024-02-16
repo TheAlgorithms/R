@@ -14,10 +14,11 @@ jobs:
         run: |
           echo "Creating 'Documentation'"
           mkdir -p documentation
-      - name: Install knitr dependency
+      - name: Install dependencies
         run: |
           echo "Installing R package dependencies. Scripts might have additional dependencies installed."
           Rscript -e 'if (!require(knitr)) install.packages("knitr")'
+          Rscript -e 'if (!require(markdown)) install.packages("markdown")'
       - name: Remove old documentation
         run: 'rm -rf documentation/*'
       - name: Generate new documentation
