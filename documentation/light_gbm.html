@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title></title>
+<style type="text/css">
+/**
+ * Prism.s theme ported from highlight.js's xcode style
+ */
+pre code {
+  padding: 1em;
+}
+.token.comment {
+  color: #007400;
+}
+.token.punctuation {
+  color: #999;
+}
+.token.tag,
+.token.selector {
+  color: #aa0d91;
+}
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #1c00cf;
+}
+.token.property,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #c41a16;
+}
+.token.inserted {
+  background-color: #ccffd8;
+}
+.token.deleted {
+  background-color: #ffebe9;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #836c28;
+}
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #5c2699;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+</style>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+pre, img { max-width: 100%; }
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee; }
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 1em;
+  border-left: 0.5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+section.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+  tr, img { page-break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
+}
+</style>
+</head>
+<body>
+<div class="frontmatter">
+<div class="title"><h1></h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<pre><code class="language-r">library(RLightGBM)
+</code></pre>
+<pre><code>## Error in library(RLightGBM): there is no package called 'RLightGBM'
+</code></pre>
+<pre><code class="language-r">data(example.binary)
+</code></pre>
+<pre><code>## Warning in data(example.binary): data set 'example.binary' not found
+</code></pre>
+<pre><code class="language-r">#Parameters
+
+num_iterations &lt;- 100
+config &lt;- list(objective = &quot;binary&quot;,  metric=&quot;binary_logloss,auc&quot;, learning_rate = 0.1, num_leaves = 63, tree_learner = &quot;serial&quot;, feature_fraction = 0.8, bagging_freq = 5, bagging_fraction = 0.8, min_data_in_leaf = 50, min_sum_hessian_in_leaf = 5.0)
+
+#Create data handle and booster
+handle.data &lt;- lgbm.data.create(x)
+</code></pre>
+<pre><code>## Error in lgbm.data.create(x): could not find function &quot;lgbm.data.create&quot;
+</code></pre>
+<pre><code class="language-r">lgbm.data.setField(handle.data, &quot;label&quot;, y)
+</code></pre>
+<pre><code>## Error in lgbm.data.setField(handle.data, &quot;label&quot;, y): could not find function &quot;lgbm.data.setField&quot;
+</code></pre>
+<pre><code class="language-r">handle.booster &lt;- lgbm.booster.create(handle.data, lapply(config, as.character))
+</code></pre>
+<pre><code>## Error in lgbm.booster.create(handle.data, lapply(config, as.character)): could not find function &quot;lgbm.booster.create&quot;
+</code></pre>
+<pre><code class="language-r">#Train for num_iterations iterations and eval every 5 steps
+
+lgbm.booster.train(handle.booster, num_iterations, 5)
+</code></pre>
+<pre><code>## Error in lgbm.booster.train(handle.booster, num_iterations, 5): could not find function &quot;lgbm.booster.train&quot;
+</code></pre>
+<pre><code class="language-r">#Predict
+pred &lt;- lgbm.booster.predict(handle.booster, x.test)
+</code></pre>
+<pre><code>## Error in lgbm.booster.predict(handle.booster, x.test): could not find function &quot;lgbm.booster.predict&quot;
+</code></pre>
+<pre><code class="language-r">#Test accuracy
+sum(y.test == (y.pred &gt; 0.5)) / length(y.test)
+</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object 'y.test' not found
+</code></pre>
+<pre><code class="language-r">#Save model (can be loaded again via lgbm.booster.load(filename))
+lgbm.booster.save(handle.booster, filename = &quot;/tmp/model.txt&quot;)
+</code></pre>
+<pre><code>## Error in lgbm.booster.save(handle.booster, filename = &quot;/tmp/model.txt&quot;): could not find function &quot;lgbm.booster.save&quot;
+</code></pre>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</body>
+</html>

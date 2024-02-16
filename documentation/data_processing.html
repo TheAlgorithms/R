@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title></title>
+<style type="text/css">
+/**
+ * Prism.s theme ported from highlight.js's xcode style
+ */
+pre code {
+  padding: 1em;
+}
+.token.comment {
+  color: #007400;
+}
+.token.punctuation {
+  color: #999;
+}
+.token.tag,
+.token.selector {
+  color: #aa0d91;
+}
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #1c00cf;
+}
+.token.property,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #c41a16;
+}
+.token.inserted {
+  background-color: #ccffd8;
+}
+.token.deleted {
+  background-color: #ffebe9;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #836c28;
+}
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #5c2699;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+</style>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+pre, img { max-width: 100%; }
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee; }
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 1em;
+  border-left: 0.5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+section.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+  tr, img { page-break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
+}
+</style>
+</head>
+<body>
+<div class="frontmatter">
+<div class="title"><h1></h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<pre><code class="language-r">library(xlsx)
+</code></pre>
+<pre><code>## Error in library(xlsx): there is no package called 'xlsx'
+</code></pre>
+<pre><code class="language-r">## Loading required package: rJava
+## Loading required package: xlsxjars
+
+setwd(&quot;/Users/chenfeiyang&quot;)
+</code></pre>
+<pre><code>## Error in setwd(&quot;/Users/chenfeiyang&quot;): cannot change working directory
+</code></pre>
+<pre><code class="language-r">cameraData &lt;- read.xlsx(&quot;./data/cameras.xlsx&quot;, sheetIndex = 1, header = TRUE)
+</code></pre>
+<pre><code>## Error in read.xlsx(&quot;./data/cameras.xlsx&quot;, sheetIndex = 1, header = TRUE): could not find function &quot;read.xlsx&quot;
+</code></pre>
+<pre><code class="language-r">cameraData &lt;- read.xlsx(&quot;./data/cameras.xlsx&quot;, &quot;Baltimore Fixed Speed Cameras&quot;, 
+    header = TRUE)
+</code></pre>
+<pre><code>## Error in read.xlsx(&quot;./data/cameras.xlsx&quot;, &quot;Baltimore Fixed Speed Cameras&quot;, : could not find function &quot;read.xlsx&quot;
+</code></pre>
+<pre><code class="language-r">head(cameraData)
+</code></pre>
+<pre><code>## Error in head(cameraData): object 'cameraData' not found
+</code></pre>
+<pre><code class="language-r">##                          address direction      street  crossStreet
+## 1       S CATON AVE &amp; BENSON AVE       N/B   Caton Ave   Benson Ave
+## 2       S CATON AVE &amp; BENSON AVE       S/B   Caton Ave   Benson Ave
+## 3 WILKENS AVE &amp; PINE HEIGHTS AVE       E/B Wilkens Ave Pine Heights
+## 4        THE ALAMEDA &amp; E 33RD ST       S/B The Alameda      33rd St
+## 5        E 33RD ST &amp; THE ALAMEDA       E/B      E 33rd  The Alameda
+## 6        ERDMAN AVE &amp; N MACON ST       E/B      Erdman     Macon St
+##                 intersection                      Location.1
+## 1     Caton Ave &amp; Benson Ave (39.2693779962, -76.6688185297)
+## 2     Caton Ave &amp; Benson Ave (39.2693157898, -76.6689698176)
+## 3 Wilkens Ave &amp; Pine Heights  (39.2720252302, -76.676960806)
+## 4     The Alameda  &amp; 33rd St (39.3285013141, -76.5953545714)
+## 5      E 33rd  &amp; The Alameda (39.3283410623, -76.5953594625)
+## 6         Erdman  &amp; Macon St (39.3068045671, -76.5593167803)
+
+# Read specific rows and columns in Excel
+colIndex &lt;- 2:3
+rowIndex &lt;- 1:4
+cameraDataSubset &lt;- read.xlsx(&quot;./data/cameras.xlsx&quot;, sheetIndex = 1, colIndex = colIndex, 
+    rowIndex = rowIndex)
+</code></pre>
+<pre><code>## Error in read.xlsx(&quot;./data/cameras.xlsx&quot;, sheetIndex = 1, colIndex = colIndex, : could not find function &quot;read.xlsx&quot;
+</code></pre>
+<pre><code class="language-r">cameraDataSubset
+</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object 'cameraDataSubset' not found
+</code></pre>
+<pre><code class="language-r">##   direction      street
+## 1       N/B   Caton Ave
+## 2       S/B   Caton Ave
+## 3       E/B Wilkens Ave
+
+# Subsetting - quick review
+set.seed(13435)
+X &lt;- data.frame(var1 = sample(1:5), var2 = sample(6:10), var3 = sample(11:15))
+X &lt;- X[sample(1:5), ]
+X$var2[c(1, 3)] = NA
+X
+</code></pre>
+<pre><code>##   var1 var2 var3
+## 5    2   NA   11
+## 4    4   10   12
+## 1    3   NA   14
+## 2    1    7   15
+## 3    5    6   13
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3
+## 1    2   NA   15
+## 4    1   10   11
+## 2    3   NA   12
+## 3    5    6   14
+## 5    4    9   13
+
+X[, 1]
+</code></pre>
+<pre><code>## [1] 2 4 3 1 5
+</code></pre>
+<pre><code class="language-r">## [1] 2 1 3 5 4
+X[, &quot;var1&quot;]
+</code></pre>
+<pre><code>## [1] 2 4 3 1 5
+</code></pre>
+<pre><code class="language-r">## [1] 2 1 3 5 4
+X[1:2, &quot;var2&quot;]
+</code></pre>
+<pre><code>## [1] NA 10
+</code></pre>
+<pre><code class="language-r">## [1] NA 10
+
+# Logicals and: &amp; , or: |
+X[(X$var1 &lt;= 3 &amp; X$var3 &gt; 11), ]
+</code></pre>
+<pre><code>##   var1 var2 var3
+## 1    3   NA   14
+## 2    1    7   15
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3
+## 1    2   NA   15
+## 2    3   NA   12
+X[(X$var1 &lt;= 3 | X$var3 &gt; 15), ]
+</code></pre>
+<pre><code>##   var1 var2 var3
+## 5    2   NA   11
+## 1    3   NA   14
+## 2    1    7   15
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3
+## 1    2   NA   15
+## 4    1   10   11
+## 2    3   NA   12
+
+## Dealing with missing values
+X[which(X$var2 &gt; 8), ]
+</code></pre>
+<pre><code>##   var1 var2 var3
+## 4    4   10   12
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3
+## 4    1   10   11
+## 5    4    9   13
+
+# Sorting
+sort(X$var1)
+</code></pre>
+<pre><code>## [1] 1 2 3 4 5
+</code></pre>
+<pre><code class="language-r">## [1] 1 2 3 4 5
+sort(X$var1, decreasing = TRUE)
+</code></pre>
+<pre><code>## [1] 5 4 3 2 1
+</code></pre>
+<pre><code class="language-r">## [1] 5 4 3 2 1
+sort(X$var2, na.last = TRUE)
+</code></pre>
+<pre><code>## [1]  6  7 10 NA NA
+</code></pre>
+<pre><code class="language-r">## [1]  6  9 10 NA NA
+
+# Ordering
+X[order(X$var1), ]
+</code></pre>
+<pre><code>##   var1 var2 var3
+## 2    1    7   15
+## 5    2   NA   11
+## 1    3   NA   14
+## 4    4   10   12
+## 3    5    6   13
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3
+## 4    1   10   11
+## 1    2   NA   15
+## 2    3   NA   12
+## 5    4    9   13
+## 3    5    6   14
+
+X[order(X$var1, X$var3), ]
+</code></pre>
+<pre><code>##   var1 var2 var3
+## 2    1    7   15
+## 5    2   NA   11
+## 1    3   NA   14
+## 4    4   10   12
+## 3    5    6   13
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3
+## 4    1   10   11
+## 1    2   NA   15
+## 2    3   NA   12
+## 5    4    9   13
+## 3    5    6   14
+
+## Sort using the arrange function of the plyr package
+
+library(plyr)
+</code></pre>
+<pre><code>## Error in library(plyr): there is no package called 'plyr'
+</code></pre>
+<pre><code class="language-r">arrange(X, var1)
+</code></pre>
+<pre><code>## Error in arrange(X, var1): could not find function &quot;arrange&quot;
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3
+## 1    1   10   11
+## 2    2   NA   15
+## 3    3   NA   12
+## 4    4    9   13
+## 5    5    6   14
+
+arrange(X, desc(var1))
+</code></pre>
+<pre><code>## Error in arrange(X, desc(var1)): could not find function &quot;arrange&quot;
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3
+## 1    5    6   14
+## 2    4    9   13
+## 3    3   NA   12
+## 4    2   NA   15
+## 5    1   10   11
+
+# Add row and column
+X$var4 &lt;- rnorm(5)
+X
+</code></pre>
+<pre><code>##   var1 var2 var3       var4
+## 5    2   NA   11 -0.4150458
+## 4    4   10   12  2.5437602
+## 1    3   NA   14  1.5545298
+## 2    1    7   15 -0.6192328
+## 3    5    6   13 -0.9261035
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3     var4
+## 1    2   NA   15  0.18760
+## 4    1   10   11  1.78698
+## 2    3   NA   12  0.49669
+## 3    5    6   14  0.06318
+## 5    4    9   13 -0.53613
+
+Y &lt;- cbind(X, rnorm(5))
+Y
+</code></pre>
+<pre><code>##   var1 var2 var3       var4    rnorm(5)
+## 5    2   NA   11 -0.4150458 -0.66549949
+## 4    4   10   12  2.5437602 -0.02166735
+## 1    3   NA   14  1.5545298 -0.17411953
+## 2    1    7   15 -0.6192328  0.23900438
+## 3    5    6   13 -0.9261035 -1.83245959
+</code></pre>
+<pre><code class="language-r">##   var1 var2 var3     var4 rnorm(5)
+## 1    2   NA   15  0.18760  0.62578
+## 4    1   10   11  1.78698 -2.45084
+## 2    3   NA   12  0.49669  0.08909
+## 3    5    6   14  0.06318  0.47839
+## 5    4    9   13 -0.53613  1.00053
+</code></pre>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</body>
+</html>

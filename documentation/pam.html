@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title></title>
+<style type="text/css">
+/**
+ * Prism.s theme ported from highlight.js's xcode style
+ */
+pre code {
+  padding: 1em;
+}
+.token.comment {
+  color: #007400;
+}
+.token.punctuation {
+  color: #999;
+}
+.token.tag,
+.token.selector {
+  color: #aa0d91;
+}
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #1c00cf;
+}
+.token.property,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #c41a16;
+}
+.token.inserted {
+  background-color: #ccffd8;
+}
+.token.deleted {
+  background-color: #ffebe9;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #836c28;
+}
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #5c2699;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+</style>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+pre, img { max-width: 100%; }
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee; }
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 1em;
+  border-left: 0.5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+section.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+  tr, img { page-break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
+}
+</style>
+</head>
+<body>
+<div class="frontmatter">
+<div class="title"><h1></h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<pre><code class="language-r">library(cluster) 
+pam_fit &lt;- pam(iris[, 1:4], 5) # Partition Around Medoids
+summary(pam_fit) # Get summary
+</code></pre>
+<pre><code>## Medoids:
+##       ID Sepal.Length Sepal.Width Petal.Length Petal.Width
+## [1,]   8          5.0         3.4          1.5         0.2
+## [2,]  64          6.1         2.9          4.7         1.4
+## [3,]  70          5.6         2.5          3.9         1.1
+## [4,] 113          6.8         3.0          5.5         2.1
+## [5,] 106          7.6         3.0          6.6         2.1
+## Clustering vector:
+##   [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+##  [38] 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 3 2 2 2 3 2 3 3 2 3 2 3 2 2 3 2 3 2 3 2 2
+##  [75] 2 2 2 4 2 3 3 3 3 2 2 2 2 2 3 3 3 2 3 3 3 3 3 2 3 3 4 2 4 4 4 5 3 5 4 5 4
+## [112] 4 4 2 2 4 4 5 5 2 4 2 5 2 4 4 2 2 4 4 5 5 4 2 2 5 4 4 2 4 4 4 2 4 4 4 2 4
+## [149] 4 2
+## Objective function:
+##     build      swap 
+## 0.5520959 0.5272835 
+## 
+## Numerical information per cluster:
+##      size  max_diss   av_diss diameter separation
+## [1,]   50 1.2369317 0.4846000 2.428992  1.6401219
+## [2,]   40 1.1224972 0.5874690 1.661325  0.3000000
+## [3,]   24 1.1000000 0.5205001 1.627882  0.3000000
+## [4,]   27 0.8660254 0.5077127 1.374773  0.3162278
+## [5,]    9 0.9643651 0.5737248 1.389244  0.4358899
+## 
+## Isolated clusters:
+##  L-clusters: character(0)
+##  L*-clusters: character(0)
+## 
+## Silhouette plot information:
+##     cluster neighbor    sil_width
+## 1         1        3  0.823782713
+## 8         1        3  0.822979939
+## 18        1        3  0.821191829
+## 50        1        3  0.820946901
+## 5         1        3  0.819989654
+## 41        1        3  0.819878967
+## 40        1        3  0.818905711
+## 29        1        3  0.812116253
+## 38        1        3  0.811246460
+## 28        1        3  0.810123090
+## 12        1        3  0.799834938
+## 36        1        3  0.798299736
+## 27        1        3  0.796367017
+## 3         1        3  0.793333297
+## 22        1        3  0.791981289
+## 35        1        3  0.789669653
+## 20        1        3  0.786689337
+## 10        1        3  0.785945881
+## 7         1        3  0.784292003
+## 49        1        3  0.784257843
+## 48        1        3  0.779752099
+## 47        1        3  0.777942371
+## 30        1        3  0.775746314
+## 2         1        3  0.773966636
+## 31        1        3  0.771500461
+## 13        1        3  0.768378249
+## 11        1        3  0.766919198
+## 46        1        3  0.766389968
+## 4         1        3  0.760528648
+## 32        1        3  0.757686027
+## 37        1        3  0.756698504
+## 44        1        3  0.756592820
+## 23        1        3  0.756110206
+## 26        1        3  0.750347697
+## 24        1        3  0.745215991
+## 43        1        3  0.741959676
+## 17        1        3  0.738559175
+## 21        1        3  0.737981532
+## 33        1        3  0.724060094
+## 25        1        3  0.721037402
+## 39        1        3  0.718527842
+## 6         1        3  0.702644402
+## 9         1        3  0.696132723
+## 14        1        3  0.695119096
+## 45        1        3  0.694338305
+## 34        1        3  0.681434226
+## 15        1        3  0.660358295
+## 19        1        3  0.655738366
+## 16        1        3  0.597147161
+## 42        1        3  0.555054870
+## 64        2        3  0.471339064
+## 55        2        4  0.458317613
+## 52        2        4  0.443534424
+## 92        2        3  0.433142280
+## 59        2        4  0.431621613
+## 139       2        4  0.417405565
+## 76        2        3  0.415948453
+## 127       2        4  0.402579655
+## 73        2        4  0.399050400
+## 66        2        4  0.388387404
+## 74        2        3  0.372099711
+## 71        2        4  0.366704189
+## 57        2        4  0.363901411
+## 84        2        4  0.349237676
+## 79        2        3  0.347927387
+## 128       2        4  0.344414971
+## 86        2        3  0.342879650
+## 120       2        3  0.339139851
+## 122       2        4  0.324164232
+## 124       2        4  0.310947933
+## 87        2        4  0.296111811
+## 75        2        3  0.294712248
+## 114       2        4  0.287220191
+## 102       2        4  0.276114979
+## 143       2        4  0.276114979
+## 134       2        4  0.274416839
+## 77        2        4  0.262524104
+## 150       2        4  0.250702974
+## 98        2        3  0.207008254
+## 69        2        3  0.206965943
+## 147       2        4  0.186361678
+## 51        2        4  0.158584073
+## 88        2        3  0.154974194
+## 67        2        3  0.080197066
+## 53        2        4  0.068704364
+## 135       2        4  0.009859737
+## 115       2        4  0.007411473
+## 62        2        3 -0.010322685
+## 56        2        3 -0.018480568
+## 85        2        3 -0.056548190
+## 81        3        2  0.593063391
+## 82        3        2  0.588486416
+## 70        3        2  0.577829255
+## 90        3        2  0.541572577
+## 80        3        2  0.540075551
+## 94        3        2  0.527900827
+## 58        3        2  0.518504963
+## 54        3        2  0.510585771
+## 60        3        2  0.509830210
+## 61        3        2  0.497940985
+## 65        3        2  0.497569203
+## 83        3        2  0.489146497
+## 93        3        2  0.469694889
+## 99        3        1  0.458807124
+## 68        3        2  0.409714352
+## 100       3        2  0.400450702
+## 95        3        2  0.396521625
+## 89        3        2  0.348880615
+## 63        3        2  0.336954121
+## 91        3        2  0.295905041
+## 97        3        2  0.281018209
+## 96        3        2  0.262894448
+## 107       3        2  0.186381085
+## 72        3        2  0.161825540
+## 113       4        2  0.577935875
+## 105       4        5  0.577360661
+## 141       4        5  0.575917221
+## 125       4        5  0.550165260
+## 140       4        2  0.541953152
+## 133       4        2  0.496625982
+## 145       4        5  0.487427796
+## 137       4        2  0.486932219
+## 129       4        2  0.484485212
+## 121       4        5  0.461832625
+## 146       4        2  0.455480506
+## 116       4        2  0.450650676
+## 117       4        2  0.425816992
+## 101       4        5  0.425555783
+## 142       4        2  0.407031174
+## 144       4        5  0.401369810
+## 138       4        2  0.394312582
+## 149       4        2  0.388080059
+## 109       4        2  0.374157348
+## 104       4        2  0.351135503
+## 148       4        2  0.328372054
+## 111       4        2  0.256998908
+## 112       4        2  0.192307087
+## 103       4        5  0.154141472
+## 130       4        5  0.105352310
+## 78        4        2 -0.016348526
+## 126       4        5 -0.082878191
+## 106       5        4  0.565971497
+## 123       5        4  0.546749956
+## 119       5        4  0.477509712
+## 118       5        4  0.459700515
+## 132       5        4  0.439388428
+## 136       5        4  0.409060616
+## 108       5        4  0.312571293
+## 131       5        4  0.253594219
+## 110       5        4  0.082867697
+## Average silhouette width per cluster:
+## [1] 0.7575140 0.2733844 0.4333981 0.3797101 0.3941571
+## Average silhouette width of total data set:
+## [1] 0.4867481
+## 
+## Available components:
+##  [1] &quot;medoids&quot;    &quot;id.med&quot;     &quot;clustering&quot; &quot;objective&quot;  &quot;isolation&quot; 
+##  [6] &quot;clusinfo&quot;   &quot;silinfo&quot;    &quot;diss&quot;       &quot;call&quot;       &quot;data&quot;
+</code></pre>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</body>
+</html>

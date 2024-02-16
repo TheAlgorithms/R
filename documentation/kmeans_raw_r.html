@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title></title>
+<style type="text/css">
+/**
+ * Prism.s theme ported from highlight.js's xcode style
+ */
+pre code {
+  padding: 1em;
+}
+.token.comment {
+  color: #007400;
+}
+.token.punctuation {
+  color: #999;
+}
+.token.tag,
+.token.selector {
+  color: #aa0d91;
+}
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #1c00cf;
+}
+.token.property,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #c41a16;
+}
+.token.inserted {
+  background-color: #ccffd8;
+}
+.token.deleted {
+  background-color: #ffebe9;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #836c28;
+}
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #5c2699;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+</style>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+pre, img { max-width: 100%; }
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee; }
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 1em;
+  border-left: 0.5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+section.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+  tr, img { page-break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
+}
+</style>
+</head>
+<body>
+<div class="frontmatter">
+<div class="title"><h1></h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<pre><code class="language-r">custonKmeans&lt;-function(dataset=NA,k=NA){
+  if(is.na(dataset) || is.na(k)){
+    stop(&quot;You must input valid parameters!&quot;)
+  }
+  Eudist&lt;-function(x,y){
+    distance&lt;-sqrt(sum((x-y)^2))
+    return (distance)
+  }
+  
+  rows.dataset&lt;-nrow(dataset)
+  continue.change=TRUE
+  initPoint&lt;-dataset[sample.int(rows.dataset,size = k),]
+  formerPoint&lt;-initPoint
+  iterPoint&lt;-matrix(0,nrow = k,ncol = ncol(dataset))
+  
+  #记录每一个点到每一个类的距离
+  error.matrix&lt;-matrix(0,nrow=rows.dataset,ncol=k)
+  while(continue.change){
+    #记录每个点所属的类是哪一个
+    cluster.matrix&lt;-matrix(0,nrow=rows.dataset,ncol=k)
+    for(i in 1:rows.dataset){#计算每个点到三个初始中心点的距离
+      for(j in 1:k){
+        error.matrix[i,j]&lt;-Eudist(dataset[i,],formerPoint[j,])
+      }
+    }
+    #将每一个点所属的类计算出来
+    for(i in 1:rows.dataset){
+      cluster.matrix[i,which.min(error.matrix[i,])]&lt;-1
+    }
+    
+    #更新新的质心位置
+    for(i in 1:k){
+      iterPoint[i,]&lt;-apply(dataset[which(cluster.matrix[,i] == 1),],2,&quot;mean&quot;)
+    }
+    all.true&lt;-c()
+    for(i in 1:k){
+      if(all(formerPoint[i,] == iterPoint[i,]) == T){
+        all.true[i]&lt;-TRUE
+      }
+    }
+    formerPoint = iterPoint
+    continue.change=ifelse(all(all.true) == T,F,T)
+  }
+  colnames(iterPoint)&lt;-colnames(dataset)
+  out=list()
+  out[[&quot;centers&quot;]]&lt;-iterPoint
+  out[[&quot;distance&quot;]]&lt;-error.matrix
+  out[[&quot;cluster&quot;]]&lt;-rep(1,rows.dataset)
+  for(i in 1:rows.dataset){
+    out[[&quot;cluster&quot;]][i]&lt;-which(cluster.matrix[i,] == 1)
+  }
+  return(out)
+}
+</code></pre>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</body>
+</html>
