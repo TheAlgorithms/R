@@ -145,24 +145,32 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
-</code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
-</code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
-</code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code class="language-r"># Counting sort in R:
+
+counting.sort &lt;- function(elements.vec){  
+  min &lt;- min(elements.vec)
+  max &lt;- max(elements.vec)  
+  count &lt;- rep(0,(max - min + 1))
+  for(i in 1:length(elements.vec)){
+    x &lt;- 1 - min + elements.vec[i]
+    count[x] &lt;- count[x] + 1
+  } 
+  for(i in 2:length(count)){
+    count[i] &lt;- count[i] + count[i-1]
+  }  
+  result &lt;- rep(0,length(elements.vec))
+  for(i in 1:length(elements.vec)){
+    x &lt;- 1 - min + elements.vec[i]
+    index &lt;- count[x]
+    result[index] &lt;- elements.vec[i]
+    count[x] = count[x] - 1
+  } 
+  return(result)  
+}
+
+# Example:
+# counting.sort(c(5, 2, 3, 1, 4))
+# [1] 1 2 3 4 5
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

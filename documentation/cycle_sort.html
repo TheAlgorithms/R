@@ -145,24 +145,67 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r"># Cycle Sort Function
+# Sorts an input vector in-place using the Cycle Sort algorithm.
+# Parameters:
+# - arr: Input vector to be sorted.
+# Returns:
+# - Sorted vector.
+cycle_sort &lt;- function(arr) {
+  n &lt;- length(arr)
+  for (cycle_start in 1:(n - 1)) {
+    item &lt;- arr[cycle_start]
+    pos &lt;- cycle_start
+    
+    # Find the correct position for the current item
+    for (i in (cycle_start + 1):n) {
+      if (arr[i] &lt; item) {
+        pos &lt;- pos + 1
+      }
+    }
+    
+    # Skip if the item is already in the correct position
+    if (pos == cycle_start) {
+      next
+    }
+    
+    # Move the item to its correct position
+    while (item == arr[pos]) {
+      pos &lt;- pos + 1
+    }
+    temp &lt;- arr[pos]
+    arr[pos] &lt;- item
+    item &lt;- temp
+    
+    # Rotate the remaining cycle
+    while (pos != cycle_start) {
+      pos &lt;- cycle_start
+      for (i in (cycle_start + 1):n) {
+        if (arr[i] &lt; item) {
+          pos &lt;- pos + 1
+        }
+      }
+      
+      # Skip if the item is already in the correct position
+      while (item == arr[pos]) {
+        pos &lt;- pos + 1
+      }
+      
+      # Move the item to its correct position
+      temp &lt;- arr[pos]
+      arr[pos] &lt;- item
+      item &lt;- temp
+    }
+  }
+  return(arr)
+}
+
+# Example usage:
+elements_vec &lt;- c(3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5)
+cycle_sorted_vec &lt;- cycle_sort(elements_vec)
+print(cycle_sorted_vec)
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
-</code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
-</code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>##  [1] 1 1 2 3 3 4 5 5 5 6 9
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

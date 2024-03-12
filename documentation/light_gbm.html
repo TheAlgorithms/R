@@ -145,59 +145,52 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(tidyverse)
+<pre><code class="language-r">library(RLightGBM)
 </code></pre>
-<pre><code>## Error in library(tidyverse): there is no package called 'tidyverse'
+<pre><code>## Error in library(RLightGBM): there is no package called 'RLightGBM'
 </code></pre>
-<pre><code class="language-r">library(xgboost)
+<pre><code class="language-r">data(example.binary)
 </code></pre>
-<pre><code>## Error in library(xgboost): there is no package called 'xgboost'
+<pre><code>## Warning in data(example.binary): data set 'example.binary' not found
 </code></pre>
-<pre><code class="language-r">ind&lt;-sample(2,nrow(diamonds),replace = T,prob = c(0.7,0.3))
+<pre><code class="language-r">#Parameters
+
+num_iterations &lt;- 100
+config &lt;- list(objective = &quot;binary&quot;,  metric=&quot;binary_logloss,auc&quot;, learning_rate = 0.1, num_leaves = 63, tree_learner = &quot;serial&quot;, feature_fraction = 0.8, bagging_freq = 5, bagging_fraction = 0.8, min_data_in_leaf = 50, min_sum_hessian_in_leaf = 5.0)
+
+#Create data handle and booster
+handle.data &lt;- lgbm.data.create(x)
 </code></pre>
-<pre><code>## Error in nrow(diamonds): object 'diamonds' not found
+<pre><code>## Error in lgbm.data.create(x): could not find function &quot;lgbm.data.create&quot;
 </code></pre>
-<pre><code class="language-r">train.set&lt;-diamonds[ind==1,]
+<pre><code class="language-r">lgbm.data.setField(handle.data, &quot;label&quot;, y)
 </code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): object 'diamonds' not found
+<pre><code>## Error in lgbm.data.setField(handle.data, &quot;label&quot;, y): could not find function &quot;lgbm.data.setField&quot;
 </code></pre>
-<pre><code class="language-r">test.set&lt;-diamonds[ind==2,]
+<pre><code class="language-r">handle.booster &lt;- lgbm.booster.create(handle.data, lapply(config, as.character))
 </code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): object 'diamonds' not found
+<pre><code>## Error in lgbm.booster.create(handle.data, lapply(config, as.character)): could not find function &quot;lgbm.booster.create&quot;
 </code></pre>
-<pre><code class="language-r">xgb.train&lt;-bind_cols(select_if(train.set,is.numeric),model.matrix(~cut-1,train.set) %&gt;% as.tibble(),model.matrix(~color-1,train.set) %&gt;% as.tibble(),model.matrix(~clarity-1,train.set) %&gt;% as.tibble())
+<pre><code class="language-r">#Train for num_iterations iterations and eval every 5 steps
+
+lgbm.booster.train(handle.booster, num_iterations, 5)
 </code></pre>
-<pre><code>## Error in bind_cols(select_if(train.set, is.numeric), model.matrix(~cut - : could not find function &quot;bind_cols&quot;
+<pre><code>## Error in lgbm.booster.train(handle.booster, num_iterations, 5): could not find function &quot;lgbm.booster.train&quot;
 </code></pre>
-<pre><code class="language-r">xgboost.train&lt;-xgb.DMatrix(data = as.matrix(select(xgb.train,-price)),label=xgb.train$price)
+<pre><code class="language-r">#Predict
+pred &lt;- lgbm.booster.predict(handle.booster, x.test)
 </code></pre>
-<pre><code>## Error in xgb.DMatrix(data = as.matrix(select(xgb.train, -price)), label = xgb.train$price): could not find function &quot;xgb.DMatrix&quot;
+<pre><code>## Error in lgbm.booster.predict(handle.booster, x.test): could not find function &quot;lgbm.booster.predict&quot;
 </code></pre>
-<pre><code class="language-r">xgb.test&lt;-bind_cols(select_if(test.set,is.numeric),model.matrix(~cut-1,test.set) %&gt;% as.tibble(),model.matrix(~color-1,test.set) %&gt;% as.tibble(),model.matrix(~clarity-1,test.set) %&gt;% as.tibble())
+<pre><code class="language-r">#Test accuracy
+sum(y.test == (y.pred &gt; 0.5)) / length(y.test)
 </code></pre>
-<pre><code>## Error in bind_cols(select_if(test.set, is.numeric), model.matrix(~cut - : could not find function &quot;bind_cols&quot;
+<pre><code>## Error in eval(expr, envir, enclos): object 'y.test' not found
 </code></pre>
-<pre><code class="language-r">xgboost.test&lt;-xgb.DMatrix(data = select(xgb.test,-price) %&gt;% as.matrix(),label=xgb.test$price)
+<pre><code class="language-r">#Save model (can be loaded again via lgbm.booster.load(filename))
+lgbm.booster.save(handle.booster, filename = &quot;/tmp/model.txt&quot;)
 </code></pre>
-<pre><code>## Error in xgb.DMatrix(data = select(xgb.test, -price) %&gt;% as.matrix(), : could not find function &quot;xgb.DMatrix&quot;
-</code></pre>
-<pre><code class="language-r">param&lt;-list(eval_metric='rmse',gamma=1,max_depth=6,nthread = 3)
-xg.model&lt;-xgb.train(data = xgboost.train,params = param,watchlist = list(test=xgboost.test),nrounds = 500,early_stopping_rounds = 60,
-                      print_every_n = 30)
-</code></pre>
-<pre><code>## Error in xgb.train(data = xgboost.train, params = param, watchlist = list(test = xgboost.test), : could not find function &quot;xgb.train&quot;
-</code></pre>
-<pre><code class="language-r">xg.predict&lt;-predict(xg.model,xgboost.test)
-</code></pre>
-<pre><code>## Error in predict(xg.model, xgboost.test): object 'xg.model' not found
-</code></pre>
-<pre><code class="language-r">mse.xgb&lt;-sqrt(mean((test.set$price-xg.predict)^2))
-</code></pre>
-<pre><code>## Error in mean((test.set$price - xg.predict)^2): object 'test.set' not found
-</code></pre>
-<pre><code class="language-r">plot((test.set$price-xg.predict))
-</code></pre>
-<pre><code>## Error in plot((test.set$price - xg.predict)): object 'test.set' not found
+<pre><code>## Error in lgbm.booster.save(handle.booster, filename = &quot;/tmp/model.txt&quot;): could not find function &quot;lgbm.booster.save&quot;
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

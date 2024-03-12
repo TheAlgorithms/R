@@ -27,6 +27,6 @@ print(unlist(scriptlist))
 
 cat("Compiling documentation from scripts.\n")
 invisible(lapply(unlist(scriptlist), function(x) tryCatch(knitr::spin(x),
-    error = function(e) message("Error compiling: ", x))))
+    error = function(e) message("Error compiling: ", e))))
 
 cat("R process done.\n")

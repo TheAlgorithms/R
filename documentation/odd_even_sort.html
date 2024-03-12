@@ -145,24 +145,47 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r"># Odd-Even Sort Function
+# Sorts an input vector in-place using the Odd-Even Sort algorithm.
+# Parameters:
+# - arr: Input vector to be sorted.
+# Returns:
+# - Sorted vector.
+odd_even_sort &lt;- function(arr) {
+  n &lt;- length(arr)
+  sorted &lt;- FALSE
+  while (!sorted) {
+    sorted &lt;- TRUE
+    
+    # Odd-Even Sort (Phase 1 - Odd)
+    for (i in seq(1, n - 1, by = 2)) {
+      if (arr[i] &gt; arr[i + 1]) {
+        temp &lt;- arr[i]
+        arr[i] &lt;- arr[i + 1]
+        arr[i + 1] &lt;- temp
+        sorted &lt;- FALSE
+      }
+    }
+    
+    # Odd-Even Sort (Phase 2 - Even)
+    for (i in seq(2, n - 1, by = 2)) {
+      if (arr[i] &gt; arr[i + 1]) {
+        temp &lt;- arr[i]
+        arr[i] &lt;- arr[i + 1]
+        arr[i + 1] &lt;- temp
+        sorted &lt;- FALSE
+      }
+    }
+  }
+  return(arr)
+}
+
+# Example usage:
+elements_vec &lt;- c(3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5)
+odd_even_sorted_vec &lt;- odd_even_sort(elements_vec)
+print(odd_even_sorted_vec)
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
-</code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
-</code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>##  [1] 1 1 2 3 3 4 5 5 5 6 9
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

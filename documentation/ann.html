@@ -145,59 +145,55 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(tidyverse)
+<pre><code class="language-r">library(neuralnet)
 </code></pre>
-<pre><code>## Error in library(tidyverse): there is no package called 'tidyverse'
+<pre><code>## Error in library(neuralnet): there is no package called 'neuralnet'
 </code></pre>
-<pre><code class="language-r">library(xgboost)
+<pre><code class="language-r">concrete&lt;-read.csv(file = &quot;concrete.txt&quot;,stringsAsFactors = F)#get the data
 </code></pre>
-<pre><code>## Error in library(xgboost): there is no package called 'xgboost'
+<pre><code>## Warning in file(file, &quot;rt&quot;): cannot open file 'concrete.txt': No such file or
+## directory
 </code></pre>
-<pre><code class="language-r">ind&lt;-sample(2,nrow(diamonds),replace = T,prob = c(0.7,0.3))
+<pre><code>## Error in file(file, &quot;rt&quot;): cannot open the connection
 </code></pre>
-<pre><code>## Error in nrow(diamonds): object 'diamonds' not found
+<pre><code class="language-r">normalize&lt;-function(x){
+  return((x-min(x))/(max(x)-min(x)))
+}
+concrete&lt;-as.data.frame(lapply(concrete, normalize))
 </code></pre>
-<pre><code class="language-r">train.set&lt;-diamonds[ind==1,]
+<pre><code>## Error in lapply(concrete, normalize): object 'concrete' not found
 </code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): object 'diamonds' not found
+<pre><code class="language-r">concrete_train&lt;-concrete[1:773,]
 </code></pre>
-<pre><code class="language-r">test.set&lt;-diamonds[ind==2,]
+<pre><code>## Error in eval(expr, envir, enclos): object 'concrete' not found
 </code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): object 'diamonds' not found
+<pre><code class="language-r">concrete_test&lt;-concrete[774:1030,]
 </code></pre>
-<pre><code class="language-r">xgb.train&lt;-bind_cols(select_if(train.set,is.numeric),model.matrix(~cut-1,train.set) %&gt;% as.tibble(),model.matrix(~color-1,train.set) %&gt;% as.tibble(),model.matrix(~clarity-1,train.set) %&gt;% as.tibble())
+<pre><code>## Error in eval(expr, envir, enclos): object 'concrete' not found
 </code></pre>
-<pre><code>## Error in bind_cols(select_if(train.set, is.numeric), model.matrix(~cut - : could not find function &quot;bind_cols&quot;
+<pre><code class="language-r">concrete_model&lt;-neuralnet(strength~cement+slag+ash+water+superplastic+coarseagg+fineagg+age,data = concrete_train,hidden = 5)
 </code></pre>
-<pre><code class="language-r">xgboost.train&lt;-xgb.DMatrix(data = as.matrix(select(xgb.train,-price)),label=xgb.train$price)
+<pre><code>## Error in neuralnet(strength ~ cement + slag + ash + water + superplastic + : could not find function &quot;neuralnet&quot;
 </code></pre>
-<pre><code>## Error in xgb.DMatrix(data = as.matrix(select(xgb.train, -price)), label = xgb.train$price): could not find function &quot;xgb.DMatrix&quot;
+<pre><code class="language-r">model_res&lt;-compute(concrete_model,concrete_test[,1:8])
 </code></pre>
-<pre><code class="language-r">xgb.test&lt;-bind_cols(select_if(test.set,is.numeric),model.matrix(~cut-1,test.set) %&gt;% as.tibble(),model.matrix(~color-1,test.set) %&gt;% as.tibble(),model.matrix(~clarity-1,test.set) %&gt;% as.tibble())
+<pre><code>## Error in compute(concrete_model, concrete_test[, 1:8]): could not find function &quot;compute&quot;
 </code></pre>
-<pre><code>## Error in bind_cols(select_if(test.set, is.numeric), model.matrix(~cut - : could not find function &quot;bind_cols&quot;
+<pre><code class="language-r">x=model_res$net.result
 </code></pre>
-<pre><code class="language-r">xgboost.test&lt;-xgb.DMatrix(data = select(xgb.test,-price) %&gt;% as.matrix(),label=xgb.test$price)
+<pre><code>## Error in eval(expr, envir, enclos): object 'model_res' not found
 </code></pre>
-<pre><code>## Error in xgb.DMatrix(data = select(xgb.test, -price) %&gt;% as.matrix(), : could not find function &quot;xgb.DMatrix&quot;
+<pre><code class="language-r">y=concrete_test$strength
 </code></pre>
-<pre><code class="language-r">param&lt;-list(eval_metric='rmse',gamma=1,max_depth=6,nthread = 3)
-xg.model&lt;-xgb.train(data = xgboost.train,params = param,watchlist = list(test=xgboost.test),nrounds = 500,early_stopping_rounds = 60,
-                      print_every_n = 30)
+<pre><code>## Error in eval(expr, envir, enclos): object 'concrete_test' not found
 </code></pre>
-<pre><code>## Error in xgb.train(data = xgboost.train, params = param, watchlist = list(test = xgboost.test), : could not find function &quot;xgb.train&quot;
+<pre><code class="language-r">cor(x,y)
 </code></pre>
-<pre><code class="language-r">xg.predict&lt;-predict(xg.model,xgboost.test)
+<pre><code>## Error in is.data.frame(y): object 'y' not found
 </code></pre>
-<pre><code>## Error in predict(xg.model, xgboost.test): object 'xg.model' not found
+<pre><code class="language-r">plot(concrete_model)
 </code></pre>
-<pre><code class="language-r">mse.xgb&lt;-sqrt(mean((test.set$price-xg.predict)^2))
-</code></pre>
-<pre><code>## Error in mean((test.set$price - xg.predict)^2): object 'test.set' not found
-</code></pre>
-<pre><code class="language-r">plot((test.set$price-xg.predict))
-</code></pre>
-<pre><code>## Error in plot((test.set$price - xg.predict)): object 'test.set' not found
+<pre><code>## Error in plot(concrete_model): object 'concrete_model' not found
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

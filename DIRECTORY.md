@@ -59,19 +59,27 @@
   * [Logistic Regression 2](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/logistic_regression_2.r)
   * [Multiple Linear Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/multiple_linear_regression.r)
 
+## Searches
+  * [Binary Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/binary_search.r)
+  * [Linear Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/linear_search.r)
+
 ## Sorting Algorithms
+  * [Binary Insertion Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/binary_insertion_sort.r)
   * [Bubble Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/bubble_sort.r)
+  * [Bucket Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/bucket_sort.r)
+  * [Cocktail Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/cocktail_sort.r)
   * [Comb Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/comb_sort.r)
   * [Counting Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/counting_sort.r)
+  * [Cycle Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/cycle_sort.r)
   * [Heap Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/heap_sort.r)
   * [Insertion Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/insertion_sort.r)
   * [Merge Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/merge_sort.r)
+  * [Odd Even Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/odd_even_sort.r)
+  * [Pancake Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/pancake_sort.r)
   * [Quick Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/quick_sort.r)
   * [Radix Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/radix_sort.r)
   * [Selection Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/selection_sort.r)
+  * [Shell Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/shell_sort.r)
   * [Stooge Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/stooge_sort.r)
-
-
-## Searches
-  * [Linear Search](https://github.com/TheAlgorithms/R/blob/master/searches/linear_search.r)
-  * [Binary Search](https://github.com/TheAlgorithms/R/blob/master/searches/binary_search.r)
+  * [Topological Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/topological_sort.r)
+  * [Wiggle Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/wiggle_sort.r)

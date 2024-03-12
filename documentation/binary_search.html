@@ -145,24 +145,36 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r">binary_search &lt;- function(arr, target) { #function for finding position of value 
+  low &lt;- 1
+  high &lt;- length(arr) 
+  
+  while (low &lt;= high) {
+    mid &lt;- low + (high - low) %/% 2 #finding mid of array
+    
+    if (arr[mid] == target) { #comapring the mis value with the value to search
+      return(mid)  # Target found, return its index
+    } else if (arr[mid] &lt; target) {
+      low &lt;- mid + 1  # Search in the right half
+    } else {
+      high &lt;- mid - 1  # Search in the left half
+    }
+  }
+  return(-1)  # Target not found in the array
+}
+
+arr &lt;- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) #input array (hard code)
+target &lt;- 7 #input value to be searched (hard code)
+
+result &lt;- binary_search(arr, target) #binary_seach function calling
+
+if (result == -1) {
+  cat(&quot;Element&quot;, target, &quot;not found in the array.\n&quot;)
+} else {
+  cat(&quot;Element&quot;, target, &quot;found at position&quot;, result, &quot;.\n&quot;)
+}
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
-</code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
-</code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>## Element 7 found at position 7 .
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

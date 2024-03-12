@@ -145,24 +145,65 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r">cocktailSort &lt;- function(arr) {
+  n &lt;- length(arr)
+  swapped &lt;- TRUE
+  beg &lt;- 1
+  end &lt;- n - 1
+
+  while (swapped) {
+    swapped &lt;- FALSE
+    
+    # Forward pass (left to right)
+    for (i in seq(beg, end)) {
+      if (arr[i] &gt; arr[i + 1]) {
+        # Swap arr[i] and arr[i + 1]
+        temp &lt;- arr[i]
+        arr[i] &lt;- arr[i + 1]
+        arr[i + 1] &lt;- temp
+        swapped &lt;- TRUE
+      }
+    }
+
+    # If no swaps occurred in the forward pass, the array is sorted
+    if (!swapped) {
+      break
+    }
+
+    swapped &lt;- FALSE
+    end &lt;- end - 1
+
+    # Backward pass (right to left)
+    for (i in seq(end, beg, by = -1)) {
+      if (arr[i] &gt; arr[i + 1]) {
+        # Swap arr[i] and arr[i + 1]
+        temp &lt;- arr[i]
+        arr[i] &lt;- arr[i + 1]
+        arr[i + 1] &lt;- temp
+        swapped &lt;- TRUE
+      }
+    }
+
+    beg &lt;- beg + 1
+  }
+  
+  return(arr)
+}
+
+# Example Usage
+unsorted_array &lt;- c(38, 27, 43, 3, 9, 82, 10)
+cat(&quot;Unsorted Array: &quot;, unsorted_array, &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
+<pre><code>## Unsorted Array:  38 27 43 3 9 82 10
 </code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
+<pre><code class="language-r"># Call the Cocktail Sort function to sort the array
+sorted_array &lt;- cocktailSort(unsorted_array)
+
+cat(&quot;Sorted Array: &quot;, sorted_array, &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
+<pre><code>## Sorted Array:  3 9 10 27 38 43 82
 </code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code class="language-r"># Example: The 'unsorted_array' is sorted using Cocktail Sort
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

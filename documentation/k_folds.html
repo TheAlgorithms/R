@@ -145,24 +145,35 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
-</code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
-</code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
-</code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code class="language-r"># K folds cross validation is essential for machine learning
+# createFolds function in package caret is easy to use
+# here we write our own function
+
+get_k_folds&lt;-function(y = c(),k = 10, isList = TRUE, seed = 123){
+  set.seed(seed)
+  folds&lt;-sample(1:length(y), length(y))
+  every_n&lt;-ceiling(length(y)/k)
+  matFolds&lt;-suppressWarnings(matrix(folds, ncol=every_n, byrow = T))
+  
+  if(isList){
+    value&lt;-NULL
+    rownames(matFolds)&lt;-paste(&quot;Folds&quot;,1:k,sep=&quot;&quot;)
+    value&lt;-lapply(1:k, function(x){
+      if(x == k){
+        return(matFolds[x,][1:(length(y)-every_n*(k-1))])
+      }else{
+        return(matFolds[x,])
+      }
+    })
+  }else{
+    value&lt;-c()
+    for(i in 1:length(y)){
+      value[i]&lt;-ceiling(i/every_n)
+    }
+  }
+  
+  return(value)
+}
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

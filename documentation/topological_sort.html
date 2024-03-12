@@ -145,24 +145,57 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r"># Function to perform topological sort
+topological_sort &lt;- function(graph) {
+  # Number of vertices in the graph
+  num_vertices &lt;- length(graph)
+  
+  # Helper function to perform DFS
+  dfs &lt;- function(node, visited, stack) {
+    visited[node] &lt;- TRUE
+    
+    # Visit all adjacent vertices
+    for (neighbor in graph[[node]]) {
+      if (!visited[neighbor]) {
+        dfs(neighbor, visited, stack)
+      }
+    }
+    
+    # Push the current node onto the stack
+    stack &lt;&lt;- c(stack, node)
+  }
+  
+  # Initialize data structures
+  visited &lt;- rep(FALSE, num_vertices)
+  stack &lt;- c()
+  
+  # Perform DFS for each unvisited vertex
+  for (node in 1:num_vertices) {
+    if (!visited[node]) {
+      dfs(node, visited, stack)
+    }
+  }
+  
+  # Reverse the stack to get the topological order
+  topological_order &lt;- rev(stack)
+  return(topological_order)
+}
+
+# Example usage
+# Define a sample DAG as an adjacency list
+# Here, we represent the graph as a list of vectors, where each vector contains the neighbors of the corresponding node.
+graph &lt;- list(
+  c(2, 3),    # Node 1 points to nodes 2 and 3
+  c(3, 4),    # Node 2 points to nodes 3 and 4
+  c(5),       # Node 3 points to node 5
+  c(5),       # Node 4 points to node 5
+  numeric(0)  # Node 5 has no outgoing edges
+)
+
+topological_order &lt;- topological_sort(graph)
+cat(&quot;Topological Order:&quot;, topological_order, &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
-</code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
-</code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>## Topological Order: 5 4 3 2 1
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
