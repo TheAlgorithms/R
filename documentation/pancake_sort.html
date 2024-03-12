@@ -145,24 +145,55 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r"># Function to flip the first 'k' elements of an array
+flip &lt;- function(arr, k) {
+  arr[1:k] &lt;- rev(arr[1:k])  # Reverse the first 'k' elements
+  return(arr)
+}
+
+# Function to find the index of the maximum element in an array
+findMaxIndex &lt;- function(arr, n) {
+  maxIndex &lt;- 1
+  for (i in 2:n) {
+    if (arr[i] &gt; arr[maxIndex]) {
+      maxIndex &lt;- i
+    }
+  }
+  return(maxIndex)
+}
+
+# Function to perform Pancake Sort
+pancakeSort &lt;- function(arr) {
+  n &lt;- length(arr)
+  
+  for (currentSize in n:2) {
+    # Find the index of the maximum element in the unsorted part of the array
+    maxIndex &lt;- findMaxIndex(arr, currentSize)
+    
+    # If the maximum element is not at the end of the unsorted part, flip it
+    if (maxIndex != currentSize) {
+      # Flip the maximum element to the beginning of the array
+      arr &lt;- flip(arr, maxIndex)
+      
+      # Flip the maximum element to its correct position
+      arr &lt;- flip(arr, currentSize)
+    }
+  }
+  
+  return(arr)
+}
+
+# Example usage:
+arr &lt;- c(3, 1, 5, 2, 4)
+cat(&quot;Original Array:&quot;, arr, &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
+<pre><code>## Original Array: 3 1 5 2 4
 </code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
+<pre><code class="language-r"># Call the Pancake Sort function to sort the array
+sortedArr &lt;- pancakeSort(arr)
+cat(&quot;Sorted Array:&quot;, sortedArr, &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>## Sorted Array: 1 2 3 4 5
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

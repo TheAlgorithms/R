@@ -145,24 +145,18 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r">ols&lt;-function(y,x){
+    data&lt;-model.matrix(y ~ ., data = x)
+    decomp &lt;- svd(data)
+    return(decomp$v %*% diag(1 / decomp$d) %*% t(decomp$u) %*% y)
+  }
+
+set.seed(1)
+x &lt;- rnorm(1000)
+y &lt;- 4 * x + rnorm(1000, sd = .5)
+ols(y=y,x=matrix(x, ncol = 1))
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
-</code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
-</code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>## Error in terms.formula(object, data = data): '.' in formula and no 'data' argument
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

@@ -145,24 +145,47 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r"># Function to perform Shell Sort
+shellSort &lt;- function(arr) {
+  n &lt;- length(arr)
+  
+  # Start with a large gap and reduce it
+  gap &lt;- n %/% 2  # Initial gap
+  
+  while (gap &gt; 0) {
+    for (i in (gap + 1):n) {
+      # Store the current element to be compared
+      temp &lt;- arr[i]
+      
+      # Compare the current element with elements at positions 'i - gap', 'i - 2 * gap', ...
+      j &lt;- i
+      while (j &gt; gap &amp;&amp; arr[j - gap] &gt; temp) {
+        arr[j] &lt;- arr[j - gap]
+        j &lt;- j - gap
+      }
+      
+      # Place the current element in its correct position
+      arr[j] &lt;- temp
+    }
+    
+    # Reduce the gap for the next iteration
+    gap &lt;- gap %/% 2
+  }
+  
+  return(arr)
+}
+
+# Example usage:
+arr &lt;- c(12, 34, 54, 2, 3)
+cat(&quot;Original Array:&quot;, arr, &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
+<pre><code>## Original Array: 12 34 54 2 3
 </code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
+<pre><code class="language-r"># Call the Shell Sort function to sort the array
+sortedArr &lt;- shellSort(arr)
+cat(&quot;Sorted Array:&quot;, sortedArr, &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>## Sorted Array: 2 3 12 34 54
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

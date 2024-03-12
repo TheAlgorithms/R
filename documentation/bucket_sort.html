@@ -145,24 +145,54 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(rpart)
-x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r"># Bucket Sort Function
+# Sorts an input vector using the Bucket Sort algorithm.
+# Parameters:
+# - arr: Input vector to be sorted.
+# Returns:
+# - Sorted vector.
+bucket_sort &lt;- function(arr) {
+  if (length(arr) == 0) {
+    return(arr)
+  }
+  
+  # Find the maximum and minimum values in the input vector
+  max_val &lt;- max(arr)
+  min_val &lt;- min(arr)
+  
+  # Create an array of buckets
+  num_buckets &lt;- max_val - min_val + 1
+  buckets &lt;- vector(&quot;list&quot;, length = num_buckets)
+  
+  # Initialize the buckets
+  for (i in 1:num_buckets) {
+    buckets[[i]] &lt;- numeric(0)
+  }
+  
+  # Place elements into buckets
+  for (val in arr) {
+    bucket_index &lt;- val - min_val + 1
+    buckets[[bucket_index]] &lt;- c(buckets[[bucket_index]], val)
+  }
+  
+  # Sort each bucket (using any sorting algorithm, e.g., Bubble Sort)
+  sorted_buckets &lt;- lapply(buckets, bubble.sort)
+  
+  # Concatenate the sorted buckets to obtain the final sorted array
+  sorted_arr &lt;- unlist(sorted_buckets)
+  
+  return(sorted_arr)
+}
+
+# Example usage:
+elements_vec &lt;- c(3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5)
+bucket_sorted_vec &lt;- bucket_sort(elements_vec)
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
+<pre><code>## Error in match.fun(FUN): object 'bubble.sort' not found
 </code></pre>
-<pre><code class="language-r"># grow tree 
-fit &lt;- rpart(y_train ~ ., data = x,method=&quot;class&quot;)
+<pre><code class="language-r">print(bucket_sorted_vec)
 </code></pre>
-<pre><code>## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
-</code></pre>
-<pre><code class="language-r">summary(fit)
-</code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
-</code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
-</code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>## Error in print(bucket_sorted_vec): object 'bucket_sorted_vec' not found
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>

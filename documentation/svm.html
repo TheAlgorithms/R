@@ -145,59 +145,27 @@ section.footnotes::before {
 <div class="date"><h3></h3></div>
 </div>
 <div class="body">
-<pre><code class="language-r">library(tidyverse)
+<pre><code class="language-r">library(e1071)
 </code></pre>
-<pre><code>## Error in library(tidyverse): there is no package called 'tidyverse'
+<pre><code>## Error in library(e1071): there is no package called 'e1071'
 </code></pre>
-<pre><code class="language-r">library(xgboost)
+<pre><code class="language-r">x &lt;- cbind(x_train,y_train)
 </code></pre>
-<pre><code>## Error in library(xgboost): there is no package called 'xgboost'
+<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
 </code></pre>
-<pre><code class="language-r">ind&lt;-sample(2,nrow(diamonds),replace = T,prob = c(0.7,0.3))
+<pre><code class="language-r"># Fitting model
+fit &lt;-svm(y_train ~ ., data = x)
 </code></pre>
-<pre><code>## Error in nrow(diamonds): object 'diamonds' not found
+<pre><code>## Error in svm(y_train ~ ., data = x): could not find function &quot;svm&quot;
 </code></pre>
-<pre><code class="language-r">train.set&lt;-diamonds[ind==1,]
+<pre><code class="language-r">summary(fit)
 </code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): object 'diamonds' not found
+<pre><code>## Error in summary(fit): object 'fit' not found
 </code></pre>
-<pre><code class="language-r">test.set&lt;-diamonds[ind==2,]
+<pre><code class="language-r"># Predict Output 
+predicted= predict(fit,x_test)
 </code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): object 'diamonds' not found
-</code></pre>
-<pre><code class="language-r">xgb.train&lt;-bind_cols(select_if(train.set,is.numeric),model.matrix(~cut-1,train.set) %&gt;% as.tibble(),model.matrix(~color-1,train.set) %&gt;% as.tibble(),model.matrix(~clarity-1,train.set) %&gt;% as.tibble())
-</code></pre>
-<pre><code>## Error in bind_cols(select_if(train.set, is.numeric), model.matrix(~cut - : could not find function &quot;bind_cols&quot;
-</code></pre>
-<pre><code class="language-r">xgboost.train&lt;-xgb.DMatrix(data = as.matrix(select(xgb.train,-price)),label=xgb.train$price)
-</code></pre>
-<pre><code>## Error in xgb.DMatrix(data = as.matrix(select(xgb.train, -price)), label = xgb.train$price): could not find function &quot;xgb.DMatrix&quot;
-</code></pre>
-<pre><code class="language-r">xgb.test&lt;-bind_cols(select_if(test.set,is.numeric),model.matrix(~cut-1,test.set) %&gt;% as.tibble(),model.matrix(~color-1,test.set) %&gt;% as.tibble(),model.matrix(~clarity-1,test.set) %&gt;% as.tibble())
-</code></pre>
-<pre><code>## Error in bind_cols(select_if(test.set, is.numeric), model.matrix(~cut - : could not find function &quot;bind_cols&quot;
-</code></pre>
-<pre><code class="language-r">xgboost.test&lt;-xgb.DMatrix(data = select(xgb.test,-price) %&gt;% as.matrix(),label=xgb.test$price)
-</code></pre>
-<pre><code>## Error in xgb.DMatrix(data = select(xgb.test, -price) %&gt;% as.matrix(), : could not find function &quot;xgb.DMatrix&quot;
-</code></pre>
-<pre><code class="language-r">param&lt;-list(eval_metric='rmse',gamma=1,max_depth=6,nthread = 3)
-xg.model&lt;-xgb.train(data = xgboost.train,params = param,watchlist = list(test=xgboost.test),nrounds = 500,early_stopping_rounds = 60,
-                      print_every_n = 30)
-</code></pre>
-<pre><code>## Error in xgb.train(data = xgboost.train, params = param, watchlist = list(test = xgboost.test), : could not find function &quot;xgb.train&quot;
-</code></pre>
-<pre><code class="language-r">xg.predict&lt;-predict(xg.model,xgboost.test)
-</code></pre>
-<pre><code>## Error in predict(xg.model, xgboost.test): object 'xg.model' not found
-</code></pre>
-<pre><code class="language-r">mse.xgb&lt;-sqrt(mean((test.set$price-xg.predict)^2))
-</code></pre>
-<pre><code>## Error in mean((test.set$price - xg.predict)^2): object 'test.set' not found
-</code></pre>
-<pre><code class="language-r">plot((test.set$price-xg.predict))
-</code></pre>
-<pre><code>## Error in plot((test.set$price - xg.predict)): object 'test.set' not found
+<pre><code>## Error in predict(fit, x_test): object 'fit' not found
 </code></pre>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
