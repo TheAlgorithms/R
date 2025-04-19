@@ -15,30 +15,56 @@ All algorithms can be found in the [`DIRECTORY.md`](https://github.com/TheAlgori
 ## Contribution Guidelines
 
 Please ensure to follow the points stated below if you would like to contribute:
-1. Code Quality & Functionality
+### 1. Code Quality & Functionality
+
 -Ensure that your code is functional and well-structured before submitting a pull request.
+
 -The code should run without errors in an R environment and produce the expected output.
+
 -Follow best practices for efficiency, readability, and maintainability.
-2. Adding a New Algorithm
+
+### 2. Adding a New Algorithm
+
 -Verify that the algorithm is not already implemented in the repository.
+
 -Include a brief explanation of the algorithm in the file as comments.
+
 -Add an example showcasing its usage (it can be commented within the script).
-3. Modifying an Existing Algorithm
+
+### 3. Modifying an Existing Algorithm
+
 -If making improvements, clearly document the changes in your pull request description.
+
 -Ensure that your modifications do not break existing functionality.
+
 -If applicable, update or add test cases to validate your changes.
-4. Code Style & Naming Conventions
+
+### 4. Code Style & Naming Conventions
+
 -Use consistent and meaningful variable names. Follow one of these naming conventions:
+
 -Use . or _ to separate words (e.g., results.df for a data frame).
+
 -Ensure that filenames follow the existing directory structure and naming patterns.
-5. Documentation & Comments
+
+### 5. Documentation & Comments
+
 -Provide clear and concise documentation in the form of comments within the code.
+
 -Add a brief docstring at the beginning of the script explaining:
+
 -What the algorithm does
+
 -The expected input and output
+
 -Any dependencies required
-6. Testing & Verification
+
+### 6. Testing & Verification
+
 -Before submitting a pull request, verify that your code:
+
 -Runs correctly with different test cases
+
 -Does not produce unnecessary warnings or errors
+
 -If applicable, add a test file demonstrating the algorithm’s correctness.
