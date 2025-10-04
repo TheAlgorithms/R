@@ -33,6 +33,9 @@
   * [K Folds](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/k_folds.r)
   * [Lasso](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/lasso.r)
 
+## Data Structures
+  * [Binary Search Tree](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/binary_search_tree.r)
+
 ## Mathematics
   * [Amicable Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/amicable_numbers.r)
   * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
