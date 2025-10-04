@@ -62,6 +62,7 @@
 ## Searches
   * [Binary Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/binary_search.r)
   * [Linear Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/linear_search.r)
+  * [Ternary Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/ternary_search.r)
 
 ## Sorting Algorithms
   * [Binary Insertion Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/binary_insertion_sort.r)
