@@ -33,6 +33,9 @@
   * [K Folds](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/k_folds.r)
   * [Lasso](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/lasso.r)
 
+## Graph Algorithms
+  * [Breadth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/breadth_first_search.r)
+
 ## Mathematics
   * [Amicable Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/amicable_numbers.r)
   * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
