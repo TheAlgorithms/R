@@ -47,6 +47,7 @@
   * [Perfect Square](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/perfect_square.r)
   * [Pi Monte Carlo](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/pi_monte_carlo.r)
   * [Prime](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/prime.r)
+  * [Sieve Of Eratosthenes](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/sieve_of_eratosthenes.r)
 
 ## Regression Algorithms
   * [Ann](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/ann.r)
