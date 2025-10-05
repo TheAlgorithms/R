@@ -38,6 +38,7 @@
   * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
   * [Bisection Method](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/bisection_method.r)
   * [Euclidean Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/euclidean_distance.r)
+  * [Extended Euclidean Algorithm](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/extended_euclidean_algorithm.r)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/factorial.r)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/fibonacci.r)
   * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/first_n_fibonacci.r)
