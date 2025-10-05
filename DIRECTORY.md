@@ -35,6 +35,7 @@
   * [Lasso](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/lasso.r)
 
 ## Graph Algorithms
+  * [Breadth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/breadth_first_search.r)
   * [Depth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/depth_first_search.r)
 
 ## Mathematics
