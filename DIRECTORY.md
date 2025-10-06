@@ -25,6 +25,7 @@
 ## Data Manipulation
   * [Label Encode](https://github.com/TheAlgorithms/R/blob/HEAD/data_manipulation/label_encode.r)
   * [One Hot Encode](https://github.com/TheAlgorithms/R/blob/HEAD/data_manipulation/one_hot_encode.r)
+  * [Shorten Vector](https://github.com/TheAlgorithms/R/blob/HEAD/data_manipulation/shorten.vector.R)
 
 ## Data Preprocessing
   * [Data Normalization Standardization](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/data_normalization_standardization.r)
@@ -35,21 +36,30 @@
 
 ## Data Structures
   * [Binary Search Tree](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/binary_search_tree.r)
+## Graph Algorithms
+  * [Dijkstra Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/dijkstra_shortest_path.r)
+  * [Breadth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/breadth_first_search.r)
+  * [Depth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/depth_first_search.r)
 
 ## Mathematics
   * [Amicable Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/amicable_numbers.r)
   * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
   * [Bisection Method](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/bisection_method.r)
   * [Euclidean Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/euclidean_distance.r)
+  * [Extended Euclidean Algorithm](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/extended_euclidean_algorithm.r)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/factorial.r)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/fibonacci.r)
   * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/first_n_fibonacci.r)
+  * [Greatest Common Divisor](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/greatest_common_divisor.r)
   * [Hamming Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/hamming_distance.r)
   * [Josephus Problem](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/josephus_problem.r)
+  * [Least Common Multiple](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/least_common_multiple.r)
   * [Perfect Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/perfect_number.r)
   * [Perfect Square](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/perfect_square.r)
+  * [Permutation Calculation](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/permutation_calculation.r)
   * [Pi Monte Carlo](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/pi_monte_carlo.r)
   * [Prime](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/prime.r)
+  * [Sieve Of Eratosthenes](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/sieve_of_eratosthenes.r)
 
 ## Regression Algorithms
   * [Ann](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/ann.r)
@@ -85,4 +95,19 @@
   * [Shell Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/shell_sort.r)
   * [Stooge Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/stooge_sort.r)
   * [Topological Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/topological_sort.r)
-  * [Wiggle Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/wiggle_sort.r)
+    * [Wiggle Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/wiggle_sort.r)
+
+## String Manipulation
+  * [Find Palindrome](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/findPalindrome.R)
+  * [Is Anagram](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.anagram.R)
+  * [Is Lower](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.lower.R)
+  * [Is Uppercase](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.uppercase.R)
+  * [Mask Words](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/maskWords.R)
+  * [Rearrange Ways](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/rearrangeWays.R)
+
+## Quantitative Finance
+  * [Kalman Filter](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/kalman_filter.r)
+  * [Markowitz Portfolio Optimization](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/markowitz_portfolio_optimization.r)
+  * [Monte Carlo Simulation](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/monte_carlo_simulation.r)
+
+```
