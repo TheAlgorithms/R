@@ -274,8 +274,11 @@ cat("3. Edge Cases\n")
 cat("Empty pattern:", length(kmp_search("hello", "")), "matches\n")
 cat("Empty text:", length(kmp_search("", "hello")), "matches\n") 
 cat("Pattern longer than text:", length(kmp_search("hi", "hello")), "matches\n")
-cat("Single character pattern:", kmp_search("abcabc", "a"), "\n")
-cat("Pattern not in text:", kmp_search("hello world", "xyz"), "\n\n")
+cat("Single character pattern:", paste(kmp_search("abcabc", "a"), collapse = ", "), "\n")
+cat("Pattern not in text:", paste(kmp_search("hello world", "xyz"), collapse = ", "), "\n")
+cat("Identical strings:", paste(kmp_search("hello", "hello"), collapse = ", "), "\n")
+cat("Pattern at start:", paste(kmp_search("hello world", "hello"), collapse = ", "), "\n")
+cat("Pattern at end:", paste(kmp_search("world hello", "hello"), collapse = ", "), "\n\n")
 
 # Test 4: Performance comparison
 cat("4. Performance Comparison\n")

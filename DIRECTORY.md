@@ -82,9 +82,7 @@
   * [Shell Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/shell_sort.r)
   * [Stooge Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/stooge_sort.r)
   * [Topological Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/topological_sort.r)
-    * [Wiggle Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/wiggle_sort.r)
+  * [Wiggle Sort](https://github.com/TheAlgorithms/R/blob/HEAD/sorting_algorithms/wiggle_sort.r)
 
 ## String Manipulation
   * [KMP String Matching](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/kmp_string_matching.r)
-
-```
