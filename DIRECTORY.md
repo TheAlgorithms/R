@@ -34,6 +34,8 @@
   * [K Folds](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/k_folds.r)
   * [Lasso](https://github.com/TheAlgorithms/R/blob/HEAD/data_preprocessing/lasso.r)
 
+## Dynamic Programming
+  * [Longest Common Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_common_subsequence.r)
 ## Data Structures
   * [Binary Search Tree](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/binary_search_tree.r)
 ## Graph Algorithms
