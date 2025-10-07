@@ -1,16 +1,16 @@
-cocktailSort <- function(arr) {
+# Cocktail Sort in R
+cocktail.sort <- function(arr) {
   n <- length(arr)
   swapped <- TRUE
-  beg <- 1
+  start <- 1
   end <- n - 1
 
   while (swapped) {
     swapped <- FALSE
     
-    # Forward pass (left to right)
-    for (i in seq(beg, end)) {
+    # Forward pass
+    for (i in seq(start, end)) {
       if (arr[i] > arr[i + 1]) {
-        # Swap arr[i] and arr[i + 1]
         temp <- arr[i]
         arr[i] <- arr[i + 1]
         arr[i + 1] <- temp
@@ -18,18 +18,14 @@ cocktailSort <- function(arr) {
       }
     }
 
-    # If no swaps occurred in the forward pass, the array is sorted
-    if (!swapped) {
-      break
-    }
+    if (!swapped) break
 
     swapped <- FALSE
     end <- end - 1
 
-    # Backward pass (right to left)
-    for (i in seq(end, beg, by = -1)) {
+    # Backward pass
+    for (i in seq(end, start, by = -1)) {
       if (arr[i] > arr[i + 1]) {
-        # Swap arr[i] and arr[i + 1]
         temp <- arr[i]
         arr[i] <- arr[i + 1]
         arr[i + 1] <- temp
@@ -37,20 +33,15 @@ cocktailSort <- function(arr) {
       }
     }
 
-    beg <- beg + 1
+    start <- start + 1
   }
   
   return(arr)
 }
 
-# Example Usage
-unsorted_array <- c(38, 27, 43, 3, 9, 82, 10)
-cat("Unsorted Array: ", unsorted_array, "\n")
+# Example usage
+unsorted.array <- c(38, 27, 43, 3, 9, 82, 10)
+cat("Unsorted Array:", unsorted.array, "\n")
 
-# Call the Cocktail Sort function to sort the array
-sorted_array <- cocktailSort(unsorted_array)
-
-cat("Sorted Array: ", sorted_array, "\n")
-
-# Example: The 'unsorted_array' is sorted using Cocktail Sort
-
+sorted.array <- cocktail.sort(unsorted.array)
+cat("Sorted Array:  ", sorted.array, "\n")
