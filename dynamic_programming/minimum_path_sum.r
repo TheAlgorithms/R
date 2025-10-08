@@ -302,18 +302,21 @@ cat("\n")
 cat("Test 5: Performance Comparison (6x8 grid)\n")
 grid_perf <- matrix(sample(1:20, 48, replace = TRUE), nrow = 6, ncol = 8)
 
-start_time <- Sys.time()
-result_std <- minimum_path_sum(grid_perf)
-std_time <- as.numeric(Sys.time() - start_time, units = "secs")
+library(microbenchmark)
 
-start_time <- Sys.time()
+mbm <- microbenchmark(
+  std = minimum_path_sum(grid_perf),
+  opt = minimum_path_sum_optimized(grid_perf),
+  times = 100L
+)
+
+result_std <- minimum_path_sum(grid_perf)
 result_opt <- minimum_path_sum_optimized(grid_perf)
-opt_time <- as.numeric(Sys.time() - start_time, units = "secs")
 
 cat("Standard DP result:", result_std$min_sum, "\n")
 cat("Optimized DP result:", result_opt, "\n")
-cat("Standard DP time:", sprintf("%.4f sec", std_time), "\n")
-cat("Optimized DP time:", sprintf("%.4f sec", opt_time), "\n")
+cat("Standard DP median time:", sprintf("%.6f sec", median(mbm$time[mbm$expr == "std"])/1e9), "\n")
+cat("Optimized DP median time:", sprintf("%.6f sec", median(mbm$time[mbm$expr == "opt"])/1e9), "\n")
 cat("Results match:", result_std$min_sum == result_opt, "\n\n")
 
 # Test 6: Multiple Minimum Paths
