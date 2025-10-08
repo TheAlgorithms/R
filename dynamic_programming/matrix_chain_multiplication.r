@@ -123,10 +123,58 @@ calculate_multiplication_cost <- function(dimensions, parentheses) {
   #' @param parentheses: String representation of parenthesization
   #' @return: Total cost of multiplication
   
-  # This is a simplified version - in practice, you'd parse the parentheses string
-  # For demonstration, we'll use the DP result
-  result <- matrix_chain_multiplication(dimensions)
-  return(result$min_cost)
+  # Helper to parse the parenthesization string into a tree
+  parse_parentheses <- function(s) {
+    s <- gsub(" ", "", s) # Remove spaces
+    # If it's a single matrix, e.g. "A1"
+    if (grepl("^A[0-9]+$", s)) {
+      idx <- as.integer(sub("A", "", s))
+      return(list(type = "leaf", idx = idx))
+    }
+    # Otherwise, find the main split
+    # Remove outer parentheses if present
+    if (substr(s, 1, 1) == "(" && substr(s, nchar(s), nchar(s)) == ")") {
+      s <- substr(s, 2, nchar(s) - 1)
+    }
+    # Find the split point for " × " at the top level
+    depth <- 0
+    for (i in seq_len(nchar(s))) {
+      ch <- substr(s, i, i)
+      if (ch == "(") depth <- depth + 1
+      if (ch == ")") depth <- depth - 1
+      # Look for "×" at depth 0
+      if (depth == 0 && substr(s, i, i+1) == "×") {
+        left <- substr(s, 1, i-2)
+        right <- substr(s, i+2, nchar(s))
+        return(list(
+          type = "node",
+          left = parse_parentheses(left),
+          right = parse_parentheses(right)
+        ))
+      }
+    }
+    stop("Invalid parenthesization string")
+  }
+  
+  # Helper to compute cost recursively
+  compute_cost <- function(node) {
+    if (node$type == "leaf") {
+      # Return dimensions for this matrix
+      idx <- node$idx
+      return(list(rows = dimensions[idx], cols = dimensions[idx+1], cost = 0))
+    } else {
+      left <- compute_cost(node$left)
+      right <- compute_cost(node$right)
+      # Multiply left and right matrices: left$rows x left$cols and right$rows x right$cols
+      if (left$cols != right$rows) stop("Incompatible matrix dimensions")
+      cost <- left$cost + right$cost + left$rows * left$cols * right$cols
+      return(list(rows = left$rows, cols = right$cols, cost = cost))
+    }
+  }
+  
+  tree <- parse_parentheses(parentheses)
+  result <- compute_cost(tree)
+  return(result$cost)
 }
 
 # Function to find all possible optimal parenthesizations
