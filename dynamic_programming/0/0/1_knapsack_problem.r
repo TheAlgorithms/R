@@ -24,34 +24,45 @@ knapsack_01 <- function(weights, values, capacity) {
   #' @return: List containing max value, selected items, and DP table
   
   n <- length(values)
+  
+  # Handle edge case
+  if (n == 0 || capacity == 0) {
+    return(list(
+      max_value = 0,
+      selected_items = c(),
+      dp_table = matrix(0, nrow = n + 1, ncol = capacity + 1)
+    ))
+  }
+  
+  # Create DP table: dp[i, w] = max value using first i items with capacity w
   dp <- matrix(0, nrow = n + 1, ncol = capacity + 1)
   
   # Fill DP table
-  for (i in 2:(n + 1)) {
+  for (i in 1:n) {
     for (w in 0:capacity) {
-      if (weights[i - 1] <= w) {
-        include <- values[i - 1] + dp[i - 1, w - weights[i - 1] + 1]
-        exclude <- dp[i - 1, w + 1]
-        dp[i, w + 1] <- max(include, exclude)
-      } else {
-        dp[i, w + 1] <- dp[i - 1, w + 1]
+      # Don't include item i
+      dp[i + 1, w + 1] <- dp[i, w + 1]
+      
+      # Include item i (if it fits)
+      if (weights[i] <= w) {
+        include_value <- values[i] + dp[i, w - weights[i] + 1]
+        dp[i + 1, w + 1] <- max(dp[i + 1, w + 1], include_value)
       }
     }
   }
   
   # Backtrack to find selected items
-  res_value <- dp[n + 1, capacity + 1]
   selected <- c()
+  i <- n
   w <- capacity
   
-  for (i in n:1) {
-    if (res_value <= 0) break
-    if (res_value == dp[i, w + 1]) next
-    
-    # Item i is included
-    selected <- c(i, selected)
-    res_value <- res_value - values[i]
-    w <- w - weights[i]
+  while (i > 0 && w > 0) {
+    # If value came from including item i
+    if (dp[i + 1, w + 1] != dp[i, w + 1]) {
+      selected <- c(i, selected)
+      w <- w - weights[i]
+    }
+    i <- i - 1
   }
   
   return(list(
@@ -67,11 +78,20 @@ knapsack_01_optimized <- function(weights, values, capacity) {
   #' @return: Maximum total value
   
   n <- length(values)
+  
+  if (n == 0 || capacity == 0) {
+    return(0)
+  }
+  
   dp <- rep(0, capacity + 1)
   
+  # Process each item
   for (i in 1:n) {
-    for (w in capacity:weights[i]) {
-      dp[w + 1] <- max(dp[w + 1], values[i] + dp[w - weights[i] + 1])
+    # Traverse from right to left to avoid overwriting needed values
+    for (w in capacity:0) {
+      if (weights[i] <= w) {
+        dp[w + 1] <- max(dp[w + 1], values[i] + dp[w - weights[i] + 1])
+      }
     }
   }
   
@@ -84,6 +104,12 @@ print_knapsack_dp <- function(dp_table, weights, values, capacity) {
   cat("Weights:", paste(weights, collapse = ", "), "\n")
   cat("Values :", paste(values, collapse = ", "), "\n")
   cat("Capacity:", capacity, "\n\n")
+  
+  # Print capacity headers
+  cat("        ")
+  cat(paste(sprintf("%3d", 0:capacity), collapse = " "))
+  cat("\n")
+  cat(paste(rep("-", 8 + 4 * (capacity + 1)), collapse = ""), "\n")
   
   for (i in 1:nrow(dp_table)) {
     cat(sprintf("Item %2d | ", i - 1))
@@ -111,12 +137,15 @@ cat("Capacity:", capacity, "\n\n")
 result <- knapsack_01(weights, values, capacity)
 print_knapsack_dp(result$dp_table, weights, values, capacity)
 cat("Maximum Value:", result$max_value, "\n")
-cat("Selected Item Indices:", paste(result$selected_items, collapse = ", "), "\n\n")
+cat("Selected Item Indices:", paste(result$selected_items, collapse = ", "), "\n")
+cat("Total Weight:", sum(weights[result$selected_items]), "\n")
+cat("Total Value:", sum(values[result$selected_items]), "\n\n")
 
 # Test 2: Space Optimized Example
 cat("Test 2: Space Optimized Version\n")
 max_val_opt <- knapsack_01_optimized(weights, values, capacity)
-cat("Maximum Value (Optimized):", max_val_opt, "\n\n")
+cat("Maximum Value (Optimized):", max_val_opt, "\n")
+cat("Verification: Both methods match:", result$max_value == max_val_opt, "\n\n")
 
 # Test 3: Larger Dataset
 cat("Test 3: Larger Dataset\n")
@@ -131,7 +160,8 @@ cat("Capacity:", capacity, "\n\n")
 
 large_result <- knapsack_01(weights, values, capacity)
 cat("Maximum Value:", large_result$max_value, "\n")
-cat("Selected Items:", paste(large_result$selected_items, collapse = ", "), "\n\n")
+cat("Selected Items:", paste(large_result$selected_items, collapse = ", "), "\n")
+cat("Total Weight:", sum(weights[large_result$selected_items]), "\n\n")
 
 # Test 4: Edge Cases
 cat("Test 4: Edge Cases\n")
@@ -153,3 +183,12 @@ std_time <- as.numeric(Sys.time() - start_time, units = "secs")
 
 cat("Optimized DP result:", res_std, "\n")
 cat("Time taken:", sprintf("%.4f sec", std_time), "\n")
+
+# Verify correctness
+cat("\nVerifying correctness with full DP:\n")
+start_time <- Sys.time()
+res_full <- knapsack_01(weights, values, capacity)
+full_time <- as.numeric(Sys.time() - start_time, units = "secs")
+cat("Full DP result:", res_full$max_value, "\n")
+cat("Time taken:", sprintf("%.4f sec", full_time), "\n")
+cat("Results match:", res_std == res_full$max_value, "\n")
