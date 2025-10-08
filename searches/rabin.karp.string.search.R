@@ -36,7 +36,7 @@ h <- 1       # base^(m-1)
 matches <- c()
 
 # Compute (base^(m-1)) % mod safely
-for (i in seq_len(max(0, m - 1))) {
+for (i in seq_len(m - 1)) {
   h <- (h * base) %% mod
 }
 
