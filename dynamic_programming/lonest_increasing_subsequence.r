@@ -219,7 +219,6 @@ cat("One LIS Sequence:", paste(result_large$lis_sequence, collapse = ", "), "\n\
 cat("Test 6: Performance Comparison (n=1000)\n")
 n <- 1000
 nums_perf <- sample(1:1000, n)
-capacity <- 200
 
 start_time <- Sys.time()
 res_opt <- longest_increasing_subsequence_optimized(nums_perf)
