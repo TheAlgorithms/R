@@ -88,7 +88,7 @@ knapsack_01_optimized <- function(weights, values, capacity) {
   # Process each item
   for (i in 1:n) {
     # Traverse from right to left to avoid overwriting needed values
-    for (w in capacity:0) {
+    for (w in capacity:weights[i]) {
       if (weights[i] <= w) {
         dp[w + 1] <- max(dp[w + 1], values[i] + dp[w - weights[i] + 1])
       }
