@@ -21,7 +21,6 @@ coin_change <- function(coins, amount) {
   
   # Initialize DP array
   dp <- rep(Inf, amount + 1)
-  dp[1] <- 0
   dp[0 + 1] <- 0  # zero coins needed for amount 0
   
   for (i in 1:amount) {
