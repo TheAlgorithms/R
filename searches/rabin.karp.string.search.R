@@ -1,44 +1,58 @@
 # Rabin–Karp String Search Algorithm in R
 # Author: sgindeed
-# Description: Finds all occurrences of a pattern in a given text using rolling hash
+# Description: Finds all occurrences of a pattern in a given text using a rolling hash technique.
 
-# Ask for user inputs
-text <- readline(prompt = "Enter the main text: ")
+# Ask user for input
+text <- readline(prompt = "Enter the text: ")
 pattern <- readline(prompt = "Enter the pattern to search: ")
 
-# Convert to lowercase for case-insensitive matching
+# Convert both to lowercase for case-insensitive matching
 text <- tolower(text)
 pattern <- tolower(pattern)
 
+# Get lengths
 n <- nchar(text)
 m <- nchar(pattern)
 
-# Base and modulus for rolling hash
-base <- 256
-mod <- 101
+# Handle empty or invalid inputs
+if (m == 0) {
+  cat("Empty pattern. Nothing to search.\n")
+  quit(save = "no")
+}
 
-# Convert to character vectors
-text_chars <- utf8ToInt(text)
-pattern_chars <- utf8ToInt(pattern)
+if (m > n) {
+  cat("Pattern is longer than text. Pattern not found in text.\n")
+  quit(save = "no")
+}
 
-# Compute (base^(m-1)) % mod
-h <- 1
-for (i in 1:(m - 1)) {
+# Constants
+base <- 256   # Number of possible characters
+mod <- 101    # A prime number for hashing
+
+# Initialize variables
+p_hash <- 0  # hash for pattern
+t_hash <- 0  # hash for text window
+h <- 1       # base^(m-1)
+matches <- c()
+
+# Compute (base^(m-1)) % mod safely
+for (i in seq_len(max(0, m - 1))) {
   h <- (h * base) %% mod
 }
 
-# Compute hash of pattern and first window
-p_hash <- 0
-t_hash <- 0
+# Convert characters to ASCII values
+pattern_chars <- utf8ToInt(pattern)
+text_chars <- utf8ToInt(text)
+
+# Compute initial hash values for pattern and first window of text
 for (i in 1:m) {
   p_hash <- (base * p_hash + pattern_chars[i]) %% mod
   t_hash <- (base * t_hash + text_chars[i]) %% mod
 }
 
-# Rabin–Karp pattern search
-matches <- c()
+# Rabin–Karp main search
 for (i in 0:(n - m)) {
-  # If hash matches, check actual substring
+  # If hash matches, verify actual substring
   if (p_hash == t_hash) {
     if (substr(text, i + 1, i + m) == pattern) {
       matches <- c(matches, i + 1)
@@ -58,5 +72,5 @@ for (i in 0:(n - m)) {
 if (length(matches) > 0) {
   cat("Pattern found at positions:", paste(matches, collapse = ", "), "\n")
 } else {
-  cat("Pattern not found in text.\n")
+  cat("Pattern not found in the given text.\n")
 }
