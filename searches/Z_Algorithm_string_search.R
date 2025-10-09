@@ -109,35 +109,37 @@ print_z_array <- function(s) {
 # ------------------------------------------------------------
 # Example Usage & Testing
 # ------------------------------------------------------------
-cat("=== Z-Algorithm for String Matching ===\n\n")
+if (interactive()) {
+  cat("=== Z-Algorithm for String Matching ===\n\n")
 
-# Test 1: Basic Example
-pattern <- "abc"
-text <- "ababcabc"
-cat("Test 1: Basic Example\n")
-cat("Pattern:", pattern, "\nText   :", text, "\n")
-result <- z_algorithm(pattern, text)
-cat("Pattern found at indices:", paste(result, collapse = ", "), "\n\n")
+  # Test 1: Basic Example
+  pattern <- "abc"
+  text <- "ababcabc"
+  cat("Test 1: Basic Example\n")
+  cat("Pattern:", pattern, "\nText   :", text, "\n")
+  result <- z_algorithm(pattern, text)
+  cat("Pattern found at indices:", paste(result, collapse = ", "), "\n\n")
 
-# Test 2: Overlapping Matches
-pattern <- "aa"
-text <- "aaaa"
-cat("Test 2: Overlapping Matches\n")
-cat("Pattern:", pattern, "\nText   :", text, "\n")
-result <- z_algorithm(pattern, text)
-cat("Pattern found at indices:", paste(result, collapse = ", "), "\n\n")
+  # Test 2: Overlapping Matches
+  pattern <- "aa"
+  text <- "aaaa"
+  cat("Test 2: Overlapping Matches\n")
+  cat("Pattern:", pattern, "\nText   :", text, "\n")
+  result <- z_algorithm(pattern, text)
+  cat("Pattern found at indices:", paste(result, collapse = ", "), "\n\n")
 
-# Test 3: No Match
-pattern <- "xyz"
-text <- "abcabc"
-cat("Test 3: No Match\n")
-result <- z_algorithm(pattern, text)
-cat("Result:", if (length(result) == 0) "No matches found" else result, "\n\n")
+  # Test 3: No Match
+  pattern <- "xyz"
+  text <- "abcabc"
+  cat("Test 3: No Match\n")
+  result <- z_algorithm(pattern, text)
+  cat("Result:", if (length(result) == 0) "No matches found" else result, "\n\n")
 
-# Test 4: Show Z-Array
-cat("Test 4: Show Z-Array\n")
-print_z_array(paste0("abc$", "ababcabc"))
+  # Test 4: Show Z-Array
+  cat("Test 4: Show Z-Array\n")
+  print_z_array(paste0("abc$", "ababcabc"))
 
-# ------------------------------------------------------------
-# End of File
-# ------------------------------------------------------------
+  # ------------------------------------------------------------
+  # End of File
+  # ------------------------------------------------------------
+}
