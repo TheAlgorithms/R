@@ -84,14 +84,15 @@ z_algorithm <- function(pattern, text) {
   combined <- paste0(pattern, delim, text)
   z <- .z_array(combined)
   pattern_length <- nchar(pattern)
-  result <- c()
+  result_list <- list()
 
   for (i in seq_along(z)) {
     if (z[i] == pattern_length) {
-      result <- c(result, i - pattern_length - 1)
+      result_list[[length(result_list) + 1]] <- i - pattern_length - 1
     }
   }
 
+  result <- unlist(result_list, use.names = FALSE)
   result <- result[result > 0]
   return(result)
 }
