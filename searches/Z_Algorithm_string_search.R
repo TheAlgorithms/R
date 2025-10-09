@@ -146,7 +146,7 @@ if (interactive()) {
   cat("Pattern found at indices:", paste(result, collapse = ", "), "\n\n")
 
   # Test 2: Overlapping Matches
-  pattern <- "aa"
+  cat("Result:", if (length(result) == 0) "No matches found" else paste(result, collapse = ", "), "\n\n")
   text <- "aaaa"
   cat("Test 2: Overlapping Matches\n")
   cat("Pattern:", pattern, "\nText   :", text, "\n")
