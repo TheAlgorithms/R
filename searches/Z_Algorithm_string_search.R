@@ -4,7 +4,7 @@
 # where each element `Z[i]` represents the length of the longest substring
 # starting from position `i` that is also a prefix of the string.
 #
-# By concatenating the pattern, a unique delimiter (`$`), and the text,
+# By concatenating the pattern, a unique delimiter, and the text,
 # we can efficiently find all occurrences of the pattern in O(n + m) time.
 #
 # Time Complexity: O(n + m)
@@ -16,9 +16,38 @@
 # - Finding repetitions and borders in strings
 # - Prefix-based text indexing
 #
-# ------------------------------------------------------------
 
-# Core Z-Algorithm implementation
+# Internal helper (non-exported): compute Z-array for a string `s`
+# Note: leading dot indicates internal use; do not export.
+.z_array <- function(s) {
+  n <- nchar(s)
+  z <- integer(n)
+  l <- 0
+  r <- 0
+  chars <- strsplit(s, "")[[1]]
+
+  for (i in seq(2, n)) {  # R is 1-based
+    if (i > (r + 1)) {
+      l <- i; r <- i
+      while (r <= n && chars[r] == chars[r - l + 1]) r <- r + 1
+      z[i] <- r - l
+      r <- r - 1
+    } else {
+      k <- i - l + 1
+      if (z[k] < (r - i + 1)) {
+        z[i] <- z[k]
+      } else {
+        l <- i
+        while (r <= n && chars[r] == chars[r - l + 1]) r <- r + 1
+        z[i] <- r - l
+        r <- r - 1
+      }
+    }
+  }
+  z
+}
+
+# Core Z-Algorithm function
 z_algorithm <- function(pattern, text) {
   #' Z-Algorithm for String Pattern Matching
   #'
@@ -38,42 +67,19 @@ z_algorithm <- function(pattern, text) {
   #'
   #' @export
 
-  # Internal function to compute Z-array
-  calculate_z <- function(s) {
-    n <- nchar(s)
-    z <- integer(n)
-    l <- 0
-    r <- 0
-    chars <- strsplit(s, "")[[1]]
-
-    for (i in seq(2, n)) {  # R is 1-based
-      if (i > (r + 1)) {
-        l <- i
-        r <- i
-        while (r <= n && chars[r] == chars[r - l + 1]) {
-          r <- r + 1
-        }
-        z[i] <- r - l
-        r <- r - 1
-      } else {
-        k <- i - l + 1
-        if (z[k] < (r - i + 1)) {
-          z[i] <- z[k]
-        } else {
-          l <- i
-          while (r <= n && chars[r] == chars[r - l + 1]) {
-            r <- r + 1
-          }
-          z[i] <- r - l
-          r <- r - 1
-        }
-      }
-    }
-    return(z)
+  # Input validation
+  if (missing(pattern) || missing(text) || nchar(pattern) == 0 || nchar(text) == 0) {
+    return(integer(0))
   }
 
-  combined <- paste0(pattern, "$", text)
-  z <- calculate_z(combined)
+  # choose a safe delimiter
+  delim <- "\x01"
+  if (grepl(delim, pattern, fixed = TRUE) || grepl(delim, text, fixed = TRUE)) {
+    delim <- "$"
+  }
+
+  combined <- paste0(pattern, delim, text)
+  z <- .z_array(combined)
   pattern_length <- nchar(pattern)
   result <- c()
 
@@ -83,38 +89,13 @@ z_algorithm <- function(pattern, text) {
     }
   }
 
-  # Keep only positive valid indices
   result <- result[result > 0]
   return(result)
 }
 
-# Helper Function (optional visualization)
+# Helper: visualize Z-array
 print_z_array <- function(s) {
-  z <- {
-    n <- nchar(s)
-    z <- integer(n)
-    l <- 0
-    r <- 0
-    chars <- strsplit(s, "")[[1]]
-    for (i in seq(2, n)) {
-      if (i > (r + 1)) {
-        l <- i
-        r <- i
-        while (r <= n && chars[r] == chars[r - l + 1]) r <- r + 1
-        z[i] <- r - l
-        r <- r - 1
-      } else {
-        k <- i - l + 1
-        if (z[k] < (r - i + 1)) z[i] <- z[k] else {
-          l <- i
-          while (r <= n && chars[r] == chars[r - l + 1]) r <- r + 1
-          z[i] <- r - l
-          r <- r - 1
-        }
-      }
-    }
-    z
-  }
+  z <- .z_array(s)
   cat("Z-array for", s, ":\n")
   cat(paste(z, collapse = " "), "\n\n")
 }
@@ -130,7 +111,7 @@ cat("Pattern:", pattern, "\nText   :", text, "\n")
 result <- z_algorithm(pattern, text)
 cat("Pattern found at indices:", paste(result, collapse = ", "), "\n\n")
 
-# Test 2: Multiple Overlaps
+# Test 2: Overlapping Matches
 pattern <- "aa"
 text <- "aaaa"
 cat("Test 2: Overlapping Matches\n")
@@ -145,6 +126,6 @@ cat("Test 3: No Match\n")
 result <- z_algorithm(pattern, text)
 cat("Result:", if (length(result) == 0) "No matches found" else result, "\n\n")
 
-# Test 4: Visualization
+# Test 4: Show Z-Array
 cat("Test 4: Show Z-Array\n")
-print_z_array(paste0(pattern, "$", text))
+print_z_array(paste0("abc$", "ababcabc"))
