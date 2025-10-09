@@ -75,7 +75,7 @@ z_algorithm <- function(pattern, text) {
     return(integer(0))
   }
 
-  # choose a safe delimiter
+  # Choose a safe delimiter
   delim <- "\x01"
   if (grepl(delim, pattern, fixed = TRUE) || grepl(delim, text, fixed = TRUE)) {
     delim <- "$"
