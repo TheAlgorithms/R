@@ -100,6 +100,19 @@ z_algorithm <- function(pattern, text) {
 # ------------------------------------------------------------
 # Helper: visualize Z-array
 # ------------------------------------------------------------
+#' Print the Z-array for a given string
+#'
+#' Computes and prints the Z-array for the input string \code{s}.
+#' The Z-array shows, for each position, the length of the longest substring
+#' starting at that position which matches the prefix of the string.
+#'
+#' @param s A character string for which to compute the Z-array.
+#'
+#' @return No return value; prints the Z-array to the console.
+#'
+#' @examples
+#' print_z_array("ababcabc")
+#' print_z_array(paste0("abc$", "ababcabc"))
 print_z_array <- function(s) {
   z <- .z_array(s)
   cat("Z-array for", s, ":\n")
