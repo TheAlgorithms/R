@@ -28,7 +28,6 @@
   chars <- strsplit(s, "")[[1]]
 
   for (i in seq(2, n)) {  # R is 1-based
-    # --- FIX: The condition was changed from i > (r + 1) to i > r ---
     if (i > r) {
       l <- i; r <- i
       while (r <= n && chars[r] == chars[r - l + 1]) r <- r + 1
