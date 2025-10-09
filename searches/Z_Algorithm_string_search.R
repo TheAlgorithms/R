@@ -75,10 +75,22 @@ z_algorithm <- function(pattern, text) {
     return(integer(0))
   }
 
-  # Choose a safe delimiter
-  delim <- "\x01"
-  if (grepl(delim, pattern, fixed = TRUE) || grepl(delim, text, fixed = TRUE)) {
-    delim <- "$"
+  # Choose a safe delimiter not present in pattern or text
+  candidate_delims <- c("\x01", "$", "#", "@", "|", "~", "%", "^", "&", "*", "!")
+  delim <- NULL
+  for (cand in candidate_delims) {
+    if (!grepl(cand, pattern, fixed = TRUE) && !grepl(cand, text, fixed = TRUE)) {
+      delim <- cand
+      break
+    }
+  }
+  # If all candidates are present, generate a unique delimiter
+  if (is.null(delim)) {
+    base_delim <- "\x01"
+    delim <- base_delim
+    while (grepl(delim, pattern, fixed = TRUE) || grepl(delim, text, fixed = TRUE)) {
+      delim <- paste0(delim, base_delim)
+    }
   }
 
   combined <- paste0(pattern, delim, text)
