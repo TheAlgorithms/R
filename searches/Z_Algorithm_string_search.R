@@ -16,6 +16,7 @@
 # - Finding repetitions and borders in strings
 # - Prefix-based text indexing
 #
+# ------------------------------------------------------------
 
 # Internal helper (non-exported): compute Z-array for a string `s`
 # Note: leading dot indicates internal use; do not export.
@@ -27,7 +28,8 @@
   chars <- strsplit(s, "")[[1]]
 
   for (i in seq(2, n)) {  # R is 1-based
-    if (i > (r + 1)) {
+    # --- FIX: The condition was changed from i > (r + 1) to i > r ---
+    if (i > r) {
       l <- i; r <- i
       while (r <= n && chars[r] == chars[r - l + 1]) r <- r + 1
       z[i] <- r - l
@@ -47,7 +49,9 @@
   z
 }
 
+# ------------------------------------------------------------
 # Core Z-Algorithm function
+# ------------------------------------------------------------
 z_algorithm <- function(pattern, text) {
   #' Z-Algorithm for String Pattern Matching
   #'
@@ -93,14 +97,18 @@ z_algorithm <- function(pattern, text) {
   return(result)
 }
 
+# ------------------------------------------------------------
 # Helper: visualize Z-array
+# ------------------------------------------------------------
 print_z_array <- function(s) {
   z <- .z_array(s)
   cat("Z-array for", s, ":\n")
   cat(paste(z, collapse = " "), "\n\n")
 }
 
+# ------------------------------------------------------------
 # Example Usage & Testing
+# ------------------------------------------------------------
 cat("=== Z-Algorithm for String Matching ===\n\n")
 
 # Test 1: Basic Example
@@ -129,3 +137,7 @@ cat("Result:", if (length(result) == 0) "No matches found" else result, "\n\n")
 # Test 4: Show Z-Array
 cat("Test 4: Show Z-Array\n")
 print_z_array(paste0("abc$", "ababcabc"))
+
+# ------------------------------------------------------------
+# End of File
+# ------------------------------------------------------------
