@@ -115,7 +115,7 @@ z_algorithm <- function(pattern, text) {
 #' print_z_array(paste0("abc$", "ababcabc"))
 print_z_array <- function(s) {
   z <- .z_array(s)
-  cat("Z-array for", s, ":\n")
+  cat("Z-array for", dQuote(s), ":\n")
   cat(paste(z, collapse = " "), "\n\n")
 }
 
