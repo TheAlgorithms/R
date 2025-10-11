@@ -6,8 +6,9 @@
   * [Decision Tree](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/decision_tree.r)
   * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/gradient_boosting_algorithms.r)
   * [Knn](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/knn.r)
-  * [Lasso](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/lasso.r)
   * [Light Gbm](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/light_gbm.r)
+  * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/logistic_regression.r)
+  * [Logistic Regression 2](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/logistic_regression_2.r)
   * [Naive Bayes](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/naive_bayes.r)
   * [Random Forest](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/random_forest.r)
   * [Svm](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/svm.r)
@@ -51,8 +52,6 @@
   * [Depth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/depth_first_search.r)
   * [Dijkstra Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/dijkstra_shortest_path.r)
 
-## [Levenshtein](https://github.com/TheAlgorithms/R/blob/HEAD//levenshtein.r)
-
 ## Mathematics
   * [Amicable Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/amicable_numbers.r)
   * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
@@ -63,7 +62,6 @@
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/fibonacci.r)
   * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/first_n_fibonacci.r)
   * [Greatest Common Divisor](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/greatest_common_divisor.r)
-  * [Hamming Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/hamming_distance.r)
   * [Josephus Problem](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/josephus_problem.r)
   * [Least Common Multiple](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/least_common_multiple.r)
   * [Perfect Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/perfect_number.r)
@@ -80,13 +78,8 @@
 
 ## Regression Algorithms
   * [Ann](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/ann.r)
-  * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/gradient_boosting_algorithms.r)
-  * [Knn](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/knn.r)
-  * [Light Gbm](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/light_gbm.r)
   * [Linear Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/linear_regression.r)
   * [Linearregressionrawr](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/linearregressionrawr.r)
-  * [Logistic Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/logistic_regression.r)
-  * [Logistic Regression 2](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/logistic_regression_2.r)
   * [Multiple Linear Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/multiple_linear_regression.r)
 
 ## Searches
@@ -123,9 +116,11 @@
 ## String Manipulation
   * [Burrows](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/burrows.r)
   * [Findpalindrome](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/findpalindrome.r)
+  * [Hamming Distance](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/hamming_distance.r)
   * [Is.Anagram](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.anagram.r)
   * [Is.Lower](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.lower.r)
   * [Is.Uppercase](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.uppercase.r)
+  * [Levenshtein](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/levenshtein.r)
   * [Longest.Palindromic.Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/longest.palindromic.subsequence.r)
   * [Longest.Substring.No.Repeat](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/longest.substring.no.repeat.r)
   * [Manacher.Longest.Palindrome](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/manacher.longest.palindrome.r)
