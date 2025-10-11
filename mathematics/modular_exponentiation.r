@@ -18,7 +18,9 @@
 #' - Negative exponents are **not supported** (would require modular inverse).
 #'
 #' @examples
-#' modular_exponentiation(2, 10, 1000)   # 24
+#' # 2^10 = 1024, and 1024 mod 1000 = 24
+#' modular_exponentiation(2, 10, 1000)
+#' # [1] 24
 #' modular_exponentiation(3, 0, 7)       # 1
 #' modular_exponentiation(5, 3)          # 125 (no modulus)
 #' modular_exponentiation(-2, 5, 13)     # 6  because (-2)^5 = -32 ≡ 6 (mod 13)
