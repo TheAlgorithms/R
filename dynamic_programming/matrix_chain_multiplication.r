@@ -213,10 +213,72 @@ find_all_optimal_parentheses <- function(dimensions) {
   
   all_ways <- generate_all_parentheses(1, n)
   
-  # Filter only optimal ways (simplified - in practice, calculate cost for each)
-  # For demonstration, return first few ways
-  return(all_ways[1:min(3, length(all_ways))])
-}
+  # Helper function to compute cost of a parenthesization
+  compute_cost <- function(paren, dims) {
+    # Recursively compute cost based on parenthesization string
+    # paren: string like "(A1 × (A2 × A3))"
+    # dims: vector of dimensions
+    # Returns: cost (integer)
+    
+    # Parse the parenthesization string into a tree structure
+    # Helper: extract indices of matrices in a parenthesization
+    extract_indices <- function(s) {
+      # Returns vector of matrix indices in the string
+      matches <- gregexpr("A[0-9]+", s)
+      as.integer(unlist(regmatches(s, matches)))
+    }
+    
+    # Helper: recursively compute cost
+    recursive_cost <- function(s) {
+      # If s is a single matrix, cost is 0
+      indices <- extract_indices(s)
+      if (length(indices) == 1) {
+        return(list(cost = 0, left = indices[1], right = indices[1]))
+      }
+      
+      # Find the main split: the outermost multiplication
+      # Remove outer parentheses
+      s_trim <- substring(s, 2, nchar(s) - 1)
+      
+      # Find the split point (the × not inside parentheses)
+      depth <- 0
+      split_pos <- NULL
+      for (i in seq_len(nchar(s_trim))) {
+        ch <- substr(s_trim, i, i)
+        if (ch == "(") depth <- depth + 1
+        if (ch == ")") depth <- depth - 1
+        if (ch == "×" && depth == 0) {
+          split_pos <- i
+          break
+        }
+      }
+      if (is.null(split_pos)) {
+        # Should not happen
+        stop("Invalid parenthesization string: ", s)
+      }
+      
+      left_str <- trimws(substring(s_trim, 1, split_pos - 1))
+      right_str <- trimws(substring(s_trim, split_pos + 1))
+      
+      left <- recursive_cost(left_str)
+      right <- recursive_cost(right_str)
+      
+      # The multiplication cost: dims[left$left] x dims[left$right+1] x dims[right$right+1]
+      cost_here <- dims[left$left] * dims[left$right + 1] * dims[right$right + 1]
+      total_cost <- left$cost + right$cost + cost_here
+      return(list(cost = total_cost, left = left$left, right = right$right))
+    }
+    
+    recursive_cost(paren)$cost
+  }
+  
+  # Compute cost for each parenthesization
+  costs <- sapply(all_ways, compute_cost, dims = dimensions)
+  
+  # Find all parenthesizations with minimum cost
+  optimal_ways <- all_ways[costs == min_cost]
+  
+  return(optimal_ways)
 
 # Helper function to print DP table
 print_matrix_chain_dp <- function(dp_table, split_table, dimensions) {
