@@ -550,12 +550,12 @@ optimized_time &lt;- as.numeric(Sys.time() - start_time, units = &quot;secs&quot
 cat(&quot;Standard algorithm: LCS length =&quot;, standard_result, 
     &quot;Time:&quot;, sprintf(&quot;%.6f&quot;, standard_time), &quot;seconds\n&quot;)
 </code></pre>
-<pre><code>## Standard algorithm: LCS length = 59 Time: 0.050064 seconds
+<pre><code>## Standard algorithm: LCS length = 59 Time: 0.052980 seconds
 </code></pre>
 <pre><code class="language-r">cat(&quot;Optimized algorithm: LCS length =&quot;, optimized_result, 
     &quot;Time:&quot;, sprintf(&quot;%.6f&quot;, optimized_time), &quot;seconds\n&quot;)
 </code></pre>
-<pre><code>## Optimized algorithm: LCS length = 59 Time: 0.046882 seconds
+<pre><code>## Optimized algorithm: LCS length = 59 Time: 0.049993 seconds
 </code></pre>
 <pre><code class="language-r">cat(&quot;Results match:&quot;, standard_result == optimized_result, &quot;\n\n&quot;)
 </code></pre>
