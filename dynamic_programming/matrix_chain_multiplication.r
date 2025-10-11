@@ -405,8 +405,13 @@ cat("Minimum cost:", analysis_result$min_cost, "\n")
 
 # Compare with naive left-to-right multiplication
 naive_cost <- 0
-for (i in 1:(length(dims_analysis) - 2)) {
-  naive_cost <- naive_cost + dims_analysis[1] * dims_analysis[i + 1] * dims_analysis[i + 2]
+# Simulate left-to-right multiplication, updating result matrix dimensions
+rows <- dims_analysis[1]
+cols <- dims_analysis[2]
+for (i in 2:(length(dims_analysis) - 1)) {
+  next_cols <- dims_analysis[i + 1]
+  naive_cost <- naive_cost + rows * cols * next_cols
+  cols <- next_cols
 }
 
 cat("Naive left-to-right cost:", naive_cost, "\n")
