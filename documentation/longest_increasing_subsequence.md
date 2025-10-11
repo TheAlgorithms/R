@@ -398,7 +398,7 @@ cat("Time taken:", sprintf("%.4f sec", opt_time), "\n")
 ```
 
 ```
-## Time taken: 0.0148 sec
+## Time taken: 0.0159 sec
 ```
 
 ``` r
@@ -420,7 +420,7 @@ cat("Time taken:", sprintf("%.4f sec", basic_time), "\n")
 ```
 
 ```
-## Time taken: 0.0020 sec
+## Time taken: 0.0019 sec
 ```
 
 ``` r

@@ -540,7 +540,7 @@ cat("Standard algorithm: LCS length =", standard_result,
 ```
 
 ```
-## Standard algorithm: LCS length = 59 Time: 0.050064 seconds
+## Standard algorithm: LCS length = 59 Time: 0.050646 seconds
 ```
 
 ``` r
@@ -549,7 +549,7 @@ cat("Optimized algorithm: LCS length =", optimized_result,
 ```
 
 ```
-## Optimized algorithm: LCS length = 59 Time: 0.046882 seconds
+## Optimized algorithm: LCS length = 59 Time: 0.046827 seconds
 ```
 
 ``` r
