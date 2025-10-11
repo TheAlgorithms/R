@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 ols<-function(y,x){
     data<-model.matrix(y ~ ., data = x)
     decomp <- svd(data)

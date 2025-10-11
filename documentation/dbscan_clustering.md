@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(dbscan)
 ```
 
@@ -8,7 +8,7 @@ library(dbscan)
 ## Error in library(dbscan): there is no package called 'dbscan'
 ```
 
-```r
+``` r
 cl <- dbscan(iris[,-5], eps = .5, minPts = 5)
 ```
 
@@ -16,7 +16,7 @@ cl <- dbscan(iris[,-5], eps = .5, minPts = 5)
 ## Error in dbscan(iris[, -5], eps = 0.5, minPts = 5): could not find function "dbscan"
 ```
 
-```r
+``` r
 plot(iris[,-5], col = cl$cluster)
 ```
 

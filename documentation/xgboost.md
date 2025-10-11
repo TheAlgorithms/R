@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(tidyverse)
 ```
 
@@ -8,7 +8,7 @@ library(tidyverse)
 ## Error in library(tidyverse): there is no package called 'tidyverse'
 ```
 
-```r
+``` r
 library(xgboost)
 ```
 
@@ -16,7 +16,7 @@ library(xgboost)
 ## Error in library(xgboost): there is no package called 'xgboost'
 ```
 
-```r
+``` r
 ind<-sample(2,nrow(diamonds),replace = T,prob = c(0.7,0.3))
 ```
 
@@ -24,23 +24,23 @@ ind<-sample(2,nrow(diamonds),replace = T,prob = c(0.7,0.3))
 ## Error in nrow(diamonds): object 'diamonds' not found
 ```
 
-```r
+``` r
 train.set<-diamonds[ind==1,]
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'diamonds' not found
+## Error: object 'diamonds' not found
 ```
 
-```r
+``` r
 test.set<-diamonds[ind==2,]
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'diamonds' not found
+## Error: object 'diamonds' not found
 ```
 
-```r
+``` r
 xgb.train<-bind_cols(select_if(train.set,is.numeric),model.matrix(~cut-1,train.set) %>% as.tibble(),model.matrix(~color-1,train.set) %>% as.tibble(),model.matrix(~clarity-1,train.set) %>% as.tibble())
 ```
 
@@ -48,7 +48,7 @@ xgb.train<-bind_cols(select_if(train.set,is.numeric),model.matrix(~cut-1,train.s
 ## Error in bind_cols(select_if(train.set, is.numeric), model.matrix(~cut - : could not find function "bind_cols"
 ```
 
-```r
+``` r
 xgboost.train<-xgb.DMatrix(data = as.matrix(select(xgb.train,-price)),label=xgb.train$price)
 ```
 
@@ -56,7 +56,7 @@ xgboost.train<-xgb.DMatrix(data = as.matrix(select(xgb.train,-price)),label=xgb.
 ## Error in xgb.DMatrix(data = as.matrix(select(xgb.train, -price)), label = xgb.train$price): could not find function "xgb.DMatrix"
 ```
 
-```r
+``` r
 xgb.test<-bind_cols(select_if(test.set,is.numeric),model.matrix(~cut-1,test.set) %>% as.tibble(),model.matrix(~color-1,test.set) %>% as.tibble(),model.matrix(~clarity-1,test.set) %>% as.tibble())
 ```
 
@@ -64,7 +64,7 @@ xgb.test<-bind_cols(select_if(test.set,is.numeric),model.matrix(~cut-1,test.set)
 ## Error in bind_cols(select_if(test.set, is.numeric), model.matrix(~cut - : could not find function "bind_cols"
 ```
 
-```r
+``` r
 xgboost.test<-xgb.DMatrix(data = select(xgb.test,-price) %>% as.matrix(),label=xgb.test$price)
 ```
 
@@ -72,7 +72,7 @@ xgboost.test<-xgb.DMatrix(data = select(xgb.test,-price) %>% as.matrix(),label=x
 ## Error in xgb.DMatrix(data = select(xgb.test, -price) %>% as.matrix(), : could not find function "xgb.DMatrix"
 ```
 
-```r
+``` r
 param<-list(eval_metric='rmse',gamma=1,max_depth=6,nthread = 3)
 xg.model<-xgb.train(data = xgboost.train,params = param,watchlist = list(test=xgboost.test),nrounds = 500,early_stopping_rounds = 60,
                       print_every_n = 30)
@@ -82,7 +82,7 @@ xg.model<-xgb.train(data = xgboost.train,params = param,watchlist = list(test=xg
 ## Error in xgb.train(data = xgboost.train, params = param, watchlist = list(test = xgboost.test), : could not find function "xgb.train"
 ```
 
-```r
+``` r
 xg.predict<-predict(xg.model,xgboost.test)
 ```
 
@@ -90,7 +90,7 @@ xg.predict<-predict(xg.model,xgboost.test)
 ## Error in predict(xg.model, xgboost.test): object 'xg.model' not found
 ```
 
-```r
+``` r
 mse.xgb<-sqrt(mean((test.set$price-xg.predict)^2))
 ```
 
@@ -98,7 +98,7 @@ mse.xgb<-sqrt(mean((test.set$price-xg.predict)^2))
 ## Error in mean((test.set$price - xg.predict)^2): object 'test.set' not found
 ```
 
-```r
+``` r
 plot((test.set$price-xg.predict))
 ```
 

@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 x <- cbind(x_train,y_train)
 ```
 
@@ -8,7 +8,7 @@ x <- cbind(x_train,y_train)
 ## Error in cbind(x_train, y_train): object 'x_train' not found
 ```
 
-```r
+``` r
 # Train the model using the training sets and check score
 logistic <- glm(y_train ~ ., data = x,family='binomial')
 ```
@@ -17,7 +17,7 @@ logistic <- glm(y_train ~ ., data = x,family='binomial')
 ## Error in model.frame.default(formula = y_train ~ ., data = x, drop.unused.levels = TRUE): 'data' must be a data.frame, environment, or list
 ```
 
-```r
+``` r
 summary(logistic)
 ```
 
@@ -25,7 +25,7 @@ summary(logistic)
 ## Error in summary(logistic): object 'logistic' not found
 ```
 
-```r
+``` r
 # Predict Output
 predicted= predict(logistic,x_test)
 ```
