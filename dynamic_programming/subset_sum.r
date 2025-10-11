@@ -124,7 +124,8 @@ find_all_subsets <- function(arr, target) {
   #' @return: List of all possible subsets
   
   n <- length(arr)
-  if (n == 0 || target == 0) return(list())
+  if (target == 0) return(list(c()))
+  if (n == 0) return(list())
   
   # For simplicity, return just one subset (same as main function)
   # Finding all possible subsets is complex and not essential for the algorithm demonstration
