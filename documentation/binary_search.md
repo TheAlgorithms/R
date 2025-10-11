@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 binary_search <- function(arr, target) { #function for finding position of value 
   low <- 1
   high <- length(arr) 

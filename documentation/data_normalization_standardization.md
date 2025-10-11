@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 # normalization & standardization
 normalization<-function(x){
   return((x-min(x))/(max(x)-min(x)))
@@ -23,7 +23,7 @@ head(iris)
 ## 6          5.4         3.9          1.7         0.4  setosa
 ```
 
-```r
+``` r
 # Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 # 1          5.1         3.5          1.4         0.2  setosa
 # 2          4.9         3.0          1.4         0.2  setosa
@@ -46,7 +46,7 @@ head(iris)
 ## 6          5.4         3.9          1.7         0.4
 ```
 
-```r
+``` r
 # Sepal.Length Sepal.Width Petal.Length Petal.Width
 # 1          5.1         3.5          1.4         0.2
 # 2          4.9         3.0          1.4         0.2
@@ -213,7 +213,7 @@ apply(as.matrix(iris),2,normalization)
 ## [150,]   0.44444444  0.41666667   0.69491525  0.70833333
 ```
 
-```r
+``` r
 # Sepal.Length Sepal.Width Petal.Length Petal.Width
 # [1,]   0.22222222  0.62500000   0.06779661  0.04166667
 # [2,]   0.16666667  0.41666667   0.06779661  0.04166667
@@ -381,7 +381,7 @@ apply(as.matrix(iris),2,standardization)
 ## [150,]   0.06843254 -0.13153881   0.76021149  0.7880306775
 ```
 
-```r
+``` r
 # Sepal.Length Sepal.Width Petal.Length   Petal.Width
 # [1,]  -0.89767388  1.01560199  -1.33575163 -1.3110521482
 # [2,]  -1.13920048 -0.13153881  -1.33575163 -1.3110521482

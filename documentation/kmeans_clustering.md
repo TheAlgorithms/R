@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 set.seed(42)
 cl <- kmeans(iris[,-5], 3)
 plot(iris[,-5], col = cl$cluster)
