@@ -1,4 +1,4 @@
-newtonRaphson <- function(f, fprime, x0, tol = 1e-6, max_iter = 100) {
+newton_raphson <- function(f, fprime, x0, tol = 1e-6, max_iter = 100) {
   x <- x0
   for (i in 1:max_iter) {
     deriv <- fprime(x)
