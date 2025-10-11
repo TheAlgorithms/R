@@ -289,7 +289,9 @@ cat("Minimum sum:", result_col$min_sum, "\n\n")
 
 # Test 4: Larger Grid
 cat("Test 4: Larger Grid (4x5)\n")
-set.seed(42)
+# Set random seed for reproducibility in tests. The value 42 is chosen arbitrarily.
+SEED <- 42
+set.seed(SEED)
 grid_large <- matrix(sample(1:9, 20, replace = TRUE), nrow = 4, ncol = 5)
 cat("Grid:\n")
 print(grid_large)
