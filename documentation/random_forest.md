@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(randomForest)
 ```
 
@@ -8,7 +8,7 @@ library(randomForest)
 ## Error in library(randomForest): there is no package called 'randomForest'
 ```
 
-```r
+``` r
 x <- cbind(x_train,y_train)
 ```
 
@@ -16,7 +16,7 @@ x <- cbind(x_train,y_train)
 ## Error in cbind(x_train, y_train): object 'x_train' not found
 ```
 
-```r
+``` r
 # Fitting model
 fit <- randomForest(Species ~ ., x,ntree=500)
 ```
@@ -25,7 +25,7 @@ fit <- randomForest(Species ~ ., x,ntree=500)
 ## Error in randomForest(Species ~ ., x, ntree = 500): could not find function "randomForest"
 ```
 
-```r
+``` r
 summary(fit)
 ```
 
@@ -33,7 +33,7 @@ summary(fit)
 ## Error in summary(fit): object 'fit' not found
 ```
 
-```r
+``` r
 # Predict Output 
 predicted= predict(fit,x_test)
 ```

@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(arules)
 ```
 
@@ -8,7 +8,7 @@ library(arules)
 ## Error in library(arules): there is no package called 'arules'
 ```
 
-```r
+``` r
 groceries <- read.transactions("groceries.csv", sep=",")
 ```
 
@@ -16,7 +16,7 @@ groceries <- read.transactions("groceries.csv", sep=",")
 ## Error in read.transactions("groceries.csv", sep = ","): could not find function "read.transactions"
 ```
 
-```r
+``` r
 summary(groceries)
 ```
 
@@ -24,7 +24,7 @@ summary(groceries)
 ## Error in summary(groceries): object 'groceries' not found
 ```
 
-```r
+``` r
 itemFrequencyPlot(groceries, topN=20)
 ```
 
@@ -32,7 +32,7 @@ itemFrequencyPlot(groceries, topN=20)
 ## Error in itemFrequencyPlot(groceries, topN = 20): could not find function "itemFrequencyPlot"
 ```
 
-```r
+``` r
 #sample for randomly extracting samples, image function for visualing sparse matrix
 image(sample(groceries,100))
 ```
@@ -41,7 +41,7 @@ image(sample(groceries,100))
 ## Error in sample(groceries, 100): object 'groceries' not found
 ```
 
-```r
+``` r
 groceries_rule <- apriori(data=groceries, parameter=list(support=0.006, confidence=0.25, minlen=2))
 ```
 
@@ -49,7 +49,7 @@ groceries_rule <- apriori(data=groceries, parameter=list(support=0.006, confiden
 ## Error in apriori(data = groceries, parameter = list(support = 0.006, confidence = 0.25, : could not find function "apriori"
 ```
 
-```r
+``` r
 plotly_arules(groceries_rule)
 ```
 
@@ -57,7 +57,7 @@ plotly_arules(groceries_rule)
 ## Error in plotly_arules(groceries_rule): could not find function "plotly_arules"
 ```
 
-```r
+``` r
 summary(groceries_rule)
 ```
 

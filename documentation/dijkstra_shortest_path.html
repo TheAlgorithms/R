@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="generator" content="litedown 0.7">
+<title></title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+body, .abstract, code, .footnotes, footer, #refs, .caption { font-size: .9em; }
+li li { font-size: .95em; }
+ul:has(li > input[type="checkbox"]) { list-style: none; padding-left: 1em; }
+*, :before, :after { box-sizing: border-box; }
+a { color: steelblue; }
+pre, img { max-width: 100%; }
+pre { white-space: pre-wrap; word-break: break-word; }
+pre code { display: block; padding: 1em; overflow-x: auto; }
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre, th) > code, code[class], div > .caption { background: #f8f8f8; }
+pre > code:is(:not([class]), .language-plain, .language-none, .plain), .box, .figure, .table { background: inherit; border: 1px solid #eee; }
+pre > code {
+  &.message { border-color: #9eeaf9; }
+  &.warning { background: #fff3cd; border-color: #fff3cd; }
+  &.error { background: #f8d7da; border-color: #f8d7da; }
+}
+.fenced-chunk { border-left: 1px solid #666; }
+.code-fence {
+  opacity: .4;
+  border: 1px dashed #666;
+  border-left: 2px solid;
+  &:hover { opacity: inherit; }
+}
+.box, .figure, .table, table { margin: 1em auto; }
+div > .caption { padding: 1px 1em; }
+.figure { p:has(img, svg), pre:has(svg) { text-align: center; } }
+.flex-col { display: flex; justify-content: space-between; }
+table {
+  &:only-child:not(.table > *) { margin: auto; }
+  th, td { padding: 5px; font-variant-numeric: tabular-nums; }
+  thead, tfoot, tr:nth-child(even) { background: whitesmoke; }
+  thead th { border-bottom: 1px solid #ddd; }
+  &:not(.datatable-table) {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+}
+blockquote {
+  color: #666;
+  margin: 0;
+  padding: 1px 1em;
+  border-left: .5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC {
+  a { text-decoration: none; }
+  ul { list-style: none; padding-left: 1em; }
+  & > ul { padding: 0; }
+  ul ul { border-left: 1px solid lightsteelblue; }
+}
+.body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.main-number::after { content: "."; }
+span[class^="ref-number-"] { font-weight: bold; }
+.ref-number-fig::after, .ref-number-tab::after { content: ":"; }
+.cross-ref-chp::before { content: "Chapter "; }
+.cross-ref-sec::before { content: "Section "; }
+.cross-ref-fig::before, .ref-number-fig::before { content: "Figure "; }
+.cross-ref-tab::before, .ref-number-tab::before { content: "Table "; }
+.cross-ref-eqn::before, .MathJax_ref:has(mjx-mtext > mjx-c + mjx-c)::before { content: "Equation "; }
+.abstract, #refs {
+  &::before { display: block; margin: 1em auto; font-weight: bold; }
+}
+.abstract::before { content: "Abstract"; text-align: center; }
+#refs::before { content: "Bibliography"; font-size: 1.5em; }
+.ref-paren-open::before { content: "("; }
+.ref-paren-close::after { content: ")"; }
+.ref-semicolon::after { content: "; "; }
+.ref-and::after { content: " and "; }
+.ref-et-al::after { content: " et al."; font-style: italic; }
+.footnote-ref a {
+  &::before { content: "["; }
+  &::after { content: "]"; }
+}
+section.footnotes {
+  margin-top: 2em;
+  &::before { content: ""; display: block; max-width: 20em; }
+}
+.fade {
+  background: repeating-linear-gradient(135deg, white, white 30px, #ddd 32px, #ddd 32px);
+  opacity: 0.6;
+}
+
+@media print {
+  body { max-width: 100%; }
+  tr, img { break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  body:not(.pagesjs) pre:has(.line-numbers):not(:hover) { white-space: pre; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.14/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+<div class="frontmatter">
+</div>
+<div class="body">
+<pre><code class="language-r"># Dijkstra's Shortest Path Algorithm
+#
+# Dijkstra's algorithm finds the shortest path between a source vertex and all other vertices
+# in a weighted graph with non-negative edge weights. It uses a greedy approach with a priority queue.
+#
+# Time Complexity: O((V + E) log V) with binary heap, O(V^2) with simple array
+# Space Complexity: O(V) for distance and visited arrays
+#
+# Input: A weighted graph represented as adjacency list with weights, and a source vertex
+# Output: Shortest distances from source to all vertices and the paths
+
+# Priority queue implementation using simple vector (for educational purposes)
+# In production, use more efficient data structures
+create_priority_queue &lt;- function() {
+  list(
+    elements = data.frame(vertex = integer(0), distance = numeric(0)),
+    size = 0
+  )
+}
+
+# Insert element into priority queue
+pq_insert &lt;- function(pq, vertex, distance) {
+  pq$elements &lt;- rbind(pq$elements, data.frame(vertex = vertex, distance = distance))
+  pq$size &lt;- pq$size + 1
+  return(pq)
+}
+
+# Extract minimum element from priority queue
+pq_extract_min &lt;- function(pq) {
+  if (pq$size == 0) {
+    return(list(pq = pq, min_element = NULL))
+  }
+  
+  min_idx &lt;- which.min(pq$elements$distance)
+  min_element &lt;- pq$elements[min_idx, ]
+  pq$elements &lt;- pq$elements[-min_idx, ]
+  pq$size &lt;- pq$size - 1
+  
+  return(list(pq = pq, min_element = min_element))
+}
+
+# Check if priority queue is empty
+pq_is_empty &lt;- function(pq) {
+  return(pq$size == 0)
+}
+
+# Main Dijkstra's algorithm implementation
+dijkstra_shortest_path &lt;- function(graph, source) {
+  # Get all vertices in the graph
+  all_vertices &lt;- unique(c(names(graph), unlist(lapply(graph, function(x) x$vertex))))
+  num_vertices &lt;- max(all_vertices)
+  
+  # Initialize distances and previous vertices
+  distances &lt;- rep(Inf, num_vertices)
+  previous &lt;- rep(-1, num_vertices)
+  visited &lt;- rep(FALSE, num_vertices)
+  
+  # Set source distance to 0
+  distances[source] &lt;- 0
+  
+  # Create priority queue and add source
+  pq &lt;- create_priority_queue()
+  pq &lt;- pq_insert(pq, source, 0)
+  
+  while (!pq_is_empty(pq)) {
+    # Extract vertex with minimum distance
+    result &lt;- pq_extract_min(pq)
+    pq &lt;- result$pq
+    current &lt;- result$min_element
+    
+    if (is.null(current)) break
+    
+    u &lt;- current$vertex
+    
+    # Skip if already visited
+    if (visited[u]) next
+    
+    # Mark as visited
+    visited[u] &lt;- TRUE
+    
+    # Update distances to neighbors
+    if (as.character(u) %in% names(graph)) {
+      for (edge in graph[[as.character(u)]]) {
+        v &lt;- edge$vertex
+        weight &lt;- edge$weight
+        
+        # Relaxation step
+        if (!visited[v] &amp;&amp; distances[u] + weight &lt; distances[v]) {
+          distances[v] &lt;- distances[u] + weight
+          previous[v] &lt;- u
+          pq &lt;- pq_insert(pq, v, distances[v])
+        }
+      }
+    }
+  }
+  
+  return(list(
+    distances = distances,
+    previous = previous
+  ))
+}
+
+# Reconstruct shortest path from source to target
+get_shortest_path &lt;- function(dijkstra_result, source, target) {
+  previous &lt;- dijkstra_result$previous
+  distances &lt;- dijkstra_result$distances
+  
+  # Check if target is reachable
+  if (distances[target] == Inf) {
+    return(list(
+      path = NULL,
+      distance = Inf
+    ))
+  }
+  
+  # Reconstruct path by backtracking
+  path &lt;- c()
+  current &lt;- target
+  
+  while (current != -1) {
+    path &lt;- c(current, path)
+    current &lt;- previous[current]
+  }
+  
+  return(list(
+    path = path,
+    distance = distances[target]
+  ))
+}
+
+# Find shortest paths to all vertices
+get_all_shortest_paths &lt;- function(dijkstra_result, source) {
+  distances &lt;- dijkstra_result$distances
+  previous &lt;- dijkstra_result$previous
+  paths &lt;- list()
+  
+  for (target in 1:length(distances)) {
+    if (distances[target] != Inf) {
+      path_result &lt;- get_shortest_path(dijkstra_result, source, target)
+      paths[[as.character(target)]] &lt;- path_result
+    }
+  }
+  
+  return(paths)
+}
+
+# Example usage and testing
+cat(&quot;=== Dijkstra's Shortest Path Algorithm ===\n&quot;)
+</code></pre>
+<pre><code>## === Dijkstra's Shortest Path Algorithm ===
+</code></pre>
+<pre><code class="language-r"># Create a weighted graph as adjacency list
+# Graph structure with weights:
+#       1
+#     /   \
+#   4/     \2
+#   /       \
+#  2         3
+#  |3      /1
+#  |      /
+#  4-----5
+#     2
+weighted_graph &lt;- list(
+  &quot;1&quot; = list(
+    list(vertex = 2, weight = 4),
+    list(vertex = 3, weight = 2)
+  ),
+  &quot;2&quot; = list(
+    list(vertex = 4, weight = 3)
+  ),
+  &quot;3&quot; = list(
+    list(vertex = 5, weight = 1)
+  ),
+  &quot;4&quot; = list(
+    list(vertex = 5, weight = 2)
+  ),
+  &quot;5&quot; = list()
+)
+
+cat(&quot;Weighted graph structure:\n&quot;)
+</code></pre>
+<pre><code>## Weighted graph structure:
+</code></pre>
+<pre><code class="language-r">for (vertex in names(weighted_graph)) {
+  edges &lt;- weighted_graph[[vertex]]
+  if (length(edges) &gt; 0) {
+    edge_strs &lt;- sapply(edges, function(e) paste0(e$vertex, &quot;(&quot;, e$weight, &quot;)&quot;))
+    cat(&quot;Vertex&quot;, vertex, &quot;-&gt; [&quot;, paste(edge_strs, collapse = &quot;, &quot;), &quot;]\n&quot;)
+  } else {
+    cat(&quot;Vertex&quot;, vertex, &quot;-&gt; []\n&quot;)
+  }
+}
+</code></pre>
+<pre><code>## Vertex 1 -&gt; [ 2(4), 3(2) ]
+## Vertex 2 -&gt; [ 4(3) ]
+## Vertex 3 -&gt; [ 5(1) ]
+## Vertex 4 -&gt; [ 5(2) ]
+## Vertex 5 -&gt; []
+</code></pre>
+<pre><code class="language-r"># Run Dijkstra's algorithm from vertex 1
+cat(&quot;\nRunning Dijkstra's algorithm from vertex 1:\n&quot;)
+</code></pre>
+<pre><code>## 
+## Running Dijkstra's algorithm from vertex 1:
+</code></pre>
+<pre><code class="language-r">result &lt;- dijkstra_shortest_path(weighted_graph, 1)
+
+# Display shortest distances
+cat(&quot;Shortest distances from vertex 1:\n&quot;)
+</code></pre>
+<pre><code>## Shortest distances from vertex 1:
+</code></pre>
+<pre><code class="language-r">for (i in 1:length(result$distances)) {
+  if (result$distances[i] != Inf) {
+    cat(&quot;To vertex&quot;, i, &quot;: distance =&quot;, result$distances[i], &quot;\n&quot;)
+  }
+}
+</code></pre>
+<pre><code>## To vertex 1 : distance = 0 
+## To vertex 2 : distance = 4 
+## To vertex 3 : distance = 2 
+## To vertex 4 : distance = 7 
+## To vertex 5 : distance = 3
+</code></pre>
+<pre><code class="language-r"># Get shortest path to specific vertex
+cat(&quot;\nShortest path from 1 to 5:\n&quot;)
+</code></pre>
+<pre><code>## 
+## Shortest path from 1 to 5:
+</code></pre>
+<pre><code class="language-r">path_to_5 &lt;- get_shortest_path(result, 1, 5)
+if (!is.null(path_to_5$path)) {
+  cat(&quot;Path:&quot;, paste(path_to_5$path, collapse = &quot; -&gt; &quot;), &quot;\n&quot;)
+  cat(&quot;Distance:&quot;, path_to_5$distance, &quot;\n&quot;)
+}
+</code></pre>
+<pre><code>## Path: 1 -&gt; 3 -&gt; 5 
+## Distance: 3
+</code></pre>
+<pre><code class="language-r"># Get all shortest paths
+cat(&quot;\nAll shortest paths from vertex 1:\n&quot;)
+</code></pre>
+<pre><code>## 
+## All shortest paths from vertex 1:
+</code></pre>
+<pre><code class="language-r">all_paths &lt;- get_all_shortest_paths(result, 1)
+for (target in names(all_paths)) {
+  path_info &lt;- all_paths[[target]]
+  cat(&quot;To vertex&quot;, target, &quot;: &quot;, paste(path_info$path, collapse = &quot; -&gt; &quot;), 
+      &quot; (distance:&quot;, path_info$distance, &quot;)\n&quot;)
+}
+</code></pre>
+<pre><code>## To vertex 1 :  1  (distance: 0 )
+## To vertex 2 :  1 -&gt; 2  (distance: 4 )
+## To vertex 3 :  1 -&gt; 3  (distance: 2 )
+## To vertex 4 :  1 -&gt; 2 -&gt; 4  (distance: 7 )
+## To vertex 5 :  1 -&gt; 3 -&gt; 5  (distance: 3 )
+</code></pre>
+<pre><code class="language-r"># Example with a more complex graph
+cat(&quot;\n=== More Complex Weighted Graph Example ===\n&quot;)
+</code></pre>
+<pre><code>## 
+## === More Complex Weighted Graph Example ===
+</code></pre>
+<pre><code class="language-r">complex_weighted_graph &lt;- list(
+  &quot;1&quot; = list(
+    list(vertex = 2, weight = 7),
+    list(vertex = 3, weight = 9),
+    list(vertex = 6, weight = 14)
+  ),
+  &quot;2&quot; = list(
+    list(vertex = 3, weight = 10),
+    list(vertex = 4, weight = 15)
+  ),
+  &quot;3&quot; = list(
+    list(vertex = 4, weight = 11),
+    list(vertex = 6, weight = 2)
+  ),
+  &quot;4&quot; = list(
+    list(vertex = 5, weight = 6)
+  ),
+  &quot;5&quot; = list(),
+  &quot;6&quot; = list(
+    list(vertex = 5, weight = 9)
+  )
+)
+
+cat(&quot;Complex weighted graph from vertex 1:\n&quot;)
+</code></pre>
+<pre><code>## Complex weighted graph from vertex 1:
+</code></pre>
+<pre><code class="language-r">complex_result &lt;- dijkstra_shortest_path(complex_weighted_graph, 1)
+
+cat(&quot;Shortest distances:\n&quot;)
+</code></pre>
+<pre><code>## Shortest distances:
+</code></pre>
+<pre><code class="language-r">for (i in 1:length(complex_result$distances)) {
+  if (complex_result$distances[i] != Inf) {
+    cat(&quot;To vertex&quot;, i, &quot;: distance =&quot;, complex_result$distances[i], &quot;\n&quot;)
+  }
+}
+</code></pre>
+<pre><code>## To vertex 1 : distance = 0 
+## To vertex 2 : distance = 7 
+## To vertex 3 : distance = 9 
+## To vertex 4 : distance = 20 
+## To vertex 5 : distance = 20 
+## To vertex 6 : distance = 11
+</code></pre>
+<pre><code class="language-r"># Shortest path to vertex 5
+path_to_5_complex &lt;- get_shortest_path(complex_result, 1, 5)
+if (!is.null(path_to_5_complex$path)) {
+  cat(&quot;Shortest path from 1 to 5:&quot;, paste(path_to_5_complex$path, collapse = &quot; -&gt; &quot;), &quot;\n&quot;)
+  cat(&quot;Distance:&quot;, path_to_5_complex$distance, &quot;\n&quot;)
+}
+</code></pre>
+<pre><code>## Shortest path from 1 to 5: 1 -&gt; 3 -&gt; 6 -&gt; 5 
+## Distance: 20
+</code></pre>
+</div>
+</body>
+</html>
