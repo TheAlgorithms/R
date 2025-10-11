@@ -111,8 +111,10 @@ minimum_path_sum_optimized <- function(grid) {
     dp[1] <- grid[1, 1]
     
     # Initialize first row
-    for (i in 2:m) {
-      dp[i] <- dp[i - 1] + grid[i, 1]
+    if (m > 1) {
+      for (i in 2:m) {
+        dp[i] <- dp[i - 1] + grid[i, 1]
+      }
     }
     
     # Process remaining columns
