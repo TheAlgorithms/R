@@ -115,27 +115,108 @@ section.footnotes {
 <div class="frontmatter">
 </div>
 <div class="body">
-<pre><code class="language-r">library(randomForest)
+<pre><code class="language-r"># Coin Change Problem
+#
+# The Coin Change problem finds the minimum number of coins needed to make a certain amount
+# using a given set of coin denominations.
+#
+# Time Complexity: O(amount * n) where n = number of coin denominations
+# Space Complexity: O(amount)
+#
+# Applications:
+# - Currency and cash management
+# - Making change in vending machines or payment systems
+# - Dynamic resource allocation
+# - Minimum cost problems in algorithms
+
+# Function to compute minimum coins required
+coin_change &lt;- function(coins, amount) {
+  #' Compute minimum number of coins needed to make the given amount
+  #' @param coins: Numeric vector of coin denominations
+  #' @param amount: Total amount to make
+  #' @return: Minimum number of coins required, or -1 if not possible
+  
+  # Initialize DP array
+  dp &lt;- rep(Inf, amount + 1)
+  dp[0 + 1] &lt;- 0  # zero coins needed for amount 0
+  
+  for (i in 1:amount) {
+    for (coin in coins) {
+      if (coin &lt;= i) {
+        dp[i + 1] &lt;- min(dp[i + 1], 1 + dp[i - coin + 1])
+      }
+    }
+  }
+  
+  if (dp[amount + 1] == Inf) {
+    return(-1)
+  } else {
+    return(dp[amount + 1])
+  }
+}
+
+# Function to print the DP table (for educational purposes)
+print_coin_change_dp &lt;- function(dp, amount) {
+  cat(&quot;DP Table for Coin Change:\n&quot;)
+  for (i in 0:amount) {
+    cat(sprintf(&quot;Amount %2d: %s\n&quot;, i, dp[i + 1]))
+  }
+  cat(&quot;\n&quot;)
+}
+
+
+# Example Usage &amp; Testing
+cat(&quot;=== Coin Change Problem ===\n\n&quot;)
 </code></pre>
-<pre><code>## Error in library(randomForest): there is no package called 'randomForest'
+<pre><code>## === Coin Change Problem ===
 </code></pre>
-<pre><code class="language-r">x &lt;- cbind(x_train,y_train)
+<pre><code class="language-r"># Test 1: Basic Example
+coins &lt;- c(1, 2, 5)
+amount &lt;- 11
+cat(&quot;Coins:&quot;, paste(coins, collapse = &quot;, &quot;), &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in cbind(x_train, y_train): object 'x_train' not found
+<pre><code>## Coins: 1, 2, 5
 </code></pre>
-<pre><code class="language-r"># Fitting model
-fit &lt;- randomForest(Species ~ ., x,ntree=500)
+<pre><code class="language-r">cat(&quot;Amount:&quot;, amount, &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in randomForest(Species ~ ., x, ntree = 500): could not find function &quot;randomForest&quot;
+<pre><code>## Amount: 11
 </code></pre>
-<pre><code class="language-r">summary(fit)
+<pre><code class="language-r">min_coins &lt;- coin_change(coins, amount)
+cat(&quot;Minimum Coins Needed:&quot;, min_coins, &quot;\n\n&quot;)
 </code></pre>
-<pre><code>## Error in summary(fit): object 'fit' not found
+<pre><code>## Minimum Coins Needed: 3
 </code></pre>
-<pre><code class="language-r"># Predict Output 
-predicted= predict(fit,x_test)
+<pre><code class="language-r"># Test 2: No solution case
+coins &lt;- c(2, 4)
+amount &lt;- 7
+cat(&quot;Coins:&quot;, paste(coins, collapse = &quot;, &quot;), &quot;\n&quot;)
 </code></pre>
-<pre><code>## Error in predict(fit, x_test): object 'fit' not found
+<pre><code>## Coins: 2, 4
+</code></pre>
+<pre><code class="language-r">cat(&quot;Amount:&quot;, amount, &quot;\n&quot;)
+</code></pre>
+<pre><code>## Amount: 7
+</code></pre>
+<pre><code class="language-r">min_coins &lt;- coin_change(coins, amount)
+cat(&quot;Minimum Coins Needed:&quot;, min_coins, &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Minimum Coins Needed: -1
+</code></pre>
+<pre><code class="language-r"># Test 3: Larger dataset
+coins &lt;- c(1, 3, 4, 5)
+amount &lt;- 7
+cat(&quot;Coins:&quot;, paste(coins, collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Coins: 1, 3, 4, 5
+</code></pre>
+<pre><code class="language-r">cat(&quot;Amount:&quot;, amount, &quot;\n&quot;)
+</code></pre>
+<pre><code>## Amount: 7
+</code></pre>
+<pre><code class="language-r">min_coins &lt;- coin_change(coins, amount)
+cat(&quot;Minimum Coins Needed:&quot;, min_coins, &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Minimum Coins Needed: 2
 </code></pre>
 </div>
 </body>

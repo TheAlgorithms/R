@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(knn)
 ```
 
@@ -8,7 +8,7 @@ library(knn)
 ## Error in library(knn): there is no package called 'knn'
 ```
 
-```r
+``` r
 x <- cbind(x_train,y_train)
 ```
 
@@ -16,7 +16,7 @@ x <- cbind(x_train,y_train)
 ## Error in cbind(x_train, y_train): object 'x_train' not found
 ```
 
-```r
+``` r
 # Fitting model
 fit <-knn(y_train ~ ., data = x,k=5)
 ```
@@ -25,7 +25,7 @@ fit <-knn(y_train ~ ., data = x,k=5)
 ## Error in knn(y_train ~ ., data = x, k = 5): could not find function "knn"
 ```
 
-```r
+``` r
 summary(fit)
 ```
 
@@ -33,7 +33,7 @@ summary(fit)
 ## Error in summary(fit): object 'fit' not found
 ```
 
-```r
+``` r
 # Predict Output 
 predicted= predict(fit,x_test)
 ```

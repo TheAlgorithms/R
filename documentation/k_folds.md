@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 # K folds cross validation is essential for machine learning
 # createFolds function in package caret is easy to use
 # here we write our own function

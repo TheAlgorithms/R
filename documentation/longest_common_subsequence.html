@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="generator" content="litedown 0.7">
+<title></title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+body, .abstract, code, .footnotes, footer, #refs, .caption { font-size: .9em; }
+li li { font-size: .95em; }
+ul:has(li > input[type="checkbox"]) { list-style: none; padding-left: 1em; }
+*, :before, :after { box-sizing: border-box; }
+a { color: steelblue; }
+pre, img { max-width: 100%; }
+pre { white-space: pre-wrap; word-break: break-word; }
+pre code { display: block; padding: 1em; overflow-x: auto; }
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre, th) > code, code[class], div > .caption { background: #f8f8f8; }
+pre > code:is(:not([class]), .language-plain, .language-none, .plain), .box, .figure, .table { background: inherit; border: 1px solid #eee; }
+pre > code {
+  &.message { border-color: #9eeaf9; }
+  &.warning { background: #fff3cd; border-color: #fff3cd; }
+  &.error { background: #f8d7da; border-color: #f8d7da; }
+}
+.fenced-chunk { border-left: 1px solid #666; }
+.code-fence {
+  opacity: .4;
+  border: 1px dashed #666;
+  border-left: 2px solid;
+  &:hover { opacity: inherit; }
+}
+.box, .figure, .table, table { margin: 1em auto; }
+div > .caption { padding: 1px 1em; }
+.figure { p:has(img, svg), pre:has(svg) { text-align: center; } }
+.flex-col { display: flex; justify-content: space-between; }
+table {
+  &:only-child:not(.table > *) { margin: auto; }
+  th, td { padding: 5px; font-variant-numeric: tabular-nums; }
+  thead, tfoot, tr:nth-child(even) { background: whitesmoke; }
+  thead th { border-bottom: 1px solid #ddd; }
+  &:not(.datatable-table) {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+}
+blockquote {
+  color: #666;
+  margin: 0;
+  padding: 1px 1em;
+  border-left: .5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC {
+  a { text-decoration: none; }
+  ul { list-style: none; padding-left: 1em; }
+  & > ul { padding: 0; }
+  ul ul { border-left: 1px solid lightsteelblue; }
+}
+.body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.main-number::after { content: "."; }
+span[class^="ref-number-"] { font-weight: bold; }
+.ref-number-fig::after, .ref-number-tab::after { content: ":"; }
+.cross-ref-chp::before { content: "Chapter "; }
+.cross-ref-sec::before { content: "Section "; }
+.cross-ref-fig::before, .ref-number-fig::before { content: "Figure "; }
+.cross-ref-tab::before, .ref-number-tab::before { content: "Table "; }
+.cross-ref-eqn::before, .MathJax_ref:has(mjx-mtext > mjx-c + mjx-c)::before { content: "Equation "; }
+.abstract, #refs {
+  &::before { display: block; margin: 1em auto; font-weight: bold; }
+}
+.abstract::before { content: "Abstract"; text-align: center; }
+#refs::before { content: "Bibliography"; font-size: 1.5em; }
+.ref-paren-open::before { content: "("; }
+.ref-paren-close::after { content: ")"; }
+.ref-semicolon::after { content: "; "; }
+.ref-and::after { content: " and "; }
+.ref-et-al::after { content: " et al."; font-style: italic; }
+.footnote-ref a {
+  &::before { content: "["; }
+  &::after { content: "]"; }
+}
+section.footnotes {
+  margin-top: 2em;
+  &::before { content: ""; display: block; max-width: 20em; }
+}
+.fade {
+  background: repeating-linear-gradient(135deg, white, white 30px, #ddd 32px, #ddd 32px);
+  opacity: 0.6;
+}
+
+@media print {
+  body { max-width: 100%; }
+  tr, img { break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  body:not(.pagesjs) pre:has(.line-numbers):not(:hover) { white-space: pre; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.14/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+<div class="frontmatter">
+</div>
+<div class="body">
+<pre><code class="language-r"># Longest Common Subsequence (LCS) Algorithm
+#
+# The LCS problem finds the longest subsequence common to two sequences.
+# A subsequence is a sequence derived from another sequence by deleting some 
+# or no elements without changing the order of the remaining elements.
+#
+# Time Complexity: O(m * n) where m, n are lengths of the sequences
+# Space Complexity: O(m * n) for the DP table, O(min(m, n)) optimized version
+#
+# Applications:
+# - DNA sequence analysis in bioinformatics
+# - File difference utilities (diff command)  
+# - Version control systems (git diff)
+# - Plagiarism detection
+# - Data compression algorithms
+# - Edit distance calculations
+
+# Basic LCS algorithm with full DP table
+lcs_length &lt;- function(str1, str2) {
+  #' Find the length of longest common subsequence
+  #' @param str1: First string
+  #' @param str2: Second string  
+  #' @return: Length of LCS
+  
+  m &lt;- nchar(str1)
+  n &lt;- nchar(str2)
+  
+  # Create DP table
+  dp &lt;- matrix(0, nrow = m + 1, ncol = n + 1)
+  
+  # Fill the DP table
+  for (i in 1:(m + 1)) {
+    for (j in 1:(n + 1)) {
+      if (i == 1 || j == 1) {
+        dp[i, j] &lt;- 0
+      } else if (substr(str1, i - 1, i - 1) == substr(str2, j - 1, j - 1)) {
+        dp[i, j] &lt;- dp[i - 1, j - 1] + 1
+      } else {
+        dp[i, j] &lt;- max(dp[i - 1, j], dp[i, j - 1])
+      }
+    }
+  }
+  
+  return(dp[m + 1, n + 1])
+}
+
+# LCS algorithm that returns the actual subsequence
+lcs_string &lt;- function(str1, str2) {
+  #' Find the longest common subsequence string
+  #' @param str1: First string
+  #' @param str2: Second string
+  #' @return: List containing LCS string and its length
+  
+  m &lt;- nchar(str1)
+  n &lt;- nchar(str2)
+  
+  # Create DP table
+  dp &lt;- matrix(0, nrow = m + 1, ncol = n + 1)
+  
+  # Fill the DP table
+  for (i in 1:(m + 1)) {
+    for (j in 1:(n + 1)) {
+      if (i == 1 || j == 1) {
+        dp[i, j] &lt;- 0
+      } else if (substr(str1, i - 1, i - 1) == substr(str2, j - 1, j - 1)) {
+        dp[i, j] &lt;- dp[i - 1, j - 1] + 1
+      } else {
+        dp[i, j] &lt;- max(dp[i - 1, j], dp[i, j - 1])
+      }
+    }
+  }
+  
+  # Backtrack to find the actual LCS string
+  lcs &lt;- &quot;&quot;
+  i &lt;- m + 1
+  j &lt;- n + 1
+  
+  while (i &gt; 1 &amp;&amp; j &gt; 1) {
+    if (substr(str1, i - 1, i - 1) == substr(str2, j - 1, j - 1)) {
+      lcs &lt;- paste0(substr(str1, i - 1, i - 1), lcs)
+      i &lt;- i - 1
+      j &lt;- j - 1
+    } else if (dp[i - 1, j] &gt; dp[i, j - 1]) {
+      i &lt;- i - 1
+    } else {
+      j &lt;- j - 1
+    }
+  }
+  
+  return(list(
+    lcs = lcs,
+    length = dp[m + 1, n + 1],
+    dp_table = dp
+  ))
+}
+
+# Space-optimized LCS (only returns length)
+lcs_length_optimized &lt;- function(str1, str2) {
+  #' Space-optimized LCS length calculation
+  #' Uses only O(min(m, n)) space instead of O(m * n)
+  #' @param str1: First string
+  #' @param str2: Second string
+  #' @return: Length of LCS
+  
+  m &lt;- nchar(str1)
+  n &lt;- nchar(str2)
+  
+  # Make str1 the shorter string for space optimization
+  if (m &gt; n) {
+    temp &lt;- str1
+    str1 &lt;- str2
+    str2 &lt;- temp
+    temp &lt;- m
+    m &lt;- n
+    n &lt;- temp
+  }
+  
+  # Use two arrays instead of full matrix
+  prev &lt;- rep(0, m + 1)
+  curr &lt;- rep(0, m + 1)
+  
+  for (j in 1:(n + 1)) {
+    for (i in 1:(m + 1)) {
+      if (i == 1 || j == 1) {
+        curr[i] &lt;- 0
+      } else if (substr(str1, i - 1, i - 1) == substr(str2, j - 1, j - 1)) {
+        curr[i] &lt;- prev[i - 1] + 1
+      } else {
+        curr[i] &lt;- max(prev[i], curr[i - 1])
+      }
+    }
+    # Swap arrays
+    temp &lt;- prev
+    prev &lt;- curr
+    curr &lt;- temp
+  }
+  
+  return(prev[m + 1])
+}
+
+# Find all possible LCS strings (there can be multiple)
+find_all_lcs &lt;- function(str1, str2) {
+  #' Find all possible longest common subsequences
+  #' @param str1: First string
+  #' @param str2: Second string
+  #' @return: List of all LCS strings
+  
+  m &lt;- nchar(str1)
+  n &lt;- nchar(str2)
+  
+  # Create DP table
+  dp &lt;- matrix(0, nrow = m + 1, ncol = n + 1)
+  
+  # Fill the DP table
+  for (i in 1:(m + 1)) {
+    for (j in 1:(n + 1)) {
+      if (i == 1 || j == 1) {
+        dp[i, j] &lt;- 0
+      } else if (substr(str1, i - 1, i - 1) == substr(str2, j - 1, j - 1)) {
+        dp[i, j] &lt;- dp[i - 1, j - 1] + 1
+      } else {
+        dp[i, j] &lt;- max(dp[i - 1, j], dp[i, j - 1])
+      }
+    }
+  }
+  
+  # Recursive function to find all LCS
+  find_all_lcs_recursive &lt;- function(i, j) {
+    if (i == 1 || j == 1) {
+      return(&quot;&quot;)
+    }
+    
+    if (substr(str1, i - 1, i - 1) == substr(str2, j - 1, j - 1)) {
+      char &lt;- substr(str1, i - 1, i - 1)
+      prev_lcs &lt;- find_all_lcs_recursive(i - 1, j - 1)
+      return(paste0(prev_lcs, char))
+    } else {
+      results &lt;- c()
+      
+      if (dp[i - 1, j] == dp[i, j]) {
+        results &lt;- c(results, find_all_lcs_recursive(i - 1, j))
+      }
+      
+      if (dp[i, j - 1] == dp[i, j]) {
+        results &lt;- c(results, find_all_lcs_recursive(i, j - 1))
+      }
+      
+      return(unique(results))
+    }
+  }
+  
+  all_lcs &lt;- find_all_lcs_recursive(m + 1, n + 1)
+  return(unique(all_lcs))
+}
+
+# LCS for arrays/vectors instead of strings
+lcs_array &lt;- function(arr1, arr2) {
+  #' Find LCS of two arrays/vectors
+  #' @param arr1: First array
+  #' @param arr2: Second array
+  #' @return: List with LCS array and length
+  
+  m &lt;- length(arr1)
+  n &lt;- length(arr2)
+  
+  # Create DP table
+  dp &lt;- matrix(0, nrow = m + 1, ncol = n + 1)
+  
+  # Fill the DP table
+  for (i in 1:(m + 1)) {
+    for (j in 1:(n + 1)) {
+      if (i == 1 || j == 1) {
+        dp[i, j] &lt;- 0
+      } else if (arr1[i - 1] == arr2[j - 1]) {
+        dp[i, j] &lt;- dp[i - 1, j - 1] + 1
+      } else {
+        dp[i, j] &lt;- max(dp[i - 1, j], dp[i, j - 1])
+      }
+    }
+  }
+  
+  # Backtrack to find the actual LCS
+  lcs &lt;- c()
+  i &lt;- m + 1
+  j &lt;- n + 1
+  
+  while (i &gt; 1 &amp;&amp; j &gt; 1) {
+    if (arr1[i - 1] == arr2[j - 1]) {
+      lcs &lt;- c(arr1[i - 1], lcs)
+      i &lt;- i - 1
+      j &lt;- j - 1
+    } else if (dp[i - 1, j] &gt; dp[i, j - 1]) {
+      i &lt;- i - 1
+    } else {
+      j &lt;- j - 1
+    }
+  }
+  
+  return(list(
+    lcs = lcs,
+    length = dp[m + 1, n + 1]
+  ))
+}
+
+# Function to print the DP table (for educational purposes)
+print_dp_table &lt;- function(str1, str2, dp_table) {
+  #' Print the DP table in a readable format
+  #' @param str1: First string
+  #' @param str2: Second string
+  #' @param dp_table: DP table from lcs_string function
+  
+  m &lt;- nchar(str1)
+  n &lt;- nchar(str2)
+  
+  cat(&quot;DP Table for LCS calculation:\n&quot;)
+  cat(&quot;String 1:&quot;, str1, &quot;\n&quot;)
+  cat(&quot;String 2:&quot;, str2, &quot;\n\n&quot;)
+  
+  # Print column headers
+  cat(&quot;     ε &quot;)
+  for (j in 1:n) {
+    cat(sprintf(&quot;%2s &quot;, substr(str2, j, j)))
+  }
+  cat(&quot;\n&quot;)
+  
+  # Print table rows
+  for (i in 1:(m + 1)) {
+    if (i == 1) {
+      cat(&quot;  ε  &quot;)
+    } else {
+      cat(sprintf(&quot;%2s   &quot;, substr(str1, i - 1, i - 1)))
+    }
+    
+    for (j in 1:(n + 1)) {
+      cat(sprintf(&quot;%2d &quot;, dp_table[i, j]))
+    }
+    cat(&quot;\n&quot;)
+  }
+  cat(&quot;\n&quot;)
+}
+
+# Example usage and testing
+cat(&quot;=== Longest Common Subsequence (LCS) Algorithm ===\n\n&quot;)
+</code></pre>
+<pre><code>## === Longest Common Subsequence (LCS) Algorithm ===
+</code></pre>
+<pre><code class="language-r"># Test 1: Basic LCS example
+cat(&quot;1. Basic LCS Example\n&quot;)
+</code></pre>
+<pre><code>## 1. Basic LCS Example
+</code></pre>
+<pre><code class="language-r">str1 &lt;- &quot;ABCDGH&quot;
+str2 &lt;- &quot;AEDFHR&quot;
+
+cat(&quot;String 1:&quot;, str1, &quot;\n&quot;)
+</code></pre>
+<pre><code>## String 1: ABCDGH
+</code></pre>
+<pre><code class="language-r">cat(&quot;String 2:&quot;, str2, &quot;\n&quot;)
+</code></pre>
+<pre><code>## String 2: AEDFHR
+</code></pre>
+<pre><code class="language-r">result1 &lt;- lcs_string(str1, str2)
+cat(&quot;LCS:&quot;, result1$lcs, &quot;\n&quot;)
+</code></pre>
+<pre><code>## LCS: ADH
+</code></pre>
+<pre><code class="language-r">cat(&quot;Length:&quot;, result1$length, &quot;\n&quot;)
+</code></pre>
+<pre><code>## Length: 3
+</code></pre>
+<pre><code class="language-r">print_dp_table(str1, str2, result1$dp_table)
+</code></pre>
+<pre><code>## DP Table for LCS calculation:
+## String 1: ABCDGH 
+## String 2: AEDFHR 
+## 
+##      ε  A  E  D  F  H  R 
+##   ε   0  0  0  0  0  0  0 
+##  A    0  1  1  1  1  1  1 
+##  B    0  1  1  1  1  1  1 
+##  C    0  1  1  1  1  1  1 
+##  D    0  1  1  2  2  2  2 
+##  G    0  1  1  2  2  2  2 
+##  H    0  1  1  2  2  3  3
+</code></pre>
+<pre><code class="language-r"># Test 2: DNA sequence analysis
+cat(&quot;2. DNA Sequence Analysis\n&quot;)
+</code></pre>
+<pre><code>## 2. DNA Sequence Analysis
+</code></pre>
+<pre><code class="language-r">dna1 &lt;- &quot;ATCGATCGATCG&quot;
+dna2 &lt;- &quot;ATGCGATGCATG&quot;
+
+cat(&quot;DNA Sequence 1:&quot;, dna1, &quot;\n&quot;)
+</code></pre>
+<pre><code>## DNA Sequence 1: ATCGATCGATCG
+</code></pre>
+<pre><code class="language-r">cat(&quot;DNA Sequence 2:&quot;, dna2, &quot;\n&quot;)
+</code></pre>
+<pre><code>## DNA Sequence 2: ATGCGATGCATG
+</code></pre>
+<pre><code class="language-r">dna_result &lt;- lcs_string(dna1, dna2)
+cat(&quot;Common subsequence:&quot;, dna_result$lcs, &quot;\n&quot;)
+</code></pre>
+<pre><code>## Common subsequence: ATCGATGATG
+</code></pre>
+<pre><code class="language-r">cat(&quot;Length:&quot;, dna_result$length, &quot;\n&quot;)
+</code></pre>
+<pre><code>## Length: 10
+</code></pre>
+<pre><code class="language-r">cat(&quot;Similarity:&quot;, sprintf(&quot;%.2f%%&quot;, dna_result$length / max(nchar(dna1), nchar(dna2)) * 100), &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Similarity: 83.33%
+</code></pre>
+<pre><code class="language-r"># Test 3: Finding all possible LCS
+cat(&quot;3. Multiple LCS Solutions\n&quot;)
+</code></pre>
+<pre><code>## 3. Multiple LCS Solutions
+</code></pre>
+<pre><code class="language-r">str3 &lt;- &quot;ABCDEF&quot;
+str4 &lt;- &quot;ACBDEF&quot;
+
+cat(&quot;String 1:&quot;, str3, &quot;\n&quot;)
+</code></pre>
+<pre><code>## String 1: ABCDEF
+</code></pre>
+<pre><code class="language-r">cat(&quot;String 2:&quot;, str4, &quot;\n&quot;)
+</code></pre>
+<pre><code>## String 2: ACBDEF
+</code></pre>
+<pre><code class="language-r">all_lcs &lt;- find_all_lcs(str3, str4)
+cat(&quot;All possible LCS:\n&quot;)
+</code></pre>
+<pre><code>## All possible LCS:
+</code></pre>
+<pre><code class="language-r">for (i in seq_along(all_lcs)) {
+  cat(&quot;  &quot;, i, &quot;:&quot;, all_lcs[i], &quot;\n&quot;)
+}
+</code></pre>
+<pre><code>##    1 : ABDEF 
+##    2 : ACDEF
+</code></pre>
+<pre><code class="language-r">cat(&quot;\n&quot;)
+</code></pre>
+<pre><code class="language-r"># Test 4: Array LCS example
+cat(&quot;4. Array LCS Example\n&quot;)
+</code></pre>
+<pre><code>## 4. Array LCS Example
+</code></pre>
+<pre><code class="language-r">arr1 &lt;- c(1, 2, 3, 4, 5)
+arr2 &lt;- c(2, 3, 5, 7, 8)
+
+cat(&quot;Array 1:&quot;, paste(arr1, collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Array 1: 1, 2, 3, 4, 5
+</code></pre>
+<pre><code class="language-r">cat(&quot;Array 2:&quot;, paste(arr2, collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Array 2: 2, 3, 5, 7, 8
+</code></pre>
+<pre><code class="language-r">arr_result &lt;- lcs_array(arr1, arr2)
+cat(&quot;LCS Array:&quot;, paste(arr_result$lcs, collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## LCS Array: 2, 3, 5
+</code></pre>
+<pre><code class="language-r">cat(&quot;Length:&quot;, arr_result$length, &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Length: 3
+</code></pre>
+<pre><code class="language-r"># Test 5: Performance comparison
+cat(&quot;5. Performance Comparison\n&quot;)
+</code></pre>
+<pre><code>## 5. Performance Comparison
+</code></pre>
+<pre><code class="language-r">long_str1 &lt;- paste(sample(LETTERS[1:5], 100, replace = TRUE), collapse = &quot;&quot;)
+long_str2 &lt;- paste(sample(LETTERS[1:5], 100, replace = TRUE), collapse = &quot;&quot;)
+
+cat(&quot;Testing with strings of length 100...\n&quot;)
+</code></pre>
+<pre><code>## Testing with strings of length 100...
+</code></pre>
+<pre><code class="language-r"># Standard algorithm
+start_time &lt;- Sys.time()
+standard_result &lt;- lcs_length(long_str1, long_str2)
+standard_time &lt;- as.numeric(Sys.time() - start_time, units = &quot;secs&quot;)
+
+# Optimized algorithm  
+start_time &lt;- Sys.time()
+optimized_result &lt;- lcs_length_optimized(long_str1, long_str2)
+optimized_time &lt;- as.numeric(Sys.time() - start_time, units = &quot;secs&quot;)
+
+cat(&quot;Standard algorithm: LCS length =&quot;, standard_result, 
+    &quot;Time:&quot;, sprintf(&quot;%.6f&quot;, standard_time), &quot;seconds\n&quot;)
+</code></pre>
+<pre><code>## Standard algorithm: LCS length = 59 Time: 0.050064 seconds
+</code></pre>
+<pre><code class="language-r">cat(&quot;Optimized algorithm: LCS length =&quot;, optimized_result, 
+    &quot;Time:&quot;, sprintf(&quot;%.6f&quot;, optimized_time), &quot;seconds\n&quot;)
+</code></pre>
+<pre><code>## Optimized algorithm: LCS length = 59 Time: 0.046882 seconds
+</code></pre>
+<pre><code class="language-r">cat(&quot;Results match:&quot;, standard_result == optimized_result, &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Results match: TRUE
+</code></pre>
+<pre><code class="language-r"># Test 6: Edge cases
+cat(&quot;6. Edge Cases\n&quot;)
+</code></pre>
+<pre><code>## 6. Edge Cases
+</code></pre>
+<pre><code class="language-r">cat(&quot;Empty strings:&quot;, lcs_length(&quot;&quot;, &quot;ABC&quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Empty strings: 0
+</code></pre>
+<pre><code class="language-r">cat(&quot;One empty string:&quot;, lcs_length(&quot;ABC&quot;, &quot;&quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## One empty string: 0
+</code></pre>
+<pre><code class="language-r">cat(&quot;Identical strings:&quot;, lcs_length(&quot;HELLO&quot;, &quot;HELLO&quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Identical strings: 5
+</code></pre>
+<pre><code class="language-r">cat(&quot;No common characters:&quot;, lcs_length(&quot;ABC&quot;, &quot;DEF&quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## No common characters: 0
+</code></pre>
+<pre><code class="language-r">cat(&quot;Single character:&quot;, lcs_length(&quot;A&quot;, &quot;A&quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Single character: 1
+</code></pre>
+<pre><code class="language-r">cat(&quot;Single vs multiple:&quot;, lcs_length(&quot;A&quot;, &quot;ABCDEF&quot;), &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Single vs multiple: 1
+</code></pre>
+<pre><code class="language-r"># Test 7: Real-world example - File diff simulation
+cat(&quot;7. File Diff Simulation\n&quot;)
+</code></pre>
+<pre><code>## 7. File Diff Simulation
+</code></pre>
+<pre><code class="language-r">file1_lines &lt;- c(&quot;Hello World&quot;, &quot;This is line 2&quot;, &quot;Line 3 here&quot;, &quot;Final line&quot;)
+file2_lines &lt;- c(&quot;Hello World&quot;, &quot;This is modified line 2&quot;, &quot;Line 3 here&quot;, &quot;New line&quot;, &quot;Final line&quot;)
+
+cat(&quot;File 1 lines:\n&quot;)
+</code></pre>
+<pre><code>## File 1 lines:
+</code></pre>
+<pre><code class="language-r">for (i in seq_along(file1_lines)) {
+  cat(&quot; &quot;, i, &quot;:&quot;, file1_lines[i], &quot;\n&quot;)
+}
+</code></pre>
+<pre><code>##   1 : Hello World 
+##   2 : This is line 2 
+##   3 : Line 3 here 
+##   4 : Final line
+</code></pre>
+<pre><code class="language-r">cat(&quot;File 2 lines:\n&quot;)
+</code></pre>
+<pre><code>## File 2 lines:
+</code></pre>
+<pre><code class="language-r">for (i in seq_along(file2_lines)) {
+  cat(&quot; &quot;, i, &quot;:&quot;, file2_lines[i], &quot;\n&quot;)
+}
+</code></pre>
+<pre><code>##   1 : Hello World 
+##   2 : This is modified line 2 
+##   3 : Line 3 here 
+##   4 : New line 
+##   5 : Final line
+</code></pre>
+<pre><code class="language-r">file_lcs &lt;- lcs_array(file1_lines, file2_lines)
+cat(&quot;Common lines (unchanged):\n&quot;)
+</code></pre>
+<pre><code>## Common lines (unchanged):
+</code></pre>
+<pre><code class="language-r">for (i in seq_along(file_lcs$lcs)) {
+  cat(&quot; &quot;, file_lcs$lcs[i], &quot;\n&quot;)
+}
+</code></pre>
+<pre><code>##   Hello World 
+##   Line 3 here 
+##   Final line
+</code></pre>
+<pre><code class="language-r">cat(&quot;Similarity:&quot;, sprintf(&quot;%.1f%%&quot;, file_lcs$length / max(length(file1_lines), length(file2_lines)) * 100), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Similarity: 60.0%
+</code></pre>
+</div>
+</body>
+</html>
