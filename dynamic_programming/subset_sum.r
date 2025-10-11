@@ -116,25 +116,33 @@ subset_sum_optimized <- function(arr, target) {
   return(dp[target + 1])
 }
 
-# Function to find a single subset that sums to target (simplified)
-find_subset <- function(arr, target) {
-  #' Find a single subset that sums to the target value
+# Function to find all subsets that sum to target
+find_all_subsets <- function(arr, target) {
+  #' Find all subsets that sum to the target value
   #' @param arr: Numeric vector of positive integers
   #' @param target: Target sum value
-  #' @return: List containing one subset (if exists), or empty list
+  #' @return: List of subsets (each subset is a numeric vector) that sum to target
   
   n <- length(arr)
-  if (target == 0) return(list(c()))
-  if (n == 0) return(list())
+  results <- list()
   
-  # For simplicity, return just one subset (same as main function)
-  # This function returns only one subset, not all possible subsets
-  result <- subset_sum(arr, target)
-  if (result$exists) {
-    return(list(result$subset))
-  } else {
-    return(list())
+  # Helper recursive function
+  find_subsets_rec <- function(idx, current_subset, current_sum) {
+    if (current_sum == target) {
+      results <<- c(results, list(current_subset))
+      return()
+    }
+    if (idx > n || current_sum > target) {
+      return()
+    }
+    # Include arr[idx]
+    find_subsets_rec(idx + 1, c(current_subset, arr[idx]), current_sum + arr[idx])
+    # Exclude arr[idx]
+    find_subsets_rec(idx + 1, current_subset, current_sum)
   }
+  
+  find_subsets_rec(1, c(), 0)
+  return(results)
 }
 
 # Helper function to print DP table
