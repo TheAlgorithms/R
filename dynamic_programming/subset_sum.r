@@ -282,11 +282,7 @@ if (budget_result$exists) {
   cat("Total cost:", sum(selected_projects), "\n")
   cat("Remaining budget:", budget - sum(selected_projects), "\n")
 } else {
-  # Find closest possible sum
-  for (target in budget:1) {
-    if (subset_sum_optimized(project_costs, target)) {
-      cat("Closest possible sum:", target, "\n")
-      break
-    }
-  }
+  # Find closest possible sum (≤ budget) in a single pass
+  closest_sum <- max_subset_sum_leq(project_costs, budget)
+  cat("Closest possible sum:", closest_sum, "\n")
 }
