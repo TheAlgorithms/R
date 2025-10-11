@@ -25,7 +25,7 @@ kruskalMST <- function(edges, n) {
     TRUE
   }
 
-  mst <- edges[0, ]
+  mst <- data.frame(u = integer(0), v = integer(0), w = numeric(0))
   total <- 0
   for (i in seq_len(nrow(edges))) {
     if (unite(edges$u[i], edges$v[i])) {
