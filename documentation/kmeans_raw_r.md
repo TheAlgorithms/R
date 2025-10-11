@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 custonKmeans<-function(dataset=NA,k=NA){
   if(is.na(dataset) || is.na(k)){
     stop("You must input valid parameters!")

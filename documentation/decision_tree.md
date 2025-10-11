@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(rpart)
 x <- cbind(x_train,y_train)
 ```
@@ -9,7 +9,7 @@ x <- cbind(x_train,y_train)
 ## Error in cbind(x_train, y_train): object 'x_train' not found
 ```
 
-```r
+``` r
 # grow tree 
 fit <- rpart(y_train ~ ., data = x,method="class")
 ```
@@ -18,7 +18,7 @@ fit <- rpart(y_train ~ ., data = x,method="class")
 ## Error in model.frame.default(formula = y_train ~ ., data = x, na.action = function (x) : 'data' must be a data.frame, environment, or list
 ```
 
-```r
+``` r
 summary(fit)
 ```
 
@@ -26,7 +26,7 @@ summary(fit)
 ## Error in summary(fit): object 'fit' not found
 ```
 
-```r
+``` r
 # Predict Output 
 predicted= predict(fit,x_test)
 ```
