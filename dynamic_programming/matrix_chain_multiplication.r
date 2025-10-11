@@ -143,7 +143,7 @@ calculate_multiplication_cost <- function(dimensions, parentheses) {
       if (ch == "(") depth <- depth + 1
       if (ch == ")") depth <- depth - 1
       # Look for "×" at depth 0
-      if (depth == 0 && substr(s, i, i+1) == "×") {
+      if (depth == 0 && i < nchar(s) && substr(s, i, i+1) == "×") {
         left <- substr(s, 1, i-2)
         right <- substr(s, i+2, nchar(s))
         return(list(
