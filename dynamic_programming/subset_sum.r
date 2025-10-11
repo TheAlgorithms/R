@@ -116,19 +116,19 @@ subset_sum_optimized <- function(arr, target) {
   return(dp[target + 1])
 }
 
-# Function to find all possible subsets that sum to target (simplified)
-find_all_subsets <- function(arr, target) {
-  #' Find all possible subsets that sum to the target value
+# Function to find a single subset that sums to target (simplified)
+find_subset <- function(arr, target) {
+  #' Find a single subset that sums to the target value
   #' @param arr: Numeric vector of positive integers
   #' @param target: Target sum value
-  #' @return: List of all possible subsets
+  #' @return: List containing one subset (if exists), or empty list
   
   n <- length(arr)
   if (target == 0) return(list(c()))
   if (n == 0) return(list())
   
   # For simplicity, return just one subset (same as main function)
-  # Finding all possible subsets is complex and not essential for the algorithm demonstration
+  # This function returns only one subset, not all possible subsets
   result <- subset_sum(arr, target)
   if (result$exists) {
     return(list(result$subset))
