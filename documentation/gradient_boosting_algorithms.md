@@ -1,3 +1,6 @@
+
+
+``` r
 # GBM
 library(caret)
 x <- cbind(x_train,y_train)
@@ -69,3 +72,12 @@ print(report)
 importance <- varImp(report, scale = FALSE)
 
 print(importance)
+```
+
+```
+## Error in parse(text = input): <text>:59:45: unexpected symbol
+## 58: 
+## 59: x <- data[,!(names(data) %in% drop_columns)]y
+##                                                 ^
+```
+

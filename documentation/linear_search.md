@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 linear_search<-function(vector, search_value){ #made a function named linear_search having two parameters that are an array and a value to be searched
   for(i in 1:length(vector)){ 
     if(vector[i]==search_value){ #comparing each value of array with the value to be searched

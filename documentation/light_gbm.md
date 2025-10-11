@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(RLightGBM)
 ```
 
@@ -8,7 +8,7 @@ library(RLightGBM)
 ## Error in library(RLightGBM): there is no package called 'RLightGBM'
 ```
 
-```r
+``` r
 data(example.binary)
 ```
 
@@ -16,7 +16,7 @@ data(example.binary)
 ## Warning in data(example.binary): data set 'example.binary' not found
 ```
 
-```r
+``` r
 #Parameters
 
 num_iterations <- 100
@@ -30,7 +30,7 @@ handle.data <- lgbm.data.create(x)
 ## Error in lgbm.data.create(x): could not find function "lgbm.data.create"
 ```
 
-```r
+``` r
 lgbm.data.setField(handle.data, "label", y)
 ```
 
@@ -38,7 +38,7 @@ lgbm.data.setField(handle.data, "label", y)
 ## Error in lgbm.data.setField(handle.data, "label", y): could not find function "lgbm.data.setField"
 ```
 
-```r
+``` r
 handle.booster <- lgbm.booster.create(handle.data, lapply(config, as.character))
 ```
 
@@ -46,7 +46,7 @@ handle.booster <- lgbm.booster.create(handle.data, lapply(config, as.character))
 ## Error in lgbm.booster.create(handle.data, lapply(config, as.character)): could not find function "lgbm.booster.create"
 ```
 
-```r
+``` r
 #Train for num_iterations iterations and eval every 5 steps
 
 lgbm.booster.train(handle.booster, num_iterations, 5)
@@ -56,7 +56,7 @@ lgbm.booster.train(handle.booster, num_iterations, 5)
 ## Error in lgbm.booster.train(handle.booster, num_iterations, 5): could not find function "lgbm.booster.train"
 ```
 
-```r
+``` r
 #Predict
 pred <- lgbm.booster.predict(handle.booster, x.test)
 ```
@@ -65,16 +65,16 @@ pred <- lgbm.booster.predict(handle.booster, x.test)
 ## Error in lgbm.booster.predict(handle.booster, x.test): could not find function "lgbm.booster.predict"
 ```
 
-```r
+``` r
 #Test accuracy
 sum(y.test == (y.pred > 0.5)) / length(y.test)
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'y.test' not found
+## Error: object 'y.test' not found
 ```
 
-```r
+``` r
 #Save model (can be loaded again via lgbm.booster.load(filename))
 lgbm.booster.save(handle.booster, filename = "/tmp/model.txt")
 ```

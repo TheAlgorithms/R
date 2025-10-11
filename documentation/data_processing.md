@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(xlsx)
 ```
 
@@ -8,7 +8,7 @@ library(xlsx)
 ## Error in library(xlsx): there is no package called 'xlsx'
 ```
 
-```r
+``` r
 ## Loading required package: rJava
 ## Loading required package: xlsxjars
 
@@ -19,7 +19,7 @@ setwd("/Users/chenfeiyang")
 ## Error in setwd("/Users/chenfeiyang"): cannot change working directory
 ```
 
-```r
+``` r
 cameraData <- read.xlsx("./data/cameras.xlsx", sheetIndex = 1, header = TRUE)
 ```
 
@@ -27,7 +27,7 @@ cameraData <- read.xlsx("./data/cameras.xlsx", sheetIndex = 1, header = TRUE)
 ## Error in read.xlsx("./data/cameras.xlsx", sheetIndex = 1, header = TRUE): could not find function "read.xlsx"
 ```
 
-```r
+``` r
 cameraData <- read.xlsx("./data/cameras.xlsx", "Baltimore Fixed Speed Cameras", 
     header = TRUE)
 ```
@@ -36,7 +36,7 @@ cameraData <- read.xlsx("./data/cameras.xlsx", "Baltimore Fixed Speed Cameras",
 ## Error in read.xlsx("./data/cameras.xlsx", "Baltimore Fixed Speed Cameras", : could not find function "read.xlsx"
 ```
 
-```r
+``` r
 head(cameraData)
 ```
 
@@ -44,7 +44,7 @@ head(cameraData)
 ## Error in head(cameraData): object 'cameraData' not found
 ```
 
-```r
+``` r
 ##                          address direction      street  crossStreet
 ## 1       S CATON AVE & BENSON AVE       N/B   Caton Ave   Benson Ave
 ## 2       S CATON AVE & BENSON AVE       S/B   Caton Ave   Benson Ave
@@ -71,15 +71,15 @@ cameraDataSubset <- read.xlsx("./data/cameras.xlsx", sheetIndex = 1, colIndex = 
 ## Error in read.xlsx("./data/cameras.xlsx", sheetIndex = 1, colIndex = colIndex, : could not find function "read.xlsx"
 ```
 
-```r
+``` r
 cameraDataSubset
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'cameraDataSubset' not found
+## Error: object 'cameraDataSubset' not found
 ```
 
-```r
+``` r
 ##   direction      street
 ## 1       N/B   Caton Ave
 ## 2       S/B   Caton Ave
@@ -102,7 +102,7 @@ X
 ## 3    5    6   13
 ```
 
-```r
+``` r
 ##   var1 var2 var3
 ## 1    2   NA   15
 ## 4    1   10   11
@@ -117,7 +117,7 @@ X[, 1]
 ## [1] 2 4 3 1 5
 ```
 
-```r
+``` r
 ## [1] 2 1 3 5 4
 X[, "var1"]
 ```
@@ -126,7 +126,7 @@ X[, "var1"]
 ## [1] 2 4 3 1 5
 ```
 
-```r
+``` r
 ## [1] 2 1 3 5 4
 X[1:2, "var2"]
 ```
@@ -135,7 +135,7 @@ X[1:2, "var2"]
 ## [1] NA 10
 ```
 
-```r
+``` r
 ## [1] NA 10
 
 # Logicals and: & , or: |
@@ -148,7 +148,7 @@ X[(X$var1 <= 3 & X$var3 > 11), ]
 ## 2    1    7   15
 ```
 
-```r
+``` r
 ##   var1 var2 var3
 ## 1    2   NA   15
 ## 2    3   NA   12
@@ -162,7 +162,7 @@ X[(X$var1 <= 3 | X$var3 > 15), ]
 ## 2    1    7   15
 ```
 
-```r
+``` r
 ##   var1 var2 var3
 ## 1    2   NA   15
 ## 4    1   10   11
@@ -177,7 +177,7 @@ X[which(X$var2 > 8), ]
 ## 4    4   10   12
 ```
 
-```r
+``` r
 ##   var1 var2 var3
 ## 4    1   10   11
 ## 5    4    9   13
@@ -190,7 +190,7 @@ sort(X$var1)
 ## [1] 1 2 3 4 5
 ```
 
-```r
+``` r
 ## [1] 1 2 3 4 5
 sort(X$var1, decreasing = TRUE)
 ```
@@ -199,7 +199,7 @@ sort(X$var1, decreasing = TRUE)
 ## [1] 5 4 3 2 1
 ```
 
-```r
+``` r
 ## [1] 5 4 3 2 1
 sort(X$var2, na.last = TRUE)
 ```
@@ -208,7 +208,7 @@ sort(X$var2, na.last = TRUE)
 ## [1]  6  7 10 NA NA
 ```
 
-```r
+``` r
 ## [1]  6  9 10 NA NA
 
 # Ordering
@@ -224,7 +224,7 @@ X[order(X$var1), ]
 ## 3    5    6   13
 ```
 
-```r
+``` r
 ##   var1 var2 var3
 ## 4    1   10   11
 ## 1    2   NA   15
@@ -244,7 +244,7 @@ X[order(X$var1, X$var3), ]
 ## 3    5    6   13
 ```
 
-```r
+``` r
 ##   var1 var2 var3
 ## 4    1   10   11
 ## 1    2   NA   15
@@ -261,7 +261,7 @@ library(plyr)
 ## Error in library(plyr): there is no package called 'plyr'
 ```
 
-```r
+``` r
 arrange(X, var1)
 ```
 
@@ -269,7 +269,7 @@ arrange(X, var1)
 ## Error in arrange(X, var1): could not find function "arrange"
 ```
 
-```r
+``` r
 ##   var1 var2 var3
 ## 1    1   10   11
 ## 2    2   NA   15
@@ -284,7 +284,7 @@ arrange(X, desc(var1))
 ## Error in arrange(X, desc(var1)): could not find function "arrange"
 ```
 
-```r
+``` r
 ##   var1 var2 var3
 ## 1    5    6   14
 ## 2    4    9   13
@@ -306,7 +306,7 @@ X
 ## 3    5    6   13 -0.9261035
 ```
 
-```r
+``` r
 ##   var1 var2 var3     var4
 ## 1    2   NA   15  0.18760
 ## 4    1   10   11  1.78698
@@ -327,7 +327,7 @@ Y
 ## 3    5    6   13 -0.9261035 -1.83245959
 ```
 
-```r
+``` r
 ##   var1 var2 var3     var4 rnorm(5)
 ## 1    2   NA   15  0.18760  0.62578
 ## 4    1   10   11  1.78698 -2.45084
