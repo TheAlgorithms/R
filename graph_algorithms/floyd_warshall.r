@@ -21,8 +21,8 @@ FloydWarshall <- R6Class(
     #' @description Initialize the algorithm with graph size
     #' @param n_vertices Number of vertices in the graph
     initialize = function(n_vertices) {
-      if (!is.numeric(n_vertices) || n_vertices < 0 || n_vertices != round(n_vertices)) {
-        stop("Number of vertices must be a non-negative integer")
+      if (!is.numeric(n_vertices) || n_vertices < 1 || n_vertices != round(n_vertices)) {
+        stop("Number of vertices must be a positive integer (at least 1)")
       }
       
       self$n_vertices <- n_vertices
