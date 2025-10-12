@@ -4,17 +4,18 @@
 # Time complexity: O(V^3) where V is number of vertices
 # Space complexity: O(V^2) for distance and predecessor matrices
 
-library(R6)
+
 
 #' FloydWarshall Class
 #' @description R6 class implementing the Floyd-Warshall algorithm
 #' @details Finds shortest paths between all pairs of vertices in a weighted directed graph.
+#' @importFrom R6 R6Class
 #' Can handle:
 #' - Positive and negative edge weights
 #' - Direct path reconstruction
 #' - Cycle detection
 #' - Disconnected components (represented by Inf)
-FloydWarshall <- R6Class(
+FloydWarshall <- R6::R6Class(
   "FloydWarshall",
   
   public = list(
