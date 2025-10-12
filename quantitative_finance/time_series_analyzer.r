@@ -383,7 +383,7 @@ TimeSeriesAnalyzer <- R6Class(
     
     ljung_box_test = function(residuals) {
       max_lag <- min(20, length(residuals) - 1)
-      acf_vals <- acf(residuals, plot = FALSE, lag.max = max_lag)$acf[-1]
+      acf_vals <- stats::acf(residuals, plot = FALSE, lag.max = max_lag)$acf[-1]
       n <- length(residuals)
       
       Q <- n * (n + 2) * sum((acf_vals^2) / (n - 1:max_lag))
