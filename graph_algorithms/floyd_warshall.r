@@ -141,7 +141,9 @@ FloydWarshall <- R6::R6Class(
       }
       
       private$validate_vertices(from)
-      return(private$dist_matrix[from, ])
+      d <- private$dist_matrix[from, ]
+      names(d) <- as.character(seq_len(self$n_vertices))
+      return(d)
     },
     
     #' @description Check if the graph has a negative cycle
