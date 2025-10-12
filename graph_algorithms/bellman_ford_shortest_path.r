@@ -83,9 +83,9 @@ get_bellman_ford_path <- function(result, source, target) {
   path <- c()
   current <- target
   while (current != -1) {
-  path <- c(current, path)
-  if (current == source) break
-  current <- predecessor[current]
+    path <- c(current, path)
+    if (current == source) break
+    current <- predecessor[current]
 }
 
   return(list(path = path, distance = distances[target]))
