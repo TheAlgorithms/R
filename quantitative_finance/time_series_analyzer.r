@@ -253,7 +253,12 @@ TimeSeriesAnalyzer <- R6Class(
           r <- matrix(0, k, k)
           for (i in 1:k) {
             for (j in 1:k) {
-              r[i,j] <- acf[abs(i-j)+1]
+              idx <- abs(i-j)+1
+              if (idx <= length(acf)) {
+                r[i,j] <- acf[idx]
+              } else {
+                r[i,j] <- 0
+              }
             }
           }
           b <- acf[1:k]
