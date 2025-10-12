@@ -51,6 +51,7 @@
   * [Breadth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/breadth_first_search.r)
   * [Depth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/depth_first_search.r)
   * [Dijkstra Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/dijkstra_shortest_path.r)
+  * [Bellman-Ford Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/bellman_ford_shortest_path.r)
 
 ## Mathematics
   * [Amicable Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/amicable_numbers.r)
