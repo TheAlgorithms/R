@@ -356,10 +356,21 @@ TimeSeriesAnalyzer <- R6Class(
       for (i in 1:h) {
         pred <- 0
         if (p > 0) {
-          ar_terms <- if (i <= p) {
-            y[(n-p+1):n]
+          # Use the most recent p values (from original data and previous forecasts)
+          if (i <= p) {
+            ar_terms <- y[(n-p+i):(n+i-1)]
           } else {
-            forecasts[(i-p):(i-1)]
+            # Combine tail of y and head of forecasts as needed
+            num_from_y <- max(0, p - (i-1))
+            num_from_forecasts <- p - num_from_y
+            if (num_from_y > 0) {
+              ar_terms <- c(
+                y[(n - p + i):(n)],
+                forecasts[1:num_from_forecasts]
+              )
+            } else {
+              ar_terms <- forecasts[(i-p):(i-1)]
+            }
           }
           pred <- pred + sum(model$coefficients$ar * ar_terms)
         }
