@@ -1,4 +1,3 @@
-```r
 # Bellman-Ford Shortest Path Algorithm
 #
 # The Bellman-Ford algorithm computes shortest paths from a single source vertex to
@@ -83,10 +82,11 @@ get_bellman_ford_path <- function(result, source, target) {
 
   path <- c()
   current <- target
-  while (current != -1 && current != 0) {
-    path <- c(current, path)
-    current <- predecessor[current]
-  }
+  while (current != -1) {
+  path <- c(current, path)
+  if (current == source) break
+  current <- predecessor[current]
+}
 
   return(list(path = path, distance = distances[target]))
 }
@@ -144,5 +144,3 @@ if (!is.null(path_info$path)) {
 } else {
   cat(path_info$message, "\n")
 }
-
-``` 
