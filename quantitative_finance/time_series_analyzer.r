@@ -357,7 +357,7 @@ TimeSeriesAnalyzer <- R6Class(
         pred <- 0
         if (p > 0) {
           ar_terms <- if (i <= p) {
-            y[(n-p+i):n]
+            y[(n-p+1):n]
           } else {
             forecasts[(i-p):(i-1)]
           }
