@@ -296,7 +296,11 @@ TimeSeriesAnalyzer <- R6Class(
           r <- private$calculate_acf(q)
           psi <- numeric(q)
           for (j in 1:q) {
-            psi[j] <- sum(theta[1:(j-1)] * rev(psi[1:(j-1)])) + theta[j]
+            if (j > 1) {
+              psi[j] <- sum(theta[1:(j-1)] * rev(psi[1:(j-1)])) + theta[j]
+            } else {
+              psi[j] <- theta[j]
+            }
           }
           if (q == 1) {
             theta <- solve(stats::toeplitz(1), r[1])
