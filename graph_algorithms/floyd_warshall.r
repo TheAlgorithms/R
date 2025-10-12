@@ -279,7 +279,7 @@ demonstrate_floyd_warshall <- function() {
   cat("\n=== Demo Complete ===\n")
 }
 
-# Run demonstration if not in interactive mode
-if (!interactive()) {
+# Run demonstration only if explicitly requested via environment variable
+if (identical(Sys.getenv("RUN_FLOYD_WARSHALL_DEMO"), "true")) {
   demonstrate_floyd_warshall()
 }
