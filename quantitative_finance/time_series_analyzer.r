@@ -412,15 +412,17 @@ TimeSeriesAnalyzer <- R6Class(
       n <- length(sq_resid)
       lags <- 5
       
-      # Regression of squared residuals on lagged squared residuals
-      X <- matrix(1, n-lags, 1)
-      for (i in 1:lags) {
-        X <- cbind(X, stats::lag(sq_resid, i)[-c(1:lags)])
+      # Use embed to construct lagged matrix (current and past lags)
+      # embed(sq_resid, lags + 1) returns a matrix with columns: t, t-1, ..., t-lags
+      if (n <= lags) {
+        stop("Not enough observations for ARCH test lags.")
       }
-      
-      fit <- stats::lm(sq_resid[-c(1:lags)] ~ X - 1)
+      lagged_mat <- embed(sq_resid, lags + 1)
+      y <- lagged_mat[, 1]  # current squared residuals
+      X <- lagged_mat[, -1] # lagged squared residuals
+      fit <- stats::lm(y ~ X)
       R2 <- summary(fit)$r.squared
-      LM <- n * R2
+      LM <- nrow(lagged_mat) * R2
       p_value <- 1 - stats::pchisq(LM, lags)
       
       return(list(
