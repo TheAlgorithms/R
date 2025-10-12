@@ -100,19 +100,29 @@ FloydWarshall <- R6Class(
         ))
       }
       
-      # Reconstruct path
-      path <- c(from)
-      current <- from
+      # Reconstruct path backward from 'to' using pred[from, current], then reverse
+      path <- c()
+      current <- to
       
-      while (current != to) {
-        current <- private$pred_matrix[current, to]
-        path <- c(path, current)
+      while (!is.na(current) && current != from) {
+        path <- c(current, path)
+        prev <- private$pred_matrix[from, current]
         
         # Check for cycles
         if (length(path) > self$n_vertices) {
           stop("Negative cycle detected in path reconstruction")
         }
+        current <- prev
       }
+      if (is.na(current)) {
+        # No path exists
+        return(list(
+          path = numeric(0),
+          distance = Inf,
+          exists = FALSE
+        ))
+      }
+      path <- c(from, path)
       
       return(list(
         path = path,
