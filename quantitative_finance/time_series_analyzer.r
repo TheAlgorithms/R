@@ -217,7 +217,7 @@ TimeSeriesAnalyzer <- R6Class(
       # Calculate test statistic
       coef <- stats::coef(fit)[2]
       se <- sqrt(diag(stats::vcov(fit)))[2]
-      t_stat <- (coef - 1) / se
+      t_stat <- coef / se
       
       # Critical values (approximate)
       crit_values <- c(
