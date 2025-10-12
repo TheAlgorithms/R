@@ -294,7 +294,11 @@ TimeSeriesAnalyzer <- R6Class(
           for (j in 1:q) {
             psi[j] <- sum(theta[1:(j-1)] * rev(psi[1:(j-1)])) + theta[j]
           }
-          theta <- solve(stats::toeplitz(c(1, psi[1:(q-1)])), r[1:q])
+          if (q == 1) {
+            theta <- solve(stats::toeplitz(1), r[1])
+          } else {
+            theta <- solve(stats::toeplitz(c(1, psi[1:(q-1)])), r[1:q])
+          }
         }
       } else {
         theta <- numeric(0)
