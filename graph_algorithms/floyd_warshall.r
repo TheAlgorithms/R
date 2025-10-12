@@ -233,7 +233,7 @@ demonstrate_floyd_warshall <- function() {
   path_result <- fw$get_path(1, 4)
   cat("\nShortest path from 1 to 4:\n")
   cat(sprintf("Path: %s\n", paste(path_result$path, collapse = " → ")))
-  cat(sprintf("Distance: %d\n\n", path_result$distance))
+  cat(sprintf("Distance: %g\n\n", path_result$distance))
   
   # Example 2: Graph with negative weights
   cat("Example 2: Graph with negative weights\n")
