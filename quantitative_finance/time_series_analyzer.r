@@ -278,7 +278,7 @@ TimeSeriesAnalyzer <- R6Class(
       
       # Construct and solve Yule-Walker equations for AR part
       if (p > 0) {
-        r <- private$calculate_acf(p)
+        r <- private$calculate_acf(p + 1)
         phi <- solve(stats::toeplitz(r[1:p]), r[2:(p+1)])
       } else {
         phi <- numeric(0)
