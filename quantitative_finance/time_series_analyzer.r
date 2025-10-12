@@ -420,7 +420,7 @@ TimeSeriesAnalyzer <- R6Class(
       if (n <= lags) {
         stop("Not enough observations for ARCH test lags.")
       }
-      lagged_mat <- embed(sq_resid, lags + 1)
+      lagged_mat <- stats::embed(sq_resid, lags + 1)
       y <- lagged_mat[, 1]  # current squared residuals
       X <- lagged_mat[, -1] # lagged squared residuals
       fit <- stats::lm(y ~ X)
