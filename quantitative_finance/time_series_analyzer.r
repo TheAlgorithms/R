@@ -199,7 +199,8 @@ TimeSeriesAnalyzer <- R6Class(
       
       # Add lagged differences
       for (lag in 1:max_lags) {
-        X <- cbind(X, stats::lag(dy, lag)[-c(1:lag)])
+        # Use backward lag: pad with NA, then take first (length-dy-lag) elements
+        X <- cbind(X, c(rep(NA, lag), dy[1:(length(dy)-lag)])[-c(1:lag)])
       }
       
       # Remove NA rows
