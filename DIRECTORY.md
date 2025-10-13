@@ -46,17 +46,26 @@
   * [Coin Change](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/coin_change.r)
   * [Longest Common Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_common_subsequence.r)
   * [Longest Increasing Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_increasing_subsequence.r)
+  * [Matrix Chain Multiplication](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/matrix_chain_multiplication.r)
+  * [Minimum Path Sum](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/minimum_path_sum.r)
+  * [Subset Sum](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/subset_sum.r)
 
 ## Graph Algorithms
+  * [Bellman Ford Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/bellman_ford_shortest_path.r)
   * [Breadth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/breadth_first_search.r)
+  * [Bridge Detector](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/bridge_detector.r)
   * [Depth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/depth_first_search.r)
   * [Dijkstra Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/dijkstra_shortest_path.r)
-  * [Bellman-Ford Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/bellman_ford_shortest_path.r)
+  * [Floyd Warshall](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/floyd_warshall.r)
+
+## Machine Learning
+  * [Gradient Boosting](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/gradient_boosting.r)
 
 ## Mathematics
   * [Amicable Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/amicable_numbers.r)
   * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
   * [Bisection Method](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/bisection_method.r)
+  * [Catalan Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/catalan_numbers.r)
   * [Euclidean Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/euclidean_distance.r)
   * [Extended Euclidean Algorithm](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/extended_euclidean_algorithm.r)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/factorial.r)
@@ -65,6 +74,8 @@
   * [Greatest Common Divisor](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/greatest_common_divisor.r)
   * [Josephus Problem](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/josephus_problem.r)
   * [Least Common Multiple](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/least_common_multiple.r)
+  * [Modular Exponentiation](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/modular_exponentiation.r)
+  * [Newton Raphson Method](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/newton_raphson_method.r)
   * [Perfect Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/perfect_number.r)
   * [Perfect Square](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/perfect_square.r)
   * [Permutation Calculation](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/permutation_calculation.r)
@@ -73,12 +84,16 @@
   * [Sieve Of Eratosthenes](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/sieve_of_eratosthenes.r)
 
 ## Quantitative Finance
+  * [Black Scholes Option Pricing](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/black_scholes_option_pricing.r)
   * [Kalman Filter](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/kalman_filter.r)
   * [Markowitz Portfolio Optimization](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/markowitz_portfolio_optimization.r)
   * [Monte Carlo Simulation](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/monte_carlo_simulation.r)
+  * [Risk Metrics](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/risk_metrics.r)
+  * [Time Series Analyzer](https://github.com/TheAlgorithms/R/blob/HEAD/quantitative_finance/time_series_analyzer.r)
 
 ## Regression Algorithms
   * [Ann](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/ann.r)
+  * [Anova Oneway](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/anova_oneway.r)
   * [Linear Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/linear_regression.r)
   * [Linearregressionrawr](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/linearregressionrawr.r)
   * [Multiple Linear Regression](https://github.com/TheAlgorithms/R/blob/HEAD/regression_algorithms/multiple_linear_regression.r)
@@ -87,6 +102,7 @@
   * [Binary Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/binary_search.r)
   * [Linear Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/linear_search.r)
   * [Rabin.Karp.String.Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/rabin.karp.string.search.r)
+  * [Ternary.Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/ternary.search.r)
   * [Z.Algorithm.Search](https://github.com/TheAlgorithms/R/blob/HEAD/searches/z.algorithm.search.r)
 
 ## Sorting Algorithms
@@ -121,6 +137,7 @@
   * [Is.Anagram](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.anagram.r)
   * [Is.Lower](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.lower.r)
   * [Is.Uppercase](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/is.uppercase.r)
+  * [Kmp String Matching](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/kmp_string_matching.r)
   * [Levenshtein](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/levenshtein.r)
   * [Longest.Palindromic.Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/longest.palindromic.subsequence.r)
   * [Longest.Substring.No.Repeat](https://github.com/TheAlgorithms/R/blob/HEAD/string_manipulation/longest.substring.no.repeat.r)
