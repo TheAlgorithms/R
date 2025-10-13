@@ -1,6 +1,6 @@
 
 
-```r
+``` r
 library(neuralnet)
 ```
 
@@ -8,7 +8,7 @@ library(neuralnet)
 ## Error in library(neuralnet): there is no package called 'neuralnet'
 ```
 
-```r
+``` r
 concrete<-read.csv(file = "concrete.txt",stringsAsFactors = F)#get the data
 ```
 
@@ -21,7 +21,7 @@ concrete<-read.csv(file = "concrete.txt",stringsAsFactors = F)#get the data
 ## Error in file(file, "rt"): cannot open the connection
 ```
 
-```r
+``` r
 normalize<-function(x){
   return((x-min(x))/(max(x)-min(x)))
 }
@@ -32,23 +32,23 @@ concrete<-as.data.frame(lapply(concrete, normalize))
 ## Error in lapply(concrete, normalize): object 'concrete' not found
 ```
 
-```r
+``` r
 concrete_train<-concrete[1:773,]
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'concrete' not found
+## Error: object 'concrete' not found
 ```
 
-```r
+``` r
 concrete_test<-concrete[774:1030,]
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'concrete' not found
+## Error: object 'concrete' not found
 ```
 
-```r
+``` r
 concrete_model<-neuralnet(strength~cement+slag+ash+water+superplastic+coarseagg+fineagg+age,data = concrete_train,hidden = 5)
 ```
 
@@ -56,7 +56,7 @@ concrete_model<-neuralnet(strength~cement+slag+ash+water+superplastic+coarseagg+
 ## Error in neuralnet(strength ~ cement + slag + ash + water + superplastic + : could not find function "neuralnet"
 ```
 
-```r
+``` r
 model_res<-compute(concrete_model,concrete_test[,1:8])
 ```
 
@@ -64,23 +64,23 @@ model_res<-compute(concrete_model,concrete_test[,1:8])
 ## Error in compute(concrete_model, concrete_test[, 1:8]): could not find function "compute"
 ```
 
-```r
+``` r
 x=model_res$net.result
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'model_res' not found
+## Error: object 'model_res' not found
 ```
 
-```r
+``` r
 y=concrete_test$strength
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'concrete_test' not found
+## Error: object 'concrete_test' not found
 ```
 
-```r
+``` r
 cor(x,y)
 ```
 
@@ -88,7 +88,7 @@ cor(x,y)
 ## Error in is.data.frame(y): object 'y' not found
 ```
 
-```r
+``` r
 plot(concrete_model)
 ```
 
