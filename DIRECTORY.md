@@ -50,6 +50,7 @@
     - [1 Knapsack Problem](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/0/0/1_knapsack_problem.r)
   - [1 Knapsack Problem](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/0/1_knapsack_problem.r)
 - [Coin Change](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/coin_change.r)
+- [Longest Common Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_common_subsequence.r)
 - [House Robber](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/house_robber.r)
 - [Longest Increasing Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_increasing_subsequence.r)
 
