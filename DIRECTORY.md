@@ -52,7 +52,7 @@
 - [Coin Change](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/coin_change.r)
 - [Longest Common Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_common_subsequence.r)
 - [Longest Increasing Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_increasing_subsequence.r)
-  - [Maximal Square](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/maximal_square.r)
+- [Maximal Square](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/maximal_square.r)
 
 ## Graph Algorithms
 
