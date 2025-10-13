@@ -50,12 +50,7 @@
     - [1 Knapsack Problem](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/0/0/1_knapsack_problem.r)
   - [1 Knapsack Problem](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/0/1_knapsack_problem.r)
 - [Coin Change](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/coin_change.r)
-- [Burst Balloons](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/burst_balloons.r)
 - [Decode Ways](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/decode_ways.r)
-- [Maximal Square](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/maximal_square.r)
-- [Minimum Path Sum](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/minimum_path_sum.r)
-- [Profitable Schemes](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/profitable_schemes.r)
-- [Unique Paths](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/unique_paths.r)
 - [Longest Common Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_common_subsequence.r)
 - [Longest Increasing Subsequence](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/longest_increasing_subsequence.r)
 
