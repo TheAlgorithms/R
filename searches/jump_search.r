@@ -56,19 +56,19 @@ JumpSearch <- R6Class(
       comparisons <- 0
       
       # Jump through array to find the block where target might be
-      while (prev < private$n && self$data[min(step, private$n)] < target) {
+      while (step <= private$n && self$data[step] < target) {
         comparisons <- comparisons + 1
         prev <- step
         step <- step + private$optimal_jump
-        
-        # If we've jumped past the end
-        if (prev >= private$n) {
-          return(list(
-            index = -1,
-            comparisons = comparisons,
-            found = FALSE
-          ))
-        }
+      }
+      
+      # If we've jumped past the end, adjust step to not exceed n
+      if (prev >= private$n) {
+        return(list(
+          index = -1,
+          comparisons = comparisons,
+          found = FALSE
+        ))
       }
       
       # Linear search in the identified block
