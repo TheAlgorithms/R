@@ -72,7 +72,7 @@ JumpSearch <- R6Class(
       }
       
       # Linear search in the identified block
-      while (prev < private$n && self$data[prev + 1] <= target) {
+      while ((prev + 1) <= private$n && self$data[prev + 1] <= target) {
         comparisons <- comparisons + 1
         prev <- prev + 1
         
