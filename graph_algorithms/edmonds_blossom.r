@@ -37,7 +37,7 @@ edges <- c(1,2, 1,3, 2,4, 3,4, 4,5)
 g <- graph(edges, directed = FALSE)
 
 # Compute Maximum Matching
-matching <- max_bipartite_match(g, types = NULL) # types=NULL for general graphs
+matching <- max_matching(g) # Use max_matching for general (non-bipartite) graphs
 max_match_edges <- matching$matching
 
 # Display Result
