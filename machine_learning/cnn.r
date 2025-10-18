@@ -29,24 +29,29 @@
 # Load Required Library
 suppressPackageStartupMessages(library(keras))
 
-# Define CNN Architecture (Algorithm Only)
-cnn_model <- keras_model_sequential() %>%
-  layer_conv_2d(
-    filters = 32, kernel_size = c(3, 3), activation = "relu",
-    input_shape = c(28, 28, 1), padding = "same"
-  ) %>%
-  layer_max_pooling_2d(pool_size = c(2, 2)) %>%
-  layer_conv_2d(
-    filters = 64, kernel_size = c(3, 3),
-    activation = "relu", padding = "same"
-  ) %>%
-  layer_max_pooling_2d(pool_size = c(2, 2)) %>%
-  layer_flatten() %>%
-  layer_dense(units = 128, activation = "relu") %>%
-  layer_dense(units = 10, activation = "softmax")
+# Define CNN Architecture as a Function (Reusable)
+build_cnn_model <- function(input_shape = c(28, 28, 1), num_classes = 10) {
+  keras_model_sequential() %>%
+    layer_conv_2d(
+      filters = 32, kernel_size = c(3, 3), activation = "relu",
+      input_shape = input_shape, padding = "same"
+    ) %>%
+    layer_max_pooling_2d(pool_size = c(2, 2)) %>%
+    layer_conv_2d(
+      filters = 64, kernel_size = c(3, 3),
+      activation = "relu", padding = "same"
+    ) %>%
+    layer_max_pooling_2d(pool_size = c(2, 2)) %>%
+    layer_flatten() %>%
+    layer_dense(units = 128, activation = "relu") %>%
+    layer_dense(units = num_classes, activation = "softmax")
+}
 
-# Display Model Summary
-summary(cnn_model)
+# Example: Display Model Summary (only in interactive sessions)
+if (interactive()) {
+  model <- build_cnn_model()
+  summary(model)
+}
 
 # ==============================================
 # Note:
