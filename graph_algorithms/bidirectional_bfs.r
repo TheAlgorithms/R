@@ -53,34 +53,38 @@ bidirectional_bfs <- function(graph, source, target) {
   # Main loop
   while (length(queue_source) > 0 && length(queue_target) > 0) {
     # Expand one level from source side
-    next_queue <- c()
+    next_queue_list <- list()
+    idx <- 1
     for (u in queue_source) {
       for (v in graph[[as.character(u)]]) {
         if (!visited_from_source[v]) {
           visited_from_source[v] <- TRUE
           parent_from_source[v] <- u
-          next_queue <- c(next_queue, v)
+          next_queue_list[[idx]] <- v
+          idx <- idx + 1
         }
       }
     }
-    queue_source <- next_queue
+    queue_source <- unlist(next_queue_list, use.names = FALSE)
     
     # Check intersection
     meeting_node <- get_intersection()
     if (!is.na(meeting_node)) break
     
     # Expand one level from target side
-    next_queue <- c()
+    next_queue_list <- list()
+    idx <- 1
     for (u in queue_target) {
       for (v in graph[[as.character(u)]]) {
         if (!visited_from_target[v]) {
           visited_from_target[v] <- TRUE
           parent_from_target[v] <- u
-          next_queue <- c(next_queue, v)
+          next_queue_list[[idx]] <- v
+          idx <- idx + 1
         }
       }
     }
-    queue_target <- next_queue
+    queue_target <- unlist(next_queue_list, use.names = FALSE)
     
     # Check intersection again
     meeting_node <- get_intersection()
