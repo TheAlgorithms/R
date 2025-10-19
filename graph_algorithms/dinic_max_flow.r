@@ -15,16 +15,20 @@
 # - Airline scheduling
 # - Project selection and resource allocation
 
+# Formatting constant
+LINE_WIDTH <- 60
+
 #' Create an empty flow network
 #' @param n: Number of vertices
 #' @return: Flow network structure with adjacency list and capacity matrix
 create_flow_network <- function(n) {
-  list(
-    n = n,
-    graph = vector("list", n),  # Adjacency list
-    capacity = matrix(0, nrow = n, ncol = n),  # Capacity matrix
-    flow = matrix(0, nrow = n, ncol = n)  # Flow matrix
-  )
+  # Use environment to allow in-place (by-reference) mutation without superassignment
+  env <- new.env(parent = emptyenv())
+  env$n <- n
+  env$graph <- vector("list", n)           # Adjacency list
+  env$capacity <- matrix(0, nrow = n, ncol = n)  # Capacity matrix
+  env$flow <- matrix(0, nrow = n, ncol = n)      # Flow matrix
+  return(env)
 }
 
 #' Add edge to flow network
@@ -55,24 +59,30 @@ bfs_level_graph <- function(network, source, sink) {
   n <- network$n
   level <- rep(-1, n)
   level[source] <- 0
-  
-  queue <- c(source)
-  
-  while (length(queue) > 0) {
-    u <- queue[1]
-    queue <- queue[-1]
-    
+
+  # O(1) queue using head/tail indices; BFS enqueues each vertex at most once
+  queue <- integer(n)
+  head <- 1
+  tail <- 1
+  queue[tail] <- source
+  tail <- tail + 1
+
+  while (head < tail) {
+    u <- queue[head]
+    head <- head + 1
+
     for (v in network$graph[[u]]) {
       # Check if edge has residual capacity and v is not visited
       residual_capacity <- network$capacity[u, v] - network$flow[u, v]
-      
+
       if (level[v] == -1 && residual_capacity > 0) {
         level[v] <- level[u] + 1
-        queue <- c(queue, v)
+        queue[tail] <- v
+        tail <- tail + 1
       }
     }
   }
-  
+
   return(level)
 }
 
@@ -108,9 +118,9 @@ dfs_send_flow <- function(network, u, sink, level, flow, start) {
       )
       
       if (pushed_flow > 0) {
-        # Update flow
-        network$flow[u, v] <<- network$flow[u, v] + pushed_flow
-        network$flow[v, u] <<- network$flow[v, u] - pushed_flow
+        # Update flow (environment enables in-place mutation)
+        network$flow[u, v] <- network$flow[u, v] + pushed_flow
+        network$flow[v, u] <- network$flow[v, u] - pushed_flow
         return(pushed_flow)
       }
     }
@@ -194,21 +204,21 @@ dinic_max_flow <- function(network, source, sink) {
 #' @param network: Original network (optional, for displaying edges)
 print_max_flow <- function(result, network = NULL) {
   cat("Maximum Flow Result:\n")
-  cat(strrep("=", 60), "\n\n")
+  cat(strrep("=", LINE_WIDTH), "\n\n")
   cat(sprintf("Maximum Flow: %g\n", result$max_flow))
   cat(sprintf("Iterations: %d\n\n", result$iterations))
   
   cat("Minimum Cut Edges:\n")
-  cat(strrep("-", 60), "\n")
+  cat(strrep("-", LINE_WIDTH), "\n")
   if (length(result$min_cut_edges) > 0) {
     cat(sprintf("%-15s %-15s %-15s\n", "From", "To", "Capacity"))
-    cat(strrep("-", 60), "\n")
+    cat(strrep("-", LINE_WIDTH), "\n")
     total_cut_capacity <- 0
     for (edge in result$min_cut_edges) {
       cat(sprintf("%-15d %-15d %-15g\n", edge$from, edge$to, edge$capacity))
       total_cut_capacity <- total_cut_capacity + edge$capacity
     }
-    cat(strrep("-", 60), "\n")
+    cat(strrep("-", LINE_WIDTH), "\n")
     cat(sprintf("Total Cut Capacity: %g\n", total_cut_capacity))
   } else {
     cat("No cut edges found\n")
@@ -223,9 +233,9 @@ print_max_flow <- function(result, network = NULL) {
 #' @param network: Flow network with computed flows
 print_flow_edges <- function(network) {
   cat("Flow on Edges:\n")
-  cat(strrep("-", 60), "\n")
+  cat(strrep("-", LINE_WIDTH), "\n")
   cat(sprintf("%-10s %-10s %-12s %-12s\n", "From", "To", "Flow", "Capacity"))
-  cat(strrep("-", 60), "\n")
+  cat(strrep("-", LINE_WIDTH), "\n")
   
   for (u in 1:network$n) {
     for (v in network$graph[[u]]) {
@@ -235,7 +245,7 @@ print_flow_edges <- function(network) {
       }
     }
   }
-  cat(strrep("-", 60), "\n\n")
+  cat(strrep("-", LINE_WIDTH), "\n\n")
 }
 
 # ========== Example 1: Basic 6-Vertex Network ==========
