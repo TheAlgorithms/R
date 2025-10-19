@@ -3,8 +3,8 @@
   * [Apriori](https://github.com/TheAlgorithms/R/blob/HEAD/association_algorithms/apriori.r)
 
 ## Biomedical
-  * [Mann Whitney U Test](https://github.com/TheAlgorithms/R/blob/HEAD/Biomedical/mann_whitney_u_test.r)
-  * [Wilcoxon Signed Rank Test](https://github.com/TheAlgorithms/R/blob/HEAD/Biomedical/wilcoxon_signed_rank_test.r)
+  * [Mann Whitney U Test](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/mann_whitney_u_test.r)
+  * [Wilcoxon Signed Rank Test](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/wilcoxon_signed_rank_test.r)
 
 ## Classification Algorithms
   * [Decision Tree](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/decision_tree.r)

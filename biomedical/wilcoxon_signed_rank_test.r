@@ -37,16 +37,26 @@ wilcoxon_signed_rank_test <- function(x, y = NULL, paired = TRUE, alternative = 
     stop("alternative must be 'two.sided', 'less', or 'greater'")
   }
   
-  # Calculate differences
+  # Remove NA values early
   if (is.null(y)) {
     # One-sample test against median mu
+    x <- x[!is.na(x)]
+    if (length(x) == 0) {
+      stop("No non-missing observations in x")
+    }
     differences <- x - mu
     test_type <- "One-sample Wilcoxon signed-rank test"
   } else {
-    # Paired samples test
+    # Paired samples test - remove NA pairs
     if (length(x) != length(y)) {
       stop("x and y must have the same length for paired test")
     }
+    idx <- complete.cases(x, y)
+    if (sum(idx) == 0) {
+      stop("No complete cases found")
+    }
+    x <- x[idx]
+    y <- y[idx]
     differences <- x - y
     test_type <- "Paired samples Wilcoxon signed-rank test"
   }
@@ -68,11 +78,8 @@ wilcoxon_signed_rank_test <- function(x, y = NULL, paired = TRUE, alternative = 
   W_minus <- sum(ranks[non_zero_diff < 0])
   
   # Test statistic selection based on alternative hypothesis
-  if (alternative == "greater") {
-    # For greater alternative, we want to test if W- is unusually small
-    W <- W_minus
-  } else if (alternative == "less") {
-    # For less alternative, we want to test if W+ is unusually small  
+  # For one-sided tests, always use W_plus as the test statistic
+  if (alternative == "greater" || alternative == "less") {
     W <- W_plus
   } else {
     # For two-sided, use the smaller of the two (traditional approach)
@@ -81,20 +88,26 @@ wilcoxon_signed_rank_test <- function(x, y = NULL, paired = TRUE, alternative = 
   
   # Calculate p-value using normal approximation for large samples (n >= 10)
   if (n >= 10) {
-    # Mean and variance of W under null hypothesis
+    # Mean of W_plus under null hypothesis
     mu_W <- n * (n + 1) / 4
-    var_W <- n * (n + 1) * (2 * n + 1) / 24
+    
+    # Variance with tie correction
+    tie_counts <- table(abs_diff)
+    tie_correction <- sum(tie_counts^3 - tie_counts)
+    var_W <- (n * (n + 1) * (2 * n + 1) - tie_correction) / 24
     sigma_W <- sqrt(var_W)
     
-    # Apply continuity correction
+    # Apply continuity correction and compute p-values
     if (alternative == "two.sided") {
       z <- (abs(W - mu_W) - 0.5) / sigma_W
       p_value <- 2 * pnorm(z, lower.tail = FALSE)
     } else if (alternative == "less") {
-      z <- (W + 0.5 - mu_W) / sigma_W
-      p_value <- pnorm(z)
+      # For 'less': test if W_plus is unusually small
+      z <- (W_plus + 0.5 - mu_W) / sigma_W
+      p_value <- pnorm(z, lower.tail = TRUE)
     } else { # greater
-      z <- (W - 0.5 - mu_W) / sigma_W
+      # For 'greater': test if W_plus is unusually large
+      z <- (W_plus - 0.5 - mu_W) / sigma_W
       p_value <- pnorm(z, lower.tail = FALSE)
     }
   } else {
@@ -293,10 +306,12 @@ run_biomedical_examples <- function() {
   cat("=================================================================\n")
 }
 
-# Run the examples when the script is executed
+# Examples are available but not run automatically to avoid side effects
+# To run examples, execute: run_biomedical_examples()
 if (interactive()) {
   cat("Loading Wilcoxon Signed-Rank Test implementation...\n")
   cat("Run 'run_biomedical_examples()' to see biomedical examples.\n")
-} else {
-  run_biomedical_examples()
 }
+
+# Uncomment the following line to run examples automatically:
+# run_biomedical_examples()

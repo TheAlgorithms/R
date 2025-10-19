@@ -354,11 +354,15 @@ compare_with_r_builtin <- function() {
   cat("and continuity corrections, but results should be very similar.\n")
 }
 
-# Run the examples when the script is executed
+# Examples are available but not run automatically to avoid side effects
+# To run examples, execute: run_biomedical_examples()
+# To compare with R built-in, execute: compare_with_r_builtin()
 if (interactive()) {
   cat("Loading Mann-Whitney U Test implementation...\n")
   cat("Run 'run_biomedical_examples()' to see biomedical examples.\n")
   cat("Run 'compare_with_r_builtin()' to compare with R's wilcox.test().\n")
-} else {
-  run_biomedical_examples()
 }
+
+# Uncomment the following lines to run examples automatically:
+# run_biomedical_examples()
+# compare_with_r_builtin()
