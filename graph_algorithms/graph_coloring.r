@@ -2,7 +2,7 @@
 #
 # The graph coloring problem involves assigning colors to vertices of a graph such that
 # no two adjacent vertices share the same color. This implementation uses backtracking
-# to find a valid coloring with a specified number of colors. (The chromatic number is computed by find_chromatic_number().)
+# to find a valid coloring with a given number of colors.
 #
 # Time Complexity: O(m^V) where m is number of colors and V is number of vertices
 # Space Complexity: O(V) for recursion stack and color assignment array
