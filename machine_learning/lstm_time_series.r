@@ -1,8 +1,9 @@
 # LSTM Time Series Prediction in R
 # Long Short-Term Memory (LSTM) Neural Network for Time Series Forecasting
 #
-# Required libraries: keras, tensorflow
+# Required libraries: keras, tensorflow, (optional) tidyr or reshape2, ggplot2
 # Install with: install.packages("keras"); install.packages("tensorflow")
+# Optionally: install.packages(c("tidyr","reshape2","ggplot2"))
 # Then run: keras::install_keras()
 
 suppressPackageStartupMessages({
@@ -139,10 +140,10 @@ cat(sprintf("Total sequences created: %d\n\n", dim(X)[1]))
 
 # Split into train and test sets (80-20 split)
 train_size <- floor(0.8 * dim(X)[1])
-indices <- sample(1:dim(X)[1])
 
-train_indices <- indices[1:train_size]
-test_indices <- indices[(train_size + 1):length(indices)]
+# IMPORTANT: For time series, use sequential split (preserve temporal order)
+train_indices <- 1:train_size
+test_indices <- (train_size + 1):dim(X)[1]
 
 X_train <- X[train_indices, , , drop = FALSE]
 y_train <- y[train_indices, , drop = FALSE]
@@ -230,12 +231,23 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
     Predicted = as.vector(y_pred_orig)
   )
   
-  # Reshape for ggplot
-  plot_data_long <- reshape2::melt(plot_data, id.vars = "Index")
+  # Reshape for ggplot: prefer tidyr::pivot_longer if available, fallback to reshape2::melt
+  if (requireNamespace("tidyr", quietly = TRUE)) {
+    plot_data_long <- tidyr::pivot_longer(plot_data, 
+                                          cols = -Index,
+                                          names_to = "variable",
+                                          values_to = "value")
+  } else if (requireNamespace("reshape2", quietly = TRUE)) {
+    plot_data_long <- reshape2::melt(plot_data, id.vars = "Index")
+    # Ensure consistent column names with pivot_longer
+    names(plot_data_long) <- c("Index", "variable", "value")
+  } else {
+    stop("Please install 'tidyr' or 'reshape2' to create the plot (install.packages('tidyr')).")
+  }
   
-  # Create plot
+  # Create plot (use linewidth instead of size for modern ggplot2)
   p <- ggplot(plot_data_long, aes(x = Index, y = value, color = variable)) +
-    geom_line(size = 1) +
+    geom_line(linewidth = 1) +
     geom_point(alpha = 0.5) +
     scale_color_manual(values = c("Actual" = "blue", "Predicted" = "red")) +
     labs(
@@ -258,7 +270,7 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
   cat("Plot created successfully!\n\n")
 }
 
-# ========== Additional Example: Multi-step Prediction ==========
+# ========== Additional Example: Multi-step Prediction ==========\n
 
 cat("========== Multi-Step Ahead Prediction ==========\n\n")
 
