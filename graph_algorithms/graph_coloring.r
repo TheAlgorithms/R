@@ -52,7 +52,7 @@ graph_coloring <- function(graph, num_colors) {
     return(list(
       success = TRUE,
       colors = colors,
-      num_colors_used = num_colors
+      num_colors_used = max(colors)
     ))
   } else {
     return(list(
