@@ -111,7 +111,7 @@ print_integration_result <- function(f, a, b, n, result, exact = NULL) {
   #' @param result: Computed integral value
   #' @param exact: Exact value if known (optional)
   
-  cat(sprintf("Simpson's Rule Integration:\n"))
+  cat("Simpson's Rule Integration:\n")
   cat(sprintf("  Interval: [%.4f, %.4f]\n", a, b))
   cat(sprintf("  Subintervals: %d\n", n))
   cat(sprintf("  Approximate integral: %.10f\n", result))
