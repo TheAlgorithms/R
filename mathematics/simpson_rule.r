@@ -93,9 +93,11 @@ simpson_rule_vectorized <- function(f, a, b, n) {
   x <- seq(a, b, by = h)
   y <- f(x)
   
-  # Create coefficient vector: [1, 4, 2, 4, 2, ..., 4, 1]
-  coefficients <- rep(c(4, 2), length.out = n - 1)
-  coefficients <- c(1, coefficients, 1)
+  # Create coefficient vector: [1, 4, 2, 4, 2, ..., 2, 4, 1]
+  coefficients <- rep(2, n + 1)
+  coefficients[1] <- 1
+  coefficients[n + 1] <- 1
+  coefficients[seq(2, n, by = 2)] <- 4
   
   result <- sum(coefficients * y) * h / 3
   return(result)
