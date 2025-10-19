@@ -15,9 +15,9 @@
 # - Approximation algorithms for NP-hard problems
 
 #' Compute the Minimum Spanning Tree using Prim's algorithm
-#' @param graph: Adjacency matrix of the graph (use 0 or Inf for no edge)
-#' @param start_vertex: Starting vertex (default is 1)
-#' @return: List with MST edges, total weight, and parent array
+#' @param graph Adjacency matrix of the graph (use 0 or Inf for no edge)
+#' @param start_vertex Starting vertex (default is 1)
+#' @return List with MST edges, total weight, and parent array
 prim_mst <- function(graph, start_vertex = 1) {
   # Validate input
   if (!is.matrix(graph)) {
@@ -102,8 +102,8 @@ prim_mst <- function(graph, start_vertex = 1) {
 }
 
 #' Print MST in a formatted way
-#' @param mst: Result from prim_mst function
-#' @param graph: Original graph (for verification)
+#' @param mst Result from prim_mst function
+#' @param graph Original graph (for verification)
 print_mst <- function(mst, graph = NULL) {
   cat("Minimum Spanning Tree:\n")
   cat(strrep("=", 50), "\n\n")
@@ -143,9 +143,9 @@ print_mst <- function(mst, graph = NULL) {
 }
 
 #' Create adjacency matrix from edge list
-#' @param edges: List of edges, each with from, to, and weight
-#' @param n_vertices: Number of vertices
-#' @return: Adjacency matrix
+#' @param edges List of edges, each with from, to, and weight
+#' @param n_vertices Number of vertices
+#' @return Adjacency matrix
 create_graph_from_edges <- function(edges, n_vertices) {
   graph <- matrix(0, nrow = n_vertices, ncol = n_vertices)
   
@@ -158,10 +158,7 @@ create_graph_from_edges <- function(edges, n_vertices) {
 }
 
 # ========== Example 1: Basic 5-vertex graph ==========
-
 cat("========== Example 1: Basic 5-Vertex Graph ==========\n\n")
-
-# Define adjacency matrix (0 = no edge)
 graph1 <- matrix(c(
   0, 2, 0, 6, 0,
   2, 0, 3, 8, 5,
@@ -169,20 +166,14 @@ graph1 <- matrix(c(
   6, 8, 0, 0, 9,
   0, 5, 7, 9, 0
 ), nrow = 5, byrow = TRUE)
-
 cat("Graph adjacency matrix:\n")
 print(graph1)
 cat("\n")
-
-# Compute MST
 mst1 <- prim_mst(graph1)
 print_mst(mst1, graph1)
 
 # ========== Example 2: 6-vertex graph ==========
-
 cat("========== Example 2: 6-Vertex Graph ==========\n\n")
-
-# Another example with 6 vertices
 graph2 <- matrix(c(
   0, 4, 0, 0, 0, 0,
   4, 0, 8, 0, 0, 0,
@@ -191,19 +182,14 @@ graph2 <- matrix(c(
   0, 0, 0, 9, 0, 10,
   0, 0, 4, 14, 10, 0
 ), nrow = 6, byrow = TRUE)
-
 cat("Graph adjacency matrix:\n")
 print(graph2)
 cat("\n")
-
 mst2 <- prim_mst(graph2, start_vertex = 1)
 print_mst(mst2, graph2)
 
 # ========== Example 3: Using edge list representation ==========
-
 cat("========== Example 3: Graph from Edge List ==========\n\n")
-
-# Define graph as edge list
 edges <- list(
   list(from = 1, to = 2, weight = 1),
   list(from = 1, to = 3, weight = 4),
@@ -211,63 +197,46 @@ edges <- list(
   list(from = 2, to = 4, weight = 5),
   list(from = 3, to = 4, weight = 3)
 )
-
-# Convert to adjacency matrix
 graph3 <- create_graph_from_edges(edges, 4)
-
 cat("Graph from edge list:\n")
 for (edge in edges) {
   cat(sprintf("%d -- %d : %g\n", edge$from, edge$to, edge$weight))
 }
-cat("\n")
-
-cat("Adjacency matrix:\n")
+cat("\nAdjacency matrix:\n")
 print(graph3)
 cat("\n")
-
 mst3 <- prim_mst(graph3)
 print_mst(mst3, graph3)
 
-# ========== Example 4: Disconnected graph (error handling) ==========
-
+# ========== Example 4: Disconnected graph ==========
 cat("========== Example 4: Disconnected Graph ==========\n\n")
-
-# Create a disconnected graph (two separate components)
 graph4 <- matrix(c(
   0, 1, 0, 0,
   1, 0, 0, 0,
   0, 0, 0, 2,
   0, 0, 2, 0
 ), nrow = 4, byrow = TRUE)
-
 cat("Disconnected graph adjacency matrix:\n")
 print(graph4)
 cat("\n")
-
 mst4 <- prim_mst(graph4)
 print_mst(mst4, graph4)
 
 # ========== Example 5: Complete graph K4 ==========
-
 cat("========== Example 5: Complete Graph K4 ==========\n\n")
-
-# Complete graph with 4 vertices
 graph5 <- matrix(c(
   0, 1, 2, 3,
   1, 0, 4, 5,
   2, 4, 0, 6,
   3, 5, 6, 0
 ), nrow = 4, byrow = TRUE)
-
 cat("Complete graph K4:\n")
 print(graph5)
 cat("\n")
-
 mst5 <- prim_mst(graph5)
 print_mst(mst5, graph5)
 
 # ========== Notes ==========
-
 cat("========== Algorithm Properties ==========\n\n")
 cat("1. Prim's algorithm guarantees finding the MST for connected graphs\n")
 cat("2. Works only on undirected graphs with non-negative weights\n")
