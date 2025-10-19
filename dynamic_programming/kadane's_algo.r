@@ -65,12 +65,6 @@ kadane <- function(arr) {
   ))
 }
 
-# Variant: Kadane that returns also when you want first-occurrence vs. any occurrence
-kadane_first_occurrence <- function(arr) {
-  # exactly like kadane() but ties favor earlier segment (current code already does)
-  kadane(arr)
-}
-
 # Helper to pretty-print results
 print_kadane_result <- function(res, arr_name="Array") {
   cat("Input:", arr_name, "\n")
