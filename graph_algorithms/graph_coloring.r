@@ -8,7 +8,10 @@
 # Space Complexity: O(V) for recursion stack and color assignment array
 #
 # Input: graph as adjacency matrix (n x n), number of colors
-# Output: color assignment for each vertex, or NULL if no valid coloring exists
+# Output: A list with fields:
+#   - success: TRUE if a valid coloring was found, FALSE otherwise
+#   - colors: integer vector of color assignments for each vertex (or NULL if not successful)
+#   - num_colors_used: number of colors used (or NULL if not successful)
 
 graph_coloring <- function(graph, num_colors) {
   n <- nrow(graph)
