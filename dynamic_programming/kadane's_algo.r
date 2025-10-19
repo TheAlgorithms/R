@@ -148,7 +148,8 @@ kadane_circular <- function(arr) {
   if (max_wrap > normal) {
     return(list(max_sum = max_wrap, start = NA, end = NA, subarray = NA)) # indices for wrap-around not computed here
   } else {
-    return(list(max_sum = normal, start = kadane(arr)$start, end = kadane(arr)$end, subarray = kadane(arr)$subarray))
+    normal_result <- kadane(arr)
+    return(list(max_sum = normal, start = normal_result$start, end = normal_result$end, subarray = normal_result$subarray))
   }
 }
 
