@@ -144,8 +144,8 @@ welsh_powell_coloring <- function(graph) {
 validate_coloring <- function(graph, colors) {
   n <- nrow(graph)
   
-  for (i in 1:n) {
-    for (j in 1:n) {
+  for (i in 1:(n - 1)) {
+    for (j in (i + 1):n) {
       if (graph[i, j] == 1 && colors[i] == colors[j]) {
         return(FALSE)
       }
