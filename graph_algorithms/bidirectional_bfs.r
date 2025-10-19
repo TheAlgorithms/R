@@ -119,34 +119,36 @@ bidirectional_bfs <- function(graph, source, target) {
 # Example Usage and Test
 # ==============================================================
 
-cat("=== Bidirectional BFS Shortest Path ===\n")
+if (interactive()) {
+  cat("=== Bidirectional BFS Shortest Path ===\n")
 
-# Example Graph (Unweighted)
-# 1 -- 2 -- 3
-#  |    |
-#  4 -- 5 -- 6
+  # Example Graph (Unweighted)
+  # 1 -- 2 -- 3
+  #  |    |
+  #  4 -- 5 -- 6
 
-graph <- list(
-  "1" = c(2, 4),
-  "2" = c(1, 3, 5),
-  "3" = c(2, 6),
-  "4" = c(1, 5),
-  "5" = c(2, 4, 6),
-  "6" = c(3, 5)
-)
+  graph <- list(
+    "1" = c(2, 4),
+    "2" = c(1, 3, 5),
+    "3" = c(2, 6),
+    "4" = c(1, 5),
+    "5" = c(2, 4, 6),
+    "6" = c(3, 5)
+  )
 
-cat("Graph adjacency list:\n")
-for (v in names(graph)) {
-  cat("Vertex", v, "-> [", paste(graph[[v]], collapse = ", "), "]\n")
-}
+  cat("Graph adjacency list:\n")
+  for (v in names(graph)) {
+    cat("Vertex", v, "-> [", paste(graph[[v]], collapse = ", "), "]\n")
+  }
 
-cat("\nRunning Bidirectional BFS from 1 to 6...\n")
-result <- bidirectional_bfs(graph, 1, 6)
+  cat("\nRunning Bidirectional BFS from 1 to 6...\n")
+  result <- bidirectional_bfs(graph, 1, 6)
 
-if (result$found) {
-  cat("Shortest Path Found!\n")
-  cat("Path:", paste(result$path, collapse = " -> "), "\n")
-  cat("Distance:", result$distance, "\n")
-} else {
-  cat("No path found between source and target.\n")
+  if (result$found) {
+    cat("Shortest Path Found!\n")
+    cat("Path:", paste(result$path, collapse = " -> "), "\n")
+    cat("Distance:", result$distance, "\n")
+  } else {
+    cat("No path found between source and target.\n")
+  }
 }
