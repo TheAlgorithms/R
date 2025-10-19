@@ -60,7 +60,9 @@ viterbi <- function(states, observations, start_prob, trans_prob, emit_prob) {
   best_path[T_len] <- best_last_state
   
   if (T_len > 1) {
-    for (t in (T_len - 1):1) {
+    for (t in rev(seq_len(T_len - 1))) {
+      best_path[t] <- path[best_path[t + 1], t + 1]
+    }
       best_path[t] <- path[best_path[t + 1], t + 1]
     }
   }
