@@ -58,14 +58,14 @@ simpson_rule <- function(f, a, b, n) {
   result <- f(x[1]) + f(x[n + 1])
   
   # Apply Simpson's coefficients
-  # Odd indices (1, 3, 5, ...) get coefficient 4
-  # Even indices (2, 4, 6, ...) get coefficient 2
+  # Odd indices (i = 3, 5, 7, ...) get coefficient 4
+  # Even indices (i = 2, 4, 6, ...) get coefficient 2
   for (i in 2:n) {
-    if (i %% 2 == 0) {
-      # Even index: multiply by 4
+    if (i %% 2 != 0) {
+      # Odd index: multiply by 4
       result <- result + 4 * f(x[i])
     } else {
-      # Odd index: multiply by 2
+      # Even index: multiply by 2
       result <- result + 2 * f(x[i])
     }
   }
