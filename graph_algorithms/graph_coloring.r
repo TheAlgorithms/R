@@ -156,25 +156,29 @@ validate_coloring <- function(graph, colors) {
 }
 
 # Example usage and tests
-cat("=== Graph Coloring Algorithm ===\n\n")
+if (interactive()) {
+  cat("=== Graph Coloring Algorithm ===\n\n")
 
-# Example 1: Simple triangle graph (needs 3 colors)
-cat("Example 1: Triangle Graph\n")
-triangle <- matrix(c(
-  0, 1, 1,
-  1, 0, 1,
-  1, 1, 0
-), nrow = 3, byrow = TRUE)
+  # Example 1: Simple triangle graph (needs 3 colors)
+  cat("Example 1: Triangle Graph\n")
+  triangle <- matrix(c(
+    0, 1, 1,
+    1, 0, 1,
+    1, 1, 0
+  ), nrow = 3, byrow = TRUE)
 
-cat("Adjacency Matrix:\n")
-print(triangle)
+  cat("Adjacency Matrix:\n")
+  print(triangle)
 
-result1 <- graph_coloring(triangle, 3)
-cat("\nBacktracking with 3 colors:\n")
-cat("Success:", result1$success, "\n")
-cat("Color assignment:", result1$colors, "\n")
-cat("Valid:", validate_coloring(triangle, result1$colors), "\n")
+  result1 <- graph_coloring(triangle, 3)
+  cat("\nBacktracking with 3 colors:\n")
+  cat("Success:", result1$success, "\n")
+  cat("Color assignment:", result1$colors, "\n")
+  cat("Valid:", validate_coloring(triangle, result1$colors), "\n")
 
+  # (Include all remaining example/test code here, indented inside the block)
+  # ...
+}
 result1_fail <- graph_coloring(triangle, 2)
 cat("\nBacktracking with 2 colors:\n")
 cat("Success:", result1_fail$success, "\n")
