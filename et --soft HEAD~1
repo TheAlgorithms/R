@@ -1,0 +1,461 @@
+[33mcommit 7d4b7af52036b21abf54435f14250ef170351389[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mGraph_colouring[m[33m)[m
+Author: Prathamesh Kalshetti <prathameshkalshetti450@gmail.com>
+Date:   Sun Oct 19 13:56:38 2025 +0530
+
+    graph_colouring
+
+[33mcommit 4921341b2921457245427d4b465e0eb1478f28e6[m[33m ([m[1;31morigin/feat-viterbi[m[33m, [m[1;32mfeat-viterbi[m[33m, [m[1;32mfeat-bidirectional_bfs[m[33m)[m
+Author: Prathamesh Kalshetti <prathameshkalshetti450@gmail.com>
+Date:   Sat Oct 18 12:35:09 2025 +0530
+
+    viterbi
+
+[33mcommit 8b30acf58c4636541e76801c4f9f22dfcd53d85b[m[33m ([m[1;31morigin/feat-bidirectional_bfs[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Prathamesh Kalshetti <prathameshkalshetti450@gmail.com>
+Date:   Sat Oct 18 11:44:39 2025 +0530
+
+    bidirectional_bfs
+
+[33mcommit b083bc9dcffa63af4210cb5b8664246a4a0cf941[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: PIYUSH KUMAR SINGH <121piyush466mits@gmail.com>
+Date:   Thu Oct 16 20:02:54 2025 +0530
+
+    Add Knuth-Morris-Pratt (KMP) string matching algorithm [HACKTOBERFEST 2025] (#157)
+
+[33mcommit 1ae8bda8c22c4d580f7c6e7cdc457125328acadb[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Wed Oct 15 03:15:51 2025 +0530
+
+    [FEATURE] Add Jump Search Algorithm Implementation in R (#216)
+
+[33mcommit 65e82bffad452bcc0237df9551acfc90e3d69243[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Sun Oct 12 19:04:20 2025 +0530
+
+    Add comprehensive Value at Risk (VaR) and Expected Shortfall (ES) calculator (#201)
+
+[33mcommit a5cbeecd63b6efedd7fc9a94d61143e73115a0dc[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Sun Oct 12 19:00:13 2025 +0530
+
+    Add Time Series Analysis and ARIMA Modeling Implementation in R (#202)
+
+[33mcommit d711ac1f0db4909653825ae531968c4393e27fff[m
+Author: Andrii Siriak <siryaka@gmail.com>
+Date:   Sun Oct 12 16:26:48 2025 +0300
+
+    Create stale.yml
+
+[33mcommit 69a0c3045cade6b7c8409f55a0d4b5ae29a1b083[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Sun Oct 12 18:53:20 2025 +0530
+
+    Add Floyd–Warshall All-Pairs Shortest Path Algorithm Implementation in R (#203)
+
+[33mcommit 6d15d42ac89877ab1a54cf5707c03cc3a659947e[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Sun Oct 12 15:18:30 2025 +0530
+
+    created a comprehensive Black-Scholes option pricing algorithm (#200)
+
+[33mcommit 79ca778cf37b2fca295f893ed00785e61f2396a8[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Sun Oct 12 15:18:20 2025 +0530
+
+    Implement Gradient Boosting Regressor with Decision Trees in R (#199)
+
+[33mcommit e6c0b52d8e1300b88c6971e45f87745425bcf4a4[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Sun Oct 12 15:18:11 2025 +0530
+
+    Tarjan's Bridge Finding Algorithm (#198)
+
+[33mcommit b811a36c4f33cf4551f3196a1735319f861a9bb5[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Sun Oct 12 13:42:20 2025 +0530
+
+    feat : Add the Bellman-Ford Shortest Path Algorithm in R (#192)
+
+[33mcommit 47ff5ed6db5ae97765218b89073c2ea96b8cc5e7[m
+Author: Srishti Soni <92056170+shimmer12@users.noreply.github.com>
+Date:   Sun Oct 12 02:41:13 2025 +0530
+
+    Add modular exponentiation function (#194)
+
+[33mcommit b5d1199c77508d1bb99c4c7bda1cb44a19570556[m
+Author: Srishti Soni <92056170+shimmer12@users.noreply.github.com>
+Date:   Sun Oct 12 02:40:30 2025 +0530
+
+    Implement Newton-Raphson method in R (#196)
+
+[33mcommit b90abace62e50712a58eba9ff717f89fe87434de[m
+Author: Srishti Soni <92056170+shimmer12@users.noreply.github.com>
+Date:   Sun Oct 12 02:38:56 2025 +0530
+
+    Add one-way ANOVA function implementation (#195)
+
+[33mcommit 7a5ea9c1aa0c3e79557515e083b646c408a84d48[m
+Author: Sachin Pangal <151670745+Orthodox-64@users.noreply.github.com>
+Date:   Sun Oct 12 02:21:20 2025 +0530
+
+    Implemented the Subset Sum Problem algorithm in R. (#171)
+
+[33mcommit 52f65cfbc046862917dc33a28cff489cca0fdfbb[m
+Author: Pratik <bhagwatpratik781@gmail.com>
+Date:   Sun Oct 12 02:19:57 2025 +0530
+
+    Add Catalan Numbers algorithm implementation (#191)
+
+[33mcommit aa686ce907b27380ca30a23afa1f6d06a12766e4[m
+Author: Sachin Pangal <151670745+Orthodox-64@users.noreply.github.com>
+Date:   Sat Oct 11 16:25:05 2025 +0530
+
+    Implemented the Minimum Path Sum algorithm in R. (#172)
+
+[33mcommit e33a9c68b50d209d76c019a0456c2422664ee535[m
+Author: Arpita Roy <100989922+Arpita23r@users.noreply.github.com>
+Date:   Sat Oct 11 16:23:24 2025 +0530
+
+    feat: added ternary search (#177)
+
+[33mcommit 4c17308965c2067587ca2b4c70b23ed632fda5f9[m
+Author: Sachin Pangal <151670745+Orthodox-64@users.noreply.github.com>
+Date:   Sat Oct 11 16:19:47 2025 +0530
+
+    Implemented the Matrix Chain Multiplication algorithm in R. (#173)
+
+[33mcommit 66bc83f2bf75054b3f732036600966aa5c1022d8[m
+Author: Copilot <198982749+Copilot@users.noreply.github.com>
+Date:   Sat Oct 11 13:13:01 2025 +0300
+
+    Move misplaced algorithms to correct folders (#188)
+
+[33mcommit ad44b946ce0e0f47a94719f0f11b4eaaa1631661[m
+Author: Copilot <198982749+Copilot@users.noreply.github.com>
+Date:   Sat Oct 11 13:05:11 2025 +0300
+
+    ✨ Enhance Copilot instructions with comprehensive contribution guidelines (#190)
+
+[33mcommit 2c17bf7f083504f12a9aacdeae5b31d412585030[m
+Author: Andrii Siriak <siryaka@gmail.com>
+Date:   Sat Oct 11 11:48:57 2025 +0200
+
+    Create copilot-instructions.md (#186)
+
+[33mcommit b397c7d15dea0030aee1a454cd376537126c7386[m
+Author: Sachin Pangal <151670745+Orthodox-64@users.noreply.github.com>
+Date:   Sat Oct 11 14:58:38 2025 +0530
+
+    Implemented the Coin Change algorithm in R. (#170)
+
+[33mcommit 39b9816674da70109816746f9537790f56288d51[m
+Author: Arpita Roy <100989922+Arpita23r@users.noreply.github.com>
+Date:   Sat Oct 11 14:57:26 2025 +0530
+
+    added shortest common super sequence (#180)
+
+[33mcommit eb97f01a3a3dcc7fe28383bc5e9bfcc654527b48[m
+Author: Arpita Roy <100989922+Arpita23r@users.noreply.github.com>
+Date:   Sat Oct 11 14:55:38 2025 +0530
+
+    feat:added minimum palindromic insertion (#181)
+
+[33mcommit 7ca7e9555d8646666fd3ffd41bd2c527bb74b6ef[m
+Author: Arpita Roy <100989922+Arpita23r@users.noreply.github.com>
+Date:   Sat Oct 11 14:42:34 2025 +0530
+
+    added manacher algorithm (#178)
+
+[33mcommit f9ad73230a7102c1fd7e9ad016b36b3efcfe39ea[m
+Author: Arpita Roy <100989922+Arpita23r@users.noreply.github.com>
+Date:   Sat Oct 11 14:19:39 2025 +0530
+
+    add levenshtein (#179)
+
+[33mcommit 5bb715513cfdd49a4ffa987033dcf507bd890752[m
+Author: Arpita Roy <100989922+Arpita23r@users.noreply.github.com>
+Date:   Sat Oct 11 14:18:59 2025 +0530
+
+    feat: Add Z Algorithm string search in R (#176)
+
+[33mcommit e92a3f21a8cbae8d4828cd4f16b77adbdb64e076[m
+Author: Supratim <109270340+sgindeed@users.noreply.github.com>
+Date:   Sat Oct 11 14:18:34 2025 +0530
+
+    Add Burrows-Wheeler Transform (BWT) implementation in R (#184)
+
+[33mcommit 1887b9346a4e043b0e821c34fb4963fc0327bea6[m
+Author: Sachin Pangal <151670745+Orthodox-64@users.noreply.github.com>
+Date:   Thu Oct 9 03:32:13 2025 +0530
+
+    feat: implement Longest Increasing Subsequence algorithm in R (#169)
+
+[33mcommit e5f601222adb584472c8f5ccf9c1e7baebf0c6b2[m
+Author: Supratim <109270340+sgindeed@users.noreply.github.com>
+Date:   Thu Oct 9 03:01:56 2025 +0530
+
+    feat: Add Rabin–Karp string search algorithm in R (#166)
+
+[33mcommit 96737fe963113a4caa1945e0048592bc0bbf8b9e[m
+Author: Supratim <109270340+sgindeed@users.noreply.github.com>
+Date:   Thu Oct 9 02:34:51 2025 +0530
+
+    feat: Add Minimum Window Substring algorithm in R (#165)
+
+[33mcommit 8c18f07eb90e5b1bd5ba595c5cbcc490e64c615c[m
+Author: Supratim <109270340+sgindeed@users.noreply.github.com>
+Date:   Thu Oct 9 02:30:19 2025 +0530
+
+    feat: Add Longest Palindromic Subsequence algorithm in R (#164)
+
+[33mcommit 9e23362e429f1350e5b1a17668e3fbb7d6cfd777[m
+Author: Sachin Pangal <151670745+Orthodox-64@users.noreply.github.com>
+Date:   Thu Oct 9 02:23:38 2025 +0530
+
+    feat- 0/1 Knapsack Problem (Dynamic Programming) in R (#167)
+
+[33mcommit 72ad1cc59b8e2e3e0971ea8bf9264b3979a195d3[m
+Author: Supratim <109270340+sgindeed@users.noreply.github.com>
+Date:   Wed Oct 8 17:40:31 2025 +0530
+
+    feat: Add R program to find longest substring without repeating characters (#163)
+
+[33mcommit d408fea8e7a33d5ef39c5d2907b3d3f926a2684c[m
+Author: Supratim <109270340+sgindeed@users.noreply.github.com>
+Date:   Wed Oct 8 13:06:04 2025 +0530
+
+    Create unique.letters.count.R (#162)
+
+[33mcommit cd836f75a18150fdba2ab6c92a762918679bddb8[m
+Author: PIYUSH KUMAR SINGH <121piyush466mits@gmail.com>
+Date:   Wed Oct 8 03:22:27 2025 +0530
+
+    Add Longest Common Subsequence (LCS) dynamic programming algorithm (#158)
+
+[33mcommit 365ec08676862369c69b077473d1b5ba6a1b8322[m
+Author: PIYUSH KUMAR SINGH <121piyush466mits@gmail.com>
+Date:   Mon Oct 6 22:09:05 2025 +0530
+
+    Add Binary Search Tree (BST) (#159)
+
+[33mcommit 68bc3c84a2328baa65030f3474ec168740d9e9e7[m
+Author: PIYUSH KUMAR SINGH <121piyush466mits@gmail.com>
+Date:   Mon Oct 6 02:36:34 2025 +0530
+
+    Add Sieve of Eratosthenes algorithm (#154)
+
+[33mcommit df205e73e11c94e4a2aa33db83085a9c033f5aa4[m
+Author: PIYUSH KUMAR SINGH <121piyush466mits@gmail.com>
+Date:   Mon Oct 6 02:36:00 2025 +0530
+
+    Add Dijkstra's shortest path algorithm (#153)
+
+[33mcommit b0f8ccf076a8b6c1e9e15904b6ecda9b4e684099[m
+Author: PIYUSH KUMAR SINGH <121piyush466mits@gmail.com>
+Date:   Mon Oct 6 02:34:00 2025 +0530
+
+    Add Breadth-First Search (BFS) (#152)
+
+[33mcommit b3d0b78f302dc66864af73c66a9ebdcb14b32412[m
+Author: PIYUSH KUMAR SINGH <121piyush466mits@gmail.com>
+Date:   Mon Oct 6 02:26:51 2025 +0530
+
+    Add Depth-First Search (DFS) algorithm (#151)
+
+[33mcommit 6e76d3422e584ecb1159a08eb12d7a2bdcff96b7[m
+Author: PIYUSH KUMAR SINGH <121piyush466mits@gmail.com>
+Date:   Sat Oct 4 23:43:58 2025 +0530
+
+    Add Extended Euclidean Algorithm (#155)
+
+[33mcommit 6b0fd3b5e79a4f2706fb579e391b25ba711131a1[m
+Author: Pradnya Ingle <146155532+Pradnyaa05@users.noreply.github.com>
+Date:   Sat Apr 19 18:42:09 2025 +0530
+
+    Update contribution guidelines (#147)
+
+[33mcommit 74547073b5776205d9522f776c833df9954b2684[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Tue Nov 26 17:10:10 2024 +0100
+
+    Add maskWords.R (#144)
+
+[33mcommit b46d3ac3be75d6e13ee72d507924e3b10bc7ed0a[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Wed Nov 13 22:18:47 2024 +0100
+
+    Add shorten.vector.R (#143)
+
+[33mcommit 191af3f0e4f2f799ca095f68a91ab94cefe631cd[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Wed Nov 6 22:08:53 2024 +0100
+
+    Move findPalindrome.R to string_manipulation folder (#139)
+
+[33mcommit 27e2420f557d394d2679e8f8163fdfd31f7ec133[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Wed Nov 6 22:08:36 2024 +0100
+
+    Move is.anagram.R to string_manipulation folder (#140)
+
+[33mcommit 91525faf60f3004170f8493226e6ce7bca327e37[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Wed Nov 6 22:08:17 2024 +0100
+
+    Move is.lower.R to string_manipulation folder (#141)
+
+[33mcommit 37eb076a00448137a9f0ea42c41bb2eabfa01126[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Wed Nov 6 22:07:29 2024 +0100
+
+    Move is.upper.R to string_manipulation folder (#142)
+
+[33mcommit 7ab44f65f543ef05bbccb95f4cefa21e3ae6a568[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Mon Nov 4 20:41:49 2024 +0100
+
+    Change folder name (#138)
+
+[33mcommit 2a7072558072e0223f4c29651aa9075cf7c0b7b1[m
+Author: Simon Waldherr <git@simon.waldherr.eu>
+Date:   Tue Oct 29 21:24:58 2024 +0100
+
+    Add Patience Sort (#137)
+
+[33mcommit 5da148ecd1ab8d7416d1d15e835553211a546464[m
+Author: Simon Waldherr <git@simon.waldherr.eu>
+Date:   Tue Oct 29 21:24:15 2024 +0100
+
+    Add strand sort (#136)
+
+[33mcommit ad2f0963b20a8304e157d726eaf717bcc116b26a[m
+Author: Simon Waldherr <git@simon.waldherr.eu>
+Date:   Tue Oct 29 21:23:46 2024 +0100
+
+    Add common divisor and common multiple (#135)
+
+[33mcommit acbb8d8766a9bd771129c660a3b782461a522a43[m
+Author: Simon Waldherr <git@simon.waldherr.eu>
+Date:   Tue Oct 29 21:23:18 2024 +0100
+
+    Add permutation calculation example (#134)
+
+[33mcommit 92324e2ed5cc174854e21d5a527632e32ba5da53[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Tue Oct 29 18:38:38 2024 +0100
+
+    Add an algorithm for checking if a string is in lowercase (#131)
+
+[33mcommit c2dcaff0007bfc8f9086c2f3c00cb69b9fc473b8[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Tue Oct 29 18:38:22 2024 +0100
+
+    Add an algorithm for checking if a string is in uppercase (#130)
+
+[33mcommit ce8a6948838c725d123825872ef9b2df74fe1330[m
+Author: Simon Waldherr <git@simon.waldherr.eu>
+Date:   Tue Oct 29 18:37:12 2024 +0100
+
+    Add gnome sort (#133)
+
+[33mcommit 64b7b70be500795a4e9b52cf72a0283cf972ae6a[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Fri Oct 25 15:57:35 2024 +0100
+
+    Add an algorithm for determining the number of possible rearrangements of a string (#129)
+
+[33mcommit 7f007339efcf9d01ced45960dd1a4e086e607467[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Wed Oct 23 18:52:10 2024 +0100
+
+    Add an algorithm for checking anagrams (#128)
+
+[33mcommit 61eed3860d479581e3aa18abb6032538ad596c37[m
+Author: Ifeanyi Idiaye <72707830+Ifeanyi55@users.noreply.github.com>
+Date:   Wed Oct 23 11:35:50 2024 +0100
+
+    Add an algorithm that finds palindromes in text (#127)
+
+[33mcommit 898a0a1fda67fec17f579bbb7df0ebf5caf301ef[m
+Author: Vineet Kumar <108144301+whyvineet@users.noreply.github.com>
+Date:   Mon Oct 7 18:29:38 2024 +0530
+
+    Add Tim Sort (#125)
+
+[33mcommit a1aeafc84a375243befd6839621fa6a392e33ec1[m
+Author: Akshat Sharma <111536616+Akshat111111@users.noreply.github.com>
+Date:   Tue Mar 12 14:35:04 2024 +0530
+
+    Add Monte Carlo simulation, Markowitz portfolio optimization, and Kalman filter (#123)
+
+[33mcommit 3ddddeec99dcffe5ae577747e6c831b2388178c1[m
+Author: Andrii Siriak <siryaka@gmail.com>
+Date:   Tue Mar 12 10:17:13 2024 +0200
+
+    Remove outdated documentation by fixing documentation_workflow.yml (#121)
+
+[33mcommit 8381a8d6a06ae9d4f48cd69f8d3ab11607893772[m
+Author: Rohit Chaudhari <100275369+rohitkbc@users.noreply.github.com>
+Date:   Sun Nov 19 15:12:46 2023 +0530
+
+    Add Gitpod (#119)
+
+[33mcommit 348c099e5b9d1a4245e8d33655af212b694af04d[m
+Author: Saurav <91366385+Saurav-IIITU@users.noreply.github.com>
+Date:   Fri Nov 3 18:37:43 2023 +0530
+
+    Add topological sort (#117)
+
+[33mcommit 1c7e4a23522149e74bc45971f074849f451b496e[m
+Author: Riya Khandelwal <114740796+Khandelwal05@users.noreply.github.com>
+Date:   Sat Oct 14 18:48:58 2023 +0530
+
+    Add cocktail_sort.r (#114)
+
+[33mcommit 8beb87a6c3c0251083c63b1553d8de749d2feaf3[m
+Author: paras-2407 <131509174+paras-2407@users.noreply.github.com>
+Date:   Wed Oct 11 01:47:32 2023 +0530
+
+    Update directory.md (#112)
+
+[33mcommit f5056677ece79ee39be8c14b3b20d5fa6a9a4ef9[m
+Author: paras-2407 <131509174+paras-2407@users.noreply.github.com>
+Date:   Mon Oct 9 21:02:46 2023 +0530
+
+    Add binary_search.r (fixes #107) (#108)
+
+[33mcommit 4f35b315fa16c10fe93246aa1385913e9f66ff84[m
+Author: paras-2407 <131509174+paras-2407@users.noreply.github.com>
+Date:   Sun Oct 8 00:45:13 2023 +0530
+
+    Add linear_search.r (#106)
+
+[33mcommit 74b05246256de287702e5ea2385fc7c877bd24de[m
+Author: iMeet07 <97329296+iMeet07@users.noreply.github.com>
+Date:   Fri Oct 6 22:28:14 2023 +0530
+
+    Add pancake_sort (#101)
+
+[33mcommit bd0cb3348d3d1ea46e8aedd8bd2fb4dedab44848[m
+Author: iMeet07 <97329296+iMeet07@users.noreply.github.com>
+Date:   Fri Oct 6 22:26:00 2023 +0530
+
+    Add shell_sort (#102)
+
+[33mcommit 07a1c231cb5a2e1cdc9b2d6940d68598b3fc5e0f[m
+Author: iMeet07 <97329296+iMeet07@users.noreply.github.com>
+Date:   Thu Oct 5 19:08:27 2023 +0530
+
+    Add wiggle sort (#97)
+
+[33mcommit d73ef9dfc5a891af14b10ce7ee7b057938b051bb[m
+Author: iMeet07 <97329296+iMeet07@users.noreply.github.com>
+Date:   Thu Oct 5 19:05:40 2023 +0530
+
+    Add binary_insertion_sort.r (#95)
+
+[33mcommit bc04a424bdf93b96feb0a0a8c94f70c2205eb9ca[m
+Author: BSzmolke <40246238+BSzmolke@users.noreply.github.com>
+Date:   Mon May 29 13:25:30 2023 +0200
+
+    Add amicable number checker (#92)
