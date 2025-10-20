@@ -191,80 +191,82 @@ for (i in seq_along(test_cases)) {
               i, tc$text, tc$pattern, result, status))
 }
 
-cat(sprintf("\nResults: %d passed, %d failed out of %d tests\n\n",
-            passed, failed, length(test_cases)))
+if (interactive()) {
+  cat(sprintf("\nResults: %d passed, %d failed out of %d tests\n\n",
+              passed, failed, length(test_cases)))
 
-# Example: Complex patterns
-cat("Complex Pattern Examples:\n")
+  # Example: Complex patterns
+  cat("Complex Pattern Examples:\n")
 
-examples <- list(
-  list(text = "programming", pattern = "pro*ing"),
-  list(text = "dynamic", pattern = "d?n?m?c"),
-  list(text = "algorithm", pattern = "*gor*"),
-  list(text = "computer", pattern = "c*t*r"),
-  list(text = "science", pattern = "s*e*e")
-)
+  examples <- list(
+    list(text = "programming", pattern = "pro*ing"),
+    list(text = "dynamic", pattern = "d?n?m?c"),
+    list(text = "algorithm", pattern = "*gor*"),
+    list(text = "computer", pattern = "c*t*r"),
+    list(text = "science", pattern = "s*e*e")
+  )
 
-for (ex in examples) {
-  result <- isMatch(ex$text, ex$pattern)
-  cat(sprintf("  '%s' matches '%s': %s\n", ex$text, ex$pattern, result))
-}
-
-# Example: Space-optimized version comparison
-cat("\nSpace-Optimized Version Test:\n")
-text1 <- "abcdefghij"
-pattern1 <- "a*f*j"
-result_normal <- isMatch(text1, pattern1)
-result_optimized <- isMatch_optimized(text1, pattern1)
-cat(sprintf("Text: '%s', Pattern: '%s'\n", text1, pattern1))
-cat(sprintf("Normal DP: %s, Optimized: %s\n", result_normal, result_optimized))
-
-# Example: Multiple texts matching
-cat("\nMatching Multiple Texts:\n")
-texts <- c("cat", "bat", "rat", "hat", "mat", "sat")
-pattern2 <- "?at"
-cat(sprintf("Pattern: '%s'\n", pattern2))
-cat("Matching texts:\n")
-for (text in texts) {
-  if (isMatch(text, pattern2)) {
-    cat(sprintf("  - %s\n", text))
+  for (ex in examples) {
+    result <- isMatch(ex$text, ex$pattern)
+    cat(sprintf("  '%s' matches '%s': %s\n", ex$text, ex$pattern, result))
   }
-}
 
-# Example: Wildcard star patterns
-cat("\nWildcard Star Patterns:\n")
-files <- c("document.txt", "image.png", "script.r", "data.csv", "report.pdf")
-pattern3 <- "*.txt"
-cat(sprintf("Pattern: '%s'\n", pattern3))
-cat("Matching files:\n")
-for (file in files) {
-  if (isMatch(file, pattern3)) {
-    cat(sprintf("  - %s\n", file))
+  # Example: Space-optimized version comparison
+  cat("\nSpace-Optimized Version Test:\n")
+  text1 <- "abcdefghij"
+  pattern1 <- "a*f*j"
+  result_normal <- isMatch(text1, pattern1)
+  result_optimized <- isMatch_optimized(text1, pattern1)
+  cat(sprintf("Text: '%s', Pattern: '%s'\n", text1, pattern1))
+  cat(sprintf("Normal DP: %s, Optimized: %s\n", result_normal, result_optimized))
+
+  # Example: Multiple texts matching
+  cat("\nMatching Multiple Texts:\n")
+  texts <- c("cat", "bat", "rat", "hat", "mat", "sat")
+  pattern2 <- "?at"
+  cat(sprintf("Pattern: '%s'\n", pattern2))
+  cat("Matching texts:\n")
+  for (text in texts) {
+    if (isMatch(text, pattern2)) {
+      cat(sprintf("  - %s\n", text))
+    }
   }
-}
 
-pattern4 <- "*.r"
-cat(sprintf("\nPattern: '%s'\n", pattern4))
-cat("Matching files:\n")
-for (file in files) {
-  if (isMatch(file, pattern4)) {
-    cat(sprintf("  - %s\n", file))
+  # Example: Wildcard star patterns
+  cat("\nWildcard Star Patterns:\n")
+  files <- c("document.txt", "image.png", "script.r", "data.csv", "report.pdf")
+  pattern3 <- "*.txt"
+  cat(sprintf("Pattern: '%s'\n", pattern3))
+  cat("Matching files:\n")
+  for (file in files) {
+    if (isMatch(file, pattern3)) {
+      cat(sprintf("  - %s\n", file))
+    }
   }
+
+  pattern4 <- "*.r"
+  cat(sprintf("\nPattern: '%s'\n", pattern4))
+  cat("Matching files:\n")
+  for (file in files) {
+    if (isMatch(file, pattern4)) {
+      cat(sprintf("  - %s\n", file))
+    }
+  }
+
+  # Example: Edge cases
+  cat("\nEdge Cases:\n")
+  edge_cases <- list(
+    list(text = "", pattern = ""),
+    list(text = "a", pattern = ""),
+    list(text = "", pattern = "a"),
+    list(text = "***", pattern = "*"),
+    list(text = "aaa", pattern = "a*a")
+  )
+
+  for (ec in edge_cases) {
+    result <- isMatch(ec$text, ec$pattern)
+    cat(sprintf("  text='%s', pattern='%s' => %s\n", ec$text, ec$pattern, result))
+  }
+
+  cat("\n=== All tests completed ===\n")
 }
-
-# Example: Edge cases
-cat("\nEdge Cases:\n")
-edge_cases <- list(
-  list(text = "", pattern = ""),
-  list(text = "a", pattern = ""),
-  list(text = "", pattern = "a"),
-  list(text = "***", pattern = "*"),
-  list(text = "aaa", pattern = "a*a")
-)
-
-for (ec in edge_cases) {
-  result <- isMatch(ec$text, ec$pattern)
-  cat(sprintf("  text='%s', pattern='%s' => %s\n", ec$text, ec$pattern, result))
-}
-
-cat("\n=== All tests completed ===\n")
