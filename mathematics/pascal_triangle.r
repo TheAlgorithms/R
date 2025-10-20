@@ -279,11 +279,11 @@ if (FALSE) {
   cat("Sum of diagonal: 1 + 4 + 10 + 20 = 35 = C(7,3)\n")
   cat("Formula: C(n,r) + C(n+1,r) + ... + C(n+k,r) = C(n+k+1,r+1)\n")
   
-  cat("\n5. Catalan Numbers (central elements):\n")
-  cat("Row 2: C(2,1) = 2\n")
-  cat("Row 4: C(4,2) = 6\n")
-  cat("Row 6: C(6,3) = 20\n")
-  cat("Row 8: C(8,4) = 70\n")
+  cat("\n5. Catalan Numbers:\n")
+  # Catalan numbers: C(2n, n)/(n+1) for n = 1..4
+  catalan <- function(n) choose(2*n, n)/(n+1)
+  n_vals <- 1:4
+  cat("Catalan numbers for n=1..4:", paste(catalan(n_vals), collapse = ", "), "\n")
   
   # Example 9: Application - Probability
   cat("\nExample 9: Application - Coin Flip Probability\n")
