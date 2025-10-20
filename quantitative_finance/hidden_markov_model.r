@@ -165,8 +165,8 @@ HMM <- R6Class("HMM",
       self$emission_means <- as.numeric(kmeans_result$centers)
       self$emission_vars <- tapply(returns, kmeans_result$cluster, var)
       
-      # Ensure positive variance
-      self$emission_vars[self$emission_vars <= 0] <- 1e-6
+      # Ensure positive variance and handle NA from var() for single observation clusters
+      self$emission_vars[is.na(self$emission_vars) | self$emission_vars <= 0] <- 1e-6
       
       # Initialize transition matrix with persistence
       self$transition_matrix <- matrix(0.1 / (self$n_states - 1), 
