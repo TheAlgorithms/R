@@ -222,20 +222,16 @@ HMM <- R6Class("HMM",
       for (i in 1:self$n_states) {
         alpha[1, i] <- self$initial_probs[i] * private$emission_prob(returns[1], i)
       }
-      scaling[1] <- sum(alpha[1, ])
-      if (scaling[1] > 0) {
-        alpha[1, ] <- alpha[1, ] / scaling[1]
-      }
+      scaling[1] <- max(sum(alpha[1, ]), .Machine$double.eps)
+      alpha[1, ] <- alpha[1, ] / scaling[1]
       
       for (t in 2:n) {
         for (j in 1:self$n_states) {
           alpha[t, j] <- sum(alpha[t-1, ] * self$transition_matrix[, j]) * 
                          private$emission_prob(returns[t], j)
         }
-        scaling[t] <- sum(alpha[t, ])
-        if (scaling[t] > 0) {
-          alpha[t, ] <- alpha[t, ] / scaling[t]
-        }
+        scaling[t] <- max(sum(alpha[t, ]), .Machine$double.eps)
+        alpha[t, ] <- alpha[t, ] / scaling[t]
       }
       
       # Backward pass
