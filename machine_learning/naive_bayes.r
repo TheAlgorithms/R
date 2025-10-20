@@ -38,10 +38,11 @@ GaussianNB <- R6Class("GaussianNB",
         class_samples <- X[y == self$classes[i], , drop = FALSE]
         self$feature_means[i, ] <- colMeans(class_samples)
         self$feature_vars[i, ] <- apply(class_samples, 2, var)
+        # Replace NA variances (single-sample or all-constant) with epsilon
+        self$feature_vars[i, is.na(self$feature_vars[i, ])] <- self$epsilon
+        # Ensure minimum variance threshold
+        self$feature_vars[i, ] <- pmax(self$feature_vars[i, ], self$epsilon)
       }
-      
-      # Add epsilon to avoid zero variance
-      self$feature_vars <- self$feature_vars + self$epsilon
       
       invisible(self)
     },
