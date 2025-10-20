@@ -126,14 +126,8 @@ KMeans <- R6Class(
     compute_distances = function(X, centroids) {
       n_samples <- nrow(X)
       n_clusters <- nrow(centroids)
-      distances <- matrix(0, nrow = n_samples, ncol = n_clusters)
-      
-      for (i in 1:n_samples) {
-        for (k in 1:n_clusters) {
-          distances[i, k] <- self$euclidean_distance(X[i, ], centroids[k, ])
-        }
-      }
-      
+      # Vectorized computation of distances using dist()
+      distances <- as.matrix(dist(rbind(X, centroids)))[1:n_samples, (n_samples+1):(n_samples+n_clusters)]
       return(distances)
     },
     
