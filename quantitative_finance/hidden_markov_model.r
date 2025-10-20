@@ -19,11 +19,20 @@
 #   - base stats (e.g., rnorm, dnorm, eigen)
 #
 # Assumptions:
-#   - Emissions (returns) are modeled as Gaussian distributions per regime
-#
-# Minimal usage example:
-#   library(R6)
-#   source("hidden_markov_model.r")
+      if (!is.null(random_state)) {
+        old_seed_exists <- exists(".Random.seed", envir = .GlobalEnv)
+        if (old_seed_exists) {
+          old_seed <- get(".Random.seed", envir = .GlobalEnv)
+        }
+        set.seed(random_state)
+      }
+      self$n_states <- n_states
+      self$n_iter <- n_iter
+      self$tol <- tol
+      self$random_state <- random_state
+      if (!is.null(random_state) && old_seed_exists) {
+        assign(".Random.seed", old_seed, envir = .GlobalEnv)
+      }
 #   returns <- rnorm(500, mean = 0, sd = 1)  # Example returns
 #   hmm <- HMM$new(n_states = 3)
 #   hmm$fit(returns)
