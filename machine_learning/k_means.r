@@ -640,7 +640,6 @@ KMeans <- R6Class(
 #' @param random_state Random seed
 #' @param n_init Number of initializations
 #' @return Fitted KMeans object
-#' @export
 k_means <- function(X, n_clusters = 3, init = "k-means++", max_iter = 300, 
                     tol = 1e-4, random_state = NULL, n_init = 10) {
   model <- KMeans$new(
