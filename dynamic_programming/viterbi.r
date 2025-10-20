@@ -43,11 +43,13 @@ viterbi <- function(states, observations, start_prob, trans_prob, emit_prob) {
   }
   
   # Recursion step
-  for (t in 2:T_len) {
-    for (j in 1:N) {
-      probs <- V[, t - 1] * trans_prob[, states[j]] * emit_prob[states[j], observations[t]]
-      V[j, t] <- max(probs)
-      path[j, t] <- which.max(probs)
+  if (T_len > 1) {
+    for (t in 2:T_len) {
+      for (j in 1:N) {
+        probs <- V[, t - 1] * trans_prob[, states[j]] * emit_prob[states[j], observations[t]]
+        V[j, t] <- max(probs)
+        path[j, t] <- which.max(probs)
+      }
     }
   }
   
