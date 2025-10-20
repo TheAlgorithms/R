@@ -215,11 +215,12 @@ HMM <- R6Class("HMM",
     forward_backward = function(returns) {
       n <- length(returns)
       alpha <- matrix(0, nrow = n, ncol = self$n_states)
-      beta <- matrix(0, nrow = n, ncol = self$n_states)
-      scaling <- numeric(n)
-      
-      # Forward pass
-      for (i in 1:self$n_states) {
+          # Precompute emission probabilities for returns[t+1] for all states
+          emission_probs_next <- sapply(1:self$n_states, function(j) {
+            private$emission_prob(returns[t+1], j)
+          })
+          for (i in 1:self$n_states) {
+            beta[t, i] <- sum(self$transition_matrix[i, ] * emission_probs_next * beta[t+1, ])
         alpha[1, i] <- self$initial_probs[i] * private$emission_prob(returns[1], i)
       }
       scaling[1] <- max(sum(alpha[1, ]), .Machine$double.eps)
