@@ -189,9 +189,9 @@ if (FALSE) {
   # Example 2: Generate specific row
   cat("\nExample 2: Row 7 of Pascal's Triangle\n")
   cat("======================================\n")
-  row7 <- pascal_row(7)
-  cat(paste(row7, collapse = " "), "\n")
-  cat("These are binomial coefficients: C(7,0), C(7,1), ..., C(7,7)\n")
+  cat(sprintf("C(10, 3) = %.0f\n", pascal_element(10, 3)))
+  cat(sprintf("C(8, 4) = %.0f\n", pascal_element(8, 4)))
+  cat(sprintf("C(6, 2) = %.0f\n", pascal_element(6, 2)))
   
   # Example 3: Get specific element
   cat("\nExample 3: Specific Elements\n")
