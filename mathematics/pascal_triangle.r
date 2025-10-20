@@ -124,6 +124,9 @@ pascal_diagonal_sums <- function(n) {
 #' @param n Row number (0-indexed)
 #' @return Sum of row n (equals 2^n)
 pascal_row_sum <- function(n) {
+  if (n < 0) {
+    stop("Row number must be non-negative")
+  }
   return(2^n)
 }
 
