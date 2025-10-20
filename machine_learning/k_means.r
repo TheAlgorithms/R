@@ -279,7 +279,7 @@ KMeans <- R6Class(
         inertia <- assignment$inertia
         
         # Check convergence
-        if (abs(prev_inertia - inertia) < self$tol) {
+        if (is.finite(prev_inertia) && abs(prev_inertia - inertia) < self$tol) {
           return(list(
             centroids = centroids,
             labels = labels,
