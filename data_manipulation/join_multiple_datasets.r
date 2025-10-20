@@ -1,11 +1,9 @@
 # join_multiple_datasets.r
 
+library(dplyr)
+library(purrr)
+
 join_multiple_datasets <- function(inputs) {
-  library(dplyr)
-  library(purrr)
-  
-  # Read CSV files if character paths are provided
-  datasets <- lapply(inputs, function(x) {
     if (is.character(x)) read.csv(x, stringsAsFactors = FALSE) else x
   })
   
