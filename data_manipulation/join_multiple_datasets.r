@@ -11,7 +11,7 @@ join_multiple_datasets <- function(inputs) {
   
   # Remove empty or invalid datasets
   datasets <- datasets[!sapply(datasets, function(df) is.null(df) || nrow(df) == 0)]
-  if (length(datasets) < 2) stop("At least two valid datasets are required.")
+  if (length(datasets) < 2) stop(sprintf("At least two valid datasets are required, but only %d valid dataset(s) found.", length(datasets)))
   
   # Function to find common columns between two datasets
   get_common_cols <- function(df1, df2) intersect(names(df1), names(df2))
