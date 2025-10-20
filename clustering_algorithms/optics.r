@@ -5,7 +5,7 @@
 # structure. Unlike DBSCAN, it produces a reachability plot that can be used to
 # extract clusters at different density thresholds.
 #
-# Time Complexity: O(n^2) for distance matrix, O(n log n) with spatial indexing
+# Time Complexity: O(n^2) for distance matrix (no spatial indexing used in this implementation)
 # Space Complexity: O(n^2) for distance matrix
 #
 # Input: data matrix/dataframe, eps (maximum radius), minPts (minimum neighbors)
