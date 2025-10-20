@@ -315,8 +315,8 @@ if (FALSE) {
   cat("Middle element C(50,25):", format(row50[26], scientific = FALSE), "\n")
   cat("Last 5 elements:", paste(row50[46:51], collapse = ", "), "\n")
   
-  # Example 11: Verification with binomial coefficient
-  cat("\nExample 11: Verification\n")
+  cat(sprintf("C(%d,%d) using Pascal's Triangle: %.0f\n", n, k, element))
+  cat(sprintf("C(%d,%d) using factorials: %.0f\n", n, k, factorial_calc))
   cat("========================\n")
   n <- 10
   k <- 4
