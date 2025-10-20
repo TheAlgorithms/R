@@ -131,6 +131,9 @@ pascal_row_sum <- function(n) {
 #' @param n Number of rows
 #' @return Vector of row sums
 pascal_all_row_sums <- function(n) {
+  if (n <= 0) {
+    return(numeric(0))
+  }
   return(2^(0:(n-1)))
 }
 
