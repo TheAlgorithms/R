@@ -235,7 +235,8 @@ HMM <- R6Class("HMM",
     compute_gamma = function(alpha, beta) {
       gamma <- alpha * beta
       row_sums <- rowSums(gamma)
-      gamma <- gamma / matrix(row_sums, nrow = nrow(gamma), ncol = ncol(gamma))
+      denom <- pmax(row_sums, .Machine$double.eps)
+      gamma <- gamma / matrix(denom, nrow = nrow(gamma), ncol = ncol(gamma))
       return(gamma)
     },
     
