@@ -120,9 +120,14 @@ HMM <- R6Class("HMM",
     get_regime_labels = function() {
       regime_names <- character(self$n_states)
       sorted_means <- sort(self$emission_means, index.return = TRUE)
-      
-      if (self$n_states == 2) {
-        regime_names[sorted_means$ix[1]] <- "Bear"
+      eig <- eigen(t(self$transition_matrix))
+      # Find the eigenvalue closest to 1
+      idx <- which.min(abs(eig$values - 1))
+      steady_state <- Re(eig$vectors[, idx])
+      # Ensure non-negative and normalize
+      steady_state <- steady_state / sum(steady_state)
+      steady_state[steady_state < 0] <- 0
+      steady_state <- steady_state / sum(steady_state)
         regime_names[sorted_means$ix[2]] <- "Bull"
       } else if (self$n_states == 3) {
         regime_names[sorted_means$ix[1]] <- "Bear"
