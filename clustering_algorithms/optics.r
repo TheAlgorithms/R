@@ -34,9 +34,9 @@ optics <- function(data, eps = 0.5, minPts = 5) {
     neighbors <- which(dist_matrix[i, ] <= eps)
     neighbors <- neighbors[neighbors != i]
     
-    if (length(neighbors) >= minPts) {
+    if (length(neighbors) >= (minPts - 1)) {
       neighbor_dists <- sort(dist_matrix[i, neighbors])
-      core_dist[i] <- neighbor_dists[minPts]
+      core_dist[i] <- neighbor_dists[minPts - 1]
     }
   }
   
