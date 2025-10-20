@@ -1,7 +1,11 @@
 # pascal_triangle.r
-# Pascal's Triangle Generator
-# Each number is the sum of two numbers directly above it
-# Formula: C(n, k) = C(n-1, k-1) + C(n-1, k)
+# Script for generating and working with Pascal's Triangle.
+# Provides:
+#   - pascal_triangle(n): Returns a list of n rows of Pascal's Triangle (input: integer n > 0; output: list of numeric vectors).
+#   - pascal_row(n): Returns the nth row as a numeric vector (input: integer n >= 0; output: numeric vector).
+#   - pascal_element(n, k): Returns the binomial coefficient C(n, k) (inputs: integers n >= 0, 0 <= k <= n; output: numeric value).
+#   - print_pascal_triangle(n, centered=TRUE): Prints the triangle formatted (input: integer n > 0, logical centered; output: printed output).
+# No external dependencies.
 
 #' Generate Pascal's Triangle up to n rows
 #' @param n Number of rows
