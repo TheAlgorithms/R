@@ -135,7 +135,7 @@ pascal_row_sum <- function(n) {
     stop("Row number must be non-negative")
   }
   return(2^n)
-}
+    stop("Number of rows must be positive")
 
 #' Get all row sums up to n rows
 #' @param n Number of rows
