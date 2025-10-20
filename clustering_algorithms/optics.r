@@ -27,7 +27,6 @@ optics <- function(data, eps = 0.5, minPts = 5) {
   core_dist <- rep(Inf, n)
   processed <- rep(FALSE, n)
   ordered_points <- integer(0)
-  cluster_id <- rep(0, n)
   
   # Calculate core distance for each point
   for (i in 1:n) {
