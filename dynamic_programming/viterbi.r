@@ -75,39 +75,41 @@ viterbi <- function(states, observations, start_prob, trans_prob, emit_prob) {
 # Example Usage and Test
 # ==============================================================
 
-cat("=== Viterbi Algorithm — Hidden Markov Model ===\n")
+if (!exists(".test_mode")) {
+  cat("=== Viterbi Algorithm — Hidden Markov Model ===\n")
 
-# Example: Weather HMM
-# States: Rainy, Sunny
-# Observations: walk, shop, clean
-states <- c("Rainy", "Sunny")
-observations <- c("walk", "shop", "clean")
+  # Example: Weather HMM
+  # States: Rainy, Sunny
+  # Observations: walk, shop, clean
+  states <- c("Rainy", "Sunny")
+  observations <- c("walk", "shop", "clean")
 
-# Start probabilities
-start_prob <- c(Rainy = 0.6, Sunny = 0.4)
+  # Start probabilities
+  start_prob <- c(Rainy = 0.6, Sunny = 0.4)
 
-# Transition probabilities
-trans_prob <- matrix(c(
-  0.7, 0.3,   # from Rainy to (Rainy, Sunny)
-  0.4, 0.6    # from Sunny to (Rainy, Sunny)
-), nrow = 2, byrow = TRUE)
-rownames(trans_prob) <- states
-colnames(trans_prob) <- states
+  # Transition probabilities
+  trans_prob <- matrix(c(
+    0.7, 0.3,   # from Rainy to (Rainy, Sunny)
+    0.4, 0.6    # from Sunny to (Rainy, Sunny)
+  ), nrow = 2, byrow = TRUE)
+  rownames(trans_prob) <- states
+  colnames(trans_prob) <- states
 
-# Emission probabilities
-emit_prob <- matrix(c(
-  0.1, 0.4, 0.5,  # Rainy emits (walk, shop, clean)
-  0.6, 0.3, 0.1   # Sunny emits (walk, shop, clean)
-), nrow = 2, byrow = TRUE)
-rownames(emit_prob) <- states
-colnames(emit_prob) <- observations
+  # Emission probabilities
+  emit_prob <- matrix(c(
+    0.1, 0.4, 0.5,  # Rainy emits (walk, shop, clean)
+    0.6, 0.3, 0.1   # Sunny emits (walk, shop, clean)
+  ), nrow = 2, byrow = TRUE)
+  rownames(emit_prob) <- states
+  colnames(emit_prob) <- observations
 
-# Observed sequence
-obs_seq <- c("walk", "shop", "clean")
+  # Observed sequence
+  obs_seq <- c("walk", "shop", "clean")
 
-cat("Observation sequence:", paste(obs_seq, collapse = ", "), "\n")
-result <- viterbi(states, obs_seq, start_prob, trans_prob, emit_prob)
+  cat("Observation sequence:", paste(obs_seq, collapse = ", "), "\n")
+  result <- viterbi(states, obs_seq, start_prob, trans_prob, emit_prob)
 
-cat("Most probable state sequence:\n")
-cat(paste(result$best_path, collapse = " -> "), "\n")
-cat("Probability of this sequence:", result$best_prob, "\n")
+  cat("Most probable state sequence:\n")
+  cat(paste(result$best_path, collapse = " -> "), "\n")
+  cat("Probability of this sequence:", result$best_prob, "\n")
+}
