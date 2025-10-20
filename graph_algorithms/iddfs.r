@@ -24,9 +24,15 @@ print_line <- function(char = "-", width = LINE_WIDTH) {
 normalize_graph <- function(graph) {
   if (!is.list(graph)) stop("graph must be a list")
   # Collect vertices from names and neighbors
-  name_ids <- suppressWarnings(as.integer(names(graph)))
+  name_ids <- as.integer(names(graph))
   if (any(is.na(name_ids))) {
-    stop("graph names must be coercible to integers (e.g., '1','2',...)\n")
+    bad_names <- names(graph)[is.na(name_ids)]
+    stop(
+      sprintf(
+        "graph names must be coercible to integers (e.g., '1','2',...). Problematic names: %s",
+        paste(bad_names, collapse = ", ")
+      )
+    )
   }
   neighbor_ids <- unlist(graph, use.names = FALSE)
   if (length(neighbor_ids) == 0) neighbor_ids <- integer(0)
