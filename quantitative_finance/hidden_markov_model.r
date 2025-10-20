@@ -213,15 +213,17 @@ HMM <- R6Class("HMM",
       # Backward pass
       beta[n, ] <- 1
       
-      for (t in (n-1):1) {
-        for (i in 1:self$n_states) {
-          beta[t, i] <- sum(self$transition_matrix[i, ] * 
-                           sapply(1:self$n_states, function(j) {
-                             private$emission_prob(returns[t+1], j)
-                           }) * beta[t+1, ])
-        }
-        if (scaling[t+1] > 0) {
-          beta[t, ] <- beta[t, ] / scaling[t+1]
+      if (n >= 2) {
+        for (t in (n-1):1) {
+          for (i in 1:self$n_states) {
+            beta[t, i] <- sum(self$transition_matrix[i, ] * 
+                             sapply(1:self$n_states, function(j) {
+                               private$emission_prob(returns[t+1], j)
+                             }) * beta[t+1, ])
+          }
+          if (scaling[t+1] > 0) {
+            beta[t, ] <- beta[t, ] / scaling[t+1]
+          }
         }
       }
       
