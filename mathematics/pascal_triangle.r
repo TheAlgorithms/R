@@ -70,7 +70,7 @@ pascal_element <- function(n, k) {
   }
   
   result <- 1
-  for (i in 1:k) {
+  for (i in seq_len(k)) {
     result <- result * (n - i + 1) / i
   }
   
