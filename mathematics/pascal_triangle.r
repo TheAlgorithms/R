@@ -57,7 +57,10 @@ pascal_row <- function(n) {
 #' @param k Column number (0-indexed)
 #' @return Value at position (n, k) - binomial coefficient C(n, k)
 pascal_element <- function(n, k) {
-  if (n < 0 || k < 0 || k > n) {
+  if (n < 0 || k < 0) {
+    stop("Row and column numbers must be non-negative")
+  }
+  if (k > n) {
     return(0)
   }
   
