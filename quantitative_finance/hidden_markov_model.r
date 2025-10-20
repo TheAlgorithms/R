@@ -331,8 +331,10 @@ HMM <- R6Class("HMM",
       states <- integer(n)
       states[n] <- which.max(delta[n, ])
       
-      for (t in (n-1):1) {
-        states[t] <- psi[t+1, states[t+1]]
+      if (n >= 2) {
+        for (t in (n-1):1) {
+          states[t] <- psi[t+1, states[t+1]]
+        }
       }
       
       return(states)
