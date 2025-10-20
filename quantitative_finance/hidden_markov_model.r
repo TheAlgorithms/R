@@ -1,8 +1,36 @@
 # hidden_markov_model.r
 # Hidden Markov Model for Financial Regime Detection
-# Detects market regimes (bull/bear/sideways) using HMM
-# Implements Baum-Welch (EM) and Viterbi algorithms
-
+#
+# This file implements a Hidden Markov Model (HMM) for detecting financial market regimes
+# (e.g., bull, bear, sideways) from time series of returns. The model uses Gaussian emissions
+# and supports fitting via the Baum-Welch (EM) algorithm and state inference via the Viterbi algorithm.
+#
+# Expected input:
+#   - returns: numeric vector of asset returns (e.g., daily log returns)
+#
+# Output:
+#   - Fitted model parameters: transition_matrix (state transition probabilities),
+#     emission_means (mean return per regime), emission_vars (variance per regime)
+#   - Inferred states: numeric vector of most likely regime for each time point
+#   - Additional methods: get_regime_labels(), get_expected_durations(), get_steady_state()
+#
+# Dependencies:
+#   - R6 (object-oriented class system)
+#   - base stats (e.g., rnorm, dnorm, eigen)
+#
+# Assumptions:
+#   - Emissions (returns) are modeled as Gaussian distributions per regime
+#
+# Minimal usage example:
+#   library(R6)
+#   source("hidden_markov_model.r")
+#   returns <- rnorm(500, mean = 0, sd = 1)  # Example returns
+#   hmm <- HMM$new(n_states = 3)
+#   hmm$fit(returns)
+#   states <- hmm$predict(returns)
+#   print(hmm$get_regime_labels())
+#   print(states)
+#
 library(R6)
 
 HMM <- R6Class("HMM",
