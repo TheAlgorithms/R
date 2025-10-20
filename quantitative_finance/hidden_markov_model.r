@@ -320,7 +320,7 @@ HMM <- R6Class("HMM",
           self$transition_matrix[i, ] <- self$transition_matrix[i, ] / row_sum
         }
       }
-      
+          delta[1, i] <- log(self$initial_probs[i] + 1e-10) + log(emission)
       # Update emission parameters
       for (i in 1:self$n_states) {
         gamma_sum <- sum(gamma[, i])
