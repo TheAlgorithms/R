@@ -23,7 +23,7 @@
 # Output:
 #   A list containing:
 #       best_path     - most probable state sequence
-#       best_prob      - probability of the best path
+#      best_prob      - probability of the best path
 #
 # Example usage provided at bottom of file.
 # ==============================================================
