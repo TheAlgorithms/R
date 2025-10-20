@@ -306,7 +306,7 @@ if (FALSE) {
   }
   
   # Example 10: Large row computation
-  cat("\nExample 10: Large Row Computation\n")
+  cat("Last 5 elements:", paste(row50[47:51], collapse = ", "), "\n")
   cat("==================================\n")
   cat("Row 50 (too large to display fully):\n")
   row50 <- pascal_row(50)
