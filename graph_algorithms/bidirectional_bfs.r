@@ -146,3 +146,9 @@ if (result$found) {
 } else {
   cat("No path found between source and target.\n")
 }
+}
+    return(list(
+        distances = distances,
+        predecessor = predecessor,
+        found = found
+    ))
