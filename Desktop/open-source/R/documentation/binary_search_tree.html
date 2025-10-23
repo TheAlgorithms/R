@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="generator" content="litedown 0.7">
+<title></title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+body, .abstract, code, .footnotes, footer, #refs, .caption { font-size: .9em; }
+li li { font-size: .95em; }
+ul:has(li > input[type="checkbox"]) { list-style: none; padding-left: 1em; }
+*, :before, :after { box-sizing: border-box; }
+a { color: steelblue; }
+pre, img { max-width: 100%; }
+pre { white-space: pre-wrap; word-break: break-word; }
+pre code { display: block; padding: 1em; overflow-x: auto; }
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre, th) > code, code[class], div > .caption { background: #f8f8f8; }
+pre > code:is(:not([class]), .language-plain, .language-none, .plain), .box, .figure, .table { background: inherit; border: 1px solid #eee; }
+pre > code {
+  &.message { border-color: #9eeaf9; }
+  &.warning { background: #fff3cd; border-color: #fff3cd; }
+  &.error { background: #f8d7da; border-color: #f8d7da; }
+}
+.fenced-chunk { border-left: 1px solid #666; }
+.code-fence {
+  opacity: .4;
+  border: 1px dashed #666;
+  border-left: 2px solid;
+  &:hover { opacity: inherit; }
+}
+.box, .figure, .table, table { margin: 1em auto; }
+div > .caption { padding: 1px 1em; }
+.figure { p:has(img, svg), pre:has(svg) { text-align: center; } }
+.flex-col { display: flex; justify-content: space-between; }
+table {
+  &:only-child:not(.table > *) { margin: auto; }
+  th, td { padding: 5px; font-variant-numeric: tabular-nums; }
+  thead, tfoot, tr:nth-child(even) { background: whitesmoke; }
+  thead th { border-bottom: 1px solid #ddd; }
+  &:not(.datatable-table) {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+}
+blockquote {
+  color: #666;
+  margin: 0;
+  padding: 1px 1em;
+  border-left: .5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC {
+  a { text-decoration: none; }
+  ul { list-style: none; padding-left: 1em; }
+  & > ul { padding: 0; }
+  ul ul { border-left: 1px solid lightsteelblue; }
+}
+.body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.main-number::after { content: "."; }
+span[class^="ref-number-"] { font-weight: bold; }
+.ref-number-fig::after, .ref-number-tab::after { content: ":"; }
+.cross-ref-chp::before { content: "Chapter "; }
+.cross-ref-sec::before { content: "Section "; }
+.cross-ref-fig::before, .ref-number-fig::before { content: "Figure "; }
+.cross-ref-tab::before, .ref-number-tab::before { content: "Table "; }
+.cross-ref-eqn::before, .MathJax_ref:has(mjx-mtext > mjx-c + mjx-c)::before { content: "Equation "; }
+.abstract, #refs {
+  &::before { display: block; margin: 1em auto; font-weight: bold; }
+}
+.abstract::before { content: "Abstract"; text-align: center; }
+#refs::before { content: "Bibliography"; font-size: 1.5em; }
+.ref-paren-open::before { content: "("; }
+.ref-paren-close::after { content: ")"; }
+.ref-semicolon::after { content: "; "; }
+.ref-and::after { content: " and "; }
+.ref-et-al::after { content: " et al."; font-style: italic; }
+.footnote-ref a {
+  &::before { content: "["; }
+  &::after { content: "]"; }
+}
+section.footnotes {
+  margin-top: 2em;
+  &::before { content: ""; display: block; max-width: 20em; }
+}
+.fade {
+  background: repeating-linear-gradient(135deg, white, white 30px, #ddd 32px, #ddd 32px);
+  opacity: 0.6;
+}
+
+@media print {
+  body { max-width: 100%; }
+  tr, img { break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  body:not(.pagesjs) pre:has(.line-numbers):not(:hover) { white-space: pre; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.14/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+<div class="frontmatter">
+</div>
+<div class="body">
+<pre><code class="language-r"># Binary Search Tree (BST) Implementation
+#
+# A Binary Search Tree is a hierarchical data structure where each node has at most
+# two children (left and right), and for every node:
+# - All values in the left subtree are less than the node's value
+# - All values in the right subtree are greater than the node's value
+# - Both subtrees are also binary search trees
+#
+# Time Complexities (average case):
+# - Search: O(log n)  
+# - Insert: O(log n)
+# - Delete: O(log n)
+# - Traversal: O(n)
+#
+# Worst case: O(n) when tree becomes skewed (like a linked list)
+#
+# Applications:
+# - Database indexing
+# - Expression parsing
+# - Priority queues
+# - File system organization
+
+# Define BST Node structure using R6 class system
+if (!require(R6, quietly = TRUE)) {
+  cat(&quot;Installing R6 package for object-oriented programming...\n&quot;)
+  install.packages(&quot;R6&quot;, quiet = TRUE)
+  library(R6)
+}
+</code></pre>
+<pre><code>## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+## logical.return = TRUE, : there is no package called 'R6'
+</code></pre>
+<pre><code>## Installing R6 package for object-oriented programming...
+</code></pre>
+<pre><code class="language-r"># BST Node class
+BSTNode &lt;- R6Class(&quot;BSTNode&quot;,
+  public = list(
+    value = NULL,
+    left = NULL,
+    right = NULL,
+    
+    initialize = function(value) {
+      self$value &lt;- value
+      self$left &lt;- NULL
+      self$right &lt;- NULL
+    }
+  )
+)
+
+# Binary Search Tree class
+BST &lt;- R6Class(&quot;BST&quot;,
+  public = list(
+    root = NULL,
+    size = 0,
+    
+    initialize = function() {
+      self$root &lt;- NULL
+      self$size &lt;- 0
+    },
+    
+    # Insert a value into the BST
+    insert = function(value) {
+      if (is.null(self$root)) {
+        self$root &lt;- BSTNode$new(value)
+        self$size &lt;- self$size + 1
+      } else {
+        private$insert_recursive(self$root, value)
+      }
+    },
+    
+    # Search for a value in the BST
+    search = function(value) {
+      return(private$search_recursive(self$root, value))
+    },
+    
+    # Delete a value from the BST
+    delete = function(value) {
+      if (self$search(value)) {
+        self$root &lt;- private$delete_recursive(self$root, value)
+        self$size &lt;- self$size - 1
+        return(TRUE)
+      }
+      return(FALSE)
+    },
+    
+    # Find minimum value in the BST
+    find_min = function() {
+      if (is.null(self$root)) return(NULL)
+      return(private$find_min_recursive(self$root)$value)
+    },
+    
+    # Find maximum value in the BST  
+    find_max = function() {
+      if (is.null(self$root)) return(NULL)
+      return(private$find_max_recursive(self$root)$value)
+    },
+    
+    # In-order traversal (left, root, right) - gives sorted output
+    inorder_traversal = function() {
+      result &lt;- c()
+      private$inorder_recursive(self$root, result)
+      return(result)
+    },
+    
+    # Pre-order traversal (root, left, right)
+    preorder_traversal = function() {
+      result &lt;- c()
+      private$preorder_recursive(self$root, result)
+      return(result)
+    },
+    
+    # Post-order traversal (left, right, root)
+    postorder_traversal = function() {
+      result &lt;- c()
+      private$postorder_recursive(self$root, result)
+      return(result)
+    },
+    
+    # Level-order traversal (breadth-first)
+    level_order_traversal = function() {
+      if (is.null(self$root)) return(c())
+      
+      result &lt;- c()
+      queue &lt;- list(self$root)
+      
+      while (length(queue) &gt; 0) {
+        node &lt;- queue[[1]]
+        queue &lt;- queue[-1]
+        
+        result &lt;- c(result, node$value)
+        
+        if (!is.null(node$left)) {
+          queue &lt;- append(queue, list(node$left))
+        }
+        if (!is.null(node$right)) {
+          queue &lt;- append(queue, list(node$right))
+        }
+      }
+      
+      return(result)
+    },
+    
+    # Get height of the tree
+    height = function() {
+      return(private$height_recursive(self$root))
+    },
+    
+    # Check if tree is valid BST
+    is_valid_bst = function() {
+      return(private$is_valid_bst_recursive(self$root, -Inf, Inf))
+    },
+    
+    # Get size of the tree
+    get_size = function() {
+      return(self$size)
+    },
+    
+    # Check if tree is empty
+    is_empty = function() {
+      return(is.null(self$root))
+    },
+    
+    # Print tree structure
+    print_tree = function() {
+      if (is.null(self$root)) {
+        cat(&quot;Empty tree\n&quot;)
+        return()
+      }
+      private$print_tree_recursive(self$root, &quot;&quot;, TRUE)
+    }
+  ),
+  
+  private = list(
+    # Recursive helper for insertion
+    insert_recursive = function(node, value) {
+      if (value &lt; node$value) {
+        if (is.null(node$left)) {
+          node$left &lt;- BSTNode$new(value)
+          self$size &lt;- self$size + 1
+        } else {
+          private$insert_recursive(node$left, value)
+        }
+      } else if (value &gt; node$value) {
+        if (is.null(node$right)) {
+          node$right &lt;- BSTNode$new(value)
+          self$size &lt;- self$size + 1
+        } else {
+          private$insert_recursive(node$right, value)
+        }
+      }
+      # If value == node$value, don't insert (no duplicates)
+    },
+    
+    # Recursive helper for search
+    search_recursive = function(node, value) {
+      if (is.null(node) || node$value == value) {
+        return(!is.null(node))
+      }
+      
+      if (value &lt; node$value) {
+        return(private$search_recursive(node$left, value))
+      } else {
+        return(private$search_recursive(node$right, value))
+      }
+    },
+    
+    # Recursive helper for deletion
+    delete_recursive = function(node, value) {
+      if (is.null(node)) {
+        return(NULL)
+      }
+      
+      if (value &lt; node$value) {
+        node$left &lt;- private$delete_recursive(node$left, value)
+      } else if (value &gt; node$value) {
+        node$right &lt;- private$delete_recursive(node$right, value)
+      } else {
+        # Node to delete found
+        if (is.null(node$left)) {
+          return(node$right)
+        } else if (is.null(node$right)) {
+          return(node$left)
+        }
+        
+        # Node has two children - find inorder successor
+        successor &lt;- private$find_min_recursive(node$right)
+        node$value &lt;- successor$value
+        node$right &lt;- private$delete_recursive(node$right, successor$value)
+      }
+      
+      return(node)
+    },
+    
+    # Find minimum node
+    find_min_recursive = function(node) {
+      while (!is.null(node$left)) {
+        node &lt;- node$left
+      }
+      return(node)
+    },
+    
+    # Find maximum node
+    find_max_recursive = function(node) {
+      while (!is.null(node$right)) {
+        node &lt;- node$right
+      }
+      return(node)
+    },
+    
+    # In-order traversal helper
+    inorder_recursive = function(node, result) {
+      if (!is.null(node)) {
+        result &lt;&lt;- private$inorder_recursive(node$left, result)
+        result &lt;&lt;- c(result, node$value)
+        result &lt;&lt;- private$inorder_recursive(node$right, result)
+      }
+      return(result)
+    },
+    
+    # Pre-order traversal helper
+    preorder_recursive = function(node, result) {
+      if (!is.null(node)) {
+        result &lt;&lt;- c(result, node$value)
+        result &lt;&lt;- private$preorder_recursive(node$left, result)
+        result &lt;&lt;- private$preorder_recursive(node$right, result)
+      }
+      return(result)
+    },
+    
+    # Post-order traversal helper
+    postorder_recursive = function(node, result) {
+      if (!is.null(node)) {
+        result &lt;&lt;- private$postorder_recursive(node$left, result)
+        result &lt;&lt;- private$postorder_recursive(node$right, result)
+        result &lt;&lt;- c(result, node$value)
+      }
+      return(result)
+    },
+    
+    # Height calculation helper
+    height_recursive = function(node) {
+      if (is.null(node)) {
+        return(-1)  # Height of empty tree is -1
+      }
+      
+      left_height &lt;- private$height_recursive(node$left)
+      right_height &lt;- private$height_recursive(node$right)
+      
+      return(1 + max(left_height, right_height))
+    },
+    
+    # BST validation helper
+    is_valid_bst_recursive = function(node, min_val, max_val) {
+      if (is.null(node)) {
+        return(TRUE)
+      }
+      
+      if (node$value &lt;= min_val || node$value &gt;= max_val) {
+        return(FALSE)
+      }
+      
+      return(private$is_valid_bst_recursive(node$left, min_val, node$value) &amp;&amp;
+             private$is_valid_bst_recursive(node$right, node$value, max_val))
+    },
+    
+    # Tree printing helper
+    print_tree_recursive = function(node, prefix, is_last) {
+      if (!is.null(node)) {
+        cat(prefix)
+        cat(if (is_last) &quot;└── &quot; else &quot;├── &quot;)
+        cat(node$value, &quot;\n&quot;)
+        
+        new_prefix &lt;- paste0(prefix, if (is_last) &quot;    &quot; else &quot;│   &quot;)
+        
+        if (!is.null(node$left) || !is.null(node$right)) {
+          if (!is.null(node$left)) {
+            private$print_tree_recursive(node$left, new_prefix, is.null(node$right))
+          }
+          if (!is.null(node$right)) {
+            private$print_tree_recursive(node$right, new_prefix, TRUE)
+          }
+        }
+      }
+    }
+  )
+)
+
+# Utility functions for BST operations
+
+# Create BST from array
+create_bst_from_array &lt;- function(arr) {
+  #' Create a BST from an array of values
+  #' @param arr: Array of values to insert
+  #' @return: BST object
+  
+  bst &lt;- BST$new()
+  for (value in arr) {
+    bst$insert(value)
+  }
+  return(bst)
+}
+
+# Check if two BSTs are identical
+are_identical_bsts &lt;- function(bst1, bst2) {
+  #' Check if two BSTs have identical structure and values
+  #' @param bst1: First BST
+  #' @param bst2: Second BST
+  #' @return: TRUE if identical, FALSE otherwise
+  
+  traversal1 &lt;- bst1$preorder_traversal()
+  traversal2 &lt;- bst2$preorder_traversal()
+  
+  return(identical(traversal1, traversal2))
+}
+
+# Find kth smallest element in BST
+kth_smallest &lt;- function(bst, k) {
+  #' Find the kth smallest element in BST
+  #' @param bst: BST object
+  #' @param k: Position (1-indexed)
+  #' @return: kth smallest value or NULL if k is out of bounds
+  
+  inorder &lt;- bst$inorder_traversal()
+  if (k &gt; 0 &amp;&amp; k &lt;= length(inorder)) {
+    return(inorder[k])
+  }
+  return(NULL)
+}
+
+# Example usage and testing
+cat(&quot;=== Binary Search Tree (BST) Implementation ===\n\n&quot;)
+</code></pre>
+<pre><code>## === Binary Search Tree (BST) Implementation ===
+</code></pre>
+<pre><code class="language-r"># Test 1: Basic BST operations
+cat(&quot;1. Basic BST Operations\n&quot;)
+</code></pre>
+<pre><code>## 1. Basic BST Operations
+</code></pre>
+<pre><code class="language-r">bst &lt;- BST$new()
+
+# Insert values
+values &lt;- c(50, 30, 70, 20, 40, 60, 80)
+cat(&quot;Inserting values:&quot;, paste(values, collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Inserting values: 50, 30, 70, 20, 40, 60, 80
+</code></pre>
+<pre><code class="language-r">for (value in values) {
+  bst$insert(value)
+}
+
+cat(&quot;Tree size:&quot;, bst$get_size(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Tree size: 7
+</code></pre>
+<pre><code class="language-r">cat(&quot;Tree height:&quot;, bst$height(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Tree height: 2
+</code></pre>
+<pre><code class="language-r">cat(&quot;Is valid BST:&quot;, bst$is_valid_bst(), &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Is valid BST: TRUE
+</code></pre>
+<pre><code class="language-r"># Test 2: Tree visualization
+cat(&quot;2. Tree Structure\n&quot;)
+</code></pre>
+<pre><code>## 2. Tree Structure
+</code></pre>
+<pre><code class="language-r">bst$print_tree()
+</code></pre>
+<pre><code>## └── 50 
+##     ├── 30 
+##     │   ├── 20 
+##     │   └── 40 
+##     └── 70 
+##         ├── 60 
+##         └── 80
+</code></pre>
+<pre><code class="language-r">cat(&quot;\n&quot;)
+</code></pre>
+<pre><code class="language-r"># Test 3: Search operations
+cat(&quot;3. Search Operations\n&quot;)
+</code></pre>
+<pre><code>## 3. Search Operations
+</code></pre>
+<pre><code class="language-r">search_values &lt;- c(40, 25, 80, 100)
+for (value in search_values) {
+  found &lt;- bst$search(value)
+  cat(&quot;Search for&quot;, value, &quot;:&quot;, if (found) &quot;Found&quot; else &quot;Not found&quot;, &quot;\n&quot;)
+}
+</code></pre>
+<pre><code>## Search for 40 : Found 
+## Search for 25 : Not found 
+## Search for 80 : Found 
+## Search for 100 : Not found
+</code></pre>
+<pre><code class="language-r">cat(&quot;\n&quot;)
+</code></pre>
+<pre><code class="language-r"># Test 4: Min/Max operations
+cat(&quot;4. Min/Max Operations\n&quot;)
+</code></pre>
+<pre><code>## 4. Min/Max Operations
+</code></pre>
+<pre><code class="language-r">cat(&quot;Minimum value:&quot;, bst$find_min(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Minimum value: 20
+</code></pre>
+<pre><code class="language-r">cat(&quot;Maximum value:&quot;, bst$find_max(), &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Maximum value: 80
+</code></pre>
+<pre><code class="language-r"># Test 5: Tree traversals
+cat(&quot;5. Tree Traversals\n&quot;)
+</code></pre>
+<pre><code>## 5. Tree Traversals
+</code></pre>
+<pre><code class="language-r">cat(&quot;In-order (sorted):   &quot;, paste(bst$inorder_traversal(), collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## In-order (sorted):
+</code></pre>
+<pre><code class="language-r">cat(&quot;Pre-order:           &quot;, paste(bst$preorder_traversal(), collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Pre-order:
+</code></pre>
+<pre><code class="language-r">cat(&quot;Post-order:          &quot;, paste(bst$postorder_traversal(), collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Post-order:
+</code></pre>
+<pre><code class="language-r">cat(&quot;Level-order (BFS):   &quot;, paste(bst$level_order_traversal(), collapse = &quot;, &quot;), &quot;\n\n&quot;)
+</code></pre>
+<pre><code>## Level-order (BFS):    50, 30, 70, 20, 40, 60, 80
+</code></pre>
+<pre><code class="language-r"># Test 6: Deletion operations
+cat(&quot;6. Deletion Operations\n&quot;)
+</code></pre>
+<pre><code>## 6. Deletion Operations
+</code></pre>
+<pre><code class="language-r">delete_values &lt;- c(20, 30, 50)  # Delete leaf, node with one child, root
+
+for (value in delete_values) {
+  cat(&quot;Deleting&quot;, value, &quot;:&quot;, if (bst$delete(value)) &quot;Success&quot; else &quot;Failed&quot;, &quot;\n&quot;)
+  cat(&quot;Tree after deletion:\n&quot;)
+  bst$print_tree()
+  cat(&quot;In-order traversal:&quot;, paste(bst$inorder_traversal(), collapse = &quot;, &quot;), &quot;\n&quot;)
+  cat(&quot;Tree size:&quot;, bst$get_size(), &quot;\n\n&quot;)
+}
+</code></pre>
+<pre><code>## Deleting 20 : Success 
+## Tree after deletion:
+## └── 50 
+##     ├── 30 
+##     │   └── 40 
+##     └── 70 
+##         ├── 60 
+##         └── 80 
+## In-order traversal:  
+## Tree size: 6 
+## 
+## Deleting 30 : Success 
+## Tree after deletion:
+## └── 50 
+##     ├── 40 
+##     └── 70 
+##         ├── 60 
+##         └── 80 
+## In-order traversal:  
+## Tree size: 5 
+## 
+## Deleting 50 : Success 
+## Tree after deletion:
+## └── 60 
+##     ├── 40 
+##     └── 70 
+##         └── 80 
+## In-order traversal:  
+## Tree size: 4
+</code></pre>
+<pre><code class="language-r"># Test 7: Create BST from sorted vs unsorted array
+cat(&quot;7. BST Creation Comparison\n&quot;)
+</code></pre>
+<pre><code>## 7. BST Creation Comparison
+</code></pre>
+<pre><code class="language-r"># Sorted array (creates skewed tree)
+sorted_array &lt;- c(1, 2, 3, 4, 5, 6, 7)
+bst_sorted &lt;- create_bst_from_array(sorted_array)
+cat(&quot;BST from sorted array [1,2,3,4,5,6,7]:\n&quot;)
+</code></pre>
+<pre><code>## BST from sorted array [1,2,3,4,5,6,7]:
+</code></pre>
+<pre><code class="language-r">cat(&quot;Height:&quot;, bst_sorted$height(), &quot;(should be close to log₂(7) ≈ 2.8 for balanced)\n&quot;)
+</code></pre>
+<pre><code>## Height: 6 (should be close to log₂(7) ≈ 2.8 for balanced)
+</code></pre>
+<pre><code class="language-r">bst_sorted$print_tree()
+</code></pre>
+<pre><code>## └── 1 
+##     └── 2 
+##         └── 3 
+##             └── 4 
+##                 └── 5 
+##                     └── 6 
+##                         └── 7
+</code></pre>
+<pre><code class="language-r"># Shuffled array (more balanced)
+shuffled_array &lt;- c(4, 2, 6, 1, 3, 5, 7)
+bst_shuffled &lt;- create_bst_from_array(shuffled_array)
+cat(&quot;BST from shuffled array [4,2,6,1,3,5,7]:\n&quot;)
+</code></pre>
+<pre><code>## BST from shuffled array [4,2,6,1,3,5,7]:
+</code></pre>
+<pre><code class="language-r">cat(&quot;Height:&quot;, bst_shuffled$height(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Height: 2
+</code></pre>
+<pre><code class="language-r">bst_shuffled$print_tree()
+</code></pre>
+<pre><code>## └── 4 
+##     ├── 2 
+##     │   ├── 1 
+##     │   └── 3 
+##     └── 6 
+##         ├── 5 
+##         └── 7
+</code></pre>
+<pre><code class="language-r"># Test 8: kth smallest element
+cat(&quot;8. Finding kth Smallest Elements\n&quot;)
+</code></pre>
+<pre><code>## 8. Finding kth Smallest Elements
+</code></pre>
+<pre><code class="language-r">for (k in 1:min(5, bst_shuffled$get_size())) {
+  kth_val &lt;- kth_smallest(bst_shuffled, k)
+  cat(k, &quot;smallest element:&quot;, kth_val, &quot;\n&quot;)
+}
+</code></pre>
+<pre><code>## 1 smallest element: 
+## 2 smallest element: 
+## 3 smallest element: 
+## 4 smallest element: 
+## 5 smallest element:
+</code></pre>
+<pre><code class="language-r">cat(&quot;\n&quot;)
+</code></pre>
+<pre><code class="language-r"># Test 9: Edge cases
+cat(&quot;9. Edge Cases\n&quot;)
+</code></pre>
+<pre><code>## 9. Edge Cases
+</code></pre>
+<pre><code class="language-r">empty_bst &lt;- BST$new()
+cat(&quot;Empty BST:\n&quot;)
+</code></pre>
+<pre><code>## Empty BST:
+</code></pre>
+<pre><code class="language-r">cat(&quot;Is empty:&quot;, empty_bst$is_empty(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Is empty: TRUE
+</code></pre>
+<pre><code class="language-r">cat(&quot;Size:&quot;, empty_bst$get_size(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Size: 0
+</code></pre>
+<pre><code class="language-r">cat(&quot;Height:&quot;, empty_bst$height(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Height: -1
+</code></pre>
+<pre><code class="language-r">cat(&quot;Min value:&quot;, empty_bst$find_min(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Min value:
+</code></pre>
+<pre><code class="language-r">cat(&quot;Search for 5:&quot;, empty_bst$search(5), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Search for 5: FALSE
+</code></pre>
+<pre><code class="language-r">cat(&quot;Delete 5:&quot;, empty_bst$delete(5), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Delete 5: FALSE
+</code></pre>
+<pre><code class="language-r"># Single node BST
+single_bst &lt;- BST$new()
+single_bst$insert(42)
+cat(&quot;\nSingle node BST:\n&quot;)
+</code></pre>
+<pre><code>## 
+## Single node BST:
+</code></pre>
+<pre><code class="language-r">cat(&quot;Size:&quot;, single_bst$get_size(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Size: 1
+</code></pre>
+<pre><code class="language-r">cat(&quot;Height:&quot;, single_bst$height(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Height: 0
+</code></pre>
+<pre><code class="language-r">cat(&quot;Min/Max:&quot;, single_bst$find_min(), &quot;/&quot;, single_bst$find_max(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Min/Max: 42 / 42
+</code></pre>
+<pre><code class="language-r">single_bst$print_tree()
+</code></pre>
+<pre><code>## └── 42
+</code></pre>
+<pre><code class="language-r"># Test 10: Real-world example - Student grades
+cat(&quot;\n10. Real-world Example - Student Grade Management\n&quot;)
+</code></pre>
+<pre><code>## 
+## 10. Real-world Example - Student Grade Management
+</code></pre>
+<pre><code class="language-r">grade_bst &lt;- BST$new()
+grades &lt;- c(85, 92, 78, 96, 83, 88, 91, 79, 87, 94)
+
+cat(&quot;Student grades:&quot;, paste(grades, collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Student grades: 85, 92, 78, 96, 83, 88, 91, 79, 87, 94
+</code></pre>
+<pre><code class="language-r">for (grade in grades) {
+  grade_bst$insert(grade)
+}
+
+cat(&quot;Grades in ascending order:&quot;, paste(grade_bst$inorder_traversal(), collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Grades in ascending order:
+</code></pre>
+<pre><code class="language-r">cat(&quot;Highest grade:&quot;, grade_bst$find_max(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Highest grade: 96
+</code></pre>
+<pre><code class="language-r">cat(&quot;Lowest grade:&quot;, grade_bst$find_min(), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Lowest grade: 78
+</code></pre>
+<pre><code class="language-r">cat(&quot;Median grade (middle element):&quot;, kth_smallest(grade_bst, ceiling(grade_bst$get_size()/2)), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Median grade (middle element):
+</code></pre>
+<pre><code class="language-r"># Find students above certain grade
+threshold &lt;- 90
+above_threshold &lt;- grade_bst$inorder_traversal()
+above_threshold &lt;- above_threshold[above_threshold &gt;= threshold]
+cat(&quot;Grades &gt;=&quot;, threshold, &quot;:&quot;, paste(above_threshold, collapse = &quot;, &quot;), &quot;\n&quot;)
+</code></pre>
+<pre><code>## Grades &gt;= 90 :
+</code></pre>
+<pre><code class="language-r">cat(&quot;\nGrade distribution tree:\n&quot;)
+</code></pre>
+<pre><code>## 
+## Grade distribution tree:
+</code></pre>
+<pre><code class="language-r">grade_bst$print_tree()
+</code></pre>
+<pre><code>## └── 85 
+##     ├── 78 
+##     │   └── 83 
+##     │       └── 79 
+##     └── 92 
+##         ├── 88 
+##         │   ├── 87 
+##         │   └── 91 
+##         └── 96 
+##             └── 94
+</code></pre>
+</div>
+</body>
+</html>
