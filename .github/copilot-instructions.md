@@ -52,8 +52,8 @@ Before submitting a pull request, verify that your code:
 
 When reviewing a pull request:
 - Verify that any added algorithms or data structures aren't already implemented elsewhere in the repository (including under a different name)
-- Confirm that the proposed algorithm is a recognized computer-science algorithm, not a problem-specific adaptation of a general technique (e.g., tuned for LeetCode or other competitive-programming problems)
+- Confirm that the proposed algorithm is a recognized computer-science algorithm, not a problem-specific adaptation of a general technique (e.g., tuned for LeetCode or other competitive-programming problems). It is prohibited to add LeetCode problems.
 - Check that the extension of all code file names is a lowercase `.r`
-- Check that DIRECTORY.md was updated correctly
+- Check that the newly added algorithm is also added to DIRECTORY.md file
 - Verify that the code includes appropriate documentation and examples
 - Ensure that variable naming follows repository conventions
