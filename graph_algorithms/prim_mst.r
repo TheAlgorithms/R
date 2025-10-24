@@ -135,7 +135,7 @@ print_mst <- function(mst, graph = NULL) {
     if (mst$num_edges == expected_edges) {
       cat(sprintf("✓ MST has correct number of edges (%d)\n", expected_edges))
     } else {
-      cat(sprintf("⚠ Warning: MST has %d edges, expected %d (graph may be disconnected)\n", 
+      cat(sprintf("[WARN] MST has %d edges, expected %d (graph may be disconnected)\n", 
                   mst$num_edges, expected_edges))
     }
   }
