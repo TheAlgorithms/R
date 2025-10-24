@@ -115,5 +115,7 @@ if (interactive()) {
   cat(paste(result$best_path, collapse = " -> "), "\n")
   cat("Probability of this sequence:", result$best_prob, "\n")
 }
+  cat("Probability of this sequence:", result$best_prob, "\n")
+}
 cat(paste(result$best_path, collapse = " -> "), "\n")
 cat("Probability of this sequence:", result$best_prob, "\n")
