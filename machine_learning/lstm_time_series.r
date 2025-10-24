@@ -270,7 +270,7 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
   cat("Plot created successfully!\n\n")
 }
 
-# ========== Additional Example: Multi-step Prediction ==========\n
+# ========== Additional Example: Multi-step Prediction ==========
 
 cat("========== Multi-Step Ahead Prediction ==========\n\n")
 
