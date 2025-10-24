@@ -231,42 +231,43 @@ X <- as.matrix(iris[, 1:4])
 y <- factor(iris$Species)
 
 # train/test split 70/30
-n <- nrow(X)
-train_idx <- sample(seq_len(n), size = floor(0.7 * n))
-test_idx <- setdiff(seq_len(n), train_idx)
+if (interactive()) {
+  n <- nrow(X)
+  train_idx <- sample(seq_len(n), size = floor(0.7 * n))
+  test_idx <- setdiff(seq_len(n), train_idx)
 
-X_train <- X[train_idx, , drop = FALSE]
-y_train <- y[train_idx]
-X_test <- X[test_idx, , drop = FALSE]
-y_test <- y[test_idx]
+  X_train <- X[train_idx, , drop = FALSE]
+  y_train <- y[train_idx]
+  X_test <- X[test_idx, , drop = FALSE]
+  y_test <- y[test_idx]
 
-model <- knn_train(X_train, y_train, k = 5, weighted = TRUE, normalize = TRUE)
-pred <- knn_predict(model, X_test, return_probs = TRUE, return_neighbors = FALSE)
+  model <- knn_train(X_train, y_train, k = 5, weighted = TRUE, normalize = TRUE)
+  pred <- knn_predict(model, X_test, return_probs = TRUE, return_neighbors = FALSE)
 
-acc <- knn_accuracy(y_test, pred$predictions)
-cat(sprintf("Test accuracy (k=%d, weighted=%s, normalize=%s): %.4f\n",
-            model$k, model$weighted, model$normalize, acc))
-cat("Confusion Matrix:\n")
-print(confusion_matrix(y_test, pred$predictions))
-cat("\n")
+  acc <- knn_accuracy(y_test, pred$predictions)
+  cat(sprintf("Test accuracy (k=%d, weighted=%s, normalize=%s): %.4f\n",
+              model$k, model$weighted, model$normalize, acc))
+  cat("Confusion Matrix:\n")
+  print(confusion_matrix(y_test, pred$predictions))
+  cat("\n")
 
-# ---------------------------
-# Example/Test: Regression (toy)
-# ---------------------------
-cat("=== k-NN Example: Toy regression ===\n")
-set.seed(1)
-n_reg <- 200
-X_reg <- matrix(runif(n_reg * 2, -5, 5), ncol = 2)
-y_reg <- X_reg[,1] * 2 - X_reg[,2] * 0.5 + rnorm(n_reg, sd = 0.5)
-train_idx <- sample(seq_len(n_reg), size = 150)
-X_tr <- X_reg[train_idx, , drop=FALSE]; y_tr <- y_reg[train_idx]
-X_te <- X_reg[-train_idx, , drop=FALSE]; y_te <- y_reg[-train_idx]
+  # ---------------------------
+  # Example/Test: Regression (toy)
+  # ---------------------------
+  cat("=== k-NN Example: Toy regression ===\n")
+  set.seed(1)
+  n_reg <- 200
+  X_reg <- matrix(runif(n_reg * 2, -5, 5), ncol = 2)
+  y_reg <- X_reg[,1] * 2 - X_reg[,2] * 0.5 + rnorm(n_reg, sd = 0.5)
+  train_idx <- sample(seq_len(n_reg), size = 150)
+  X_tr <- X_reg[train_idx, , drop=FALSE]; y_tr <- y_reg[train_idx]
+  X_te <- X_reg[-train_idx, , drop=FALSE]; y_te <- y_reg[-train_idx]
 
-model_reg <- knn_train(X_tr, y_tr, k = 7, weighted = TRUE, normalize = TRUE)
-pred_reg <- knn_predict(model_reg, X_te)
-mse <- mean((pred_reg$predictions - y_te)^2)
-cat(sprintf("Regression MSE (k=%d, weighted=%s): %.4f\n\n", model_reg$k, model_reg$weighted, mse))
-
+  model_reg <- knn_train(X_tr, y_tr, k = 7, weighted = TRUE, normalize = TRUE)
+  pred_reg <- knn_predict(model_reg, X_te)
+  mse <- mean((pred_reg$predictions - y_te)^2)
+  cat(sprintf("Regression MSE (k=%d, weighted=%s): %.4f\n\n", model_reg$k, model_reg$weighted, mse))
+}
 # ---------------------------
 # End of script
 # ---------------------------
