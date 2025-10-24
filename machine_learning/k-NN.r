@@ -173,7 +173,7 @@ knn_predict <- function(model, X_new, return_probs = TRUE, return_neighbors = FA
       else probs[i, ] <- counts
       
       # choose class with max probability (first tie wins because which.max)
-      preds[i] <- colnames(probs)[which.max(probs[i, ])]
+      preds[i] <- names(which.max(probs[i, ]))
     }
     # cast to factor with original levels
     preds <- factor(preds, levels = model$classes)
