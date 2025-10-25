@@ -60,6 +60,12 @@
   * [Johnson Shortest Paths](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/johnson_shortest_paths.r)
   * [Kosaraju Scc](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/kosaraju_scc.r)
 
+
+## Linked List Algorithms
+  * [Circular Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/circular_linked_list.r)
+  * [Doubly Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/doubly_linked_list.r)
+  * [Singly Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/singly_linked_list.r)
+
 ## Machine Learning
   * [Gradient Boosting](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/gradient_boosting.r)
 
