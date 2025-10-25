@@ -85,6 +85,7 @@
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/fibonacci.r)
   * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/first_n_fibonacci.r)
   * [Greatest Common Divisor](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/greatest_common_divisor.r)
+  * [Palindrome Check](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/isPalindrome.r)
   * [Josephus Problem](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/josephus_problem.r)
   * [Least Common Multiple](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/least_common_multiple.r)
   * [Modular Exponentiation](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/modular_exponentiation.r)
