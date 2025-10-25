@@ -176,9 +176,6 @@ if (interactive()) {
   cat("Color assignment:", result1$colors, "\n")
   cat("Valid:", validate_coloring(triangle, result1$colors), "\n")
 
-  # (Include all remaining example/test code here, indented inside the block)
-  # ...
-
   result1_fail <- graph_coloring(triangle, 2)
   cat("\nBacktracking with 2 colors:\n")
   cat("Success:", result1_fail$success, "\n")
