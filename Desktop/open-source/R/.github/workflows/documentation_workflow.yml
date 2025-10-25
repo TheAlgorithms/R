@@ -1,0 +1,36 @@
+name: Documentation
+on: [push, pull_request]
+
+jobs:
+  MakeDocs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2-branch
+        with:
+          r-version: '4.1.0'
+      - name: Create Documentation directory
+        run: |
+          echo "Creating 'Documentation'"
+          mkdir -p documentation
+      - name: Install dependencies
+        run: |
+          echo "Installing R package dependencies. Scripts might have additional dependencies installed."
+          Rscript -e 'if (!require(knitr)) install.packages("knitr")'
+          Rscript -e 'if (!require(markdown)) install.packages("markdown")'
+      - name: Remove old documentation
+        run: 'rm -rf documentation/*'
+      - name: Generate new documentation
+        run: 'Rscript .github/scripts/doc_builder.r'
+      - name: Commit Documentation
+        run: |
+          git diff-index --quiet HEAD && exit
+          echo "Setting up Git to push changes."
+          git config --global user.name 'autoprettier'
+          git config --global user.email 'actions@github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          echo "Staging documentation"
+          git add documentation/ # This is the only directory that has changes and should be staged
+          git commit -m "Update documentation" || true
+          git push || true
