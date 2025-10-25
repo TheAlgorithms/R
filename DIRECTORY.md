@@ -2,6 +2,10 @@
 ## Association Algorithms
   * [Apriori](https://github.com/TheAlgorithms/R/blob/HEAD/association_algorithms/apriori.r)
 
+## Biomedical
+  * [Mann Whitney U Test](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/mann_whitney_u_test.r)
+  * [Wilcoxon Signed Rank Test](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/wilcoxon_signed_rank_test.r)
+
 ## Classification Algorithms
   * [Decision Tree](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/decision_tree.r)
   * [Gradient Boosting Algorithms](https://github.com/TheAlgorithms/R/blob/HEAD/classification_algorithms/gradient_boosting_algorithms.r)
@@ -57,9 +61,18 @@
   * [Depth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/depth_first_search.r)
   * [Dijkstra Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/dijkstra_shortest_path.r)
   * [Floyd Warshall](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/floyd_warshall.r)
+  * [Johnson Shortest Paths](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/johnson_shortest_paths.r)
+  * [Kosaraju Scc](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/kosaraju_scc.r)
+
+
+## Linked List Algorithms
+  * [Circular Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/circular_linked_list.r)
+  * [Doubly Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/doubly_linked_list.r)
+  * [Singly Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/singly_linked_list.r)
 
 ## Machine Learning
   * [Gradient Boosting](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/gradient_boosting.r)
+
 
 ## Mathematics
   * [Amicable Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/amicable_numbers.r)
