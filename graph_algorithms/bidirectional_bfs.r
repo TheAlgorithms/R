@@ -10,7 +10,8 @@
 # Space Complexity: O(V)
 #
 # Input:
-#   graph  - adjacency list (list of integer vectors)
+#   graph  - adjacency list (named list with character keys, values are integer vectors)
+#            Note: Graph keys must be character strings (e.g., "1", "2", etc.)
 #   source - integer (starting vertex)
 #   target - integer (destination vertex)
 #
