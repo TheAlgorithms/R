@@ -57,6 +57,8 @@
   * [Depth First Search](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/depth_first_search.r)
   * [Dijkstra Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/dijkstra_shortest_path.r)
   * [Floyd Warshall](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/floyd_warshall.r)
+  * [Johnson Shortest Paths](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/johnson_shortest_paths.r)
+  * [Kosaraju Scc](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/kosaraju_scc.r)
 
 
 ## Linked List Algorithms
