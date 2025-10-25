@@ -63,6 +63,11 @@ isMatch_optimized <- function(text, pattern) {
     }
   }
   
+  # Early return for empty text
+  if (m == 0) {
+    return(prev[n + 1])
+  }
+  
   for (i in 2:(m + 1)) {
     curr <- rep(FALSE, n + 1)
     text_char <- substr(text, i - 1, i - 1)
