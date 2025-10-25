@@ -198,62 +198,62 @@ if (interactive()) {
 
   cat("Finding chromatic number...\n")
   chromatic_num <- find_chromatic_number(petersen)
-cat("Chromatic number:", chromatic_num, "\n")
-
-result2 <- graph_coloring(petersen, chromatic_num)
-cat("Color assignment:", result2$colors, "\n")
-cat("Valid:", validate_coloring(petersen, result2$colors), "\n")
-
-# Example 3: Bipartite graph (needs 2 colors)
-cat("\n\nExample 3: Bipartite Graph K(3,3)\n")
-bipartite <- matrix(c(
-  0, 0, 0, 1, 1, 1,
-  0, 0, 0, 1, 1, 1,
-  0, 0, 0, 1, 1, 1,
-  1, 1, 1, 0, 0, 0,
-  1, 1, 1, 0, 0, 0,
-  1, 1, 1, 0, 0, 0
-), nrow = 6, byrow = TRUE)
-
-result3 <- graph_coloring(bipartite, 2)
-cat("Backtracking with 2 colors:\n")
-cat("Success:", result3$success, "\n")
-cat("Color assignment:", result3$colors, "\n")
-cat("Valid:", validate_coloring(bipartite, result3$colors), "\n")
-
-# Example 4: Compare algorithms
-cat("\n\nExample 4: Algorithm Comparison on Random Graph\n")
-set.seed(42)
-n <- 8
-random_graph <- matrix(0, nrow = n, ncol = n)
-for (i in 1:(n-1)) {
-  for (j in (i+1):n) {
-    if (runif(1) < 0.3) {
-      random_graph[i, j] <- 1
-      random_graph[j, i] <- 1
+  cat("Chromatic number:", chromatic_num, "\n")
+  
+  result2 <- graph_coloring(petersen, chromatic_num)
+  cat("Color assignment:", result2$colors, "\n")
+  cat("Valid:", validate_coloring(petersen, result2$colors), "\n")
+  
+  # Example 3: Bipartite graph (needs 2 colors)
+  cat("\n\nExample 3: Bipartite Graph K(3,3)\n")
+  bipartite <- matrix(c(
+    0, 0, 0, 1, 1, 1,
+    0, 0, 0, 1, 1, 1,
+    0, 0, 0, 1, 1, 1,
+    1, 1, 1, 0, 0, 0,
+    1, 1, 1, 0, 0, 0,
+    1, 1, 1, 0, 0, 0
+  ), nrow = 6, byrow = TRUE)
+  
+  result3 <- graph_coloring(bipartite, 2)
+  cat("Backtracking with 2 colors:\n")
+  cat("Success:", result3$success, "\n")
+  cat("Color assignment:", result3$colors, "\n")
+  cat("Valid:", validate_coloring(bipartite, result3$colors), "\n")
+  
+  # Example 4: Compare algorithms
+  cat("\n\nExample 4: Algorithm Comparison on Random Graph\n")
+  set.seed(42)
+  n <- 8
+  random_graph <- matrix(0, nrow = n, ncol = n)
+  for (i in 1:(n-1)) {
+    for (j in (i+1):n) {
+      if (runif(1) < 0.3) {
+        random_graph[i, j] <- 1
+        random_graph[j, i] <- 1
+      }
     }
   }
-}
-
-cat("Graph size:", n, "vertices\n")
-cat("Number of edges:", sum(random_graph) / 2, "\n\n")
-
-greedy_result <- greedy_coloring(random_graph)
-cat("Greedy Coloring:\n")
-cat("Colors used:", greedy_result$num_colors_used, "\n")
-cat("Color assignment:", greedy_result$colors, "\n")
-cat("Valid:", validate_coloring(random_graph, greedy_result$colors), "\n\n")
-
-wp_result <- welsh_powell_coloring(random_graph)
-cat("Welsh-Powell Coloring:\n")
-cat("Colors used:", wp_result$num_colors_used, "\n")
-cat("Color assignment:", wp_result$colors, "\n")
-cat("Valid:", validate_coloring(random_graph, wp_result$colors), "\n\n")
-
-chromatic <- find_chromatic_number(random_graph)
-cat("Optimal (Backtracking):\n")
-cat("Chromatic number:", chromatic, "\n")
-
-optimal_result <- graph_coloring(random_graph, chromatic)
-cat("Color assignment:", optimal_result$colors, "\n")
-cat("Valid:", validate_coloring(random_graph, optimal_result$colors), "\n")
+  
+  cat("Graph size:", n, "vertices\n")
+  cat("Number of edges:", sum(random_graph) / 2, "\n\n")
+  
+  greedy_result <- greedy_coloring(random_graph)
+  cat("Greedy Coloring:\n")
+  cat("Colors used:", greedy_result$num_colors_used, "\n")
+  cat("Color assignment:", greedy_result$colors, "\n")
+  cat("Valid:", validate_coloring(random_graph, greedy_result$colors), "\n\n")
+  
+  wp_result <- welsh_powell_coloring(random_graph)
+  cat("Welsh-Powell Coloring:\n")
+  cat("Colors used:", wp_result$num_colors_used, "\n")
+  cat("Color assignment:", wp_result$colors, "\n")
+  cat("Valid:", validate_coloring(random_graph, wp_result$colors), "\n\n")
+  
+  chromatic <- find_chromatic_number(random_graph)
+  cat("Optimal (Backtracking):\n")
+  cat("Chromatic number:", chromatic, "\n")
+  
+  optimal_result <- graph_coloring(random_graph, chromatic)
+  cat("Color assignment:", optimal_result$colors, "\n")
+  cat("Valid:", validate_coloring(random_graph, optimal_result$colors), "\n")
