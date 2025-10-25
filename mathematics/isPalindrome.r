@@ -1,4 +1,13 @@
-# Palindrome Number Checking in R
+#' Check if a number is a palindrome
+#'
+#' @description Checks if an integer is a palindrome (reads the same forwards
+#'   and backward) without using strings. Negative numbers are not palindromes.
+#' @param number The integer to check.
+#' @return TRUE if the number is a palindrome, FALSE otherwise.
+#' @examples
+#' isPalindrome(121)
+#' isPalindrome(123)
+
 isPalindrome <- function(number) {
   # Negative numbers are not considered palindromes
   if (number < 0L) {
