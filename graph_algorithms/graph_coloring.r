@@ -178,26 +178,26 @@ if (interactive()) {
 
   # (Include all remaining example/test code here, indented inside the block)
   # ...
-}
-result1_fail <- graph_coloring(triangle, 2)
-cat("\nBacktracking with 2 colors:\n")
-cat("Success:", result1_fail$success, "\n")
 
-# Example 2: Petersen graph (chromatic number = 3)
-cat("\n\nExample 2: Petersen Graph (10 vertices)\n")
-petersen <- matrix(0, nrow = 10, ncol = 10)
-edges <- list(
-  c(1, 2), c(2, 3), c(3, 4), c(4, 5), c(5, 1),
-  c(1, 6), c(2, 7), c(3, 8), c(4, 9), c(5, 10),
-  c(6, 8), c(8, 10), c(10, 7), c(7, 9), c(9, 6)
-)
-for (edge in edges) {
-  petersen[edge[1], edge[2]] <- 1
-  petersen[edge[2], edge[1]] <- 1
-}
+  result1_fail <- graph_coloring(triangle, 2)
+  cat("\nBacktracking with 2 colors:\n")
+  cat("Success:", result1_fail$success, "\n")
 
-cat("Finding chromatic number...\n")
-chromatic_num <- find_chromatic_number(petersen)
+  # Example 2: Petersen graph (chromatic number = 3)
+  cat("\n\nExample 2: Petersen Graph (10 vertices)\n")
+  petersen <- matrix(0, nrow = 10, ncol = 10)
+  edges <- list(
+    c(1, 2), c(2, 3), c(3, 4), c(4, 5), c(5, 1),
+    c(1, 6), c(2, 7), c(3, 8), c(4, 9), c(5, 10),
+    c(6, 8), c(8, 10), c(10, 7), c(7, 9), c(9, 6)
+  )
+  for (edge in edges) {
+    petersen[edge[1], edge[2]] <- 1
+    petersen[edge[2], edge[1]] <- 1
+  }
+
+  cat("Finding chromatic number...\n")
+  chromatic_num <- find_chromatic_number(petersen)
 cat("Chromatic number:", chromatic_num, "\n")
 
 result2 <- graph_coloring(petersen, chromatic_num)
