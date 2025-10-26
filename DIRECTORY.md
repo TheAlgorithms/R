@@ -43,7 +43,6 @@
   * [Binary Search Tree](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/binary_search_tree.r)
   * Queue
     * [Queue Operations](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/Queue/queue_operations.r)
-    * [Rotten Oranges BFS](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/Queue/rotten_oranges_bfs.r)
 
 ## Dynamic Programming
   * 0
