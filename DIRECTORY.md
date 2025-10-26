@@ -3,7 +3,10 @@
   * [Apriori](https://github.com/TheAlgorithms/R/blob/HEAD/association_algorithms/apriori.r)
 
 ## Biomedical
+  * [Chi Square Tests](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/chi_square_tests.r)
+  * [Correlation Analysis](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/correlation_analysis.r)
   * [Mann Whitney U Test](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/mann_whitney_u_test.r)
+  * [T Tests Comprehensive](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/t_tests_comprehensive.r)
   * [Wilcoxon Signed Rank Test](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/wilcoxon_signed_rank_test.r)
 
 ## Classification Algorithms
@@ -43,6 +46,8 @@
   * [Binary Search Tree](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/binary_search_tree.r)
   * Stack
     * [Stack Operations](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/Stack/stack_operations.r)
+  * Queue
+    * [Queue Operations](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/Queue/queue_operations.r)
 
 ## Dynamic Programming
   * 0
@@ -71,6 +76,7 @@
   * [Circular Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/circular_linked_list.r)
   * [Doubly Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/doubly_linked_list.r)
   * [Singly Linked List](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/singly_linked_list.r)
+  * [Two-Pointer Technique (Fast and Slow Pointers)](https://github.com/TheAlgorithms/R/blob/HEAD/linked_list_algorithms/two_pointer_technique.r)
 
 ## Machine Learning
   * [Gradient Boosting](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/gradient_boosting.r)
