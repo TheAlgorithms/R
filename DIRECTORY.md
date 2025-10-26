@@ -42,7 +42,6 @@
 ## Data Structures
   * [Binary Search Tree](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/binary_search_tree.r)
   * Stack
-    * [Next Greater Element](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/Stack/next_greater_element.r)
     * [Stack Operations](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/Stack/stack_operations.r)
 
 ## Dynamic Programming
