@@ -3,7 +3,10 @@
   * [Apriori](https://github.com/TheAlgorithms/R/blob/HEAD/association_algorithms/apriori.r)
 
 ## Biomedical
+  * [Chi Square Tests](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/chi_square_tests.r)
+  * [Correlation Analysis](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/correlation_analysis.r)
   * [Mann Whitney U Test](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/mann_whitney_u_test.r)
+  * [T Tests Comprehensive](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/t_tests_comprehensive.r)
   * [Wilcoxon Signed Rank Test](https://github.com/TheAlgorithms/R/blob/HEAD/biomedical/wilcoxon_signed_rank_test.r)
 
 ## Classification Algorithms
