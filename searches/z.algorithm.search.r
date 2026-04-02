@@ -31,7 +31,8 @@ text <- tolower(readline("Enter text: "))
 pattern <- tolower(readline("Enter pattern: "))
 
 matches <- z_algorithm_search(text, pattern)
-if (length(matches) > 0)
+if (length(matches) > 0) {
   cat("Pattern found at positions:", matches, "\n")
-else
-  cat("Pattern not found.\n")
+} else {
+  cat("Pattern not found.\n")
+}
