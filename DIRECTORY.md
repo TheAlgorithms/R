@@ -92,6 +92,7 @@
   * [Factorial](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/factorial.r)
   * [Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/fibonacci.r)
   * [First N Fibonacci](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/first_n_fibonacci.r)
+  * [Gaussian Elimination](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/gaussian_elimination.r)
   * [Greatest Common Divisor](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/greatest_common_divisor.r)
   * [Palindrome Check](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/isPalindrome.r)
   * [Josephus Problem](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/josephus_problem.r)
