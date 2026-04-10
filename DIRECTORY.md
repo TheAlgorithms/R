@@ -80,6 +80,11 @@
 
 ## Machine Learning
   * [Gradient Boosting](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/gradient_boosting.r)
+  * [K-NN](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/k-NN.r)
+  * [K-Medoids](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/k_medoids.r)
+  * [LSTM Time Series](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/lstm_time_series.r)
+  * [Naive Bayes](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/naive_bayes.r)
+  * [Perceptron](https://github.com/TheAlgorithms/R/blob/HEAD/machine_learning/perceptron.r)
 
 
 ## Mathematics
