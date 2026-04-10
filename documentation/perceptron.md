@@ -1,6 +1,6 @@
 # Perceptron
 
-A simple linear classifier using the perceptron learning rule. This implementation supports binary and multiclass classification using one-vs-rest updates.
+A simple linear classifier using the perceptron learning rule. This implementation supports binary classification and multiclass classification with direct multiclass perceptron updates.
 
 ``` r
 library(R6)

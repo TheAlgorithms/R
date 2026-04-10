@@ -1,7 +1,8 @@
 # perceptron.r
 # Perceptron classifier implementation in R
 # A simple linear classifier using the perceptron learning rule.
-# Supports binary and multiclass classification via one-vs-rest updates.
+# Supports binary classification and multiclass classification
+# using direct multiclass perceptron updates.
 # Time Complexity: O(n_epochs * n_samples * n_features)
 # Space Complexity: O(n_classes * n_features)
 
@@ -16,7 +17,6 @@ Perceptron <- R6Class("Perceptron",
     random_state = NULL,
     classes = NULL,
     weights = NULL,
-    bias = NULL,
     is_multiclass = NULL,
 
     initialize = function(learning_rate = 0.1,
@@ -58,11 +58,9 @@ Perceptron <- R6Class("Perceptron",
       if (length(self$classes) == 2) {
         self$is_multiclass <- FALSE
         self$weights <- rep(0, n_features)
-        self$bias <- 0
       } else {
         self$is_multiclass <- TRUE
         self$weights <- matrix(0, nrow = length(self$classes), ncol = n_features)
-        self$bias <- rep(0, length(self$classes))
       }
 
       if (!is.null(self$random_state)) {
@@ -89,10 +87,9 @@ Perceptron <- R6Class("Perceptron",
               self$weights[predicted, ] <- self$weights[predicted, ] - self$learning_rate * x_i
             }
           } else {
-            score <- sum(self$weights * x_i) + self$bias
+            score <- sum(self$weights * x_i)
             if (y_i * score <= 0) {
               self$weights <- self$weights + self$learning_rate * y_i * x_i
-              self$bias <- self$bias + self$learning_rate * y_i
             }
           }
         }
@@ -118,12 +115,8 @@ Perceptron <- R6Class("Perceptron",
         return(self$classes[predicted_idx])
       }
 
-      raw_scores <- as.numeric(X_new %*% self$weights + self$bias)
-      if (is.factor(self$classes)) {
-        labels <- c(self$classes[1], self$classes[2])
-      } else {
-        labels <- self$classes
-      }
+      raw_scores <- as.numeric(X_new %*% self$weights)
+      labels <- self$classes
       predictions <- ifelse(raw_scores >= 0, labels[2], labels[1])
       return(predictions)
     },
@@ -148,9 +141,20 @@ Perceptron <- R6Class("Perceptron",
       if (is.factor(y)) {
         y <- as.character(y)
       }
-      labels <- sort(unique(y))
-      if (length(labels) != 2) stop("Binary perceptron requires exactly two classes.")
-      self$classes <- labels
+      labels <- self$classes
+      if (is.factor(labels)) {
+        labels <- as.character(labels)
+      }
+      if (is.null(labels) || length(labels) == 0) {
+        labels <- unique(y)
+        if (length(labels) != 2) stop("Binary perceptron requires exactly two classes.")
+        self$classes <- labels
+      } else {
+        if (length(labels) != 2) stop("Binary perceptron requires exactly two classes.")
+      }
+      if (any(!y %in% labels)) {
+        stop("Binary perceptron received labels not present in self$classes.")
+      }
       y_bin <- ifelse(y == labels[2], 1, -1)
       return(y_bin)
     }
