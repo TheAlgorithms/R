@@ -3,7 +3,7 @@
 Levenshtein edit distance calculates the minimum number of single-character insertions, deletions, and substitutions required to transform one string into another.
 
 ``` r
-source("../dynamic_programming/edit_distance.r")
+source("dynamic_programming/edit_distance.r")
 
 # Compute the edit distance
 distance <- edit_distance("kitten", "sitting")

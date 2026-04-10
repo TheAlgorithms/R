@@ -25,8 +25,8 @@ edit_distance <- function(str1, str2) {
   dp[, 1] <- seq(0L, m)
   dp[1, ] <- seq(0L, n)
 
-  for (i in 2:(m + 1)) {
-    for (j in 2:(n + 1)) {
+  for (i in seq_len(m) + 1L) {
+    for (j in seq_len(n) + 1L) {
       cost <- if (substr(str1, i - 1, i - 1) == substr(str2, j - 1, j - 1)) 0L else 1L
       dp[i, j] <- min(
         dp[i - 1, j] + 1L,      # deletion
@@ -57,8 +57,8 @@ edit_distance_with_path <- function(str1, str2) {
   dp[, 1] <- seq(0L, m)
   dp[1, ] <- seq(0L, n)
 
-  for (i in 2:(m + 1)) {
-    for (j in 2:(n + 1)) {
+  for (i in seq_len(m) + 1L) {
+    for (j in seq_len(n) + 1L) {
       cost <- if (substr(str1, i - 1, i - 1) == substr(str2, j - 1, j - 1)) 0L else 1L
       dp[i, j] <- min(
         dp[i - 1, j] + 1L,
