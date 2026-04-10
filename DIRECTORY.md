@@ -60,6 +60,7 @@
   * [Matrix Chain Multiplication](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/matrix_chain_multiplication.r)
   * [Minimum Path Sum](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/minimum_path_sum.r)
   * [Subset Sum](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/subset_sum.r)
+  * [Edit Distance](https://github.com/TheAlgorithms/R/blob/HEAD/dynamic_programming/edit_distance.r)
 
 ## Graph Algorithms
   * [Bellman Ford Shortest Path](https://github.com/TheAlgorithms/R/blob/HEAD/graph_algorithms/bellman_ford_shortest_path.r)
