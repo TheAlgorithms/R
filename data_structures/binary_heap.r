@@ -53,6 +53,9 @@ push <- function(heap, value) {
 }
 
 pop <- function(heap) {
+  if (length(heap) == 0){
+    stop("Heap underflow: cannot pop from an empty heap")
+  }
   
   min_value <- heap[1]
 
@@ -83,24 +86,28 @@ pop <- function(heap) {
 }
 
 peek <- function(heap) {
+  if (length(heap) == 0){
+    stop("Heap underflow: cannot peek")
+  }
   return(heap[1])
 }
 
 # Test
+if (sys.nframe() == 0){
+  h <- c()
+  h <- push(h, 5)
+  h <- push(h, 3)
+  h <- push(h, 8)
+  h <- push(h, 1)
+  h <- push(h, 9)
+  h <- push(h, 2)
 
-h <- c()
-h <- push(h, 5)
-h <- push(h, 3)
-h <- push(h, 8)
-h <- push(h, 1)
-h <- push(h, 9)
-h <- push(h, 2)
+  print(peek(h))    
+  print(h)
 
-print(peek(h))    
-print(h)
-
-res <- pop(h)
-print(res$value)  
-print(res$heap) 
+  res <- pop(h)
+  print(res$value)  
+  print(res$heap) 
+}
   
 
