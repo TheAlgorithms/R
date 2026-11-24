@@ -88,6 +88,7 @@
   * [Armstrong Number](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/armstrong_number.r)
   * [Bisection Method](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/bisection_method.r)
   * [Catalan Numbers](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/catalan_numbers.r)
+  * [Collatz Conjecture](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/collatz_conjecture.r)
   * [Euclidean Distance](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/euclidean_distance.r)
   * [Extended Euclidean Algorithm](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/extended_euclidean_algorithm.r)
   * [Factorial](https://github.com/TheAlgorithms/R/blob/HEAD/mathematics/factorial.r)
