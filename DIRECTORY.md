@@ -48,6 +48,7 @@
     * [Stack Operations](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/Stack/stack_operations.r)
   * Queue
     * [Queue Operations](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/Queue/queue_operations.r)
+  * [Union Find](https://github.com/TheAlgorithms/R/blob/HEAD/data_structures/union_find.r)
 
 ## Dynamic Programming
   * 0
