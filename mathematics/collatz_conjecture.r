@@ -19,9 +19,26 @@
 # collatz_steps(27)     # 111
 
 check_collatz_input <- function(n) {
-  if (!is.numeric(n) || length(n) != 1 || is.na(n) || n < 1 || n != floor(n)) {
+  if (!is.numeric(n) || length(n) != 1 || !is.finite(n) || n < 1 ||
+      n != floor(n)) {
     stop("Error: n must be a positive integer")
   }
+  if (n > 2^53) {
+    stop("Error: n exceeds the exact-integer range")
+  }
+}
+
+# Apply one Collatz step. Doubles hold integers exactly only up to 2^53, so
+# stop before 3 * n + 1 would pass that limit instead of returning a rounded
+# (wrong) value.
+collatz_next <- function(n) {
+  if (n %% 2 == 0) {
+    return(n / 2)
+  }
+  if (n > (2^53 - 1) / 3) {
+    stop("Error: Collatz transition exceeds the exact-integer range")
+  }
+  3 * n + 1
 }
 
 #' Generate the Collatz sequence starting at n
@@ -29,16 +46,19 @@ check_collatz_input <- function(n) {
 #' @return Numeric vector from n down to 1
 collatz_sequence <- function(n) {
   check_collatz_input(n)
-  sequence <- n
+  # Grow the buffer geometrically and trim once at the end: amortized O(s)
+  sequence <- numeric(16)
+  sequence[1] <- n
+  sequence_length <- 1
   while (n != 1) {
-    if (n %% 2 == 0) {
-      n <- n / 2
-    } else {
-      n <- 3 * n + 1
+    n <- collatz_next(n)
+    sequence_length <- sequence_length + 1
+    if (sequence_length > length(sequence)) {
+      length(sequence) <- 2 * length(sequence)
     }
-    sequence <- c(sequence, n)
+    sequence[sequence_length] <- n
   }
-  sequence
+  sequence[seq_len(sequence_length)]
 }
 
 #' Count the steps needed to reach 1
@@ -48,11 +68,7 @@ collatz_steps <- function(n) {
   check_collatz_input(n)
   steps <- 0
   while (n != 1) {
-    if (n %% 2 == 0) {
-      n <- n / 2
-    } else {
-      n <- 3 * n + 1
-    }
+    n <- collatz_next(n)
     steps <- steps + 1
   }
   steps
