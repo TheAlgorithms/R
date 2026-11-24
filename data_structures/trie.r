@@ -115,17 +115,25 @@ trie_delete <- function(trie, word) {
   TRUE
 }
 
-# Collect every word stored below a node
+# Collect every word stored below a node. Characters of the current path are
+# kept in one shared vector and joined only when a word ends, so no growing
+# prefix string is rebuilt at every node.
 trie_collect <- function(node, prefix) {
-  results <- character(0)
-  if (node$is_end) {
-    results <- c(results, prefix)
+  words <- list()
+  path <- character(0)
+  walk <- function(current, depth) {
+    if (current$is_end) {
+      words[[length(words) + 1L]] <<- paste0(
+        prefix, paste0(path[seq_len(depth)], collapse = "")
+      )
+    }
+    for (ch in sort(ls(current$children, all.names = TRUE))) {
+      path[depth + 1L] <<- ch
+      walk(get(ch, envir = current$children, inherits = FALSE), depth + 1L)
+    }
   }
-  for (ch in sort(ls(node$children, all.names = TRUE))) {
-    child <- get(ch, envir = node$children, inherits = FALSE)
-    results <- c(results, trie_collect(child, paste0(prefix, ch)))
-  }
-  results
+  walk(node, 0L)
+  as.character(unlist(words))
 }
 
 #' List all stored words starting with the prefix, in sorted order
